@@ -1,0 +1,22 @@
+---
+import bibleData from "../../../data/bible.json";
+
+const { book, chapter, verses } = bibleData;
+---
+
+<article class="reader-content">
+    <h1>{book} {chapter}</h1>
+
+    <div class="verses">
+        {
+            verses.map((verse) => (
+                <p>
+                    <sup style="font-size: 0.6em; opacity: 0.7; margin-right: 0.2em;">
+                        {verse.number}
+                    </sup>
+                    {verse.text}
+                </p>
+            ))
+        }
+    </div>
+</article>
