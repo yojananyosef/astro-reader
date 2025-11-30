@@ -1,12 +1,13 @@
 ---
 import ReaderLayout from "../features/reader/layouts/ReaderLayout.astro";
 import ReaderContent from "../features/reader/components/ReaderContent.astro";
-import SettingsPanel from "../features/reader/components/SettingsPanel";
+import ReaderControls from "../features/reader/components/ReaderControls";
 ---
 
 <ReaderLayout>
-	<div class="reader-container">
-		<SettingsPanel client:load />
+	<ReaderControls client:load />
+	<div class="reader-container" style="padding-top: 4rem;">
+		<!-- Added padding for navbar -->
 		<ReaderContent />
 	</div>
 </ReaderLayout>

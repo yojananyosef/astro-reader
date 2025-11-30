@@ -1,3 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+    --color-theme-bg: var(--color-bg);
+    --color-theme-text: var(--color-text);
+    --color-theme-link: var(--color-link);
+
+    --font-dyslexic: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+    --font-sans: 'Arial', 'Verdana', 'Calibri', sans-serif;
+}
+
 @font-face {
     font-family: 'OpenDyslexic';
     src: url('https://cdn.jsdelivr.net/npm/opendyslexic@latest/open-dyslexic-regular.woff') format('woff');
@@ -90,6 +101,7 @@ h2,
 h3 {
     line-height: 1.3;
     margin-top: 2em;
+    margin-bottom: 1em;
 }
 
 p {
