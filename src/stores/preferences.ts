@@ -21,7 +21,20 @@ export const defaultPreferences: Preferences = {
     fontFamily: 'dyslexic',
 };
 
-export const preferences = map<Preferences>(defaultPreferences);
+let initialPrefs = defaultPreferences;
+
+if (typeof localStorage !== 'undefined') {
+    const stored = localStorage.getItem('bible-reader-prefs');
+    if (stored) {
+        try {
+            initialPrefs = { ...defaultPreferences, ...JSON.parse(stored) };
+        } catch (e) {
+            console.error('Failed to parse preferences', e);
+        }
+    }
+}
+
+export const preferences = map<Preferences>(initialPrefs);
 
 // Helper to reset to defaults
 export const resetPreferences = () => {

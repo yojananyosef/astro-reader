@@ -11,6 +11,44 @@ import "../../../styles/dyslexia-theme.css";
         <title>Bible Reader MVP</title>
     </head>
     <body>
+        <script is:inline>
+            (function () {
+                try {
+                    var defaultPrefs = {
+                        theme: "sepia",
+                        fontSize: 18,
+                        lineHeight: 1.6,
+                        letterSpacing: 0.02,
+                        wordSpacing: 0.16,
+                        fontFamily: "dyslexic",
+                    };
+
+                    var stored = localStorage.getItem("bible-reader-prefs");
+                    var prefs = stored
+                        ? Object.assign({}, defaultPrefs, JSON.parse(stored))
+                        : defaultPrefs;
+
+                    var body = document.body;
+                    body.setAttribute("data-theme", prefs.theme);
+                    body.setAttribute("data-font", prefs.fontFamily);
+                    body.style.setProperty(
+                        "--font-size",
+                        prefs.fontSize + "px",
+                    );
+                    body.style.setProperty("--line-height", prefs.lineHeight);
+                    body.style.setProperty(
+                        "--letter-spacing",
+                        prefs.letterSpacing + "em",
+                    );
+                    body.style.setProperty(
+                        "--word-spacing",
+                        prefs.wordSpacing + "em",
+                    );
+                } catch (e) {
+                    console.error("Error applying theme", e);
+                }
+            })();
+        </script>
         <slot />
     </body>
 </html>

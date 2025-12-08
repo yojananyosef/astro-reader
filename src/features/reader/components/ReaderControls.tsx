@@ -24,6 +24,10 @@ export default function ReaderControls() {
         const newPrefs = { ...$preferences, [key]: value };
         preferences.set(newPrefs);
 
+        if (typeof localStorage !== 'undefined') {
+            localStorage.setItem('bible-reader-prefs', JSON.stringify(newPrefs));
+        }
+
         // Direct DOM update
         if (typeof document !== 'undefined') {
             const body = document.body;

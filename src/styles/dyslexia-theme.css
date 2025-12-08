@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -5,7 +6,7 @@
     --color-theme-text: var(--color-text);
     --color-theme-link: var(--color-link);
 
-    --font-dyslexic: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+    --font-dyslexic: 'OpenDyslexic', 'Comic Sans MS', 'Comic Sans', 'Comic Neue', sans-serif;
     --font-sans: 'Arial', 'Verdana', 'Calibri', sans-serif;
 }
 
@@ -57,7 +58,7 @@ body[data-theme='sepia'] {
 
 /* Font Families */
 body[data-font='dyslexic'] {
-    --font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+    --font-family: 'OpenDyslexic', 'Comic Sans MS', 'Comic Sans', 'Comic Neue', sans-serif;
 }
 
 /* Accessibility: Links & Buttons (Paper Section 6.4) */
