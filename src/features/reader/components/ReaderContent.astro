@@ -1,22 +1,229 @@
 ---
 import bibleData from "../../../data/bible.json";
+import { ArrowLeft, ArrowRight, BookOpen } from "lucide-preact";
 
-const { book, chapter, verses } = bibleData;
+const url = Astro.url;
+const params = url.searchParams;
+const bookKey = params.get("book") || "gen";
+const chapterKey = params.get("chapter") || "1";
+
+const vbl = bibleData.biblia.vbl;
+const atKeys = Object.keys(vbl.at);
+const ntKeys = vbl.nt ? Object.keys(vbl.nt) : [];
+const allBooks = [...atKeys, ...ntKeys];
+
+// Search in Old Testament (at) or New Testament (nt)
+let bookData =
+    (vbl.at as any)[bookKey] || (vbl.nt ? (vbl.nt as any)[bookKey] : null);
+
+// Navigation Logic
+const currentBookIndex = allBooks.indexOf(bookKey);
+const bookChaptersCount = bookData ? Object.keys(bookData.capitulo).length : 0;
+const currentChapNum = parseInt(chapterKey);
+
+let prevLink = null;
+let nextLink = null;
+
+// Prev Logic
+if (currentChapNum > 1) {
+    prevLink = `/?book=${bookKey}&chapter=${currentChapNum - 1}`;
+} else if (currentBookIndex > 0) {
+    const prevBookKey = allBooks[currentBookIndex - 1];
+    let prevBookData =
+        (vbl.at as any)[prevBookKey] ||
+        (vbl.nt ? (vbl.nt as any)[prevBookKey] : null);
+    const prevBookChapters = Object.keys(prevBookData.capitulo).length;
+    prevLink = `/?book=${prevBookKey}&chapter=${prevBookChapters}`;
+}
+
+// Next Logic
+if (currentChapNum < bookChaptersCount) {
+    nextLink = `/?book=${bookKey}&chapter=${currentChapNum + 1}`;
+} else if (currentBookIndex < allBooks.length - 1) {
+    const nextBookKey = allBooks[currentBookIndex + 1];
+    nextLink = `/?book=${nextBookKey}&chapter=1`;
+}
+
+// Fallback logic
+if (!bookData) {
+    bookData = vbl.at["gen"];
+}
+
+const bookName = (bookData as any).nombre;
+const chapterData =
+    (bookData as any).capitulo[chapterKey] || (bookData as any).capitulo["1"];
+const currentChapter = (bookData as any).capitulo[chapterKey]
+    ? chapterKey
+    : "1";
+
+// Robust Parsing & Footnotes Collection
+const footnotes: string[] = [];
+let noteCounter = 1;
+
+// Convert verses object to array with mixed format handling
+const verses = Object.entries(chapterData)
+    .map(([num, content]) => {
+        let text = "";
+        let verseNotes: number[] = [];
+
+        if (typeof content === "string") {
+            text = content;
+        } else if (typeof content === "object" && content !== null) {
+            text = (content as any).texto || "";
+            const notes = (content as any).notas as string[] | undefined;
+            if (notes && Array.isArray(notes)) {
+                notes.forEach((note) => {
+                    footnotes.push(note);
+                    verseNotes.push(noteCounter++);
+                });
+            }
+        }
+
+        return {
+            number: num,
+            text,
+            noteIndices: verseNotes,
+        };
+    })
+    .sort((a, b) => parseInt(a.number) - parseInt(b.number));
 ---
 
-<article class="reader-content">
-    <h1 style="margin-bottom: 1.5em;">{book} {chapter}</h1>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+    li:target {
+        background-color: color-mix(
+            in srgb,
+            var(--color-link),
+            transparent 85%
+        );
+        border-left: 4px solid var(--color-link);
+        padding: 0.5rem;
+        border-radius: 0 4px 4px 0;
+        transition: all 0.5s ease-in-out;
+    }
+</style>
 
-    <div class="verses">
+<article class="reader-content max-w-3xl mx-auto pb-32 px-4 md:px-0 relative">
+    <h1
+        class="text-3xl md:text-4xl font-bold text-center mb-8 text-[var(--color-link)] font-dyslexic mt-8"
+    >
+        {bookName}
+        {currentChapter}
+    </h1>
+
+    <div class="verses space-y-4">
         {
             verses.map((verse) => (
-                <p>
-                    <sup style="font-size: 0.6em; opacity: 0.7; margin-right: 0.2em;">
+                <p class="leading-relaxed text-theme-text relative text-lg md:text-xl">
+                    <sup class="text-xs font-bold mr-1 opacity-60">
                         {verse.number}
                     </sup>
                     {verse.text}
+                    {verse.noteIndices.length > 0 &&
+                        verse.noteIndices.map((idx) => (
+                            <a
+                                href={`#note-${idx}`}
+                                class="ml-0.5 text-theme-link font-bold cursor-pointer no-underline hover:underline text-xs align-super"
+                                aria-label={`Ver nota ${idx}`}
+                            >
+                                [{idx}]
+                            </a>
+                        ))}
                 </p>
             ))
         }
+    </div>
+
+    {
+        footnotes.length > 0 && (
+            <div class="mt-16 pt-8 border-t border-theme-text/20">
+                <h3 class="text-lg font-bold mb-4 text-theme-text/80 flex items-center gap-2">
+                    <BookOpen class="w-5 h-5" />
+                    Notas del Capítulo
+                </h3>
+                <ol class="list-none space-y-3 text-sm md:text-base text-theme-text/80">
+                    {footnotes.map((note, idx) => (
+                        <li
+                            id={`note-${idx + 1}`}
+                            class="pl-2 flex gap-2 group p-2 hover:bg-theme-text/5 rounded transition-colors scroll-mt-28"
+                        >
+                            <span class="font-bold text-[var(--color-link)] shrink-0">
+                                [{idx + 1}]
+                            </span>
+                            <span>{note}</span>
+                        </li>
+                    ))}
+                </ol>
+            </div>
+        )
+    }
+
+    {
+        /* Floating Navigation Buttons - Hidden on very small screens, visible on md+ */
+    }
+    <div
+        class="fixed top-1/2 -translate-y-1/2 left-4 md:left-8 z-50 hidden lg:block"
+    >
+        {
+            prevLink && (
+                <a
+                    href={prevLink}
+                    class="flex items-center justify-center w-12 h-12 rounded-full bg-theme-surface shadow-lg border border-theme-text/10 text-theme-text hover:bg-theme-text/5 active:scale-95 transition-all group"
+                    aria-label="Capítulo Anterior"
+                >
+                    <ArrowLeft class="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
+                </a>
+            )
+        }
+    </div>
+
+    <div
+        class="fixed top-1/2 -translate-y-1/2 right-4 md:right-8 z-50 hidden lg:block"
+    >
+        {
+            nextLink && (
+                <a
+                    href={nextLink}
+                    class="flex items-center justify-center w-12 h-12 rounded-full bg-theme-surface shadow-lg border border-theme-text/10 text-theme-text hover:bg-theme-text/5 active:scale-95 transition-all group"
+                    aria-label="Capítulo Siguiente"
+                >
+                    <ArrowRight class="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </a>
+            )
+        }
+    </div>
+
+    {/* Mobile Navigation Buttons (Bottom Fixed) */}
+    <div
+        class="lg:hidden fixed bottom-6 left-0 right-0 flex justify-between px-6 z-50 pointer-events-none"
+    >
+        <div class="pointer-events-auto">
+            {
+                prevLink && (
+                    <a
+                        href={prevLink}
+                        class="flex items-center justify-center w-12 h-12 rounded-full bg-theme-surface shadow-lg border border-theme-text/10 text-theme-text hover:bg-theme-text/5 active:scale-95 transition-all"
+                        aria-label="Capítulo Anterior"
+                    >
+                        <ArrowLeft class="w-6 h-6" />
+                    </a>
+                )
+            }
+        </div>
+        <div class="pointer-events-auto">
+            {
+                nextLink && (
+                    <a
+                        href={nextLink}
+                        class="flex items-center justify-center w-12 h-12 rounded-full bg-theme-surface shadow-lg border border-theme-text/10 text-theme-text hover:bg-theme-text/5 active:scale-95 transition-all"
+                        aria-label="Capítulo Siguiente"
+                    >
+                        <ArrowRight class="w-6 h-6" />
+                    </a>
+                )
+            }
+        </div>
     </div>
 </article>

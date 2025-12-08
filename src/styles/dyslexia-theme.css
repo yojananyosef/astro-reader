@@ -53,7 +53,7 @@ body[data-theme='dark'] {
 body[data-theme='sepia'] {
     --color-bg: #f4ecd8;
     --color-text: #5b4636;
-    --color-link: #0066cc;
+    --color-link: #8c5e2a;
 }
 
 /* Font Families */

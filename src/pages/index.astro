@@ -2,10 +2,27 @@
 import ReaderLayout from "../features/reader/layouts/ReaderLayout.astro";
 import ReaderContent from "../features/reader/components/ReaderContent.astro";
 import ReaderControls from "../features/reader/components/ReaderControls";
+import bibleData from "../data/bible.json";
+
+const vbl = bibleData.biblia.vbl;
+const books = [
+	...Object.entries(vbl.at).map(([key, data]) => ({
+		code: key,
+		name: (data as any).nombre,
+		chapters: Object.keys((data as any).capitulo).length,
+	})),
+	...(vbl.nt
+		? Object.entries(vbl.nt).map(([key, data]) => ({
+				code: key,
+				name: (data as any).nombre,
+				chapters: Object.keys((data as any).capitulo).length,
+			}))
+		: []),
+];
 ---
 
 <ReaderLayout>
-	<ReaderControls client:load />
+	<ReaderControls client:load books={books} />
 	<div class="reader-container" style="padding-top: 4rem;">
 		<!-- Added padding for navbar -->
 		<ReaderContent />
