@@ -83,7 +83,10 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
             <ReaderRuler />
 
             {/* Fixed Navbar */}
-            <nav className="fixed top-0 left-0 right-0 h-16 bg-[var(--color-bg)]/95 backdrop-blur-md border-b border-theme-text/10 z-50 flex items-center justify-between px-4 md:px-8 transition-colors duration-300">
+            <nav
+                className="fixed top-0 left-0 right-0 h-16 border-b border-theme-text/10 z-50 flex items-center justify-between px-4 md:px-8 transition-colors duration-300"
+                style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }}
+            >
                 <div className="flex items-center gap-3">
                     <BookOpen className="w-6 h-6 text-[var(--color-link)]" />
                     <h1 className="text-xl font-bold text-[var(--color-link)] font-dyslexic m-0" style={{ margin: 0 }}>Lectura Accesible</h1>
@@ -131,20 +134,26 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                 />
 
                 {/* Panel */}
-                <div className={`absolute right-0 top-0 bottom-0 w-full max-w-sm bg-theme-bg border-l border-theme-text/10 shadow-2xl transform transition-transform duration-300 flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                <div
+                    className={`absolute right-0 top-0 bottom-0 w-full max-w-sm border-l border-theme-text/10 shadow-2xl transform transition-transform duration-300 flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }}
+                >
 
                     {/* Header */}
-                    <div className="flex items-center justify-between p-6 border-b border-theme-text/10">
+                    <div
+                        className="flex items-center justify-between p-6 border-b"
+                        style={{ borderColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' }}
+                    >
                         <div className="flex items-center gap-2">
                             {view === 'chapters' && (
                                 <button
                                     onClick={() => setView('books')}
-                                    className="mr-2 hover:text-theme-link"
+                                    className="mr-2 hover:opacity-70 transition-opacity"
                                 >
                                     <ChevronRight className="w-5 h-5 rotate-180" />
                                 </button>
                             )}
-                            <h2 className="text-lg font-bold text-theme-text flex items-center gap-2">
+                            <h2 className="text-lg font-bold flex items-center gap-2">
                                 {view === 'settings' && <><Settings className="w-5 h-5" /> Configuración</>}
                                 {view === 'books' && <><BookOpen className="w-5 h-5" /> Libros</>}
                                 {view === 'chapters' && selectedBook?.name}
@@ -152,7 +161,10 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                         </div>
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="p-2 rounded-md hover:bg-theme-text/5 text-theme-text/60 hover:text-theme-text transition-colors"
+                            className="p-2 rounded-md transition-colors"
+                            style={{ backgroundColor: 'transparent' }}
+                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'color-mix(in srgb, var(--color-text), transparent 95%)'}
+                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
                         >
                             <X className="w-5 h-5" />
                         </button>
@@ -166,7 +178,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                             <div className="space-y-8">
                                 {/* Accessibility Tools */}
                                 <div className="space-y-3">
-                                    <div className="flex items-center gap-2 text-sm font-medium text-theme-text/80">
+                                    <div className="flex items-center gap-2 text-sm font-medium opacity-80">
                                         <Ruler className="w-4 h-4" />
                                         <label>Herramientas de Lectura</label>
                                     </div>
@@ -210,7 +222,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
 
                                 {/* Theme */}
                                 <div className="space-y-3">
-                                    <div className="flex items-center gap-2 text-sm font-medium text-theme-text/80">
+                                    <div className="flex items-center gap-2 text-sm font-medium opacity-80">
                                         <Palette className="w-4 h-4" />
                                         <label>Tema</label>
                                     </div>
@@ -223,10 +235,12 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             <button
                                                 key={theme.value}
                                                 onClick={() => update('theme', theme.value as Theme)}
-                                                className={`flex flex-col items-center justify-center p-3 rounded-lg border-2 transition-all ${$preferences.theme === theme.value
-                                                    ? 'border-theme-link bg-theme-link/10 text-theme-link'
-                                                    : 'border-transparent bg-theme-text/5 hover:bg-theme-text/10 text-theme-text'
-                                                    }`}
+                                                className="flex flex-col items-center justify-center p-3 rounded-lg border-2 transition-all"
+                                                style={{
+                                                    borderColor: $preferences.theme === theme.value ? 'var(--color-link)' : 'transparent',
+                                                    backgroundColor: $preferences.theme === theme.value ? 'color-mix(in srgb, var(--color-link), transparent 90%)' : 'color-mix(in srgb, var(--color-text), transparent 95%)',
+                                                    color: $preferences.theme === theme.value ? 'var(--color-link)' : 'var(--color-text)'
+                                                }}
                                             >
                                                 <theme.icon className="w-5 h-5 mb-1" />
                                                 <span className="text-xs font-medium">{theme.label}</span>
@@ -237,26 +251,30 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
 
                                 {/* Font Family */}
                                 <div className="space-y-3">
-                                    <div className="flex items-center gap-2 text-sm font-medium text-theme-text/80">
+                                    <div className="flex items-center gap-2 text-sm font-medium opacity-80">
                                         <Type className="w-4 h-4" />
                                         <label>Fuente</label>
                                     </div>
                                     <div className="grid grid-cols-2 gap-2">
                                         <button
                                             onClick={() => update('fontFamily', 'sans')}
-                                            className={`p-3 rounded-lg border-2 transition-all font-sans ${$preferences.fontFamily === 'sans'
-                                                ? 'border-theme-link bg-theme-link/10 text-theme-link'
-                                                : 'border-transparent bg-theme-text/5 hover:bg-theme-text/10 text-theme-text'
-                                                }`}
+                                            className="p-3 rounded-lg border-2 transition-all font-sans"
+                                            style={{
+                                                borderColor: $preferences.fontFamily === 'sans' ? 'var(--color-link)' : 'transparent',
+                                                backgroundColor: $preferences.fontFamily === 'sans' ? 'color-mix(in srgb, var(--color-link), transparent 90%)' : 'color-mix(in srgb, var(--color-text), transparent 95%)',
+                                                color: $preferences.fontFamily === 'sans' ? 'var(--color-link)' : 'var(--color-text)'
+                                            }}
                                         >
                                             Arial
                                         </button>
                                         <button
                                             onClick={() => update('fontFamily', 'dyslexic')}
-                                            className={`p-3 rounded-lg border-2 transition-all font-dyslexic ${$preferences.fontFamily === 'dyslexic'
-                                                ? 'border-theme-link bg-theme-link/10 text-theme-link'
-                                                : 'border-transparent bg-theme-text/5 hover:bg-theme-text/10 text-theme-text'
-                                                }`}
+                                            className="p-3 rounded-lg border-2 transition-all font-dyslexic"
+                                            style={{
+                                                borderColor: $preferences.fontFamily === 'dyslexic' ? 'var(--color-link)' : 'transparent',
+                                                backgroundColor: $preferences.fontFamily === 'dyslexic' ? 'color-mix(in srgb, var(--color-link), transparent 90%)' : 'color-mix(in srgb, var(--color-text), transparent 95%)',
+                                                color: $preferences.fontFamily === 'dyslexic' ? 'var(--color-link)' : 'var(--color-text)'
+                                            }}
                                         >
                                             Comic Sans
                                         </button>
@@ -269,12 +287,12 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                 <div className="space-y-6">
                                     {/* Font Size */}
                                     <div className="space-y-3">
-                                        <div className="flex items-center justify-between text-sm font-medium text-theme-text/80">
+                                        <div className="flex items-center justify-between text-sm font-medium opacity-80">
                                             <div className="flex items-center gap-2">
                                                 <Type className="w-4 h-4" />
                                                 <label>Tamaño</label>
                                             </div>
-                                            <span className="text-xs bg-theme-text/10 px-2 py-0.5 rounded font-mono">{$preferences.fontSize}px</span>
+                                            <span className="text-xs px-2 py-0.5 rounded font-mono" style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' }}>{$preferences.fontSize}px</span>
                                         </div>
                                         <input
                                             type="range"
@@ -282,18 +300,19 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             max="32"
                                             value={$preferences.fontSize}
                                             onInput={(e) => update('fontSize', Number((e.target as HTMLInputElement).value))}
-                                            className="w-full h-2 bg-theme-text/10 rounded-lg appearance-none cursor-pointer accent-[var(--color-link)]"
+                                            className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[var(--color-link)]"
+                                            style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' }}
                                         />
                                     </div>
 
                                     {/* Line Height */}
                                     <div className="space-y-3">
-                                        <div className="flex items-center justify-between text-sm font-medium text-theme-text/80">
+                                        <div className="flex items-center justify-between text-sm font-medium opacity-80">
                                             <div className="flex items-center gap-2">
                                                 <AlignJustify className="w-4 h-4" />
                                                 <label>Interlineado</label>
                                             </div>
-                                            <span className="text-xs bg-theme-text/10 px-2 py-0.5 rounded font-mono">{$preferences.lineHeight}</span>
+                                            <span className="text-xs px-2 py-0.5 rounded font-mono" style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' }}>{$preferences.lineHeight}</span>
                                         </div>
                                         <input
                                             type="range"
@@ -302,18 +321,19 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             step="0.1"
                                             value={$preferences.lineHeight}
                                             onInput={(e) => update('lineHeight', Number((e.target as HTMLInputElement).value))}
-                                            className="w-full h-2 bg-theme-text/10 rounded-lg appearance-none cursor-pointer accent-[var(--color-link)]"
+                                            className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[var(--color-link)]"
+                                            style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' }}
                                         />
                                     </div>
 
                                     {/* Letter Spacing */}
                                     <div className="space-y-3">
-                                        <div className="flex items-center justify-between text-sm font-medium text-theme-text/80">
+                                        <div className="flex items-center justify-between text-sm font-medium opacity-80">
                                             <div className="flex items-center gap-2">
                                                 <MoveHorizontal className="w-4 h-4" />
                                                 <label>Espaciado</label>
                                             </div>
-                                            <span className="text-xs bg-theme-text/10 px-2 py-0.5 rounded font-mono">{$preferences.letterSpacing}em</span>
+                                            <span className="text-xs px-2 py-0.5 rounded font-mono" style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' }}>{$preferences.letterSpacing}em</span>
                                         </div>
                                         <input
                                             type="range"
@@ -322,7 +342,8 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             step="0.01"
                                             value={$preferences.letterSpacing}
                                             onInput={(e) => update('letterSpacing', Number((e.target as HTMLInputElement).value))}
-                                            className="w-full h-2 bg-theme-text/10 rounded-lg appearance-none cursor-pointer accent-[var(--color-link)]"
+                                            className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[var(--color-link)]"
+                                            style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' }}
                                         />
                                     </div>
                                 </div>
@@ -339,10 +360,13 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             setSelectedBook(book);
                                             setView('chapters');
                                         }}
-                                        className="w-full text-left p-3 rounded-lg hover:bg-theme-text/5 flex items-center justify-between group transition-colors"
+                                        className="w-full text-left p-3 rounded-lg flex items-center justify-between group transition-colors"
+                                        style={{ backgroundColor: 'transparent' }}
+                                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'color-mix(in srgb, var(--color-text), transparent 95%)'}
+                                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
                                     >
-                                        <span className="font-medium text-theme-text">{book.name}</span>
-                                        <ChevronRight className="w-4 h-4 text-theme-text/40 group-hover:text-theme-text/60" />
+                                        <span className="font-medium">{book.name}</span>
+                                        <ChevronRight className="w-4 h-4 opacity-40 group-hover:opacity-60" />
                                     </button>
                                 ))}
                             </div>
@@ -355,7 +379,10 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                     <button
                                         key={chapter}
                                         onClick={() => navigateToChapter(chapter)}
-                                        className="p-3 rounded-lg bg-theme-text/5 hover:bg-theme-text/10 text-theme-text font-medium text-center transition-colors"
+                                        className="p-3 rounded-lg font-medium text-center transition-colors"
+                                        style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 95%)' }}
+                                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'color-mix(in srgb, var(--color-text), transparent 90%)'}
+                                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'color-mix(in srgb, var(--color-text), transparent 95%)'}
                                     >
                                         {chapter}
                                     </button>
@@ -367,13 +394,20 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
 
                     {/* Footer - Only settings */}
                     {view === 'settings' && (
-                        <div className="p-6 border-t border-theme-text/10 bg-theme-text/5">
+                        <div
+                            className="p-6 border-t"
+                            style={{
+                                borderColor: 'color-mix(in srgb, var(--color-text), transparent 90%)',
+                                backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 95%)'
+                            }}
+                        >
                             <button
                                 onClick={resetPreferences}
-                                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-theme-text text-theme-bg font-bold rounded-lg hover:opacity-90 transition-opacity shadow-sm"
+                                className="w-full flex items-center justify-center gap-2 px-4 py-3 font-bold rounded-lg hover:opacity-90 transition-opacity shadow-sm"
+                                style={{ backgroundColor: 'var(--color-text)', color: 'var(--color-bg)' }}
                             >
                                 <RotateCcw className="w-4 h-4" />
-                                Restore Default Values
+                                Restaurar valores
                             </button>
                         </div>
                     )}
