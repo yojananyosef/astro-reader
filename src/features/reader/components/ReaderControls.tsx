@@ -184,16 +184,34 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                     </div>
 
                                     {/* Ruler Toggle */}
-                                    <div className="flex items-center justify-between p-3 rounded-lg border border-theme-text/10 bg-theme-text/5">
+                                    <div
+                                        className="flex items-center justify-between p-3 rounded-lg border"
+                                        style={{
+                                            borderColor: 'color-mix(in srgb, var(--color-text), transparent 90%)',
+                                            backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 95%)'
+                                        }}
+                                    >
                                         <div className="flex items-center gap-3">
-                                            <Ruler className="w-5 h-5 text-theme-text/60" />
+                                            <Ruler className="w-5 h-5 opacity-60" />
                                             <span className="font-medium text-sm">Guía de Lectura</span>
                                         </div>
                                         <button
                                             onClick={() => update('rulerEnabled', !$preferences.rulerEnabled)}
-                                            className={`w-12 h-6 rounded-full transition-colors relative ${$preferences.rulerEnabled ? 'bg-theme-link' : 'bg-theme-text/20'}`}
+                                            className="w-11 h-6 rounded-full transition-all duration-200 relative shadow-inner"
+                                            style={{
+                                                backgroundColor: $preferences.rulerEnabled ? 'var(--color-link)' : 'color-mix(in srgb, var(--color-text), transparent 75%)',
+                                                boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.2)'
+                                            }}
+                                            aria-checked={$preferences.rulerEnabled}
+                                            role="switch"
                                         >
-                                            <div className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform ${$preferences.rulerEnabled ? 'translate-x-6' : 'translate-x-0'}`} />
+                                            <div
+                                                className={`absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full shadow-md transition-all duration-200 ${$preferences.rulerEnabled ? 'left-[22px]' : 'left-0.5'}`}
+                                                style={{
+                                                    backgroundColor: 'var(--color-bg)',
+                                                    boxShadow: '0 1px 3px rgba(0,0,0,0.3)'
+                                                }}
+                                            />
                                         </button>
                                     </div>
 
