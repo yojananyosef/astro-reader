@@ -108,3 +108,22 @@ h3 {
 p {
     margin-bottom: 1.5em;
 }
+
+/* Highlighted Verses */
+.highlighted {
+    background-color: var(--color-highlight);
+    border-radius: 4px;
+    box-shadow: 0 0 0 4px var(--color-highlight);
+}
+
+:root {
+    --color-highlight: #fff9c4; /* Light Yellow default */
+}
+
+body[data-theme='dark'] {
+    --color-highlight: #4a4a3b; /* Dark olive for dark mode */
+}
+
+body[data-theme='sepia'] {
+    --color-highlight: #e6dcb8; /* Darker sepia for highlight */
+}

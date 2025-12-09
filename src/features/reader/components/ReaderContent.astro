@@ -150,7 +150,10 @@ const verses = Object.entries(chapterData)
     <div class="verses space-y-4">
         {
             verses.map((verse) => (
-                <p class="text-theme-text relative">
+                <p
+                    class="text-theme-text relative p-2 -mx-2 rounded transition-colors cursor-pointer hover:bg-theme-text/5"
+                    data-verse-id={`${bookKey}-${currentChapter}-${verse.number}`}
+                >
                     <sup class="text-xs font-bold mr-1 opacity-60">
                         {verse.number}
                     </sup>
@@ -161,6 +164,7 @@ const verses = Object.entries(chapterData)
                                 href={`#note-${idx}`}
                                 class="ml-0.5 text-[var(--color-link)] font-bold cursor-pointer no-underline hover:underline text-xs align-super"
                                 aria-label={`Ver nota ${idx}`}
+                                onClick="event.stopPropagation()"
                             >
                                 [{idx}]
                             </a>
@@ -194,5 +198,32 @@ const verses = Object.entries(chapterData)
         )
     }
 
-    {/* Old fixed navigation removed in favor of header navigation */}
+    <script>
+        import {
+            highlights,
+            toggleHighlight,
+        } from "../../../stores/highlights";
+
+        // Subscribe to changes and update UI
+        highlights.subscribe((state) => {
+            const verses = document.querySelectorAll("[data-verse-id]");
+            verses.forEach((el) => {
+                const id = el.getAttribute("data-verse-id");
+                if (id && state[id]) {
+                    el.classList.add("highlighted");
+                } else {
+                    el.classList.remove("highlighted");
+                }
+            });
+        });
+
+        // Add Click Listeners
+        const verses = document.querySelectorAll("[data-verse-id]");
+        verses.forEach((el) => {
+            el.addEventListener("click", () => {
+                const id = el.getAttribute("data-verse-id");
+                if (id) toggleHighlight(id);
+            });
+        });
+    </script>
 </article>
