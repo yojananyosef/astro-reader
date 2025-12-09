@@ -10,6 +10,8 @@ export interface Preferences {
     letterSpacing: number; // in em
     wordSpacing: number; // in em
     fontFamily: FontFamily;
+    rulerEnabled: boolean;
+    speechRate: number;
 }
 
 export const defaultPreferences: Preferences = {
@@ -19,6 +21,8 @@ export const defaultPreferences: Preferences = {
     letterSpacing: 0.02,
     wordSpacing: 0.16,
     fontFamily: 'dyslexic',
+    rulerEnabled: false,
+    speechRate: 1.0
 };
 
 let initialPrefs = defaultPreferences;

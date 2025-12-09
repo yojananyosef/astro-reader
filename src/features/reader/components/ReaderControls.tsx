@@ -1,7 +1,9 @@
 import { useStore } from '@nanostores/preact';
 import { useEffect, useState } from 'preact/hooks';
 import { preferences, type Theme, resetPreferences } from '../../../stores/preferences';
-import { Settings, Type, AlignJustify, MoveHorizontal, Palette, RotateCcw, X, Sun, Moon, BookOpen, Menu, ChevronRight } from 'lucide-preact';
+import { Settings, Type, AlignJustify, MoveHorizontal, Palette, RotateCcw, X, Sun, Moon, BookOpen, Menu, ChevronRight, Ruler, Play, Pause, Square } from 'lucide-preact';
+import ReaderRuler from './ReaderRuler';
+import { useTTS } from '../hooks/useTTS';
 
 interface Book {
     code: string;
@@ -16,6 +18,7 @@ interface ReaderControlsProps {
 export default function ReaderControls({ books = [] }: ReaderControlsProps) {
     const $preferences = useStore(preferences);
     const [isOpen, setIsOpen] = useState(false);
+    const { isPlaying, play, stop, rate, setRate } = useTTS();
 
     // Sync state to DOM whenever preferences change (including resets)
     useEffect(() => {
@@ -29,6 +32,11 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
             body.style.setProperty('--word-spacing', `${$preferences.wordSpacing}em`);
         }
     }, [$preferences]);
+
+    // Update rate from prefs
+    useEffect(() => {
+        setRate($preferences.speechRate);
+    }, [$preferences.speechRate]);
 
     const update = (key: keyof typeof $preferences, value: any) => {
         const newPrefs = { ...$preferences, [key]: value };
@@ -72,6 +80,8 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
 
     return (
         <>
+            <ReaderRuler />
+
             {/* Fixed Navbar */}
             <nav className="fixed top-0 left-0 right-0 h-16 bg-[var(--color-bg)]/95 backdrop-blur-md border-b border-theme-text/10 z-50 flex items-center justify-between px-4 md:px-8 transition-colors duration-300">
                 <div className="flex items-center gap-3">
@@ -79,6 +89,15 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                     <h1 className="text-xl font-bold text-[var(--color-link)] font-dyslexic m-0" style={{ margin: 0 }}>Lectura Accesible</h1>
                 </div>
                 <div className="flex gap-2">
+                    {/* Quick TTS Toggle */}
+                    <button
+                        onClick={() => isPlaying ? stop() : play()}
+                        className={`p-2 rounded-md transition-colors ${isPlaying ? 'bg-theme-link/10 text-theme-link' : 'hover:bg-theme-text/5 text-theme-text'}`}
+                        aria-label={isPlaying ? "Detener lectura" : "Leer en voz alta"}
+                    >
+                        {isPlaying ? <Square className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5" />}
+                    </button>
+
                     <button
                         onClick={() => {
                             setView('books');
@@ -145,6 +164,50 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                         {/* VIEW: SETTINGS */}
                         {view === 'settings' && (
                             <div className="space-y-8">
+                                {/* Accessibility Tools */}
+                                <div className="space-y-3">
+                                    <div className="flex items-center gap-2 text-sm font-medium text-theme-text/80">
+                                        <Ruler className="w-4 h-4" />
+                                        <label>Herramientas de Lectura</label>
+                                    </div>
+
+                                    {/* Ruler Toggle */}
+                                    <div className="flex items-center justify-between p-3 rounded-lg border border-theme-text/10 bg-theme-text/5">
+                                        <div className="flex items-center gap-3">
+                                            <Ruler className="w-5 h-5 text-theme-text/60" />
+                                            <span className="font-medium text-sm">Guía de Lectura</span>
+                                        </div>
+                                        <button
+                                            onClick={() => update('rulerEnabled', !$preferences.rulerEnabled)}
+                                            className={`w-12 h-6 rounded-full transition-colors relative ${$preferences.rulerEnabled ? 'bg-theme-link' : 'bg-theme-text/20'}`}
+                                        >
+                                            <div className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform ${$preferences.rulerEnabled ? 'translate-x-6' : 'translate-x-0'}`} />
+                                        </button>
+                                    </div>
+
+                                    {/* Audio Speed */}
+                                    <div className="space-y-2 p-3 rounded-lg border border-theme-text/10 bg-theme-text/5">
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-3">
+                                                <Play className="w-5 h-5 text-theme-text/60" />
+                                                <span className="font-medium text-sm">Velocidad de Voz</span>
+                                            </div>
+                                            <span className="text-xs font-mono bg-theme-text/10 px-2 py-0.5 rounded">x{$preferences.speechRate}</span>
+                                        </div>
+                                        <input
+                                            type="range"
+                                            min="0.5"
+                                            max="2"
+                                            step="0.1"
+                                            value={$preferences.speechRate}
+                                            onInput={(e) => update('speechRate', Number((e.target as HTMLInputElement).value))}
+                                            className="w-full h-2 bg-theme-text/10 rounded-lg appearance-none cursor-pointer accent-[var(--color-link)]"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="h-px bg-theme-text/10 my-4" />
+
                                 {/* Theme */}
                                 <div className="space-y-3">
                                     <div className="flex items-center gap-2 text-sm font-medium text-theme-text/80">
@@ -310,7 +373,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                 className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-theme-text text-theme-bg font-bold rounded-lg hover:opacity-90 transition-opacity shadow-sm"
                             >
                                 <RotateCcw className="w-4 h-4" />
-                                Restaurar Valores
+                                Restore Default Values
                             </button>
                         </div>
                     )}

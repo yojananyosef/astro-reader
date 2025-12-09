@@ -117,13 +117,24 @@ p {
 }
 
 :root {
-    --color-highlight: #fff9c4; /* Light Yellow default */
+    --color-highlight: #fff9c4;
+    /* Light Yellow default */
 }
 
 body[data-theme='dark'] {
-    --color-highlight: #4a4a3b; /* Dark olive for dark mode */
+    --color-highlight: #4a4a3b;
+    /* Dark olive for dark mode */
 }
 
 body[data-theme='sepia'] {
-    --color-highlight: #e6dcb8; /* Darker sepia for highlight */
+    --color-highlight: #e6dcb8;
+    /* Darker sepia for highlight */
+}
+
+/* TTS Active Word/Block */
+.speaking-highlight {
+    background-color: color-mix(in srgb, var(--color-link), transparent 85%);
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px var(--color-link);
+    transition: all 0.2s ease;
 }
