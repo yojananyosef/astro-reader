@@ -106,17 +106,51 @@ const verses = Object.entries(chapterData)
 </style>
 
 <article class="reader-content max-w-3xl mx-auto pb-32 px-4 md:px-0 relative">
-    <h1
-        class="text-3xl md:text-4xl font-bold text-center mb-8 text-[var(--color-link)] font-dyslexic mt-8"
-    >
-        {bookName}
-        {currentChapter}
-    </h1>
+    {/* Navigation Header - Unified for Mobile/Desktop */}
+    <div class="flex items-center justify-between mt-8 mb-8">
+        {/* Previous Chapter Button */}
+        <div class="w-12 flex justify-start">
+            {
+                prevLink && (
+                    <a
+                        href={prevLink}
+                        class="p-2 rounded-full text-theme-text hover:bg-theme-text/5 active:scale-95 transition-all"
+                        aria-label="Capítulo Anterior"
+                    >
+                        <ArrowLeft class="w-8 h-8" />
+                    </a>
+                )
+            }
+        </div>
+
+        {/* Title */}
+        <h1
+            class="text-3xl md:text-4xl font-bold text-center text-[var(--color-link)] font-dyslexic m-0"
+        >
+            {bookName}
+            {currentChapter}
+        </h1>
+
+        {/* Next Chapter Button */}
+        <div class="w-12 flex justify-end">
+            {
+                nextLink && (
+                    <a
+                        href={nextLink}
+                        class="p-2 rounded-full text-theme-text hover:bg-theme-text/5 active:scale-95 transition-all"
+                        aria-label="Capítulo Siguiente"
+                    >
+                        <ArrowRight class="w-8 h-8" />
+                    </a>
+                )
+            }
+        </div>
+    </div>
 
     <div class="verses space-y-4">
         {
             verses.map((verse) => (
-                <p class="leading-relaxed text-theme-text relative text-lg md:text-xl">
+                <p class="text-theme-text relative">
                     <sup class="text-xs font-bold mr-1 opacity-60">
                         {verse.number}
                     </sup>
@@ -125,7 +159,7 @@ const verses = Object.entries(chapterData)
                         verse.noteIndices.map((idx) => (
                             <a
                                 href={`#note-${idx}`}
-                                class="ml-0.5 text-theme-link font-bold cursor-pointer no-underline hover:underline text-xs align-super"
+                                class="ml-0.5 text-[var(--color-link)] font-bold cursor-pointer no-underline hover:underline text-xs align-super"
                                 aria-label={`Ver nota ${idx}`}
                             >
                                 [{idx}]
@@ -160,70 +194,5 @@ const verses = Object.entries(chapterData)
         )
     }
 
-    {
-        /* Floating Navigation Buttons - Hidden on very small screens, visible on md+ */
-    }
-    <div
-        class="fixed top-1/2 -translate-y-1/2 left-4 md:left-8 z-50 hidden lg:block"
-    >
-        {
-            prevLink && (
-                <a
-                    href={prevLink}
-                    class="flex items-center justify-center w-12 h-12 rounded-full bg-theme-surface shadow-lg border border-theme-text/10 text-theme-text hover:bg-theme-text/5 active:scale-95 transition-all group"
-                    aria-label="Capítulo Anterior"
-                >
-                    <ArrowLeft class="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
-                </a>
-            )
-        }
-    </div>
-
-    <div
-        class="fixed top-1/2 -translate-y-1/2 right-4 md:right-8 z-50 hidden lg:block"
-    >
-        {
-            nextLink && (
-                <a
-                    href={nextLink}
-                    class="flex items-center justify-center w-12 h-12 rounded-full bg-theme-surface shadow-lg border border-theme-text/10 text-theme-text hover:bg-theme-text/5 active:scale-95 transition-all group"
-                    aria-label="Capítulo Siguiente"
-                >
-                    <ArrowRight class="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                </a>
-            )
-        }
-    </div>
-
-    {/* Mobile Navigation Buttons (Bottom Fixed) */}
-    <div
-        class="lg:hidden fixed bottom-6 left-0 right-0 flex justify-between px-6 z-50 pointer-events-none"
-    >
-        <div class="pointer-events-auto">
-            {
-                prevLink && (
-                    <a
-                        href={prevLink}
-                        class="flex items-center justify-center w-12 h-12 rounded-full bg-theme-surface shadow-lg border border-theme-text/10 text-theme-text hover:bg-theme-text/5 active:scale-95 transition-all"
-                        aria-label="Capítulo Anterior"
-                    >
-                        <ArrowLeft class="w-6 h-6" />
-                    </a>
-                )
-            }
-        </div>
-        <div class="pointer-events-auto">
-            {
-                nextLink && (
-                    <a
-                        href={nextLink}
-                        class="flex items-center justify-center w-12 h-12 rounded-full bg-theme-surface shadow-lg border border-theme-text/10 text-theme-text hover:bg-theme-text/5 active:scale-95 transition-all"
-                        aria-label="Capítulo Siguiente"
-                    >
-                        <ArrowRight class="w-6 h-6" />
-                    </a>
-                )
-            }
-        </div>
-    </div>
+    {/* Old fixed navigation removed in favor of header navigation */}
 </article>
