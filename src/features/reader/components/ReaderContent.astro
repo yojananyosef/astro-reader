@@ -106,48 +106,40 @@ const verses = Object.entries(chapterData)
 </style>
 
 <article class="reader-content max-w-3xl mx-auto pb-32 px-4 md:px-0 relative">
-    {/* Navigation Header - Unified for Mobile/Desktop */}
-    <div class="flex items-center justify-between mt-8 mb-8">
-        {/* Previous Chapter Button */}
-        <div class="w-12 flex justify-start">
-            {
-                prevLink && (
-                    <a
-                        href={prevLink}
-                        class="p-2 rounded-full active:scale-95 transition-all"
-                        style="color: var(--color-text);"
-                        aria-label="Capítulo Anterior"
-                    >
-                        <ArrowLeft class="w-8 h-8" />
-                    </a>
-                )
-            }
-        </div>
+    {/* Title - Centered */}
+    <h1
+        class="text-3xl md:text-4xl font-bold text-center text-[var(--color-link)] font-dyslexic mt-8 mb-8"
+    >
+        {bookName}
+        {currentChapter}
+    </h1>
 
-        {/* Title */}
-        <h1
-            class="text-3xl md:text-4xl font-bold text-center text-[var(--color-link)] font-dyslexic m-0"
-        >
-            {bookName}
-            {currentChapter}
-        </h1>
+    {/* Fixed Side Navigation - All Devices */}
+    {
+        prevLink && (
+            <a
+                href={prevLink}
+                class="fixed left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95 z-40"
+                style="background-color: color-mix(in srgb, var(--color-text), transparent 85%); color: var(--color-text);"
+                aria-label="Capítulo Anterior"
+            >
+                <ArrowLeft class="w-5 h-5 md:w-6 md:h-6" />
+            </a>
+        )
+    }
 
-        {/* Next Chapter Button */}
-        <div class="w-12 flex justify-end">
-            {
-                nextLink && (
-                    <a
-                        href={nextLink}
-                        class="p-2 rounded-full active:scale-95 transition-all"
-                        style="color: var(--color-text);"
-                        aria-label="Capítulo Siguiente"
-                    >
-                        <ArrowRight class="w-8 h-8" />
-                    </a>
-                )
-            }
-        </div>
-    </div>
+    {
+        nextLink && (
+            <a
+                href={nextLink}
+                class="fixed right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95 z-40"
+                style="background-color: color-mix(in srgb, var(--color-text), transparent 85%); color: var(--color-text);"
+                aria-label="Capítulo Siguiente"
+            >
+                <ArrowRight class="w-5 h-5 md:w-6 md:h-6" />
+            </a>
+        )
+    }
 
     <div class="verses space-y-4">
         {
