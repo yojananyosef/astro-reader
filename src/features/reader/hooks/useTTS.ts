@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'preact/hooks';
+import { preferences } from '../../../stores/preferences';
 
 export function useTTS() {
     const [isPlaying, setIsPlaying] = useState(false);
@@ -44,7 +45,19 @@ export function useTTS() {
             }
 
             const element = elements[currentIndex];
-            const text = (element as HTMLElement).innerText;
+            // Cloning to process text without altering DOM
+            const clone = element.cloneNode(true) as HTMLElement;
+            const currentPrefs = preferences.get();
+
+            if (currentPrefs.skipVerses) {
+                clone.querySelectorAll('sup').forEach(el => el.remove());
+            }
+
+            if (currentPrefs.skipFootnotes) {
+                clone.querySelectorAll('a').forEach(el => el.remove());
+            }
+
+            const text = clone.innerText;
 
             if (!text.trim()) {
                 currentIndex++;

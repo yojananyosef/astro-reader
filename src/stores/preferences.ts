@@ -12,6 +12,8 @@ export interface Preferences {
     fontFamily: FontFamily;
     rulerEnabled: boolean;
     speechRate: number;
+    skipVerses: boolean;
+    skipFootnotes: boolean;
 }
 
 export const defaultPreferences: Preferences = {
@@ -22,7 +24,9 @@ export const defaultPreferences: Preferences = {
     wordSpacing: 0.16,
     fontFamily: 'dyslexic',
     rulerEnabled: false,
-    speechRate: 1.0
+    speechRate: 1.0,
+    skipVerses: true,
+    skipFootnotes: true
 };
 
 let initialPrefs = defaultPreferences;
@@ -43,4 +47,7 @@ export const preferences = map<Preferences>(initialPrefs);
 // Helper to reset to defaults
 export const resetPreferences = () => {
     preferences.set(defaultPreferences);
+    if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('bible-reader-prefs', JSON.stringify(defaultPreferences));
+    }
 };

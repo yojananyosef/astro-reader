@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/preact';
 import { useEffect, useState } from 'preact/hooks';
 import { preferences, type Theme, resetPreferences } from '../../../stores/preferences';
-import { Settings, Type, AlignJustify, MoveHorizontal, Palette, RotateCcw, X, Sun, Moon, BookOpen, Menu, ChevronRight, Ruler, Play, Pause, Square } from 'lucide-preact';
+import { Settings, Type, AlignJustify, MoveHorizontal, Palette, RotateCcw, X, Sun, Moon, BookOpen, Menu, ChevronRight, Ruler, Play, Pause, Square, MessageSquare, Quote, Check } from 'lucide-preact';
 import ReaderRuler from './ReaderRuler';
 import { useTTS } from '../hooks/useTTS';
 
@@ -233,6 +233,40 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             onInput={(e) => update('speechRate', Number((e.target as HTMLInputElement).value))}
                                             className="w-full h-2 bg-theme-text/10 rounded-lg appearance-none cursor-pointer accent-[var(--color-link)]"
                                         />
+                                    </div>
+
+                                    {/* Skip Options */}
+                                    <div className="grid grid-cols-2 gap-2">
+                                        <button
+                                            onClick={() => update('skipVerses', !$preferences.skipVerses)}
+                                            className="p-3 rounded-lg border flex flex-col items-center justify-center gap-2 transition-all"
+                                            style={{
+                                                borderColor: $preferences.skipVerses ? 'var(--color-link)' : 'color-mix(in srgb, var(--color-text), transparent 90%)',
+                                                backgroundColor: $preferences.skipVerses ? 'color-mix(in srgb, var(--color-link), transparent 90%)' : 'color-mix(in srgb, var(--color-text), transparent 95%)',
+                                                color: $preferences.skipVerses ? 'var(--color-link)' : 'var(--color-text)'
+                                            }}
+                                        >
+                                            <div className="flex items-center gap-2">
+                                                <Quote className="w-5 h-5" />
+                                                {$preferences.skipVerses && <Check className="w-4 h-4" />}
+                                            </div>
+                                            <span className="text-xs font-medium">Saltar Versos</span>
+                                        </button>
+                                        <button
+                                            onClick={() => update('skipFootnotes', !$preferences.skipFootnotes)}
+                                            className="p-3 rounded-lg border flex flex-col items-center justify-center gap-2 transition-all"
+                                            style={{
+                                                borderColor: $preferences.skipFootnotes ? 'var(--color-link)' : 'color-mix(in srgb, var(--color-text), transparent 90%)',
+                                                backgroundColor: $preferences.skipFootnotes ? 'color-mix(in srgb, var(--color-link), transparent 90%)' : 'color-mix(in srgb, var(--color-text), transparent 95%)',
+                                                color: $preferences.skipFootnotes ? 'var(--color-link)' : 'var(--color-text)'
+                                            }}
+                                        >
+                                            <div className="flex items-center gap-2">
+                                                <MessageSquare className="w-5 h-5" />
+                                                {$preferences.skipFootnotes && <Check className="w-4 h-4" />}
+                                            </div>
+                                            <span className="text-xs font-medium">Saltar Notas</span>
+                                        </button>
                                     </div>
                                 </div>
 
