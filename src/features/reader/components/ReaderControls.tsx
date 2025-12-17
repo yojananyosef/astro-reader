@@ -1,9 +1,10 @@
 import { useStore } from '@nanostores/preact';
 import { useEffect, useState } from 'preact/hooks';
-import { preferences, type Theme, resetPreferences } from '../../../stores/preferences';
-import { Settings, Type, AlignJustify, MoveHorizontal, Palette, RotateCcw, X, Sun, Moon, BookOpen, Menu, ChevronRight, Ruler, Play, Pause, Square, MessageSquare, Quote, Check } from 'lucide-preact';
+import { preferences, type Theme, resetPreferences, type Preferences, PREFS_STORAGE_KEY } from '../../../stores/preferences';
+import { Settings, Type, AlignJustify, MoveHorizontal, Palette, RotateCcw, X, Sun, Moon, BookOpen, Menu, ChevronRight, Ruler, Play, Square, MessageSquare, Quote, Check } from 'lucide-preact';
 import ReaderRuler from './ReaderRuler';
 import { useTTS } from '../hooks/useTTS';
+import { applyThemeToDocument } from '../scripts/theme-manager';
 
 interface Book {
     code: string;
@@ -18,19 +19,11 @@ interface ReaderControlsProps {
 export default function ReaderControls({ books = [] }: ReaderControlsProps) {
     const $preferences = useStore(preferences);
     const [isOpen, setIsOpen] = useState(false);
-    const { isPlaying, play, stop, rate, setRate } = useTTS();
+    const { isPlaying, play, stop, setRate } = useTTS();
 
     // Sync state to DOM whenever preferences change (including resets)
     useEffect(() => {
-        if (typeof document !== 'undefined') {
-            const body = document.body;
-            body.setAttribute('data-theme', $preferences.theme);
-            body.setAttribute('data-font', $preferences.fontFamily);
-            body.style.setProperty('--font-size', `${$preferences.fontSize}px`);
-            body.style.setProperty('--line-height', `${$preferences.lineHeight}`);
-            body.style.setProperty('--letter-spacing', `${$preferences.letterSpacing}em`);
-            body.style.setProperty('--word-spacing', `${$preferences.wordSpacing}em`);
-        }
+        applyThemeToDocument($preferences);
     }, [$preferences]);
 
     // Update rate from prefs
@@ -38,24 +31,15 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
         setRate($preferences.speechRate);
     }, [$preferences.speechRate]);
 
-    const update = (key: keyof typeof $preferences, value: any) => {
-        const newPrefs = { ...$preferences, [key]: value };
+    const update = <K extends keyof Preferences>(key: K, value: Preferences[K]) => {
+        const newPrefs: Preferences = { ...$preferences, [key]: value } as Preferences;
         preferences.set(newPrefs);
 
         if (typeof localStorage !== 'undefined') {
-            localStorage.setItem('bible-reader-prefs', JSON.stringify(newPrefs));
+            localStorage.setItem(PREFS_STORAGE_KEY, JSON.stringify(newPrefs));
         }
 
-        // Direct DOM update
-        if (typeof document !== 'undefined') {
-            const body = document.body;
-            if (key === 'theme') body.setAttribute('data-theme', value);
-            if (key === 'fontFamily') body.setAttribute('data-font', value);
-            if (key === 'fontSize') body.style.setProperty('--font-size', `${value}px`);
-            if (key === 'lineHeight') body.style.setProperty('--line-height', `${value}`);
-            if (key === 'letterSpacing') body.style.setProperty('--letter-spacing', `${value}em`);
-            if (key === 'wordSpacing') body.style.setProperty('--word-spacing', `${value}em`);
-        }
+        // DOM update is handled by the useEffect above
     };
 
     const [view, setView] = useState<'settings' | 'books' | 'chapters'>('settings');
@@ -89,7 +73,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
             >
                 <div className="flex items-center gap-3">
                     <BookOpen className="w-6 h-6 text-[var(--color-link)]" />
-                    <h1 className="text-xl font-bold text-[var(--color-link)] font-dyslexic m-0" style={{ margin: 0 }}>Lectura Accesible</h1>
+                    <h1 className="text-xl font-bold text-[var(--color-link)] m-0" style={{ margin: 0 }}>Lectura Accesible</h1>
                 </div>
                 <div className="flex gap-2">
                     {/* Quick TTS Toggle */}
@@ -328,7 +312,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                                 color: $preferences.fontFamily === 'dyslexic' ? 'var(--color-link)' : 'var(--color-text)'
                                             }}
                                         >
-                                            Comic Sans
+                                            OpenDyslexic
                                         </button>
                                     </div>
                                 </div>

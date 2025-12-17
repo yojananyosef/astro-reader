@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -6,15 +5,40 @@
     --color-theme-text: var(--color-text);
     --color-theme-link: var(--color-link);
 
-    --font-dyslexic: 'OpenDyslexic', 'Comic Sans MS', 'Comic Sans', 'Comic Neue', sans-serif;
+    --font-dyslexic: 'OpenDyslexic', 'Comic Sans MS', 'Comic Sans', sans-serif;
     --font-sans: 'Arial', 'Verdana', 'Calibri', sans-serif;
 }
 
 @font-face {
     font-family: 'OpenDyslexic';
-    src: url('https://cdn.jsdelivr.net/npm/opendyslexic@latest/open-dyslexic-regular.woff') format('woff');
+    src: url('/fonts/OpenDyslexic-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('/fonts/OpenDyslexic-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('/fonts/OpenDyslexic-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('/fonts/OpenDyslexic-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
 }
 
 :root {
@@ -58,7 +82,7 @@ body[data-theme='sepia'] {
 
 /* Font Families */
 body[data-font='dyslexic'] {
-    --font-family: 'OpenDyslexic', 'Comic Sans MS', 'Comic Sans', 'Comic Neue', sans-serif;
+    --font-family: 'OpenDyslexic', 'Comic Sans MS', 'Comic Sans', sans-serif;
 }
 
 /* Accessibility: Links & Buttons (Paper Section 6.4) */

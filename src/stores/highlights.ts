@@ -6,9 +6,11 @@ interface HighlightState {
 
 export const highlights = map<HighlightState>({});
 
+const HIGHLIGHTS_STORAGE_KEY = 'bible-reader-highlights';
+
 if (typeof localStorage !== 'undefined') {
     try {
-        const stored = localStorage.getItem('bible-reader-highlights');
+        const stored = localStorage.getItem(HIGHLIGHTS_STORAGE_KEY);
         if (stored) {
             highlights.set(JSON.parse(stored));
         }
@@ -20,7 +22,7 @@ if (typeof localStorage !== 'undefined') {
 // Sync with localStorage
 highlights.subscribe((value) => {
     if (typeof localStorage !== 'undefined') {
-        localStorage.setItem('bible-reader-highlights', JSON.stringify(value));
+        localStorage.setItem(HIGHLIGHTS_STORAGE_KEY, JSON.stringify(value));
     }
 });
 

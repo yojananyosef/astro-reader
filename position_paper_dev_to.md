@@ -722,13 +722,13 @@ Este artículo es resultado de una revisión exhaustiva de 296+ artículos acad�
 ## Cómo Citar Este Artículo
 
 **APA:**
-Anonymous. (2025). "Toward accessible web typography for dyslexia: neurocognitive evidence, W3C guidelines, and CSS design recommendations." *Dev.to*.
+Gutierrez, J. (2025, noviembre 28). Hacia una tipografía web accesible para la dislexia: evidencia neurocognitiva, guías W3C y recomendaciones de diseño CSS. *Dev.to*. https://dev.to/yojananyosef/hacia-una-tipografia-web-accesible-para-la-dislexia-evidencia-neurocognitiva-guias-w3c-y-3npk.
 
 **Chicago:**
-Anonymous. "Toward Accessible Web Typography for Dyslexia: Neurocognitive Evidence, W3C Guidelines, and CSS Design Recommendations." *Dev.to*, November 28, 2025.
+Gutierrez, Johan. "Hacia una Tipografía Web Accesible para la Dislexia: Evidencia Neurocognitiva, Guías W3C y Recomendaciones de Diseño CSS." *Dev.to*, 28 de noviembre de 2025. https://dev.to/yojananyosef/hacia-una-tipografia-web-accesible-para-la-dislexia-evidencia-neurocognitiva-guias-w3c-y-3npk.
 
 **Harvard:**
-Anonymous, 2025. Toward accessible web typography for dyslexia: neurocognitive evidence, W3C guidelines, and CSS design recommendations. *Dev.to*. Available at: https://dev.to
+Gutierrez, J., 2025. Hacia una tipografía web accesible para la dislexia: evidencia neurocognitiva, guías W3C y recomendaciones de diseño CSS. *Dev.to*. Disponible en: https://dev.to/yojananyosef/hacia-una-tipografia-web-accesible-para-la-dislexia-evidencia-neurocognitiva-guias-w3c-y-3npk (Consultado el 28 de noviembre de 2025).
 
 ---
 
@@ -738,4 +738,4 @@ Este trabajo fue facilitado por extensivas búsquedas sistemáticas de literatur
 
 ---
 
-**¿Preguntas o comentarios?** Por favor, comparte en los comentarios de Dev.to. Este es un trabajo vivo y la comunidad de desarrolladores y diseñadores es bienvenida para aportar correcciones, amplificaciones o experiencias implementando estas recomendaciones.
+**¿Preguntas o comentarios?** Por favor, comparte en los comentarios. Este es un trabajo vivo y la comunidad de desarrolladores y diseñadores es bienvenida para aportar correcciones, amplificaciones o experiencias implementando estas recomendaciones.

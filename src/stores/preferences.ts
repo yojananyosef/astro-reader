@@ -2,6 +2,7 @@ import { map } from 'nanostores';
 
 export type Theme = 'light' | 'dark' | 'sepia';
 export type FontFamily = 'sans' | 'dyslexic';
+export const PREFS_STORAGE_KEY = 'bible-reader-prefs';
 
 export interface Preferences {
     theme: Theme;
@@ -17,12 +18,12 @@ export interface Preferences {
 }
 
 export const defaultPreferences: Preferences = {
-    theme: 'sepia',
+    theme: 'light',
     fontSize: 18,
     lineHeight: 1.6,
     letterSpacing: 0.02,
     wordSpacing: 0.16,
-    fontFamily: 'dyslexic',
+    fontFamily: 'sans',
     rulerEnabled: false,
     speechRate: 1.0,
     skipVerses: true,
@@ -32,7 +33,7 @@ export const defaultPreferences: Preferences = {
 let initialPrefs = defaultPreferences;
 
 if (typeof localStorage !== 'undefined') {
-    const stored = localStorage.getItem('bible-reader-prefs');
+    const stored = localStorage.getItem(PREFS_STORAGE_KEY);
     if (stored) {
         try {
             initialPrefs = { ...defaultPreferences, ...JSON.parse(stored) };
@@ -48,6 +49,6 @@ export const preferences = map<Preferences>(initialPrefs);
 export const resetPreferences = () => {
     preferences.set(defaultPreferences);
     if (typeof localStorage !== 'undefined') {
-        localStorage.setItem('bible-reader-prefs', JSON.stringify(defaultPreferences));
+        localStorage.setItem(PREFS_STORAGE_KEY, JSON.stringify(defaultPreferences));
     }
 };

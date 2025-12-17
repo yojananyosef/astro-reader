@@ -2,23 +2,9 @@
 import ReaderLayout from "../features/reader/layouts/ReaderLayout.astro";
 import ReaderContent from "../features/reader/components/ReaderContent.astro";
 import ReaderControls from "../features/reader/components/ReaderControls";
-import bibleData from "../data/bible.json";
+import booksIndex from "../data/books-index.json";
 
-const vbl = bibleData.biblia.vbl;
-const books = [
-	...Object.entries(vbl.at).map(([key, data]) => ({
-		code: key,
-		name: (data as any).nombre,
-		chapters: Object.keys((data as any).capitulo).length,
-	})),
-	...(vbl.nt
-		? Object.entries(vbl.nt).map(([key, data]) => ({
-				code: key,
-				name: (data as any).nombre,
-				chapters: Object.keys((data as any).capitulo).length,
-			}))
-		: []),
-];
+const books = booksIndex;
 ---
 
 <ReaderLayout>

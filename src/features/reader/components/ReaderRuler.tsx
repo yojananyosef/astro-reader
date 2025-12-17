@@ -26,7 +26,7 @@ export default function ReaderRuler() {
             style={{
                 top: `${position}px`,
                 transform: 'translateY(-50%)',
-                boxShadow: '0 0 0 9999px rgba(0, 0, 0, 0.5)' // Dim everything else
+                boxShadow: '0 0 0 9999px rgba(0, 0, 0, 0.5)'
             }}
             className="fixed left-0 w-full h-16 pointer-events-none z-[100] mix-blend-multiply border-y border-yellow-400/30 bg-yellow-400/10"
         />
