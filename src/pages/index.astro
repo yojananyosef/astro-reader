@@ -2,15 +2,20 @@
 import ReaderLayout from "../features/reader/layouts/ReaderLayout.astro";
 import ReaderContent from "../features/reader/components/ReaderContent.astro";
 import ReaderControls from "../features/reader/components/ReaderControls";
+import SidebarNav from "../features/reader/components/SidebarNav";
 import booksIndex from "../data/books-index.json";
 
 const books = booksIndex;
 ---
 
 <ReaderLayout>
-	<ReaderControls client:load books={books} />
-	<div class="reader-container" style="padding-top: 4rem;">
-		<!-- Added padding for navbar -->
-		<ReaderContent />
+	<div style="padding-top: 4rem;">
+		<ReaderControls client:load books={books} />
+		<div class="flex gap-6">
+			<SidebarNav client:only="preact" books={books} showTrigger={false} mode="inline" />
+			<div class="flex-1">
+				<ReaderContent />
+			</div>
+		</div>
 	</div>
 </ReaderLayout>

@@ -121,8 +121,8 @@ const verses = Object.entries(chapterData)
         prevLink && (
             <a
                 href={prevLink}
-                class="fixed left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95 z-40"
-                style="background-color: color-mix(in srgb, var(--color-text), transparent 85%); color: var(--color-text);"
+                class="fixed top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95 z-40"
+                style={`left: var(--sidebar-offset-left); background-color: color-mix(in srgb, var(--color-text), transparent 85%); color: var(--color-text);`}
                 aria-label="Capítulo Anterior"
             >
                 <ArrowLeft class="w-5 h-5 md:w-6 md:h-6" />

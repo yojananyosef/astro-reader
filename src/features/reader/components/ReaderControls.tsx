@@ -68,8 +68,8 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
 
             {/* Fixed Navbar */}
             <nav
-                className="fixed top-0 left-0 right-0 h-16 border-b border-theme-text/10 z-50 flex items-center justify-between px-4 md:px-8 transition-colors duration-300"
-                style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }}
+                className="fixed top-0 left-0 right-0 h-16 border-b z-50 flex items-center justify-between px-4 md:px-8 transition-colors duration-300"
+                style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)', borderColor: 'color-mix(in srgb, var(--color-text), transparent 85%)' }}
             >
                 <div className="flex items-center gap-3">
                     <BookOpen className="w-6 h-6 text-[var(--color-link)]" />
