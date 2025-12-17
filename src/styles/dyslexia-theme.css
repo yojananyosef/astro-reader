@@ -45,7 +45,14 @@
     /* Defaults matching the paper (Light/Cream Theme) */
     --color-bg: #f5f5f0;
     --color-text: #1a1a18;
-    --color-link: #0066cc;
+    --color-primary: #2e7d32;
+    --color-primary-hover: #276c2b;
+    --color-primary-active: #1f5a23;
+    --color-link: var(--color-primary);
+    --surface-muted-bg: color-mix(in srgb, var(--color-text), transparent 95%);
+    --surface-muted-border: color-mix(in srgb, var(--color-text), transparent 90%);
+    --surface-hover-bg: color-mix(in srgb, var(--color-text), transparent 90%);
+    --surface-active-bg: color-mix(in srgb, var(--color-text), transparent 85%);
     --font-family: 'Arial', 'Verdana', 'Calibri', sans-serif;
     --font-size: 18px;
     --line-height: 1.6;
@@ -72,6 +79,10 @@ body[data-theme='dark'] {
     --color-bg: #1a1a1a;
     --color-text: #e8e8e8;
     --color-link: #66b3ff;
+    --surface-muted-bg: #2a2a2a;
+    --surface-muted-border: #3a3a3a;
+    --surface-hover-bg: #333333;
+    --surface-active-bg: #3b3b3b;
 }
 
 body[data-theme='sepia'] {
@@ -91,6 +102,14 @@ a {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 0.25em;
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+}
+
+a:active {
+    color: var(--color-primary-active);
 }
 
 button {
@@ -161,4 +180,27 @@ body[data-theme='sepia'] {
     border-radius: 4px;
     box-shadow: 0 0 0 2px var(--color-link);
     transition: all 0.2s ease;
+}
+
+.surface-card {
+    background-color: var(--surface-muted-bg);
+    border-color: var(--surface-muted-border);
+    transition: background-color 0.2s ease, border-color 0.2s ease, outline-color 0.2s ease;
+}
+
+.surface-card input[type="range"] {
+    background-color: var(--surface-muted-border);
+}
+
+.surface-card .lucide {
+    color: var(--color-text);
+}
+
+.surface-card:hover {
+    background-color: var(--surface-hover-bg);
+}
+
+.surface-card:focus-within {
+    outline: 3px solid var(--color-link);
+    outline-offset: 2px;
 }
