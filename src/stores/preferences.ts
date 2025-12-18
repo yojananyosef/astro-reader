@@ -45,6 +45,25 @@ if (typeof localStorage !== 'undefined') {
 
 export const preferences = map<Preferences>(initialPrefs);
 
+// Sync with localStorage whenever preferences change
+if (typeof localStorage !== 'undefined') {
+    preferences.subscribe((value) => {
+        localStorage.setItem(PREFS_STORAGE_KEY, JSON.stringify(value));
+    });
+
+    // Sync from localStorage when changed in another tab
+    window.addEventListener('storage', (e) => {
+        if (e.key === PREFS_STORAGE_KEY && e.newValue) {
+            try {
+                const newPrefs = JSON.parse(e.newValue);
+                preferences.set({ ...defaultPreferences, ...newPrefs });
+            } catch (err) {
+                console.error('Failed to sync preferences from storage event', err);
+            }
+        }
+    });
+}
+
 // Helper to reset to defaults
 export const resetPreferences = () => {
     preferences.set(defaultPreferences);

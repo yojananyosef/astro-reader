@@ -12,11 +12,19 @@ type Props = {
 export default function SidebarNav({ books = [], showTrigger = false, mode = "inline" }: Props) {
   const [open, setOpen] = useState(false);
   const [collapsed, setCollapsed] = useState<boolean>(() => getInitialCollapsed());
-  const [activeItem, setActiveItem] = useState<string>("bible");
+
+  // Initialize active item based on current URL
+  const [activeItem, setActiveItem] = useState<string>(() => {
+    if (typeof window === "undefined") return "bible";
+    const path = window.location.pathname;
+    if (path.includes("/tracker")) return "tracking";
+    if (path.includes("/plans")) return "plans";
+    return "bible";
+  });
 
   const mainNav = [
     { id: "bible", label: "Biblia", icon: BookOpen, url: "/" },
-    { id: "tracking", label: "Seguimiento", icon: Bookmark, url: "#" },
+    { id: "tracking", label: "Seguimiento", icon: Bookmark, url: "/tracker" },
     { id: "plans", label: "Planes", icon: Star, url: "#" },
   ];
 
@@ -93,19 +101,33 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
               </button>
             </div>
             <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
-              {mainNav.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => {
-                    setActiveItem(item.id);
-                    goTo(item.url);
-                  }}
-                  className={`w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3 ${activeItem === item.id ? "ring-2 ring-[var(--color-link)]" : ""}`}
-                >
-                  <item.icon className="w-5 h-5 opacity-80" />
-                  <span className="font-medium">{item.label}</span>
-                </button>
-              ))}
+              {mainNav.map((item) => {
+                const isActive = activeItem === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      setActiveItem(item.id);
+                      goTo(item.url);
+                    }}
+                    className={`
+                      w-full text-left p-3 rounded-lg flex items-center gap-3 transition-all duration-200
+                      ${isActive
+                        ? "font-bold shadow-sm ring-1 ring-[var(--color-link)]"
+                        : "hover:bg-[var(--surface-hover-bg)] opacity-80 hover:opacity-100"
+                      }
+                    `}
+                    style={isActive ? {
+                      backgroundColor: "color-mix(in srgb, var(--color-link), transparent 90%)",
+                      color: "var(--color-link)"
+                    } : {}}
+                    aria-current={isActive ? 'page' : undefined}
+                  >
+                    <item.icon className={`w-5 h-5 ${isActive ? "" : "opacity-70"}`} />
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
             </nav>
             <div className="p-4 border-t" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
               <button className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3">
@@ -151,19 +173,33 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
           </div>
 
           <nav className="flex-1 overflow-y-auto p-6 space-y-2">
-            {mainNav.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  setActiveItem(item.id);
-                  goTo(item.url);
-                }}
-                className={`w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3 ${activeItem === item.id ? "ring-2 ring-[var(--color-link)]" : ""}`}
-              >
-                <item.icon className="w-5 h-5 opacity-80" />
-                <span className="font-medium">{item.label}</span>
-              </button>
-            ))}
+            {mainNav.map((item) => {
+              const isActive = activeItem === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setActiveItem(item.id);
+                    goTo(item.url);
+                  }}
+                  className={`
+                    w-full text-left p-3 rounded-lg flex items-center gap-3 transition-all duration-200
+                    ${isActive
+                      ? "font-bold shadow-sm ring-1 ring-[var(--color-link)]"
+                      : "hover:bg-[var(--surface-hover-bg)] opacity-80 hover:opacity-100"
+                    }
+                  `}
+                  style={isActive ? {
+                    backgroundColor: "color-mix(in srgb, var(--color-link), transparent 90%)",
+                    color: "var(--color-link)"
+                  } : {}}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  <item.icon className={`w-5 h-5 ${isActive ? "" : "opacity-70"}`} />
+                  <span>{item.label}</span>
+                </button>
+              );
+            })}
           </nav>
           <div className="p-4 border-t" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
             <button className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3">

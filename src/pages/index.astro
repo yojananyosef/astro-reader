@@ -10,9 +10,14 @@ const books = booksIndex;
 
 <ReaderLayout>
 	<div style="padding-top: 4rem;">
-		<ReaderControls client:load books={books} />
+		<ReaderControls client:only="preact" books={books} />
 		<div class="flex gap-6">
-			<SidebarNav client:only="preact" books={books} showTrigger={false} mode="inline" />
+			<SidebarNav
+				client:only="preact"
+				books={books}
+				showTrigger={false}
+				mode="inline"
+			/>
 			<div class="flex-1">
 				<ReaderContent />
 			</div>

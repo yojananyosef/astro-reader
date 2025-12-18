@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/preact';
 import { useEffect, useState } from 'preact/hooks';
-import { preferences, type Theme, resetPreferences, type Preferences, PREFS_STORAGE_KEY } from '../../../stores/preferences';
+import { preferences, type Theme, resetPreferences, type Preferences, PREFS_STORAGE_KEY, defaultPreferences } from '../../../stores/preferences';
 import { Settings, Type, AlignJustify, MoveHorizontal, Palette, RotateCcw, X, Sun, Moon, BookOpen, Menu, ChevronRight, Ruler, Play, Square, MessageSquare, Quote, Check } from 'lucide-preact';
 import ReaderRuler from './ReaderRuler';
 import { useTTS } from '../hooks/useTTS';
@@ -21,10 +21,25 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
     const [isOpen, setIsOpen] = useState(false);
     const { isPlaying, play, stop, setRate } = useTTS();
 
-    // Sync state to DOM whenever preferences change (including resets)
+    // Safety sync on mount to ensure hydration matches localStorage
     useEffect(() => {
-        applyThemeToDocument($preferences);
-    }, [$preferences]);
+        if (typeof localStorage !== 'undefined') {
+            try {
+                const stored = localStorage.getItem(PREFS_STORAGE_KEY);
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    const current = preferences.get();
+                    // Deep compare simplified
+                    if (JSON.stringify(parsed) !== JSON.stringify(current)) {
+                        console.log('Syncing preferences from storage on mount');
+                        preferences.set({ ...defaultPreferences, ...parsed });
+                    }
+                }
+            } catch (e) {
+                console.error('Error syncing preferences on mount', e);
+            }
+        }
+    }, []);
 
     // Update rate from prefs
     useEffect(() => {
@@ -32,14 +47,12 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
     }, [$preferences.speechRate]);
 
     const update = <K extends keyof Preferences>(key: K, value: Preferences[K]) => {
+        // Optimistic update
         const newPrefs: Preferences = { ...$preferences, [key]: value } as Preferences;
         preferences.set(newPrefs);
 
-        if (typeof localStorage !== 'undefined') {
-            localStorage.setItem(PREFS_STORAGE_KEY, JSON.stringify(newPrefs));
-        }
-
-        // DOM update is handled by the useEffect above
+        // Storage is handled by store subscription, but we can force it if needed
+        // applyThemeToDocument is handled by init-client script subscription
     };
 
     const [view, setView] = useState<'settings' | 'books' | 'chapters'>('settings');
