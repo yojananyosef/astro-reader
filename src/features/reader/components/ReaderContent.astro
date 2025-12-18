@@ -8,14 +8,14 @@ const getParam = (key: string, fallback: string) => params.get(key) || fallback;
 const bookKey = getParam("book", "gen");
 const chapterKey = getParam("chapter", "1");
 
-const currentBookEntry = booksIndex.find(b => b.code === bookKey);
+const currentBookEntry = booksIndex.find((b) => b.code === bookKey);
 
 if (!currentBookEntry) {
     return Astro.redirect(`/?book=gen&chapter=1`);
 }
 
 const loadBookData = async (code: string) => {
-    const books = import.meta.glob('../../../data/books/*.json');
+    const books = import.meta.glob("../../../data/books/*.json");
     const loader = books[`../../../data/books/${code}.json`];
     if (!loader) return null;
     const mod = await loader();
@@ -28,7 +28,7 @@ if (!bookData) {
 }
 
 // Navigation Logic
-const currentBookIndex = booksIndex.findIndex(b => b.code === bookKey);
+const currentBookIndex = booksIndex.findIndex((b) => b.code === bookKey);
 const bookChaptersCount = currentBookEntry.chapters;
 const safeParseInt = (s: string) => {
     const n = Number.parseInt(s, 10);
@@ -37,8 +37,12 @@ const safeParseInt = (s: string) => {
 const currentChapNum = safeParseInt(chapterKey);
 
 // Validate chapterKey
-if (currentChapNum === null || currentChapNum < 1 || currentChapNum > bookChaptersCount) {
-     return Astro.redirect(`/?book=${bookKey}&chapter=1`);
+if (
+    currentChapNum === null ||
+    currentChapNum < 1 ||
+    currentChapNum > bookChaptersCount
+) {
+    return Astro.redirect(`/?book=${bookKey}&chapter=1`);
 }
 
 let prevLink = null;
@@ -112,8 +116,11 @@ const verses = Object.entries(chapterData)
 
 <article class="reader-content max-w-3xl mx-auto pb-32 px-4 md:px-0 relative">
     {/* Title - Centered */}
-    <h1 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-link)] mt-8 mb-8">
-        {bookName} {currentChapter}
+    <h1
+        class="text-3xl md:text-4xl font-bold text-center text-[var(--color-link)] mt-8 mb-8"
+    >
+        {bookName}
+        {currentChapter}
     </h1>
 
     {/* Fixed Side Navigation - Original Anchors */}
@@ -174,7 +181,10 @@ const verses = Object.entries(chapterData)
 
     {
         footnotes.length > 0 && (
-            <div class="mt-16 pt-8 border-t border-theme-text/20" id="footnotes">
+            <div
+                class="mt-16 pt-8 border-t border-theme-text/20"
+                id="footnotes"
+            >
                 <h3
                     class="text-lg font-bold mb-4 flex items-center gap-2"
                     style="color: var(--color-text); opacity: 0.8;"
@@ -207,7 +217,6 @@ const verses = Object.entries(chapterData)
             highlights,
             toggleHighlight,
         } from "../../../stores/highlights";
-        
 
         // Subscribe to changes and update UI
         highlights.subscribe((state) => {
@@ -222,16 +231,21 @@ const verses = Object.entries(chapterData)
             });
         });
 
-        
-
-        function animateScrollTo(target: HTMLElement, offset = 112, duration = 400, done?: () => void) {
+        function animateScrollTo(
+            target: HTMLElement,
+            offset = 112,
+            duration = 400,
+            done?: () => void,
+        ) {
             const start = window.pageYOffset;
             const rect = target.getBoundingClientRect();
             const end = rect.top + start - offset;
             const change = end - start;
             const startTime = performance.now();
             function ease(t: number) {
-                return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                return t < 0.5
+                    ? 4 * t * t * t
+                    : 1 - Math.pow(-2 * t + 2, 3) / 2;
             }
             function step(now: number) {
                 const elapsed = now - startTime;
@@ -281,48 +295,78 @@ const verses = Object.entries(chapterData)
                     if (id) toggleHighlight(id);
                 });
             });
-        document.addEventListener("click", (ev: Event) => {
-            const t = ev.target as HTMLElement | null;
-            const a = t ? t.closest('a[href^="#note-"]') as HTMLAnchorElement | null : null;
-            if (!a) return;
-            ev.preventDefault();
-            ev.stopPropagation();
-            const href = a.getAttribute("href") || "";
-            const id = href.startsWith("#") ? href.slice(1) : href;
-            const target = id ? document.getElementById(id) : null;
-            if (target) {
-                animateScrollTo(target as HTMLElement, 112, 400, () => {
-                    window.history.replaceState(null, "", `#${id}`);
-                    setSelectedNote(id);
-                    (target as HTMLElement).focus({ preventScroll: true });
-                });
-            }
-        }, { capture: true });
-        document.addEventListener("keydown", (ev: Event) => {
-            const k = ev as KeyboardEvent;
-            const t = ev.target as HTMLElement | null;
-            const a = t instanceof HTMLAnchorElement && t.matches('a[href^="#note-"]') ? t as HTMLAnchorElement : null;
-            if (!a) return;
-            if (k.key === "Enter" || k.key === " ") {
-                ev.preventDefault();
-                const href = a.getAttribute("href") || "";
-                const id = href.startsWith("#") ? href.slice(1) : href;
-                const target = id ? document.getElementById(id) : null;
-                if (target) {
-                    animateScrollTo(target as HTMLElement, 112, 400, () => {
-                        window.history.replaceState(null, "", `#${id}`);
-                        setSelectedNote(id);
-                        (target as HTMLElement).focus({ preventScroll: true });
-                    });
-                }
-            }
-        }, { capture: true });
+            document.addEventListener(
+                "click",
+                (ev: Event) => {
+                    const t = ev.target as HTMLElement | null;
+                    const a = t
+                        ? (t.closest(
+                              'a[href^="#note-"]',
+                          ) as HTMLAnchorElement | null)
+                        : null;
+                    if (!a) return;
+                    ev.preventDefault();
+                    ev.stopPropagation();
+                    const href = a.getAttribute("href") || "";
+                    const id = href.startsWith("#") ? href.slice(1) : href;
+                    const target = id ? document.getElementById(id) : null;
+                    if (target) {
+                        animateScrollTo(target as HTMLElement, 112, 400, () => {
+                            window.history.replaceState(null, "", `#${id}`);
+                            setSelectedNote(id);
+                            (target as HTMLElement).focus({
+                                preventScroll: true,
+                            });
+                        });
+                    }
+                },
+                { capture: true },
+            );
+            document.addEventListener(
+                "keydown",
+                (ev: Event) => {
+                    const k = ev as KeyboardEvent;
+                    const t = ev.target as HTMLElement | null;
+                    const a =
+                        t instanceof HTMLAnchorElement &&
+                        t.matches('a[href^="#note-"]')
+                            ? (t as HTMLAnchorElement)
+                            : null;
+                    if (!a) return;
+                    if (k.key === "Enter" || k.key === " ") {
+                        ev.preventDefault();
+                        const href = a.getAttribute("href") || "";
+                        const id = href.startsWith("#") ? href.slice(1) : href;
+                        const target = id ? document.getElementById(id) : null;
+                        if (target) {
+                            animateScrollTo(
+                                target as HTMLElement,
+                                112,
+                                400,
+                                () => {
+                                    window.history.replaceState(
+                                        null,
+                                        "",
+                                        `#${id}`,
+                                    );
+                                    setSelectedNote(id);
+                                    (target as HTMLElement).focus({
+                                        preventScroll: true,
+                                    });
+                                },
+                            );
+                        }
+                    }
+                },
+                { capture: true },
+            );
         }
         attachListeners();
 
         // Client-side chapter navigation with smooth swap
         let navBusy = false;
-        const qs = (sel: string) => document.querySelector(sel) as HTMLElement | null;
+        const qs = (sel: string) =>
+            document.querySelector(sel) as HTMLElement | null;
         const applyFadeOut = () => {
             const content = qs("#chapter-content");
             const foot = qs("#footnotes");
@@ -348,14 +392,17 @@ const verses = Object.entries(chapterData)
             }
         };
         async function swapChapter(url: string) {
-            const res = await fetch(url, { headers: { "X-Requested-With": "fetch" } });
+            const res = await fetch(url, {
+                headers: { "X-Requested-With": "fetch" },
+            });
             const html = await res.text();
             const doc = new DOMParser().parseFromString(html, "text/html");
             const newTitle = doc.querySelector("article h1");
             const newContent = doc.querySelector("#chapter-content");
             const newFootnotes = doc.querySelector("#footnotes");
-            const newPrev = doc.querySelector("[data-chapter-link='prev']") as HTMLAnchorElement | null;
-            const newNext = doc.querySelector("[data-chapter-link='next']") as HTMLAnchorElement | null;
+            const newPrev = doc.querySelector("[data-chapter-link='prev']");
+            const newNext = doc.querySelector("[data-chapter-link='next']");
+
             if (newTitle) {
                 const currentTitle = document.querySelector("article h1");
                 if (currentTitle) currentTitle.innerHTML = newTitle.innerHTML;
@@ -364,14 +411,55 @@ const verses = Object.entries(chapterData)
                 const current = qs("#chapter-content");
                 if (current) current.innerHTML = newContent.innerHTML;
             }
+
+            // Handle Footnotes
+            const currentF = qs("#footnotes");
             if (newFootnotes) {
-                const currentF = qs("#footnotes");
-                if (currentF) currentF.innerHTML = newFootnotes.innerHTML;
+                if (currentF) {
+                    currentF.innerHTML = newFootnotes.innerHTML;
+                } else {
+                    const content = qs("#chapter-content");
+                    if (content && content.parentNode) {
+                        content.parentNode.appendChild(
+                            document.importNode(newFootnotes, true),
+                        );
+                    }
+                }
+            } else {
+                if (currentF) currentF.remove();
             }
-            const prevEl = document.querySelector("[data-chapter-link='prev']") as HTMLAnchorElement | null;
-            const nextEl = document.querySelector("[data-chapter-link='next']") as HTMLAnchorElement | null;
-            if (prevEl && newPrev) prevEl.href = newPrev.href;
-            if (nextEl && newNext) nextEl.href = newNext.href;
+
+            // Handle Navigation Buttons
+            const updateNavButton = (
+                selector: string,
+                newEl: Element | null,
+            ) => {
+                const currentEl = document.querySelector(selector);
+                if (newEl) {
+                    if (currentEl) {
+                        (currentEl as HTMLAnchorElement).href = (
+                            newEl as HTMLAnchorElement
+                        ).href;
+                    } else {
+                        const article =
+                            document.querySelector(".reader-content");
+                        const content =
+                            document.querySelector("#chapter-content");
+                        if (article && content) {
+                            article.insertBefore(
+                                document.importNode(newEl, true),
+                                content,
+                            );
+                        }
+                    }
+                } else {
+                    if (currentEl) currentEl.remove();
+                }
+            };
+
+            updateNavButton("[data-chapter-link='prev']", newPrev);
+            updateNavButton("[data-chapter-link='next']", newNext);
+
             attachListeners();
             applyFadeIn();
             window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
@@ -390,12 +478,20 @@ const verses = Object.entries(chapterData)
             const url = location.pathname + location.search + location.hash;
             swapChapter(url);
         });
-        document.addEventListener("click", (ev: Event) => {
-            const t = ev.target as HTMLElement | null;
-            const link = t ? t.closest("[data-chapter-link]") as HTMLAnchorElement | null : null;
-            if (!link) return;
-            ev.preventDefault();
-            navigateTo(link.href);
-        }, { capture: true });
+        document.addEventListener(
+            "click",
+            (ev: Event) => {
+                const t = ev.target as HTMLElement | null;
+                const link = t
+                    ? (t.closest(
+                          "[data-chapter-link]",
+                      ) as HTMLAnchorElement | null)
+                    : null;
+                if (!link) return;
+                ev.preventDefault();
+                navigateTo(link.href);
+            },
+            { capture: true },
+        );
     </script>
 </article>
