@@ -1,26 +1,20 @@
 import { defineConfig } from 'astro/config';
 import preact from '@astrojs/preact';
-import netlify from '@astrojs/netlify';
-import node from '@astrojs/node';
 import tailwindcss from '@tailwindcss/vite';
+import node from '@astrojs/node';
+import vercel from '@astrojs/vercel/serverless';
+import cloudflare from '@astrojs/cloudflare';
 
-export const resolveAdapterTarget = (env = process.env) => {
-  const isNetlify =
-    env.NETLIFY === 'true' ||
-    env.ASTRO_DEPLOY_TARGET === 'netlify' ||
-    typeof env.DEPLOY_URL === 'string';
-  return isNetlify ? 'netlify' : 'node';
+const pickAdapter = () => {
+  if (process.env.VERCEL) return vercel();
+  if (process.env.CF_PAGES || process.env.CLOUDFLARE) return cloudflare();
+  return node({ mode: 'standalone' });
 };
 
-const target = resolveAdapterTarget();
-const adapter = target === 'netlify' ? netlify() : node({ mode: 'standalone' });
-
-// https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter,
+  adapter: pickAdapter(),
   integrations: [preact()],
-
   vite: {
     plugins: [tailwindcss()]
   }

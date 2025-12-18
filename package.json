@@ -21,5 +21,9 @@
     "preact": "^10.28.0",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/vercel": "^9.0.2"
   }
 }
