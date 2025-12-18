@@ -116,7 +116,7 @@ const verses = Object.entries(chapterData)
         {bookName} {currentChapter}
     </h1>
 
-    {/* Fixed Side Navigation - All Devices */}
+    {/* Fixed Side Navigation - Original Anchors */}
     {
         prevLink && (
             <a
@@ -124,6 +124,7 @@ const verses = Object.entries(chapterData)
                 class="fixed top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95 z-40"
                 style={`left: var(--sidebar-offset-left); background-color: color-mix(in srgb, var(--color-text), transparent 85%); color: var(--color-text);`}
                 aria-label="Capítulo Anterior"
+                data-chapter-link="prev"
             >
                 <ArrowLeft class="w-5 h-5 md:w-6 md:h-6" />
             </a>
@@ -137,13 +138,14 @@ const verses = Object.entries(chapterData)
                 class="fixed right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95 z-40"
                 style="background-color: color-mix(in srgb, var(--color-text), transparent 85%); color: var(--color-text);"
                 aria-label="Capítulo Siguiente"
+                data-chapter-link="next"
             >
                 <ArrowRight class="w-5 h-5 md:w-6 md:h-6" />
             </a>
         )
     }
 
-    <div class="verses space-y-4">
+    <div class="verses space-y-4" id="chapter-content">
         {
             verses.map((verse) => (
                 <p
@@ -172,7 +174,7 @@ const verses = Object.entries(chapterData)
 
     {
         footnotes.length > 0 && (
-            <div class="mt-16 pt-8 border-t border-theme-text/20">
+            <div class="mt-16 pt-8 border-t border-theme-text/20" id="footnotes">
                 <h3
                     class="text-lg font-bold mb-4 flex items-center gap-2"
                     style="color: var(--color-text); opacity: 0.8;"
@@ -205,6 +207,7 @@ const verses = Object.entries(chapterData)
             highlights,
             toggleHighlight,
         } from "../../../stores/highlights";
+        
 
         // Subscribe to changes and update UI
         highlights.subscribe((state) => {
@@ -219,14 +222,7 @@ const verses = Object.entries(chapterData)
             });
         });
 
-        // Add Click Listeners
-        const verses = document.querySelectorAll("[data-verse-id]");
-        verses.forEach((el) => {
-            el.addEventListener("click", () => {
-                const id = el.getAttribute("data-verse-id");
-                if (id) toggleHighlight(id);
-            });
-        });
+        
 
         function animateScrollTo(target: HTMLElement, offset = 112, duration = 400, done?: () => void) {
             const start = window.pageYOffset;
@@ -277,12 +273,39 @@ const verses = Object.entries(chapterData)
             }
         });
 
-        const footnoteLinks = document.querySelectorAll("[data-verse-id] a");
-        footnoteLinks.forEach((el) => {
-            el.addEventListener("click", (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const href = el.getAttribute("href") || "";
+        function attachListeners() {
+            const verses = document.querySelectorAll("[data-verse-id]");
+            verses.forEach((el) => {
+                el.addEventListener("click", () => {
+                    const id = el.getAttribute("data-verse-id");
+                    if (id) toggleHighlight(id);
+                });
+            });
+        document.addEventListener("click", (ev: Event) => {
+            const t = ev.target as HTMLElement | null;
+            const a = t ? t.closest('a[href^="#note-"]') as HTMLAnchorElement | null : null;
+            if (!a) return;
+            ev.preventDefault();
+            ev.stopPropagation();
+            const href = a.getAttribute("href") || "";
+            const id = href.startsWith("#") ? href.slice(1) : href;
+            const target = id ? document.getElementById(id) : null;
+            if (target) {
+                animateScrollTo(target as HTMLElement, 112, 400, () => {
+                    window.history.replaceState(null, "", `#${id}`);
+                    setSelectedNote(id);
+                    (target as HTMLElement).focus({ preventScroll: true });
+                });
+            }
+        }, { capture: true });
+        document.addEventListener("keydown", (ev: Event) => {
+            const k = ev as KeyboardEvent;
+            const t = ev.target as HTMLElement | null;
+            const a = t instanceof HTMLAnchorElement && t.matches('a[href^="#note-"]') ? t as HTMLAnchorElement : null;
+            if (!a) return;
+            if (k.key === "Enter" || k.key === " ") {
+                ev.preventDefault();
+                const href = a.getAttribute("href") || "";
                 const id = href.startsWith("#") ? href.slice(1) : href;
                 const target = id ? document.getElementById(id) : null;
                 if (target) {
@@ -292,23 +315,87 @@ const verses = Object.entries(chapterData)
                         (target as HTMLElement).focus({ preventScroll: true });
                     });
                 }
-            });
-            el.addEventListener("keydown", (e) => {
-                const k = e as KeyboardEvent;
-                if (k.key === "Enter" || k.key === " ") {
-                    e.preventDefault();
-                    const href = el.getAttribute("href") || "";
-                    const id = href.startsWith("#") ? href.slice(1) : href;
-                    const target = id ? document.getElementById(id) : null;
-                    if (target) {
-                        animateScrollTo(target as HTMLElement, 112, 400, () => {
-                            window.history.replaceState(null, "", `#${id}`);
-                            setSelectedNote(id);
-                            (target as HTMLElement).focus({ preventScroll: true });
-                        });
-                    }
-                }
-            });
+            }
+        }, { capture: true });
+        }
+        attachListeners();
+
+        // Client-side chapter navigation with smooth swap
+        let navBusy = false;
+        const qs = (sel: string) => document.querySelector(sel) as HTMLElement | null;
+        const applyFadeOut = () => {
+            const content = qs("#chapter-content");
+            const foot = qs("#footnotes");
+            if (content) {
+                content.classList.remove("animate-fade-in");
+                content.classList.add("animate-fade-out");
+            }
+            if (foot) {
+                foot.classList.remove("animate-fade-in");
+                foot.classList.add("animate-fade-out");
+            }
+        };
+        const applyFadeIn = () => {
+            const content = qs("#chapter-content");
+            const foot = qs("#footnotes");
+            if (content) {
+                content.classList.remove("animate-fade-out");
+                content.classList.add("animate-fade-in");
+            }
+            if (foot) {
+                foot.classList.remove("animate-fade-out");
+                foot.classList.add("animate-fade-in");
+            }
+        };
+        async function swapChapter(url: string) {
+            const res = await fetch(url, { headers: { "X-Requested-With": "fetch" } });
+            const html = await res.text();
+            const doc = new DOMParser().parseFromString(html, "text/html");
+            const newTitle = doc.querySelector("article h1");
+            const newContent = doc.querySelector("#chapter-content");
+            const newFootnotes = doc.querySelector("#footnotes");
+            const newPrev = doc.querySelector("[data-chapter-link='prev']") as HTMLAnchorElement | null;
+            const newNext = doc.querySelector("[data-chapter-link='next']") as HTMLAnchorElement | null;
+            if (newTitle) {
+                const currentTitle = document.querySelector("article h1");
+                if (currentTitle) currentTitle.innerHTML = newTitle.innerHTML;
+            }
+            if (newContent) {
+                const current = qs("#chapter-content");
+                if (current) current.innerHTML = newContent.innerHTML;
+            }
+            if (newFootnotes) {
+                const currentF = qs("#footnotes");
+                if (currentF) currentF.innerHTML = newFootnotes.innerHTML;
+            }
+            const prevEl = document.querySelector("[data-chapter-link='prev']") as HTMLAnchorElement | null;
+            const nextEl = document.querySelector("[data-chapter-link='next']") as HTMLAnchorElement | null;
+            if (prevEl && newPrev) prevEl.href = newPrev.href;
+            if (nextEl && newNext) nextEl.href = newNext.href;
+            attachListeners();
+            applyFadeIn();
+            window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+        }
+        async function navigateTo(url: string) {
+            if (navBusy) return;
+            navBusy = true;
+            applyFadeOut();
+            setTimeout(async () => {
+                await swapChapter(url);
+                history.pushState(null, "", url);
+                navBusy = false;
+            }, 160);
+        }
+        window.addEventListener("popstate", () => {
+            const url = location.pathname + location.search + location.hash;
+            swapChapter(url);
         });
+        document.addEventListener("click", (ev: Event) => {
+            const t = ev.target as HTMLElement | null;
+            const link = t ? t.closest("[data-chapter-link]") as HTMLAnchorElement | null : null;
+            if (!link) return;
+            ev.preventDefault();
+            navigateTo(link.href);
+        }, { capture: true });
     </script>
 </article>

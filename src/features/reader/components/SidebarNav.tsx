@@ -45,14 +45,14 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
   useLayoutEffect(() => {
     const applyOffset = () => {
       const isDesktop = typeof window !== "undefined" && window.innerWidth >= 768;
-      const value = mode === "inline" && isDesktop && !collapsed ? "18rem" : "0.5rem";
+      const value = mode === "inline" && isDesktop ? "18rem" : "0.5rem";
       document.documentElement.style.setProperty("--sidebar-offset-left", value);
     };
     applyOffset();
     const onResize = () => applyOffset();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, [collapsed, mode]);
+  }, [mode]);
 
   const goTo = (url: string) => {
     if (url === "#") return;
@@ -72,43 +72,49 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
         </button>
       )}
 
-      {mode === "inline" && !collapsed && (
-        <aside
-          className="hidden md:flex flex-col w-64 shrink-0 border-r sticky top-16 h-[calc(100vh-4rem)]"
-          style={{ backgroundColor: "var(--color-bg)", color: "var(--color-text)", borderRight: "1px solid color-mix(in srgb, var(--color-text), transparent 85%)" }}
-          data-role="reader-inline-sidebar"
+      {mode === "inline" && (
+        <div
+          className="hidden md:flex w-64 shrink-0 sticky top-16 h-[calc(100vh-4rem)]"
+          style={{ backgroundColor: "transparent" }}
         >
-          <div className="p-2 border-b flex justify-end" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
-            <button
-              className="p-2 rounded-md border surface-card"
-              aria-label="Colapsar sidebar"
-              onClick={() => setCollapsed(true)}
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-          </div>
-          <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
-            {mainNav.map((item) => (
+          <aside
+            className={`flex flex-col w-64 h-full border-r shadow-none transition-transform duration-300 ease-out will-change-transform ${collapsed ? "-translate-x-full" : "translate-x-0"}`}
+            style={{ backgroundColor: "var(--color-bg)", color: "var(--color-text)", borderRight: "1px solid color-mix(in srgb, var(--color-text), transparent 85%)" }}
+            data-role="reader-inline-sidebar"
+            aria-hidden={collapsed}
+          >
+            <div className="p-2 border-b flex justify-end" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
               <button
-                key={item.id}
-                onClick={() => {
-                  setActiveItem(item.id);
-                  goTo(item.url);
-                }}
-                className={`w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3 ${activeItem === item.id ? "ring-2 ring-[var(--color-link)]" : ""}`}
+                className="p-2 rounded-md border surface-card"
+                aria-label="Colapsar sidebar"
+                onClick={() => setCollapsed(true)}
               >
-                <item.icon className="w-5 h-5 opacity-80" />
-                <span className="font-medium">{item.label}</span>
+                <ChevronLeft className="w-4 h-4" />
               </button>
-            ))}
-          </nav>
-          <div className="p-4 border-t" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
-            <button className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3">
-              <MessageSquare className="w-4 h-4" />
-              <span className="text-sm">Contáctanos</span>
-            </button>
-          </div>
-        </aside>
+            </div>
+            <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
+              {mainNav.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setActiveItem(item.id);
+                    goTo(item.url);
+                  }}
+                  className={`w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3 ${activeItem === item.id ? "ring-2 ring-[var(--color-link)]" : ""}`}
+                >
+                  <item.icon className="w-5 h-5 opacity-80" />
+                  <span className="font-medium">{item.label}</span>
+                </button>
+              ))}
+            </nav>
+            <div className="p-4 border-t" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
+              <button className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3">
+                <MessageSquare className="w-4 h-4" />
+                <span className="text-sm">Contáctanos</span>
+              </button>
+            </div>
+          </aside>
+        </div>
       )}
 
       {mode === "inline" && collapsed && (
@@ -122,7 +128,6 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
           <ChevronRight className="w-4 h-4" />
         </button>
       )}
-
       <div className={`fixed inset-0 z-[60] transition-opacity duration-300 md:hidden ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
         <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setOpen(false)} />
         <aside
@@ -185,10 +190,9 @@ export const getInitialCollapsed = (): boolean => {
 };
 
 export const computeSidebarOffset = (
-  collapsed: boolean,
   mode: "overlay" | "inline",
   width: number
 ): string => {
   const isDesktop = width >= 768;
-  return mode === "inline" && isDesktop && !collapsed ? "18rem" : "0.5rem";
+  return mode === "inline" && isDesktop ? "18rem" : "0.5rem";
 };
