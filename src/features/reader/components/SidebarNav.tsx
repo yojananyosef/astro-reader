@@ -25,7 +25,7 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
   const mainNav = [
     { id: "bible", label: "Biblia", icon: BookOpen, url: "/" },
     { id: "tracking", label: "Seguimiento", icon: Bookmark, url: "/tracker" },
-    { id: "plans", label: "Planes", icon: Star, url: "#" },
+    { id: "plans", label: "Planes", icon: Star, url: "/plans" },
   ];
 
   useEffect(() => {

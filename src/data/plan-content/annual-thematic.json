@@ -1,0 +1,118 @@
+{
+    "1": {
+        "title": "De la Creación a Babel (El Mundo Antiguo)",
+        "bible": [
+            {
+                "label": "Génesis 1",
+                "book": "gen",
+                "chapter": 1
+            },
+            {
+                "label": "Génesis 2",
+                "book": "gen",
+                "chapter": 2
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 2: La creación"
+            }
+        ],
+        "description": "El Origen: Dios crea el tiempo (Cronos) y el espacio. Institución del Sábado y el Matrimonio."
+    },
+    "2": {
+        "title": "La Caída y la Redención",
+        "bible": [
+            {
+                "label": "Génesis 3",
+                "book": "gen",
+                "chapter": 3
+            },
+            {
+                "label": "Génesis 4",
+                "book": "gen",
+                "chapter": 4
+            },
+            {
+                "label": "Génesis 5",
+                "book": "gen",
+                "chapter": 5
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 3: La tentación y la caída"
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 4: El plan de redención"
+            }
+        ],
+        "description": "La Caída: Promesa de Génesis 3:15 (Protoevangelio). Caín y Abel. Genealogía de los longevos (Matusalén)."
+    },
+    "3": {
+        "title": "El Diluvio y la Preservación",
+        "bible": [
+            {
+                "label": "Génesis 6",
+                "book": "gen",
+                "chapter": 6
+            },
+            {
+                "label": "Génesis 7",
+                "book": "gen",
+                "chapter": 7
+            },
+            {
+                "label": "Génesis 8",
+                "book": "gen",
+                "chapter": 8
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 7: El diluvio"
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 8: Después del diluvio"
+            }
+        ],
+        "description": "El Diluvio (1656 AM): La des-creación del mundo por agua y la preservación del remanente en el Arca."
+    },
+    "4": {
+        "title": "Pacto Noético y Tabla de las Naciones",
+        "bible": [
+            {
+                "label": "Génesis 9",
+                "book": "gen",
+                "chapter": 9
+            },
+            {
+                "label": "Génesis 10",
+                "book": "gen",
+                "chapter": 10
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 9: La semana literal"
+            }
+        ],
+        "description": "Pacto Noético: El arcoíris y la pena capital. La Tabla de las Naciones (el origen étnico de la humanidad)."
+    },
+    "5": {
+        "title": "Babel y la Dispersión",
+        "bible": [
+            {
+                "label": "Génesis 11",
+                "book": "gen",
+                "chapter": 11
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 10: La torre de Babel"
+            }
+        ],
+        "description": "Babel: El origen de los idiomas y la dispersión. Genealogía de Sem hasta Abram (reducción de la longevidad)."
+    }
+}

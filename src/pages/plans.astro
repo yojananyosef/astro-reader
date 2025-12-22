@@ -1,0 +1,26 @@
+---
+import ReaderLayout from "../features/reader/layouts/ReaderLayout.astro";
+import ReaderControls from "../features/reader/components/ReaderControls";
+import SidebarNav from "../features/reader/components/SidebarNav";
+import ReadingPlans from "../features/plans/components/ReadingPlans";
+import booksIndex from "../data/books-index.json";
+
+const books = booksIndex;
+---
+
+<ReaderLayout>
+  <div style="padding-top: 4rem;">
+    <ReaderControls client:only="preact" books={books} />
+    <div class="flex gap-6">
+      <SidebarNav
+        client:only="preact"
+        books={books}
+        showTrigger={false}
+        mode="inline"
+      />
+      <div class="flex-1">
+        <ReadingPlans client:only="preact" />
+      </div>
+    </div>
+  </div>
+</ReaderLayout>
