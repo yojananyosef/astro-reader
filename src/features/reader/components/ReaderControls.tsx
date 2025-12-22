@@ -90,35 +90,58 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                 </div>
                 <div className="flex gap-2">
                     {/* Quick TTS Toggle */}
-                    <button
+                    <div
                         onClick={() => isPlaying ? stop() : play()}
-                        className={`p-2 rounded-md transition-colors ${isPlaying ? 'bg-theme-link/10 text-theme-link' : 'hover:bg-theme-text/5 text-theme-text'}`}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                isPlaying ? stop() : play();
+                            }
+                        }}
+                        className={`p-2 rounded-md transition-colors cursor-pointer ${isPlaying ? 'bg-[var(--surface-active-bg)] text-[var(--color-link)]' : 'hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)]'}`}
                         aria-label={isPlaying ? "Detener lectura" : "Leer en voz alta"}
                     >
                         {isPlaying ? <Square className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5" />}
-                    </button>
+                    </div>
 
-                    <button
+                    <div
                         onClick={() => {
                             setView('books');
                             setIsOpen(true);
                         }}
-                        className="p-2 rounded-md hover:bg-theme-text/5 text-theme-text transition-colors flex items-center gap-2"
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                setView('books');
+                                setIsOpen(true);
+                            }
+                        }}
+                        className="p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors flex items-center gap-2 cursor-pointer"
                         aria-label="Abrir navegación"
                     >
                         <Menu className="w-6 h-6" />
                         <span className="hidden md:inline text-sm font-semibold">Libros</span>
-                    </button>
-                    <button
+                    </div>
+                    <div
                         onClick={() => {
                             setView('settings');
                             setIsOpen(true);
                         }}
-                        className="p-2 rounded-md hover:bg-theme-text/5 text-theme-text transition-colors"
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                setView('settings');
+                                setIsOpen(true);
+                            }
+                        }}
+                        className="p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors cursor-pointer"
                         aria-label="Abrir configuración"
                     >
                         <Settings className="w-6 h-6" />
-                    </button>
+                    </div>
                 </div>
             </nav>
 
@@ -143,12 +166,19 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                     >
                         <div className="flex items-center gap-2">
                             {view === 'chapters' && (
-                                <button
+                                <div
                                     onClick={() => setView('books')}
-                                    className="mr-2 hover:opacity-70 transition-opacity"
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter' || e.key === ' ') {
+                                            setView('books');
+                                        }
+                                    }}
+                                    className="mr-2 p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-all cursor-pointer"
                                 >
                                     <ChevronRight className="w-5 h-5 rotate-180" />
-                                </button>
+                                </div>
                             )}
                             <h2 className="text-lg font-bold flex items-center gap-2">
                                 {view === 'settings' && <><Settings className="w-5 h-5" /> Configuración</>}
@@ -156,19 +186,24 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                 {view === 'chapters' && selectedBook?.name}
                             </h2>
                         </div>
-                        <button
+                        <div
                             onClick={() => setIsOpen(false)}
-                            className="p-2 rounded-md transition-colors"
-                            style={{ backgroundColor: 'transparent' }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'color-mix(in srgb, var(--color-text), transparent 95%)'}
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    setIsOpen(false);
+                                }
+                            }}
+                            className="p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors cursor-pointer"
+                            aria-label="Cerrar panel"
                         >
                             <X className="w-5 h-5" />
-                        </button>
+                        </div>
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 overflow-y-auto p-6">
+                    <div className="flex-1 overflow-y-auto custom-scrollbar p-6">
 
                         {/* VIEW: SETTINGS */}
                         {view === 'settings' && (
@@ -188,15 +223,21 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             <Ruler className="w-5 h-5 opacity-60" />
                                             <span className="font-medium text-sm">Guía de Lectura</span>
                                         </div>
-                                        <button
+                                        <div
                                             onClick={() => update('rulerEnabled', !$preferences.rulerEnabled)}
-                                            className="w-11 h-6 rounded-full transition-all duration-200 relative shadow-inner"
+                                            role="switch"
+                                            aria-checked={$preferences.rulerEnabled}
+                                            tabIndex={0}
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Enter' || e.key === ' ') {
+                                                    update('rulerEnabled', !$preferences.rulerEnabled);
+                                                }
+                                            }}
+                                            className="w-11 h-6 rounded-full transition-all duration-200 relative shadow-inner cursor-pointer"
                                             style={{
                                                 backgroundColor: $preferences.rulerEnabled ? 'var(--color-link)' : 'color-mix(in srgb, var(--color-text), transparent 75%)',
                                                 boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.2)'
                                             }}
-                                            aria-checked={$preferences.rulerEnabled}
-                                            role="switch"
                                         >
                                             <div
                                                 className={`absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full shadow-md transition-all duration-200 ${$preferences.rulerEnabled ? 'left-[22px]' : 'left-0.5'}`}
@@ -205,7 +246,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                                     boxShadow: '0 1px 3px rgba(0,0,0,0.3)'
                                                 }}
                                             />
-                                        </button>
+                                        </div>
                                     </div>
 
                                     {/* Audio Speed */}
@@ -231,9 +272,16 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
 
                                     {/* Skip Options */}
                                     <div className="grid grid-cols-2 gap-2">
-                                        <button
+                                        <div
                                             onClick={() => update('skipVerses', !$preferences.skipVerses)}
-                                            className="p-3 rounded-lg border flex flex-col items-center justify-center gap-2 transition-all"
+                                            role="button"
+                                            tabIndex={0}
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Enter' || e.key === ' ') {
+                                                    update('skipVerses', !$preferences.skipVerses);
+                                                }
+                                            }}
+                                            className="p-3 rounded-lg border flex flex-col items-center justify-center gap-2 transition-all cursor-pointer"
                                             style={{
                                                 borderColor: $preferences.skipVerses ? 'var(--color-link)' : 'color-mix(in srgb, var(--color-text), transparent 90%)',
                                                 backgroundColor: $preferences.skipVerses ? 'color-mix(in srgb, var(--color-link), transparent 90%)' : 'color-mix(in srgb, var(--color-text), transparent 95%)',
@@ -245,10 +293,17 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                                 {$preferences.skipVerses && <Check className="w-4 h-4" />}
                                             </div>
                                             <span className="text-xs font-medium">Saltar Versos</span>
-                                        </button>
-                                        <button
+                                        </div>
+                                        <div
                                             onClick={() => update('skipFootnotes', !$preferences.skipFootnotes)}
-                                            className="p-3 rounded-lg border flex flex-col items-center justify-center gap-2 transition-all"
+                                            role="button"
+                                            tabIndex={0}
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Enter' || e.key === ' ') {
+                                                    update('skipFootnotes', !$preferences.skipFootnotes);
+                                                }
+                                            }}
+                                            className="p-3 rounded-lg border flex flex-col items-center justify-center gap-2 transition-all cursor-pointer"
                                             style={{
                                                 borderColor: $preferences.skipFootnotes ? 'var(--color-link)' : 'color-mix(in srgb, var(--color-text), transparent 90%)',
                                                 backgroundColor: $preferences.skipFootnotes ? 'color-mix(in srgb, var(--color-link), transparent 90%)' : 'color-mix(in srgb, var(--color-text), transparent 95%)',
@@ -260,11 +315,11 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                                 {$preferences.skipFootnotes && <Check className="w-4 h-4" />}
                                             </div>
                                             <span className="text-xs font-medium">Saltar Notas</span>
-                                        </button>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div className="h-px bg-theme-text/10 my-4" />
+                                <div className="h-px bg-[var(--color-text)] opacity-10 my-4" />
 
                                 {/* Theme */}
                                 <div className="space-y-3">
@@ -278,10 +333,17 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             { value: 'dark', label: 'Oscuro', icon: Moon },
                                             { value: 'sepia', label: 'Sepia', icon: BookOpen },
                                         ].map((theme) => (
-                                            <button
+                                            <div
                                                 key={theme.value}
                                                 onClick={() => update('theme', theme.value as Theme)}
-                                                className="flex flex-col items-center justify-center p-3 rounded-lg border-2 transition-all"
+                                                role="button"
+                                                tabIndex={0}
+                                                onKeyDown={(e) => {
+                                                    if (e.key === 'Enter' || e.key === ' ') {
+                                                        update('theme', theme.value as Theme);
+                                                    }
+                                                }}
+                                                className="flex flex-col items-center justify-center p-3 rounded-lg border-2 transition-all cursor-pointer"
                                                 style={{
                                                     borderColor: $preferences.theme === theme.value ? 'var(--color-link)' : 'transparent',
                                                     backgroundColor: $preferences.theme === theme.value ? 'color-mix(in srgb, var(--color-link), transparent 90%)' : 'color-mix(in srgb, var(--color-text), transparent 95%)',
@@ -290,7 +352,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             >
                                                 <theme.icon className="w-5 h-5 mb-1" />
                                                 <span className="text-xs font-medium">{theme.label}</span>
-                                            </button>
+                                            </div>
                                         ))}
                                     </div>
                                 </div>
@@ -302,9 +364,16 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                         <label>Fuente</label>
                                     </div>
                                     <div className="grid grid-cols-2 gap-2">
-                                        <button
+                                        <div
                                             onClick={() => update('fontFamily', 'sans')}
-                                            className="p-3 rounded-lg border-2 transition-all font-sans"
+                                            role="button"
+                                            tabIndex={0}
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Enter' || e.key === ' ') {
+                                                    update('fontFamily', 'sans');
+                                                }
+                                            }}
+                                            className="p-3 rounded-lg border-2 transition-all font-sans cursor-pointer text-center"
                                             style={{
                                                 borderColor: $preferences.fontFamily === 'sans' ? 'var(--color-link)' : 'transparent',
                                                 backgroundColor: $preferences.fontFamily === 'sans' ? 'color-mix(in srgb, var(--color-link), transparent 90%)' : 'color-mix(in srgb, var(--color-text), transparent 95%)',
@@ -312,10 +381,17 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             }}
                                         >
                                             Arial
-                                        </button>
-                                        <button
+                                        </div>
+                                        <div
                                             onClick={() => update('fontFamily', 'dyslexic')}
-                                            className="p-3 rounded-lg border-2 transition-all font-dyslexic"
+                                            role="button"
+                                            tabIndex={0}
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Enter' || e.key === ' ') {
+                                                    update('fontFamily', 'dyslexic');
+                                                }
+                                            }}
+                                            className="p-3 rounded-lg border-2 transition-all font-dyslexic cursor-pointer text-center"
                                             style={{
                                                 borderColor: $preferences.fontFamily === 'dyslexic' ? 'var(--color-link)' : 'transparent',
                                                 backgroundColor: $preferences.fontFamily === 'dyslexic' ? 'color-mix(in srgb, var(--color-link), transparent 90%)' : 'color-mix(in srgb, var(--color-text), transparent 95%)',
@@ -323,7 +399,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             }}
                                         >
                                             OpenDyslexic
-                                        </button>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -400,20 +476,28 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                         {view === 'books' && (
                             <div className="space-y-2">
                                 {books.map((book) => (
-                                    <button
+                                    <div
                                         key={book.code}
                                         onClick={() => {
                                             setSelectedBook(book);
                                             setView('chapters');
                                         }}
-                                        className="w-full text-left p-3 rounded-lg flex items-center justify-between group transition-colors"
+                                        role="button"
+                                        tabIndex={0}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter' || e.key === ' ') {
+                                                setSelectedBook(book);
+                                                setView('chapters');
+                                            }
+                                        }}
+                                        className="w-full text-left p-3 rounded-lg flex items-center justify-between group transition-colors cursor-pointer"
                                         style={{ backgroundColor: 'transparent' }}
-                                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'color-mix(in srgb, var(--color-text), transparent 95%)'}
-                                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                                        onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'color-mix(in srgb, var(--color-text), transparent 95%)'}
+                                        onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent'}
                                     >
                                         <span className="font-medium">{book.name}</span>
                                         <ChevronRight className="w-4 h-4 opacity-40 group-hover:opacity-60" />
-                                    </button>
+                                    </div>
                                 ))}
                             </div>
                         )}
@@ -422,16 +506,23 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                         {view === 'chapters' && selectedBook && (
                             <div className="grid grid-cols-4 sm:grid-cols-5 gap-2">
                                 {Array.from({ length: selectedBook.chapters }, (_, i) => i + 1).map((chapter) => (
-                                    <button
+                                    <div
                                         key={chapter}
                                         onClick={() => navigateToChapter(chapter)}
-                                        className="p-3 rounded-lg font-medium text-center transition-colors"
+                                        role="button"
+                                        tabIndex={0}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter' || e.key === ' ') {
+                                                navigateToChapter(chapter);
+                                            }
+                                        }}
+                                        className="p-3 rounded-lg font-medium text-center transition-colors cursor-pointer"
                                         style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 95%)' }}
-                                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'color-mix(in srgb, var(--color-text), transparent 90%)'}
-                                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'color-mix(in srgb, var(--color-text), transparent 95%)'}
+                                        onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'color-mix(in srgb, var(--color-text), transparent 90%)'}
+                                        onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'color-mix(in srgb, var(--color-text), transparent 95%)'}
                                     >
                                         {chapter}
-                                    </button>
+                                    </div>
                                 ))}
                             </div>
                         )}
@@ -447,14 +538,21 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                 backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 95%)'
                             }}
                         >
-                            <button
+                            <div
                                 onClick={resetPreferences}
-                                className="w-full flex items-center justify-center gap-2 px-4 py-3 font-bold rounded-lg hover:opacity-90 transition-opacity shadow-sm"
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        resetPreferences();
+                                    }
+                                }}
+                                className="w-full flex items-center justify-center gap-2 px-4 py-3 font-bold rounded-lg hover:opacity-90 transition-opacity shadow-sm cursor-pointer"
                                 style={{ backgroundColor: 'var(--color-text)', color: 'var(--color-bg)' }}
                             >
                                 <RotateCcw className="w-4 h-4" />
                                 Restaurar valores
-                            </button>
+                            </div>
                         </div>
                     )}
                 </div>

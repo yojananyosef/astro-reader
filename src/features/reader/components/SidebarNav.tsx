@@ -70,14 +70,21 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
   return (
     <>
       {showTrigger && mode === "overlay" && (
-        <button
-          className="p-2 rounded-md hover:bg-theme-text/5 text-theme-text transition-colors flex items-center gap-2"
+        <div
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              setOpen(true);
+            }
+          }}
+          className="p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors flex items-center gap-2 cursor-pointer"
           aria-label="Abrir menú lateral"
           onClick={() => setOpen(true)}
         >
           <Menu className="w-6 h-6" />
           <span className="hidden md:inline text-sm font-semibold">Menú</span>
-        </button>
+        </div>
       )}
 
       {mode === "inline" && (
@@ -92,26 +99,41 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
             aria-hidden={collapsed}
           >
             <div className="p-2 border-b flex justify-end" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
-              <button
-                className="p-2 rounded-md border surface-card"
+              <div
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    setCollapsed(true);
+                  }
+                }}
+                className="p-2 rounded-md border surface-card cursor-pointer"
                 aria-label="Colapsar sidebar"
                 onClick={() => setCollapsed(true)}
               >
                 <ChevronLeft className="w-4 h-4" />
-              </button>
+              </div>
             </div>
-            <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
+            <nav className="flex-1 p-4 space-y-2 overflow-y-auto custom-scrollbar">
               {mainNav.map((item) => {
                 const isActive = activeItem === item.id;
                 return (
-                  <button
+                  <div
                     key={item.id}
                     onClick={() => {
                       setActiveItem(item.id);
                       goTo(item.url);
                     }}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        setActiveItem(item.id);
+                        goTo(item.url);
+                      }
+                    }}
                     className={`
-                      w-full text-left p-3 rounded-lg flex items-center gap-3 transition-all duration-200
+                      w-full text-left p-3 rounded-lg flex items-center gap-3 transition-all duration-200 cursor-pointer
                       ${isActive
                         ? "font-bold shadow-sm ring-1 ring-[var(--color-link)]"
                         : "hover:bg-[var(--surface-hover-bg)] opacity-80 hover:opacity-100"
@@ -125,30 +147,41 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
                   >
                     <item.icon className={`w-5 h-5 ${isActive ? "" : "opacity-70"}`} />
                     <span>{item.label}</span>
-                  </button>
+                  </div>
                 );
               })}
             </nav>
             <div className="p-4 border-t" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
-              <button className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3">
+              <div
+                role="button"
+                tabIndex={0}
+                className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3 cursor-pointer hover:opacity-100 transition-opacity text-[var(--color-link)]"
+              >
                 <MessageSquare className="w-4 h-4" />
                 <span className="text-sm">Contáctanos</span>
-              </button>
+              </div>
             </div>
           </aside>
         </div>
       )}
 
       {mode === "inline" && collapsed && (
-        <button
-          className="hidden md:flex fixed left-2 p-2 rounded-full border surface-card z-40"
+        <div
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              setCollapsed(false);
+            }
+          }}
+          className="hidden md:flex fixed left-2 p-2 rounded-md border surface-card z-40 cursor-pointer"
           aria-label="Expandir sidebar"
           onClick={() => setCollapsed(false)}
           style={{ top: "calc(4rem + 8px)" }}
           data-role="reader-inline-toggle"
         >
           <ChevronRight className="w-4 h-4" />
-        </button>
+        </div>
       )}
       <div className={`fixed inset-0 z-[60] transition-opacity duration-300 md:hidden ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
         <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setOpen(false)} />
@@ -161,29 +194,42 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
               <BookOpen className="w-5 h-5 text-[var(--color-link)]" />
               <h2 className="text-lg font-bold">Navegación</h2>
             </div>
-            <button
-              className="p-2 rounded-md transition-colors"
-              style={{ backgroundColor: "transparent" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "color-mix(in srgb, var(--color-text), transparent 95%)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+            <div
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  setOpen(false);
+                }
+              }}
+              className="p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors cursor-pointer"
               onClick={() => setOpen(false)}
+              aria-label="Cerrar menú"
             >
               <ChevronRight className="w-5 h-5 rotate-180" />
-            </button>
+            </div>
           </div>
 
-          <nav className="flex-1 overflow-y-auto p-6 space-y-2">
+          <nav className="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-2">
             {mainNav.map((item) => {
               const isActive = activeItem === item.id;
               return (
-                <button
+                <div
                   key={item.id}
                   onClick={() => {
                     setActiveItem(item.id);
                     goTo(item.url);
                   }}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      setActiveItem(item.id);
+                      goTo(item.url);
+                    }
+                  }}
                   className={`
-                    w-full text-left p-3 rounded-lg flex items-center gap-3 transition-all duration-200
+                    w-full text-left p-3 rounded-lg flex items-center gap-3 transition-all duration-200 cursor-pointer
                     ${isActive
                       ? "font-bold shadow-sm ring-1 ring-[var(--color-link)]"
                       : "hover:bg-[var(--surface-hover-bg)] opacity-80 hover:opacity-100"
@@ -197,15 +243,24 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
                 >
                   <item.icon className={`w-5 h-5 ${isActive ? "" : "opacity-70"}`} />
                   <span>{item.label}</span>
-                </button>
+                </div>
               );
             })}
           </nav>
           <div className="p-4 border-t" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
-            <button className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3">
+            <div
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  // Handle contact
+                }
+              }}
+              className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3 cursor-pointer hover:opacity-100 transition-opacity"
+            >
               <MessageSquare className="w-4 h-4" />
               <span className="text-sm">Contáctanos</span>
-            </button>
+            </div>
           </div>
         </aside>
       </div>

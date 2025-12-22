@@ -8,8 +8,8 @@ export const applyThemeToDocument = (prefs: Preferences) => {
 
     body.setAttribute('data-theme', prefs.theme);
     body.setAttribute('data-font', prefs.fontFamily);
-    body.style.setProperty('--font-size', `${prefs.fontSize}px`);
-    body.style.setProperty('--line-height', `${prefs.lineHeight}`);
-    body.style.setProperty('--letter-spacing', `${prefs.letterSpacing}em`);
-    body.style.setProperty('--word-spacing', `${prefs.wordSpacing}em`);
+    body.style.setProperty('--reader-font-size', `${prefs.fontSize}px`);
+    body.style.setProperty('--reader-line-height', `${prefs.lineHeight}`);
+    body.style.setProperty('--reader-letter-spacing', `${prefs.letterSpacing}em`);
+    body.style.setProperty('--reader-word-spacing', `${prefs.wordSpacing}em`);
 };

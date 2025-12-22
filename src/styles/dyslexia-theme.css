@@ -46,49 +46,93 @@
     --color-bg: #f5f5f0;
     --color-text: #1a1a18;
     --color-primary: #2e7d32;
-    --color-primary-hover: #276c2b;
-    --color-primary-active: #1f5a23;
     --color-link: var(--color-primary);
+    --color-primary-hover: color-mix(in srgb, var(--color-link), black 15%);
+    --color-primary-active: color-mix(in srgb, var(--color-link), black 30%);
     --surface-muted-bg: color-mix(in srgb, var(--color-text), transparent 95%);
     --surface-muted-border: color-mix(in srgb, var(--color-text), transparent 90%);
     --surface-hover-bg: color-mix(in srgb, var(--color-text), transparent 90%);
     --surface-active-bg: color-mix(in srgb, var(--color-text), transparent 85%);
     --font-family: 'Arial', 'Verdana', 'Calibri', sans-serif;
-    --font-size: 18px;
-    --line-height: 1.6;
-    --letter-spacing: 0.02em;
-    --word-spacing: 0.16em;
+    --reader-font-size: 18px;
+    --reader-line-height: 1.6;
+    --reader-letter-spacing: 0.02em;
+    --reader-word-spacing: 0.16em;
     --max-width: 65ch;
+}
+
+/* Custom Scrollbar - Only for specific containers with .custom-scrollbar class */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: color-mix(in srgb, var(--color-link), transparent 50%) !important;
+    border-radius: 10px !important;
+    min-height: 40px !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-link) !important;
+}
+
+/* Firefox for specific containers */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--color-link), transparent 50%) transparent;
 }
 
 body {
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-family);
-    font-size: var(--font-size);
-    line-height: var(--line-height);
-    letter-spacing: var(--letter-spacing);
-    word-spacing: var(--word-spacing);
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: normal;
+    word-spacing: normal;
     transition: background-color 0.3s, color 0.3s;
     margin: 0;
     min-height: 100vh;
 }
 
+.reader-content,
+.reader-text {
+    font-size: var(--reader-font-size);
+    line-height: var(--reader-line-height);
+    letter-spacing: var(--reader-letter-spacing);
+    word-spacing: var(--reader-word-spacing);
+}
+
 /* Themes */
-body[data-theme='dark'] {
+[data-theme='dark'] {
     --color-bg: #1a1a1a;
     --color-text: #e8e8e8;
     --color-link: #66b3ff;
+    --color-primary: #66b3ff;
+    --color-primary-hover: color-mix(in srgb, var(--color-link), white 15%);
+    --color-primary-active: color-mix(in srgb, var(--color-link), white 30%);
     --surface-muted-bg: #2a2a2a;
     --surface-muted-border: #4a4a4a;
     --surface-hover-bg: #333333;
     --surface-active-bg: #3b3b3b;
 }
 
-body[data-theme='sepia'] {
+[data-theme='sepia'] {
     --color-bg: #f4ecd8;
     --color-text: #5b4636;
     --color-link: #8c5e2a;
+    --color-primary: #8c5e2a;
+    --color-primary-hover: color-mix(in srgb, var(--color-link), black 10%);
+    --color-primary-active: color-mix(in srgb, var(--color-link), black 20%);
+    --surface-muted-bg: color-mix(in srgb, var(--color-text), transparent 95%);
+    --surface-muted-border: color-mix(in srgb, var(--color-text), transparent 90%);
+    --surface-hover-bg: color-mix(in srgb, var(--color-text), transparent 92%);
+    --surface-active-bg: color-mix(in srgb, var(--color-text), transparent 88%);
 }
 
 /* Font Families */

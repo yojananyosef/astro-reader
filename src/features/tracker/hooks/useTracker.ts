@@ -66,7 +66,8 @@ export function useTracker() {
     const book = booksData.find((b) => b.code === bookCode);
     if (!book) return 0;
     const completedCount = completedChapters[bookCode]?.length || 0;
-    return Math.round((completedCount / book.chapters) * 100);
+    const progress = (completedCount / book.chapters) * 100;
+    return Number(progress.toFixed(1));
   }, [completedChapters]);
 
   const getTotalProgress = useCallback(() => {
@@ -75,7 +76,8 @@ export function useTracker() {
       (acc, chapters) => acc + chapters.length,
       0
     );
-    return Math.round((totalCompleted / totalChapters) * 100);
+    const progress = (totalCompleted / totalChapters) * 100;
+    return Number(progress.toFixed(1));
   }, [completedChapters]);
 
   const resetProgress = useCallback(() => {

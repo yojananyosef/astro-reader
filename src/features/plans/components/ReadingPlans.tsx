@@ -159,12 +159,19 @@ export default function ReadingPlans() {
           {categories.map((cat) => {
             const active = cat === activeCategory;
             return (
-              <button
+              <div
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-2 rounded-lg border transition-all ${active
-                    ? "ring-1 ring-[var(--color-link)] font-bold"
-                    : "opacity-80 hover:opacity-100"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    setActiveCategory(cat);
+                  }
+                }}
+                className={`px-3 py-2 rounded-lg border transition-all cursor-pointer ${active
+                  ? "ring-1 ring-[var(--color-link)] font-bold"
+                  : "opacity-80 hover:opacity-100"
                   }`}
                 style={
                   active
@@ -177,7 +184,7 @@ export default function ReadingPlans() {
                 }
               >
                 {cat === "todos" ? "Todos" : cat === "guardados" ? "Guardados" : cat === "completados" ? "Completados" : cat}
-              </button>
+              </div>
             );
           })}
         </div>
@@ -190,85 +197,101 @@ export default function ReadingPlans() {
           return (
             <article
               key={plan.id}
-              className="group p-4 rounded-xl border surface-card transition-all duration-200"
+              className="group p-5 rounded-xl border surface-card transition-all duration-200 flex flex-col h-full"
             >
               <div className="flex items-start justify-between gap-3 mb-2">
-                <h3 className="text-lg font-bold">{plan.title}</h3>
-                <button
+                <h3 className="text-lg font-bold line-clamp-1">{plan.title}</h3>
+                <div
                   aria-label={isFav ? "Quitar de favoritos" : "Agregar a favoritos"}
                   onClick={() => toggleFavorite(plan.id)}
-                  className="p-2 rounded-md border surface-card transition-colors"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      toggleFavorite(plan.id);
+                    }
+                  }}
+                  className="p-2 rounded-md border surface-card transition-colors cursor-pointer flex-shrink-0"
                   title={isFav ? "Quitar de favoritos" : "Agregar a favoritos"}
                 >
                   <Star
                     className={`w-5 h-5 ${isFav ? "text-[var(--color-link)] fill-current" : "opacity-70"
                       }`}
                   />
-                </button>
+                </div>
               </div>
 
-              <p className="text-sm opacity-80 mb-3">{plan.description}</p>
+              <p className="text-sm opacity-80 mb-4 line-clamp-2 h-[2.5rem]">{plan.description}</p>
 
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-semibold uppercase tracking-wide opacity-70">
-                  {plan.category}
-                </span>
-                <span className="text-xs font-mono px-2 py-0.5 rounded" style={{ backgroundColor: "var(--surface-muted-border)" }}>
-                  {plan.durationDays} días
-                </span>
-              </div>
-
-              {(() => {
-                const completed = planProgress[plan.id]?.completedDays?.length || 0;
-                const percent = Math.round((completed / plan.durationDays) * 100);
-                return (
-                  <div className="mb-3">
-                    <div className="w-full h-2 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
-                      <div
-                        className="h-full rounded-full transition-all duration-300"
-                        style={{ width: `${percent}%`, backgroundColor: percent === 100 ? "var(--color-link)" : "var(--color-link)" }}
-                      />
-                    </div>
-                    <div className="mt-1 text-xs opacity-70">
-                      {percent}% completado
-                    </div>
-                  </div>
-                );
-              })()}
-
-              <div className="flex gap-2">
-                <a
-                  href={`/plans/${plan.id}`}
-                  className="flex-1 text-center p-2 rounded-md font-semibold"
-                  style={{
-                    backgroundColor:
-                      "color-mix(in srgb, var(--color-link), transparent 90%)",
-                    color: "var(--color-link)",
-                    border: "1px solid var(--color-link)",
-                    textDecoration: "none"
-                  }}
-                  aria-label="Abrir plan"
-                >
-                  Ver plan
-                </a>
-                <button
-                  onClick={() => savePlan(plan.id)}
-                  className="p-2 rounded-md border surface-card flex items-center gap-2"
-                  aria-label="Guardar plan"
-                  title="Guardar plan favorito"
-                  aria-pressed={!!savedPlans[plan.id]}
-                >
-                  <span className="inline-flex items-center gap-2">
-                    {savedPlans[plan.id] ? (
-                      <Check className={`w-5 h-5 text-[var(--color-link)] ${savedPulseId === plan.id ? "animate-fade-in" : ""}`} />
-                    ) : (
-                      <Bookmark className="w-5 h-5" />
-                    )}
-                    <span className="text-sm">
-                      {savedPlans[plan.id] ? "Guardado" : "Guardar"}
-                    </span>
+              <div className="mt-auto space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-semibold uppercase tracking-wide opacity-70">
+                    {plan.category}
                   </span>
-                </button>
+                  <span className="text-xs font-mono px-2 py-0.5 rounded" style={{ backgroundColor: "var(--surface-muted-border)" }}>
+                    {plan.durationDays} días
+                  </span>
+                </div>
+
+                {(() => {
+                  const completed = planProgress[plan.id]?.completedDays?.length || 0;
+                  const percent = Math.round((completed / plan.durationDays) * 100);
+                  return (
+                    <div>
+                      <div className="w-full h-2 rounded-full overflow-hidden" style={{ backgroundColor: "color-mix(in srgb, var(--color-text), transparent 90%)" }}>
+                        <div
+                          className="h-full rounded-full transition-all duration-300"
+                          style={{ width: `${percent}%`, backgroundColor: "var(--color-link)" }}
+                        />
+                      </div>
+                      <div className="mt-1 text-xs opacity-70">
+                        {percent}% completado
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                <div className="flex gap-2">
+                  <a
+                    href={`/plans/${plan.id}`}
+                    className="flex-1 text-center p-2 rounded-md font-semibold"
+                    style={{
+                      backgroundColor:
+                        "color-mix(in srgb, var(--color-link), transparent 90%)",
+                      color: "var(--color-link)",
+                      border: "1px solid var(--color-link)",
+                      textDecoration: "none"
+                    }}
+                    aria-label="Abrir plan"
+                  >
+                    Ver plan
+                  </a>
+                  <div
+                    onClick={() => savePlan(plan.id)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        savePlan(plan.id);
+                      }
+                    }}
+                    className="p-2 rounded-md border surface-card flex items-center gap-2 cursor-pointer transition-opacity"
+                    aria-label="Guardar plan"
+                    title="Guardar plan favorito"
+                    aria-pressed={!!savedPlans[plan.id]}
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      {savedPlans[plan.id] ? (
+                        <Check className={`w-5 h-5 text-[var(--color-link)] ${savedPulseId === plan.id ? "animate-fade-in" : ""}`} />
+                      ) : (
+                        <Bookmark className="w-5 h-5" />
+                      )}
+                      <span className="text-sm">
+                        {savedPlans[plan.id] ? "Guardado" : "Guardar"}
+                      </span>
+                    </span>
+                  </div>
+                </div>
               </div>
             </article>
           );

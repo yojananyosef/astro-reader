@@ -118,25 +118,39 @@ export default function PlanDetail({ plan }: { plan: Plan }) {
           <span className="text-sm">Volver</span>
         </a>
         <div className="flex items-center gap-2">
-          <button
+          <div
             onClick={toggleFavorite}
-            className="p-2 rounded-md border surface-card transition-colors"
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                toggleFavorite();
+              }
+            }}
+            className="p-2 rounded-md border surface-card transition-colors cursor-pointer"
             aria-label={isFav ? "Quitar de favoritos" : "Agregar a favoritos"}
             title={isFav ? "Quitar de favoritos" : "Agregar a favoritos"}
           >
             <Star
               className={`w-5 h-5 ${isFav ? "text-[var(--color-link)] fill-current" : ""}`}
             />
-          </button>
-          <button
+          </div>
+          <div
             onClick={savePlan}
-            className={`p-2 rounded-md border surface-card flex items-center gap-2 transition-colors ${savedPulse ? "animate-fade-in" : ""}`}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                savePlan();
+              }
+            }}
+            className={`p-2 rounded-md border surface-card flex items-center gap-2 transition-colors cursor-pointer ${savedPulse ? "animate-fade-in" : ""}`}
             title="Guardar plan"
             aria-pressed={isSaved}
           >
             {isSaved ? <Check className="w-5 h-5 text-[var(--color-link)]" /> : <Bookmark className="w-5 h-5" />}
             <span className="text-sm">{isSaved ? "Guardado" : "Guardar"}</span>
-          </button>
+          </div>
         </div>
       </div>
 
@@ -182,27 +196,37 @@ export default function PlanDetail({ plan }: { plan: Plan }) {
         <div className="flex items-center justify-between mt-4">
           <span className="font-semibold">Progreso por días</span>
           <div className="flex items-center gap-2">
-            <button
-              disabled={currentPage <= 1}
-              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              className="px-4 py-2 rounded-md border surface-card transition-colors flex items-center justify-center gap-2"
+            <div
+              onClick={() => currentPage > 1 && setCurrentPage((p) => Math.max(1, p - 1))}
+              role="button"
+              tabIndex={currentPage <= 1 ? -1 : 0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  if (currentPage > 1) setCurrentPage((p) => Math.max(1, p - 1));
+                }
+              }}
+              className={`px-4 py-2 rounded-md border surface-card transition-colors flex items-center justify-center gap-2 ${currentPage <= 1 ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
               aria-label="Día anterior"
             >
               <ChevronLeft className="w-4 h-4" />
-            </button>
+            </div>
             <span className="text-sm">
               {currentPage}/{totalPages}
             </span>
-            <button
-              disabled={currentPage >= totalPages}
-              onClick={() =>
-                setCurrentPage((p) => Math.min(totalPages, p + 1))
-              }
-              className="px-4 py-2 rounded-md border surface-card transition-colors flex items-center justify-center gap-2"
-              aria-label="Día siguiente"
+            <div
+              onClick={() => currentPage < totalPages && setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              role="button"
+              tabIndex={currentPage >= totalPages ? -1 : 0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  if (currentPage < totalPages) setCurrentPage((p) => Math.min(totalPages, p + 1));
+                }
+              }}
+              className={`px-4 py-2 rounded-md border surface-card transition-colors flex items-center justify-center gap-2 ${currentPage >= totalPages ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+              aria-label="Siguiente día"
             >
               <ChevronRight className="w-4 h-4" />
-            </button>
+            </div>
           </div>
         </div>
 
