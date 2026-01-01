@@ -5,8 +5,6 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "build:cf": "CF_PAGES=1 astro build",
-    "build:vercel": "VERCEL=1 astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

@@ -1,19 +1,20 @@
 import { defineConfig } from 'astro/config';
 import preact from '@astrojs/preact';
 import tailwindcss from '@tailwindcss/vite';
+import node from '@astrojs/node';
+import vercel from '@astrojs/vercel/serverless';
 import cloudflare from '@astrojs/cloudflare';
 
+const pickAdapter = () => {
+  if (process.env.VERCEL) return vercel();
+  if (process.env.CF_PAGES || process.env.CLOUDFLARE) return cloudflare();
+  return node({ mode: 'standalone' });
+};
+
 export default defineConfig({
-  output: 'static',
-  adapter: cloudflare({
-    sessions: false
-  }),
-  integrations: [
-    preact({
-      compat: false,
-      devtools: false
-    })
-  ],
+  output: 'server',
+  adapter: pickAdapter(),
+  integrations: [preact()],
   vite: {
     plugins: [tailwindcss()]
   }
