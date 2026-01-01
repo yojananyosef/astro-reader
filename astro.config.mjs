@@ -26,8 +26,8 @@ const pickAdapter = () => {
 };
 
 export default defineConfig({
-  // Mejor rendimiento y menor costo en Cloudflare
-  output: 'hybrid',
+  // static ahora se comporta como hybrid
+  output: 'static',
 
   adapter: pickAdapter(),
 
