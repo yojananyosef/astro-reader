@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/preact';
 import { useEffect, useState } from 'preact/hooks';
 import { preferences, type Theme, resetPreferences, type Preferences, PREFS_STORAGE_KEY, defaultPreferences } from '../../../stores/preferences';
-import { Settings, Type, AlignJustify, MoveHorizontal, Palette, RotateCcw, X, Sun, Moon, BookOpen, Menu, ChevronRight, Ruler, Play, Square, MessageSquare, Quote, Check } from 'lucide-preact';
+import { Settings, Type, AlignJustify, MoveHorizontal, Palette, RotateCcw, X, Sun, Moon, BookOpen, Menu, ChevronRight, Ruler, Play, Square, MessageSquare, Quote, Check, Pause } from 'lucide-preact';
 import ReaderRuler from './ReaderRuler';
 import { useTTS } from '../hooks/useTTS';
 import { applyThemeToDocument } from '../scripts/theme-manager';
@@ -19,7 +19,19 @@ interface ReaderControlsProps {
 export default function ReaderControls({ books = [] }: ReaderControlsProps) {
     const $preferences = useStore(preferences);
     const [isOpen, setIsOpen] = useState(false);
-    const { isPlaying, play, stop, setRate } = useTTS();
+    const { isPlaying, isPaused, play, stop, setRate } = useTTS();
+
+    const handleAutoPlay = () => {
+        // Encontrar el botón de "siguiente capítulo" en el DOM si existe
+        const nextBtn = document.querySelector('[data-nav-next]') as HTMLElement;
+        if (nextBtn) {
+            nextBtn.click();
+            // Esperar a que el contenido cargue y empezar a leer
+            setTimeout(() => {
+                play('.reader-content p, .reader-content h1', handleAutoPlay);
+            }, 1500);
+        }
+    };
 
     // Safety sync on mount to ensure hydration matches localStorage
     useEffect(() => {
@@ -91,18 +103,32 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                 <div className="flex gap-2">
                     {/* Quick TTS Toggle */}
                     <div
-                        onClick={() => isPlaying ? stop() : play()}
+                        onClick={() => {
+                            if (isPlaying && !isPaused) {
+                                play('.reader-content p, .reader-content h1', handleAutoPlay);
+                            } else {
+                                play('.reader-content p, .reader-content h1', handleAutoPlay);
+                            }
+                        }}
+                        onContextMenu={(e) => {
+                            e.preventDefault();
+                            stop();
+                        }}
                         role="button"
                         tabIndex={0}
                         onKeyDown={(e) => {
                             if (e.key === 'Enter' || e.key === ' ') {
-                                isPlaying ? stop() : play();
+                                play('.reader-content p, .reader-content h1', handleAutoPlay);
                             }
                         }}
                         className={`p-2 rounded-md transition-colors cursor-pointer ${isPlaying ? 'bg-[var(--surface-active-bg)] text-[var(--color-link)]' : 'hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)]'}`}
-                        aria-label={isPlaying ? "Detener lectura" : "Leer en voz alta"}
+                        aria-label={isPlaying ? (isPaused ? "Reanudar lectura" : "Pausar lectura") : "Leer en voz alta"}
                     >
-                        {isPlaying ? <Square className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5" />}
+                        {isPlaying ? (
+                            isPaused ? <Play className="w-5 h-5 fill-current" /> : <Pause className="w-5 h-5 fill-current" />
+                        ) : (
+                            <Play className="w-5 h-5" />
+                        )}
                     </div>
 
                     <div
@@ -119,10 +145,31 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                             }
                         }}
                         className="p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors flex items-center gap-2 cursor-pointer"
-                        aria-label="Abrir navegación"
+                        aria-label="Abrir navegación de libros"
+                    >
+                        <BookOpen className="w-6 h-6" />
+                        <span className="hidden md:inline text-sm font-semibold">Libros</span>
+                    </div>
+
+                    <div
+                        onClick={() => {
+                            if (window.innerWidth < 768) {
+                                window.dispatchEvent(new CustomEvent('toggle-sidebar'));
+                            }
+                        }}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                if (window.innerWidth < 768) {
+                                    window.dispatchEvent(new CustomEvent('toggle-sidebar'));
+                                }
+                            }
+                        }}
+                        className="md:hidden p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors flex items-center gap-2 cursor-pointer"
+                        aria-label="Abrir menú lateral"
                     >
                         <Menu className="w-6 h-6" />
-                        <span className="hidden md:inline text-sm font-semibold">Libros</span>
                     </div>
                     <div
                         onClick={() => {

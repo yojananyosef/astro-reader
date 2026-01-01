@@ -106,6 +106,12 @@ body {
     line-height: var(--reader-line-height);
     letter-spacing: var(--reader-letter-spacing);
     word-spacing: var(--reader-word-spacing);
+    transition: max-width 0.3s ease-in-out;
+}
+
+/* Optimización de ancho cuando el sidebar está colapsado */
+[data-sidebar-collapsed="true"] .reader-content {
+    max-width: 900px !important;
 }
 
 /* Themes */

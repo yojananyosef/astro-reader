@@ -34,11 +34,16 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
     } catch { }
     const openHandler = () => setOpen(true);
     const closeHandler = () => setOpen(false);
+    const toggleHandler = () => setOpen(prev => !prev);
+
     window.addEventListener("open-sidebar", openHandler as EventListener);
     window.addEventListener("close-sidebar", closeHandler as EventListener);
+    window.addEventListener("toggle-sidebar", toggleHandler as EventListener);
+
     return () => {
       window.removeEventListener("open-sidebar", openHandler as EventListener);
       window.removeEventListener("close-sidebar", closeHandler as EventListener);
+      window.removeEventListener("toggle-sidebar", toggleHandler as EventListener);
     };
   }, []);
 
@@ -53,14 +58,14 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
   useLayoutEffect(() => {
     const applyOffset = () => {
       const isDesktop = typeof window !== "undefined" && window.innerWidth >= 768;
-      const value = mode === "inline" && isDesktop ? "18rem" : "0.5rem";
+      const value = mode === "inline" && isDesktop && !collapsed ? "18rem" : "0.5rem";
       document.documentElement.style.setProperty("--sidebar-offset-left", value);
     };
     applyOffset();
     const onResize = () => applyOffset();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, [mode]);
+  }, [mode, collapsed]);
 
   const goTo = (url: string) => {
     if (url === "#") return;
@@ -89,11 +94,11 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
 
       {mode === "inline" && (
         <div
-          className="hidden md:flex w-64 shrink-0 sticky top-16 h-[calc(100vh-4rem)]"
-          style={{ backgroundColor: "transparent" }}
+          className={`hidden md:flex shrink-0 sticky top-16 h-[calc(100vh-4rem)] transition-all duration-300 ease-in-out ${collapsed ? 'w-0' : 'w-64'}`}
+          style={{ backgroundColor: "transparent", overflow: "hidden" }}
         >
           <aside
-            className={`flex flex-col w-64 h-full border-r shadow-none transition-transform duration-300 ease-out will-change-transform ${collapsed ? "-translate-x-full" : "translate-x-0"}`}
+            className={`flex flex-col w-64 h-full border-r shadow-none transition-transform duration-300 ease-in-out will-change-transform ${collapsed ? "-translate-x-full" : "translate-x-0"}`}
             style={{ backgroundColor: "var(--color-bg)", color: "var(--color-text)", borderRight: "1px solid color-mix(in srgb, var(--color-text), transparent 85%)" }}
             data-role="reader-inline-sidebar"
             aria-hidden={collapsed}
@@ -107,7 +112,7 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
                     setCollapsed(true);
                   }
                 }}
-                className="p-2 rounded-md border surface-card cursor-pointer"
+                className={`p-2 rounded-md border surface-card cursor-pointer transition-opacity duration-200 ${collapsed ? "opacity-0 pointer-events-none" : "opacity-100"}`}
                 aria-label="Colapsar sidebar"
                 onClick={() => setCollapsed(true)}
               >
@@ -165,7 +170,7 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
         </div>
       )}
 
-      {mode === "inline" && collapsed && (
+      {mode === "inline" && (
         <div
           role="button"
           tabIndex={0}
@@ -174,7 +179,10 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
               setCollapsed(false);
             }
           }}
-          className="hidden md:flex fixed left-2 p-2 rounded-md border surface-card z-40 cursor-pointer"
+          className={`hidden md:flex fixed left-2 p-2 rounded-md border surface-card z-40 cursor-pointer transition-all duration-300 ${collapsed
+              ? "opacity-100 translate-x-0 pointer-events-auto delay-300"
+              : "opacity-0 -translate-x-4 pointer-events-none delay-0"
+            }`}
           aria-label="Expandir sidebar"
           onClick={() => setCollapsed(false)}
           style={{ top: "calc(4rem + 8px)" }}

@@ -3,9 +3,12 @@ import { preferences } from '../../../stores/preferences';
 
 export function useTTS() {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isPaused, setIsPaused] = useState(false);
     const synth = useRef<SpeechSynthesis | null>(null);
     const utterance = useRef<SpeechSynthesisUtterance | null>(null);
     const [rate, setRate] = useState(1.0);
+    const elementsRef = useRef<Element[]>([]);
+    const currentIndexRef = useRef(0);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -17,34 +20,59 @@ export function useTTS() {
         if (synth.current) {
             synth.current.cancel();
             setIsPlaying(false);
+            setIsPaused(false);
+            currentIndexRef.current = 0;
             document.querySelectorAll('.speaking-highlight').forEach(el =>
                 el.classList.remove('speaking-highlight')
             );
         }
     };
 
-    const play = (textBlocksSelector = '.reader-content p, .reader-content h1') => {
+    const pause = () => {
+        if (synth.current && isPlaying && !isPaused) {
+            synth.current.pause();
+            setIsPaused(true);
+        }
+    };
+
+    const resume = () => {
+        if (synth.current && isPlaying && isPaused) {
+            synth.current.resume();
+            setIsPaused(false);
+        }
+    };
+
+    const play = (textBlocksSelector = '.reader-content p, .reader-content h1', onComplete?: () => void) => {
         if (!synth.current) return;
 
-        // If already speaking, pause/resume? Or just stop.
-        if (isPlaying) {
-            stop();
+        // Handle Resume
+        if (isPlaying && isPaused) {
+            resume();
+            return;
+        }
+
+        // Handle Pause
+        if (isPlaying && !isPaused) {
+            pause();
             return;
         }
 
         setIsPlaying(true);
+        setIsPaused(false);
 
         // Get all readable elements
         const elements = Array.from(document.querySelectorAll(textBlocksSelector));
-        let currentIndex = 0;
+        elementsRef.current = elements;
+        currentIndexRef.current = 0;
 
         const speakNext = () => {
-            if (currentIndex >= elements.length) {
+            if (currentIndexRef.current >= elementsRef.current.length) {
                 stop();
+                if (onComplete) onComplete();
                 return;
             }
 
-            const element = elements[currentIndex];
+            const element = elementsRef.current[currentIndexRef.current];
             // Cloning to process text without altering DOM
             const clone = element.cloneNode(true) as HTMLElement;
             const currentPrefs = preferences.get();
@@ -60,7 +88,7 @@ export function useTTS() {
             const text = clone.innerText;
 
             if (!text.trim()) {
-                currentIndex++;
+                currentIndexRef.current++;
                 speakNext();
                 return;
             }
@@ -81,13 +109,17 @@ export function useTTS() {
 
             u.onend = () => {
                 element.classList.remove('speaking-highlight');
-                currentIndex++;
+                currentIndexRef.current++;
                 speakNext();
             };
 
-            u.onerror = () => {
+            u.onerror = (event) => {
+                console.error('TTS Error:', event);
                 element.classList.remove('speaking-highlight');
-                stop();
+                // Don't stop on all errors, try next if possible
+                if (event.error !== 'interrupted') {
+                    stop();
+                }
             };
 
             utterance.current = u;
@@ -99,5 +131,5 @@ export function useTTS() {
         speakNext();
     };
 
-    return { isPlaying, play, stop, rate, setRate };
+    return { isPlaying, isPaused, play, stop, pause, resume, rate, setRate };
 }

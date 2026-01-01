@@ -112,6 +112,81 @@ const verses = Object.entries(chapterData)
         border-radius: 0 4px 4px 0;
         transition: all 0.4s ease-in-out;
     }
+
+    .nav-arrow {
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 300ms ease-in-out,
+            visibility 300ms ease-in-out,
+            transform 300ms ease-in-out;
+        width: 40px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: color-mix(
+            in srgb,
+            var(--color-text),
+            transparent 92%
+        ) !important;
+        color: var(--color-text);
+        z-index: 40;
+    }
+
+    .nav-arrow:hover {
+        background-color: color-mix(
+            in srgb,
+            var(--color-text),
+            transparent 85%
+        ) !important;
+    }
+
+    .nav-arrow-prev {
+        left: 0;
+        border-radius: 0 40px 40px 0;
+        transform: translateX(-10px);
+    }
+
+    .nav-arrow-next {
+        right: 0;
+        border-radius: 40px 0 0 40px;
+        transform: translateX(10px);
+    }
+
+    .nav-arrow.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    /* Ajustes para móviles para que no estorben nada */
+    @media (max-width: 768px) {
+        .nav-arrow {
+            height: 60px;
+            width: 32px;
+            background-color: color-mix(
+                in srgb,
+                var(--color-text),
+                transparent 95%
+            ) !important;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .nav-arrow-prev {
+            left: calc(var(--sidebar-offset-left, 0px) + 1rem);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+        }
+        .nav-arrow-next {
+            right: 1rem;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+        }
+    }
 </style>
 
 <article class="reader-content max-w-3xl mx-auto pb-32 px-4 md:px-0 relative">
@@ -128,12 +203,11 @@ const verses = Object.entries(chapterData)
         prevLink && (
             <a
                 href={prevLink}
-                class="fixed top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95 z-40"
-                style={`left: var(--sidebar-offset-left); background-color: color-mix(in srgb, var(--color-text), transparent 85%); color: var(--color-text);`}
+                class="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-40"
                 aria-label="Capítulo Anterior"
                 data-chapter-link="prev"
             >
-                <ArrowLeft class="w-5 h-5 md:w-6 md:h-6" />
+                <ArrowLeft class="w-5 h-5" />
             </a>
         )
     }
@@ -142,12 +216,12 @@ const verses = Object.entries(chapterData)
         nextLink && (
             <a
                 href={nextLink}
-                class="fixed right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95 z-40"
-                style="background-color: color-mix(in srgb, var(--color-text), transparent 85%); color: var(--color-text);"
+                class="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-40"
                 aria-label="Capítulo Siguiente"
                 data-chapter-link="next"
+                data-nav-next
             >
-                <ArrowRight class="w-5 h-5 md:w-6 md:h-6" />
+                <ArrowRight class="w-5 h-5" />
             </a>
         )
     }
@@ -493,5 +567,49 @@ const verses = Object.entries(chapterData)
             },
             { capture: true },
         );
+
+        // Navigation arrows auto-hide logic
+        const arrows = document.querySelectorAll(".nav-arrow");
+        let hideTimeout: number;
+        let showDelayTimeout: number;
+
+        function showArrows() {
+            clearTimeout(hideTimeout);
+            clearTimeout(showDelayTimeout);
+
+            // 200ms delay before showing to avoid accidental triggers
+            showDelayTimeout = window.setTimeout(() => {
+                arrows.forEach((arrow) => arrow.classList.add("visible"));
+
+                // Keep visible for 2.5s after last interaction
+                hideTimeout = window.setTimeout(() => {
+                    arrows.forEach((arrow) =>
+                        arrow.classList.remove("visible"),
+                    );
+                }, 2500);
+            }, 200);
+        }
+
+        // 1. Touch interaction
+        document.addEventListener("touchstart", showArrows, { passive: true });
+
+        // 2. Vertical scroll
+        let lastScrollY = window.scrollY;
+        window.addEventListener(
+            "scroll",
+            () => {
+                const currentScrollY = window.scrollY;
+                if (Math.abs(currentScrollY - lastScrollY) > 10) {
+                    showArrows();
+                }
+                lastScrollY = currentScrollY;
+            },
+            { passive: true },
+        );
+
+        // Initial show on load (optional, but helpful for UX)
+        showArrows();
+
+        // Cleanup on navigation (handled by Astro)
     </script>
 </article>
