@@ -7,6 +7,7 @@ const params = url.searchParams;
 const getParam = (key: string, fallback: string) => params.get(key) || fallback;
 const bookKey = getParam("book", "gen");
 const chapterKey = getParam("chapter", "1");
+const versesRange = getParam("verses", "");
 
 const currentBookEntry = booksIndex.find((b) => b.code === bookKey);
 
@@ -65,8 +66,26 @@ if (currentChapNum < bookChaptersCount) {
 }
 
 const bookName = bookData.nombre;
-const chapterData = bookData.capitulo[chapterKey];
+const chapterData = bookData.capitulo[chapterKey] || {};
 const currentChapter = chapterKey;
+
+// Helper to parse verse ranges like "1-15" or "1,2,5"
+const parseVerseRange = (range: string): number[] => {
+    const result: number[] = [];
+    const parts = range.split(",");
+    parts.forEach((part) => {
+        if (part.includes("-")) {
+            const [start, end] = part.split("-").map(Number);
+            for (let i = start; i <= end; i++) result.push(i);
+        } else {
+            const n = Number(part);
+            if (!isNaN(n)) result.push(n);
+        }
+    });
+    return result;
+};
+
+const requiredVerses = versesRange ? parseVerseRange(versesRange) : [];
 
 // Robust Parsing & Footnotes Collection
 const footnotes: string[] = [];
@@ -91,13 +110,20 @@ const verses = Object.entries(chapterData)
             }
         }
 
+        const verseNum = parseInt(num);
+        const isHighlighted =
+            requiredVerses.length > 0 && requiredVerses.includes(verseNum);
+
         return {
             number: num,
             text,
             noteIndices: verseNotes,
+            isHighlighted,
         };
     })
     .sort((a, b) => parseInt(a.number) - parseInt(b.number));
+
+const highlightedCount = verses.filter((v) => v.isHighlighted).length;
 ---
 
 <style>
@@ -145,13 +171,13 @@ const verses = Object.entries(chapterData)
     .nav-arrow-prev {
         left: 0;
         border-radius: 0 40px 40px 0;
-        transform: translateX(-10px);
+        transform: translateX(-5px);
     }
 
     .nav-arrow-next {
         right: 0;
         border-radius: 40px 0 0 40px;
-        transform: translateX(10px);
+        transform: translateX(5px);
     }
 
     .nav-arrow.visible {
@@ -175,10 +201,12 @@ const verses = Object.entries(chapterData)
         .nav-arrow-prev {
             left: 0;
             border-radius: 0 30px 30px 0;
+            transform: none;
         }
         .nav-arrow-next {
             right: 0;
             border-radius: 30px 0 0 30px;
+            transform: none;
         }
     }
 
@@ -200,12 +228,106 @@ const verses = Object.entries(chapterData)
 
 <article class="reader-content max-w-3xl mx-auto pb-32 px-4 md:px-0 relative">
     {/* Title - Centered */}
-    <h1
-        class="text-3xl md:text-4xl font-bold text-center text-[var(--color-link)] mt-8 mb-8"
-    >
-        {bookName}
-        {currentChapter}
-    </h1>
+    <div class="mb-8 text-center">
+        <h1
+            class="text-3xl md:text-4xl font-bold text-[var(--color-link)] mb-2"
+        >
+            {bookName}
+            {currentChapter}
+        </h1>
+        {
+            versesRange && (
+                <div class="flex flex-wrap items-center justify-center gap-3 mt-4">
+                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--color-link)] text-[var(--color-link)] bg-[var(--color-link)]/5">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-info"
+                        >
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 16v-4" />
+                            <path d="M12 8h.01" />
+                        </svg>
+                        <span class="text-sm font-medium">
+                            Plan de lectura: versículos {versesRange}
+                        </span>
+                    </div>
+                    <span class="text-sm opacity-60">
+                        {highlightedCount} de {verses.length} versículos
+                    </span>
+                    <button
+                        id="toggle-view-mode"
+                        class="text-sm px-3 py-1.5 rounded-md border border-theme-text/20 hover:bg-theme-text/5 transition-colors flex items-center gap-2"
+                        data-mode="full"
+                    >
+                        <span id="toggle-text">Ver solo requeridos</span>
+                        <svg
+                            id="eye-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-eye-off w-4 h-4"
+                        >
+                            <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                            <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+                            <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+                            <line x1="2" x2="22" y1="2" y2="22" />
+                        </svg>
+                    </button>
+                </div>
+            )
+        }
+    </div>
+
+    {
+        versesRange && (
+            <div
+                id="reading-legend"
+                class="mb-8 p-4 rounded-xl border border-[var(--color-link)]/30 bg-[var(--color-link)]/5 flex gap-4 items-start animate-fade-in"
+            >
+                <div class="p-2 rounded-lg bg-[var(--color-link)] text-white shrink-0">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-book-open"
+                    >
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                </div>
+                <div class="text-left">
+                    <h3 class="font-bold text-[var(--color-link)]">
+                        Guía de lectura
+                    </h3>
+                    <p class="text-sm opacity-80 leading-relaxed">
+                        Estás siguiendo un plan de lectura. Los versículos
+                        resaltados son los asignados para hoy. Puedes cambiar a
+                        "Vista Parcial" para enfocarte solo en ellos.
+                    </p>
+                </div>
+            </div>
+        )
+    }
 
     {/* Fixed Side Navigation - Original Anchors */}
     {
@@ -239,14 +361,23 @@ const verses = Object.entries(chapterData)
         {
             verses.map((verse) => (
                 <p
-                    class="relative p-2 -mx-2 rounded transition-colors cursor-pointer"
-                    style="color: var(--color-text);"
+                    class={`relative p-2 -mx-2 rounded transition-all cursor-pointer verse-item ${verse.isHighlighted ? "is-highlighted" : "not-highlighted"}`}
+                    style={
+                        verse.isHighlighted
+                            ? "color: var(--color-text); background-color: color-mix(in srgb, var(--color-link), transparent 92%); border-left: 4px solid var(--color-link);"
+                            : "color: var(--color-text);"
+                    }
                     data-verse-id={`${bookKey}-${currentChapter}-${verse.number}`}
+                    data-is-required={verse.isHighlighted ? "true" : "false"}
                 >
-                    <sup class="text-xs font-bold mr-1 opacity-60">
+                    <sup
+                        class={`text-xs font-bold mr-1 ${verse.isHighlighted ? "text-[var(--color-link)] opacity-100" : "opacity-40"}`}
+                    >
                         {verse.number}
                     </sup>
-                    {verse.text}
+                    <span class={verse.isHighlighted ? "font-medium" : ""}>
+                        {verse.text}
+                    </span>
                     {verse.noteIndices.length > 0 &&
                         verse.noteIndices.map((idx) => (
                             <a
@@ -371,6 +502,47 @@ const verses = Object.entries(chapterData)
         });
 
         function attachListeners() {
+            // View Mode Toggle
+            const toggleBtn = document.getElementById("toggle-view-mode");
+            if (toggleBtn) {
+                toggleBtn.addEventListener("click", () => {
+                    const currentMode = toggleBtn.getAttribute("data-mode");
+                    const newMode = currentMode === "full" ? "partial" : "full";
+                    const text = document.getElementById("toggle-text");
+                    const icon = document.getElementById("eye-icon");
+
+                    toggleBtn.setAttribute("data-mode", newMode);
+
+                    if (newMode === "partial") {
+                        if (text) text.textContent = "Ver todo";
+                        if (icon) {
+                            icon.innerHTML =
+                                '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>';
+                            icon.classList.remove("lucide-eye-off");
+                            icon.classList.add("lucide-eye");
+                        }
+                        document
+                            .querySelectorAll(".not-highlighted")
+                            .forEach((el) => {
+                                (el as HTMLElement).style.display = "none";
+                            });
+                    } else {
+                        if (text) text.textContent = "Ver solo requeridos";
+                        if (icon) {
+                            icon.innerHTML =
+                                '<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/>';
+                            icon.classList.remove("lucide-eye");
+                            icon.classList.add("lucide-eye-off");
+                        }
+                        document
+                            .querySelectorAll(".not-highlighted")
+                            .forEach((el) => {
+                                (el as HTMLElement).style.display = "block";
+                            });
+                    }
+                });
+            }
+
             const verses = document.querySelectorAll("[data-verse-id]");
             verses.forEach((el) => {
                 el.addEventListener("click", () => {
@@ -590,12 +762,13 @@ const verses = Object.entries(chapterData)
             showDelayTimeout = window.setTimeout(() => {
                 arrows.forEach((arrow) => arrow.classList.add("visible"));
 
-                // Keep visible for 2.5s after last interaction
+                // Keep visible for 3s after last interaction (longer on mobile)
+                const duration = window.innerWidth < 768 ? 4000 : 2500;
                 hideTimeout = window.setTimeout(() => {
                     arrows.forEach((arrow) =>
                         arrow.classList.remove("visible"),
                     );
-                }, 2500);
+                }, duration);
             }, 200);
         }
 

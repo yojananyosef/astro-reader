@@ -1,9 +1,9 @@
 import { useEffect, useState } from "preact/hooks";
-import { ChevronLeft, X, Check } from "lucide-preact";
+import { ChevronLeft, X, Check, Eye, EyeOff, Info } from "lucide-preact";
 
-type Reading = { label: string; book: string; chapter: number };
+type Reading = { label: string; book: string; chapter: number; verses?: string };
 type EGWReading = { label: string; link?: string; content?: string };
-type Verse = { number: string; text: string };
+type Verse = { number: string; text: string; isHighlighted?: boolean };
 
 type Props = {
   planId: string;
@@ -43,6 +43,22 @@ export default function PlanDay({
   const [openEgw, setOpenEgw] = useState<EGWReading | null>(null);
   const [chapterVerses, setChapterVerses] = useState<Verse[]>([]);
   const [isLoadingContent, setIsLoadingContent] = useState(false);
+  const [viewMode, setViewMode] = useState<"full" | "partial">("full");
+
+  // Helper to parse verse ranges like "1-15" or "1,2,5"
+  const parseVerseRange = (range: string): number[] => {
+    const result: number[] = [];
+    const parts = range.split(",");
+    parts.forEach((part) => {
+      if (part.includes("-")) {
+        const [start, end] = part.split("-").map(Number);
+        for (let i = start; i <= end; i++) result.push(i);
+      } else {
+        result.push(Number(part));
+      }
+    });
+    return result;
+  };
 
   // Helper for tracking EGW readings too
   const egwKey = (r: EGWReading) => `egw-${r.label}`;
@@ -183,6 +199,8 @@ export default function PlanDay({
     setOpenReading(r);
     setIsLoadingContent(true);
     setChapterVerses([]);
+    setViewMode(r.verses ? "partial" : "full");
+
     try {
       const books = import.meta.glob("../../../data/books/*.json");
       const bookKey = Object.keys(books).find(k => k.toLowerCase().endsWith(`/${r.book.toLowerCase()}.json`));
@@ -196,6 +214,8 @@ export default function PlanDay({
       const data = (mod as any).default ?? mod;
       const rawVerses = data?.capitulo?.[String(r.chapter)] ?? {};
 
+      const requiredVerses = r.verses ? parseVerseRange(r.verses) : [];
+
       const parsedVerses: Verse[] = Object.entries(rawVerses)
         .map(([num, content]) => {
           let text = "";
@@ -204,7 +224,10 @@ export default function PlanDay({
           } else if (typeof content === "object" && content !== null) {
             text = (content as any).texto || "";
           }
-          return { number: num, text };
+          const verseNum = parseInt(num);
+          const isHighlighted = requiredVerses.length > 0 && requiredVerses.includes(verseNum);
+
+          return { number: num, text, isHighlighted };
         })
         .sort((a, b) => parseInt(a.number) - parseInt(b.number));
 
@@ -423,42 +446,105 @@ export default function PlanDay({
             onClick={closeModal}
             aria-hidden="true"
           />
-          <div className="relative z-50 w-full max-w-2xl mx-4 p-6 rounded-xl border surface-card space-y-4 shadow-2xl" style={{ backgroundColor: "var(--color-bg)" }}>
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold" style={{ color: "var(--color-link)" }}>
-                {openReading ? openReading.label : openEgw?.label}
-              </h2>
-              <div
-                onClick={closeModal}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    closeModal();
-                  }
-                }}
-                className="p-2 rounded-md border surface-card hover:bg-[var(--surface-hover-bg)] transition-colors cursor-pointer"
-                aria-label="Cerrar"
-                style={{ backgroundColor: "var(--color-bg)" }}
-              >
-                <X className="w-5 h-5" />
+          <div className="relative z-50 w-full max-w-2xl mx-4 rounded-xl border surface-card flex flex-col shadow-2xl max-h-[90vh]" style={{ backgroundColor: "var(--color-bg)" }}>
+            <div className="p-6 border-b shrink-0" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
+              <div className="flex items-center justify-between">
+                <div className="flex flex-col">
+                  <h2 className="text-xl font-bold" style={{ color: "var(--color-link)" }}>
+                    {openReading ? openReading.label : openEgw?.label}
+                  </h2>
+                  {openReading && openReading.verses && (
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-xs px-2 py-0.5 rounded-full border border-[var(--color-link)] text-[var(--color-link)] font-medium flex items-center gap-1">
+                        <Info className="w-3 h-3" />
+                        Lectura sugerida
+                      </span>
+                      <span className="text-xs opacity-60">
+                        {chapterVerses.filter(v => v.isHighlighted).length} versículos de {chapterVerses.length}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div className="flex items-center gap-2">
+                  {openReading && openReading.verses && (
+                    <div
+                      onClick={() => setViewMode(viewMode === "full" ? "partial" : "full")}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          setViewMode(viewMode === "full" ? "partial" : "full");
+                        }
+                      }}
+                      className="h-9 px-3 rounded-md border surface-card hover:bg-[var(--surface-hover-bg)] transition-colors flex items-center gap-2 text-sm cursor-pointer"
+                      title={viewMode === "full" ? "Mostrar solo versículos requeridos" : "Mostrar capítulo completo"}
+                    >
+                      {viewMode === "full" ? (
+                        <>
+                          <EyeOff className="w-4 h-4" />
+                          <span className="hidden sm:inline">Vista Parcial</span>
+                        </>
+                      ) : (
+                        <>
+                          <Eye className="w-4 h-4" />
+                          <span className="hidden sm:inline">Ver Todo</span>
+                        </>
+                      )}
+                    </div>
+                  )}
+                  <div
+                    onClick={closeModal}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        closeModal();
+                      }
+                    }}
+                    className="h-9 w-9 flex items-center justify-center rounded-md border surface-card hover:bg-[var(--surface-hover-bg)] transition-colors cursor-pointer"
+                    aria-label="Cerrar"
+                    style={{ backgroundColor: "var(--color-bg)" }}
+                  >
+                    <X className="w-5 h-5" />
+                  </div>
+                </div>
               </div>
+
+              {openReading && openReading.verses && viewMode === "full" && (
+                <div className="mt-4 p-3 rounded-lg border surface-card bg-opacity-10 flex gap-3 items-start" style={{ borderColor: "var(--color-link)", backgroundColor: "color-mix(in srgb, var(--color-link), transparent 95%)" }}>
+                  <Info className="w-5 h-5 text-[var(--color-link)] shrink-0 mt-0.5" />
+                  <div className="text-sm">
+                    <p className="font-semibold text-[var(--color-link)]">Plan de lectura</p>
+                    <p className="opacity-80">Los versículos resaltados son los requeridos para hoy. Puedes leer el capítulo completo si lo deseas.</p>
+                  </div>
+                </div>
+              )}
             </div>
-            <div className="max-h-[65vh] overflow-y-auto pr-2 custom-scrollbar">
+
+            <div className="flex-1 overflow-y-auto p-6 custom-scrollbar">
               {isLoadingContent ? (
                 <div className="p-8 text-center animate-pulse">Cargando contenido...</div>
               ) : openReading && chapterVerses.length === 0 ? (
                 <div className="p-4 rounded-md border surface-card text-center">Sin contenido disponible</div>
               ) : openReading ? (
                 <div className="space-y-4 reader-text">
-                  {chapterVerses.map((v) => (
-                    <div key={v.number} className="flex gap-3">
-                      <sup className="text-xs font-bold mt-2 opacity-60 select-none min-w-[1.5rem] text-right">
-                        {v.number}
-                      </sup>
-                      <p className="flex-1 m-0">{v.text}</p>
-                    </div>
-                  ))}
+                  {chapterVerses
+                    .filter(v => viewMode === "full" || v.isHighlighted)
+                    .map((v) => (
+                      <div
+                        key={v.number}
+                        className={`flex gap-3 p-2 -mx-2 rounded transition-all ${v.isHighlighted && viewMode === "full" ? "bg-opacity-10 border-l-4" : ""}`}
+                        style={v.isHighlighted && viewMode === "full" ? {
+                          backgroundColor: "color-mix(in srgb, var(--color-link), transparent 92%)",
+                          borderLeftColor: "var(--color-link)"
+                        } : {}}
+                      >
+                        <sup className={`text-xs font-bold mt-2 select-none min-w-[1.5rem] text-right ${v.isHighlighted ? "text-[var(--color-link)] opacity-100" : "opacity-40"}`}>
+                          {v.number}
+                        </sup>
+                        <p className={`flex-1 m-0 ${v.isHighlighted ? "font-medium" : "opacity-80"}`}>{v.text}</p>
+                      </div>
+                    ))}
                 </div>
               ) : openEgw ? (
                 <div className="reader-text whitespace-pre-wrap">
@@ -466,7 +552,7 @@ export default function PlanDay({
                 </div>
               ) : null}
             </div>
-            <div className="flex items-center justify-between">
+            <div className="p-6 border-t flex items-center justify-between" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
               {openReading ? (
                 <div
                   onClick={() => toggleReadingCompleted(openReading)}
@@ -477,7 +563,7 @@ export default function PlanDay({
                       toggleReadingCompleted(openReading);
                     }
                   }}
-                  className="px-4 py-2 rounded-md border surface-card flex items-center gap-2 cursor-pointer"
+                  className="px-4 py-2 rounded-md border surface-card flex items-center gap-2 cursor-pointer transition-colors hover:bg-[var(--surface-hover-bg)]"
                 >
                   <Check className={`w-5 h-5 ${isReadingCompleted(openReading) ? "text-[var(--color-link)]" : ""}`} />
                   <span className="text-sm">
@@ -494,7 +580,7 @@ export default function PlanDay({
                       toggleEgwCompleted(openEgw);
                     }
                   }}
-                  className="px-4 py-2 rounded-md border surface-card flex items-center gap-2 cursor-pointer"
+                  className="px-4 py-2 rounded-md border surface-card flex items-center gap-2 cursor-pointer transition-colors hover:bg-[var(--surface-hover-bg)]"
                 >
                   <Check className={`w-5 h-5 ${isEgwCompleted(openEgw) ? "text-[var(--color-link)]" : ""}`} />
                   <span className="text-sm">
@@ -511,7 +597,7 @@ export default function PlanDay({
                     closeModal();
                   }
                 }}
-                className="px-4 py-2 rounded-md border surface-card cursor-pointer"
+                className="px-4 py-2 rounded-md border surface-card cursor-pointer transition-colors hover:bg-[var(--surface-hover-bg)]"
               >
                 Cerrar
               </div>

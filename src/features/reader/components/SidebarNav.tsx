@@ -180,8 +180,8 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
             }
           }}
           className={`hidden md:flex fixed left-2 p-2 rounded-md border surface-card z-40 cursor-pointer transition-all duration-300 ${collapsed
-              ? "opacity-100 translate-x-0 pointer-events-auto delay-300"
-              : "opacity-0 -translate-x-4 pointer-events-none delay-0"
+            ? "opacity-100 translate-x-0 pointer-events-auto delay-500"
+            : "opacity-0 -translate-x-4 pointer-events-none delay-0"
             }`}
           aria-label="Expandir sidebar"
           onClick={() => setCollapsed(false)}
