@@ -5,24 +5,25 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:cf": "CF_PAGES=1 astro build",
+    "build:vercel": "VERCEL=1 astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/node": "^9.5.1",
-    "@astrojs/preact": "^4.1.3",
-    "@nanostores/preact": "^1.0.0",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.5",
-    "lucide-preact": "^0.555.0",
-    "nanostores": "^1.1.0",
-    "preact": "^10.28.0",
-    "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3"
+    "@astrojs/preact": "4.1.3",
+    "@nanostores/preact": "1.0.0",
+    "@tailwindcss/vite": "4.1.18",
+    "astro": "5.16.6",
+    "lucide-preact": "0.555.0",
+    "nanostores": "1.1.0",
+    "preact": "10.28.1",
+    "tailwindcss": "4.1.18"
   },
   "devDependencies": {
-    "@astrojs/cloudflare": "^12.6.12",
-    "@astrojs/vercel": "^9.0.2"
+    "@astrojs/node": "9.5.1",
+    "@astrojs/cloudflare": "12.6.12",
+    "@astrojs/vercel": "9.0.2",
+    "typescript": "5.9.3"
   }
 }
