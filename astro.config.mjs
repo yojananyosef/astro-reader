@@ -5,16 +5,15 @@ import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   output: 'static',
-
-  adapter: cloudflare(),
-
+  adapter: cloudflare({
+    sessions: false
+  }),
   integrations: [
     preact({
       compat: false,
       devtools: false
     })
   ],
-
   vite: {
     plugins: [tailwindcss()]
   }
