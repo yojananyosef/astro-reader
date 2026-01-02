@@ -2,7 +2,7 @@ import { useEffect, useState } from "preact/hooks";
 import { ChevronLeft, X, Check, Eye, EyeOff, Info } from "lucide-preact";
 
 type Reading = { label: string; book: string; chapter: number; verses?: string };
-type EGWReading = { label: string; link?: string; content?: string };
+type EGWReading = { label: string; link?: string; content?: string; chapterId?: number };
 type Verse = { number: string; text: string; isHighlighted?: boolean };
 
 type Props = {
@@ -239,9 +239,31 @@ export default function PlanDay({
     }
   };
 
-  const openEgwModal = (r: EGWReading) => {
+  const openEgwModal = async (r: EGWReading) => {
     setOpenReading(null);
     setOpenEgw(r);
+
+    if (r.chapterId && !r.content) {
+      setIsLoadingContent(true);
+      try {
+        const egwFiles = import.meta.glob("../../../data/plan-content/*.json");
+        const fileKey = Object.keys(egwFiles).find(k => k.endsWith("/es_PP54(PP).json"));
+
+        if (fileKey) {
+          const mod = await egwFiles[fileKey]();
+          const data = (mod as any).default ?? mod;
+          const chapter = data.chapters?.find((c: any) => c.number === r.chapterId);
+          if (chapter) {
+            const content = chapter.sections?.map((s: any) => s.content).join("\n\n") || "";
+            setOpenEgw({ ...r, content });
+          }
+        }
+      } catch (e) {
+        console.error("Error loading EGW content:", e);
+      } finally {
+        setIsLoadingContent(false);
+      }
+    }
   };
 
   const closeModal = () => {
@@ -378,12 +400,12 @@ export default function PlanDay({
             {egwReadings.map((r) => (
               <div
                 key={r.label}
-                className={`w-full p-3 rounded-lg border surface-card flex items-center justify-between ${r.content ? "cursor-pointer" : ""}`}
+                className={`w-full p-3 rounded-lg border surface-card flex items-center justify-between ${(r.content || r.chapterId) ? "cursor-pointer" : ""}`}
                 style={{
                   borderColor:
                     "color-mix(in srgb, var(--color-text), transparent 85%)",
                 }}
-                onClick={() => r.content && openEgwModal(r)}
+                onClick={() => (r.content || r.chapterId) && openEgwModal(r)}
               >
                 <div className="flex flex-col">
                   <span className="font-medium">{r.label}</span>
