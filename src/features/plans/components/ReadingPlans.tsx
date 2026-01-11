@@ -170,7 +170,7 @@ export default function ReadingPlans() {
                   }
                 }}
                 className={`px-3 py-2 rounded-lg border transition-all cursor-pointer ${active
-                  ? "ring-1 ring-[var(--color-link)] font-bold"
+                  ? "border-[var(--color-link)] font-bold shadow-sm"
                   : "opacity-80 hover:opacity-100"
                   }`}
                 style={

@@ -51,12 +51,12 @@ export default function CommentarySelector({ currentBook, currentChapter, books 
     };
 
     return (
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-8 p-2 md:p-3 rounded-2xl bg-theme-text/5 border border-theme-text/10 max-w-fit mx-auto relative z-50">
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-8 p-2 md:p-3 rounded-2xl bg-theme-text/5 border border-theme-text/10 max-w-fit mx-auto relative z-50 shadow-sm">
             {/* Book Selector */}
             <div className="relative" ref={bookRef}>
                 <button
                     onClick={() => { setIsBookOpen(!isBookOpen); setIsChapterOpen(false); }}
-                    className={`flex items-center gap-3 px-4 py-2 rounded-xl transition-all duration-200 ${isBookOpen ? 'bg-[var(--color-link)] text-white shadow-lg' : 'hover:bg-theme-text/5 text-[var(--color-text)]'}`}
+                    className={`flex items-center gap-3 px-4 py-2 rounded-xl transition-all duration-200 border ${isBookOpen ? 'bg-[var(--color-link)] text-white shadow-lg border-transparent' : 'hover:bg-theme-text/5 text-[var(--color-text)] border-theme-text/10 shadow-sm'}`}
                 >
                     <div className={`p-1 rounded-lg ${isBookOpen ? 'bg-white/20' : 'bg-[var(--color-link)]/10 text-[var(--color-link)]'}`}>
                         <Book className="w-4 h-4" />
@@ -68,7 +68,7 @@ export default function CommentarySelector({ currentBook, currentChapter, books 
                 </button>
 
                 {isBookOpen && (
-                    <div className="absolute top-full left-0 mt-2 w-64 max-h-[400px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-2 animate-in fade-in slide-in-from-top-2 duration-200 scrollbar-thin">
+                    <div className="absolute top-full left-0 mt-2 w-64 max-h-[400px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-2 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar">
                         <div className="grid grid-cols-1 gap-1">
                             {books.map(b => (
                                 <button
@@ -91,7 +91,7 @@ export default function CommentarySelector({ currentBook, currentChapter, books 
             <div className="relative" ref={chapterRef}>
                 <button
                     onClick={() => { setIsChapterOpen(!isChapterOpen); setIsBookOpen(false); }}
-                    className={`flex items-center gap-3 px-4 py-2 rounded-xl transition-all duration-200 ${isChapterOpen ? 'bg-[var(--color-link)] text-white shadow-lg' : 'hover:bg-theme-text/5 text-[var(--color-text)]'}`}
+                    className={`flex items-center gap-3 px-4 py-2 rounded-xl transition-all duration-200 border ${isChapterOpen ? 'bg-[var(--color-link)] text-white shadow-lg border-transparent' : 'hover:bg-theme-text/5 text-[var(--color-text)] border-theme-text/10 shadow-sm'}`}
                 >
                     <div className={`p-1 rounded-lg ${isChapterOpen ? 'bg-white/20' : 'bg-[var(--color-link)]/10 text-[var(--color-link)]'}`}>
                         <Hash className="w-4 h-4" />
@@ -103,7 +103,7 @@ export default function CommentarySelector({ currentBook, currentChapter, books 
                 </button>
 
                 {isChapterOpen && (
-                    <div className="absolute top-full right-0 mt-2 w-48 max-h-[400px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-2 animate-in fade-in slide-in-from-top-2 duration-200 scrollbar-thin">
+                    <div className="absolute top-full right-0 mt-2 w-48 max-h-[400px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-2 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar">
                         <div className="grid grid-cols-3 gap-1">
                             {chapters.map(c => (
                                 <button

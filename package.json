@@ -20,9 +20,6 @@
     "tailwindcss": "4.1.18"
   },
   "devDependencies": {
-    "@astrojs/node": "9.5.1",
-    "@astrojs/cloudflare": "12.6.12",
-    "@astrojs/vercel": "9.0.2",
     "@types/pdf-parse": "^1.1.5",
     "pdf-parse": "^2.4.5",
     "pdf-parse-fork": "^1.2.0",

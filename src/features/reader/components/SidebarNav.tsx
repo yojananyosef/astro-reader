@@ -135,7 +135,7 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
                     className={`
                       w-full text-left p-3 rounded-lg flex items-center gap-3 transition-all duration-200 cursor-pointer
                       ${isActive
-                        ? "font-bold shadow-sm ring-1 ring-[var(--color-link)]"
+                        ? "font-bold shadow-sm border border-[var(--color-link)]"
                         : "hover:bg-[var(--surface-hover-bg)] opacity-80 hover:opacity-100"
                       }
                     `}
@@ -234,7 +234,7 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
                   className={`
                     w-full text-left p-3 rounded-lg flex items-center gap-3 transition-all duration-200 cursor-pointer
                     ${isActive
-                      ? "font-bold shadow-sm ring-1 ring-[var(--color-link)]"
+                      ? "font-bold shadow-sm border border-[var(--color-link)]"
                       : "hover:bg-[var(--surface-hover-bg)] opacity-80 hover:opacity-100"
                     }
                   `}

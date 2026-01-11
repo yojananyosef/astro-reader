@@ -3,11 +3,14 @@ import ReaderLayout from "../../features/reader/layouts/ReaderLayout.astro";
 import PlanDetail from "../../features/plans/components/PlanDetail";
 import plans from "../../data/plans.json";
 
-const { id } = Astro.params;
-const plan = (plans as any[]).find((p) => p.id === id);
-if (!plan) {
-  return Astro.redirect("/plans");
+export function getStaticPaths() {
+  return plans.map((plan) => ({
+    params: { id: plan.id },
+    props: { plan },
+  }));
 }
+
+const { plan } = Astro.props;
 ---
 
 <ReaderLayout>

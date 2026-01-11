@@ -87,6 +87,38 @@
     scrollbar-color: color-mix(in srgb, var(--color-link), transparent 50%) transparent;
 }
 
+/* Global Scrollbar Removal for Native App Feel */
+html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scroll-behavior: smooth; /* Smooth scrolling for all anchors */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+/* Modern Focus State */
+:focus-visible {
+    outline: 3px solid var(--color-link);
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none !important;
+}
+
+/* Native App Feel: Disable text selection on UI elements */
+button, 
+a, 
+.nav-arrow, 
+.sidebar-item,
+[role="button"],
+.select-none-ui {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
 body {
     background-color: var(--color-bg);
     color: var(--color-text);
@@ -98,7 +130,10 @@ body {
     transition: background-color 0.3s, color 0.3s;
     margin: 0;
     min-height: 100vh;
-    scrollbar-gutter: stable;
+    /* scrollbar-gutter: stable; */ /* Removed to prevent layout shift when hiding scrollbar */
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent; /* Remove mobile blue highlight */
 }
 
 .reader-content,
@@ -166,7 +201,7 @@ a:active {
 button {
     font-size: 1rem;
     padding: 0.75em 1.5em;
-    border: 2px solid var(--color-text);
+    border: 1px solid color-mix(in srgb, var(--color-text), transparent 85%);
     background-color: var(--color-bg);
     color: var(--color-text);
     font-weight: 600;
@@ -174,11 +209,17 @@ button {
     min-height: 44px;
     /* Critical for motor accessibility */
     min-width: 44px;
-    border-radius: 4px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
-button:focus,
-a:focus {
+button:hover {
+    background-color: var(--surface-hover-bg);
+    border-color: color-mix(in srgb, var(--color-text), transparent 70%);
+}
+
+button:focus-visible,
+a:focus-visible {
     outline: 3px solid var(--color-link);
     outline-offset: 2px;
 }
@@ -204,15 +245,23 @@ p {
 }
 
 /* Highlighted Verses */
-.highlighted {
+.is-plan-highlighted {
+    background-color: color-mix(in srgb, var(--color-link), transparent 90%);
+    border-radius: 4px;
+}
+
+.is-user-highlighted {
     background-color: var(--color-highlight);
     border-radius: 4px;
-    box-shadow: 0 0 0 4px var(--color-highlight);
+}
+
+/* When both are present, we mix them or prioritize one */
+.is-plan-highlighted.is-user-highlighted {
+    background-color: color-mix(in srgb, var(--color-highlight), var(--color-link) 20%);
 }
 
 :root {
-    --color-highlight: #fff9c4;
-    /* Light Yellow default */
+    --color-highlight: #fff9c4; /* Light Yellow default */
 }
 
 body[data-theme='dark'] {
@@ -251,11 +300,6 @@ body[data-theme='sepia'] {
     background-color: var(--surface-hover-bg);
 }
 
-.surface-card:focus-within {
-    outline: 3px solid var(--color-link);
-    outline-offset: 2px;
-}
-
 /* Chapter transitions */
 @keyframes fadeIn {
     from {
@@ -287,4 +331,17 @@ body[data-theme='sepia'] {
 
 .animate-fade-out {
     animation: fadeOut 180ms ease-in forwards;
+}
+
+/* Highlighting consistency */
+.verse-selected, .commentary-selected, .note-selected {
+    background-color: color-mix(in srgb, var(--color-link), transparent 85%) !important;
+    border-left: 4px solid var(--color-link) !important;
+    transition: all 0.3s ease;
+}
+
+/* Base selection color for text */
+::selection {
+    background-color: color-mix(in srgb, var(--color-link), transparent 70%);
+    color: inherit;
 }

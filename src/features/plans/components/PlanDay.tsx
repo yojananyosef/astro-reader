@@ -548,11 +548,7 @@ export default function PlanDay({
                     .map((v) => (
                       <div
                         key={v.number}
-                        className={`flex gap-3 p-2 -mx-2 rounded transition-all ${v.isHighlighted && viewMode === "full" ? "bg-opacity-10 border-l-4" : ""}`}
-                        style={v.isHighlighted && viewMode === "full" ? {
-                          backgroundColor: "color-mix(in srgb, var(--color-link), transparent 92%)",
-                          borderLeftColor: "var(--color-link)"
-                        } : {}}
+                        className={`flex gap-3 p-2 -mx-2 rounded transition-all ${v.isHighlighted ? "is-plan-highlighted" : ""}`}
                       >
                         <sup className={`text-xs font-bold mt-2 select-none min-w-[1.5rem] text-right ${v.isHighlighted ? "text-[var(--color-link)] opacity-100" : "opacity-40"}`}>
                           {v.number}

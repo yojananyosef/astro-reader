@@ -235,7 +235,7 @@ export default function PlanDetail({ plan }: { plan: Plan }) {
             <a
               key={d}
               href={`/plans/${plan.id}/day/${d}`}
-              className={`text-center p-2 rounded-md border flex items-center justify-center gap-1 ${completedDays.includes(d) ? "ring-1 ring-[var(--color-link)] animate-fade-in" : ""}`}
+              className={`text-center p-2 rounded-md border flex items-center justify-center gap-1 ${completedDays.includes(d) ? "animate-fade-in shadow-sm" : ""}`}
               style={{
                 borderColor: completedDays.includes(d)
                   ? "var(--color-link)"
@@ -246,7 +246,8 @@ export default function PlanDetail({ plan }: { plan: Plan }) {
                 color: completedDays.includes(d)
                   ? "var(--color-link)"
                   : undefined,
-                textDecoration: "none"
+                textDecoration: "none",
+                borderWidth: completedDays.includes(d) ? "2px" : "1px"
               }}
             >
               <span>{d}</span>
