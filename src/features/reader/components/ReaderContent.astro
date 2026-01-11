@@ -1,5 +1,5 @@
 ---
-import { ArrowLeft, ArrowRight, BookOpen } from "lucide-preact";
+import { ArrowLeft, ArrowRight, BookOpen, Library } from "lucide-preact";
 import booksIndex from "../../../data/books-index.json";
 
 const url = Astro.url;
@@ -23,7 +23,16 @@ const loadBookData = async (code: string) => {
     return (mod as any).default ?? mod;
 };
 
+const loadCommentaryData = async (code: string) => {
+    const commentaries = import.meta.glob("../../../data/commentary/*.json");
+    const loader = commentaries[`../../../data/commentary/${code}.json`];
+    if (!loader) return null;
+    const mod = await loader();
+    return (mod as any).default ?? mod;
+};
+
 const bookData = await loadBookData(bookKey);
+const commentaryData = await loadCommentaryData(bookKey);
 if (!bookData) {
     return Astro.redirect(`/?book=gen&chapter=1`);
 }
@@ -68,6 +77,13 @@ if (currentChapNum < bookChaptersCount) {
 const bookName = bookData.nombre;
 const chapterData = bookData.capitulo[chapterKey] || {};
 const currentChapter = chapterKey;
+
+// Get commentary markers for current chapter
+const currentChapNumInt = safeParseInt(chapterKey);
+const currentCommentaryChapter = commentaryData?.chapters?.find(
+    (c: any) => c.chapter === currentChapNumInt
+);
+const currentChapterCommentaryVerses = currentCommentaryChapter?.verses || [];
 
 // Helper to parse verse ranges like "1-15" or "1,2,5"
 const parseVerseRange = (range: string): number[] => {
@@ -157,7 +173,7 @@ const highlightedCount = verses.filter((v) => v.isHighlighted).length;
             transparent 92%
         ) !important;
         color: var(--color-text);
-        z-index: 40;
+        z-index: 100; /* Por encima del sidebar y otros elementos */
     }
 
     .nav-arrow:hover {
@@ -169,9 +185,14 @@ const highlightedCount = verses.filter((v) => v.isHighlighted).length;
     }
 
     .nav-arrow-prev {
-        left: 0;
+        left: var(--sidebar-current-width, 0px);
         border-radius: 0 40px 40px 0;
         transform: translateX(-5px);
+        transition: 
+            opacity 300ms ease-in-out,
+            visibility 300ms ease-in-out,
+            transform 300ms ease-in-out,
+            left 0.3s ease-in-out;
     }
 
     .nav-arrow-next {
@@ -199,7 +220,7 @@ const highlightedCount = verses.filter((v) => v.isHighlighted).length;
             z-index: 100; /* Asegurar que esté por encima de todo en móvil */
         }
         .nav-arrow-prev {
-            left: 0;
+            left: 0 !important;
             border-radius: 0 30px 30px 0;
             transform: none;
         }
@@ -212,7 +233,7 @@ const highlightedCount = verses.filter((v) => v.isHighlighted).length;
 
     @media (min-width: 1200px) {
         .nav-arrow-prev {
-            left: calc(var(--sidebar-offset-left, 0px) + 1rem);
+            left: calc(var(--sidebar-current-width, 0px) + 1rem);
             border-radius: 50%;
             width: 48px;
             height: 48px;
@@ -293,41 +314,41 @@ const highlightedCount = verses.filter((v) => v.isHighlighted).length;
     </div>
 
     {
-        versesRange && (
-            <div
-                id="reading-legend"
-                class="mb-8 p-4 rounded-xl border border-[var(--color-link)]/30 bg-[var(--color-link)]/5 flex gap-4 items-start animate-fade-in"
-            >
-                <div class="p-2 rounded-lg bg-[var(--color-link)] text-white shrink-0">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-book-open"
-                    >
-                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                    </svg>
-                </div>
-                <div class="text-left">
-                    <h3 class="font-bold text-[var(--color-link)]">
-                        Guía de lectura
-                    </h3>
-                    <p class="text-sm opacity-80 leading-relaxed">
-                        Estás siguiendo un plan de lectura. Los versículos
-                        resaltados son los asignados para hoy. Puedes cambiar a
-                        "Vista Parcial" para enfocarte solo en ellos.
-                    </p>
-                </div>
-            </div>
-        )
-    }
+             versesRange && (
+                 <div
+                     id="reading-legend"
+                     class="mb-8 p-4 rounded-xl border border-[var(--color-link)]/30 bg-[var(--color-link)]/5 flex gap-4 items-start animate-fade-in"
+                 >
+                     <div class="p-2 rounded-lg bg-[var(--color-link)] text-white shrink-0">
+                         <svg
+                             xmlns="http://www.w3.org/2000/svg"
+                             width="20"
+                             height="20"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             class="lucide lucide-book-open"
+                         >
+                             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                         </svg>
+                     </div>
+                     <div class="text-left">
+                         <h3 class="font-bold text-[var(--color-link)]">
+                             Guía de lectura
+                         </h3>
+                         <p class="text-sm opacity-80 leading-relaxed">
+                             Estás siguiendo un plan de lectura. Los versículos
+                             resaltados son los asignados para hoy. Puedes cambiar a
+                             "Vista Parcial" para enfocarte solo en ellos.
+                         </p>
+                     </div>
+                 </div>
+             )
+         }
 
     {/* Fixed Side Navigation - Original Anchors */}
     {
@@ -378,6 +399,19 @@ const highlightedCount = verses.filter((v) => v.isHighlighted).length;
                     <span class={verse.isHighlighted ? "font-medium" : ""}>
                         {verse.text}
                     </span>
+                    {
+                        currentChapterCommentaryVerses.some(
+                            (c: any) => c.verse === parseInt(verse.number),
+                        ) && (
+                            <a
+                                href={`/commentary?book=${bookKey}&chapter=${chapterKey}#com-${verse.number}`}
+                                class="ml-1 text-[var(--color-link)] opacity-60 hover:opacity-100 transition-opacity inline-flex items-center align-middle"
+                                title="Ver comentario"
+                            >
+                                <Library class="w-3.5 h-3.5" />
+                            </a>
+                        )
+                    }
                     {verse.noteIndices.length > 0 &&
                         verse.noteIndices.map((idx) => (
                             <a
@@ -395,10 +429,7 @@ const highlightedCount = verses.filter((v) => v.isHighlighted).length;
 
     {
         footnotes.length > 0 && (
-            <div
-                class="mt-16 pt-8 border-t border-theme-text/20"
-                id="footnotes"
-            >
+            <div class="mt-16 pt-8 border-t border-theme-text/20" id="footnotes">
                 <h3
                     class="text-lg font-bold mb-4 flex items-center gap-2"
                     style="color: var(--color-text); opacity: 0.8;"
@@ -431,367 +462,257 @@ const highlightedCount = verses.filter((v) => v.isHighlighted).length;
             highlights,
             toggleHighlight,
         } from "../../../stores/highlights";
+        import { lastBiblePosition } from "../../../stores/navigation";
 
-        // Subscribe to changes and update UI
-        highlights.subscribe((state) => {
-            const verses = document.querySelectorAll("[data-verse-id]");
-            verses.forEach((el) => {
-                const id = el.getAttribute("data-verse-id");
-                if (id && state[id]) {
-                    el.classList.add("highlighted");
-                } else {
-                    el.classList.remove("highlighted");
-                }
-            });
-        });
+        let unsubscribe: (() => void) | null = null;
 
-        function animateScrollTo(
-            target: HTMLElement,
-            offset = 112,
-            duration = 400,
-            done?: () => void,
-        ) {
-            const start = window.pageYOffset;
-            const rect = target.getBoundingClientRect();
-            const end = rect.top + start - offset;
-            const change = end - start;
-            const startTime = performance.now();
-            function ease(t: number) {
-                return t < 0.5
-                    ? 4 * t * t * t
-                    : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        function initReader() {
+            // Guardar posición actual
+            const params = new URLSearchParams(window.location.search);
+            const book = params.get('book');
+            const chapter = params.get('chapter');
+            if (book && chapter) {
+                lastBiblePosition.set({ lastBook: book, lastChapter: chapter });
             }
-            function step(now: number) {
-                const elapsed = now - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const y = start + change * ease(progress);
-                window.scrollTo(0, y);
-                if (progress < 1) {
-                    requestAnimationFrame(step);
-                } else {
-                    if (done) done();
+
+            // Subscribe to changes and update UI
+            unsubscribe = highlights.subscribe((state) => {
+                const verses = document.querySelectorAll("[data-verse-id]");
+                verses.forEach((el) => {
+                    const id = el.getAttribute("data-verse-id");
+                    if (id && state[id]) {
+                        el.classList.add("highlighted");
+                    } else {
+                        el.classList.remove("highlighted");
+                    }
+                });
+            });
+
+            function animateScrollTo(
+                target: HTMLElement,
+                offset = 112,
+                duration = 400,
+                done?: () => void,
+            ) {
+                const start = window.pageYOffset;
+                const rect = target.getBoundingClientRect();
+                const end = rect.top + start - offset;
+                const change = end - start;
+                const startTime = performance.now();
+                function ease(t: number) {
+                    return t < 0.5
+                        ? 4 * t * t * t
+                        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                }
+                function step(now: number) {
+                    const elapsed = now - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const y = start + change * ease(progress);
+                    window.scrollTo(0, y);
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        if (done) done();
+                    }
+                }
+                requestAnimationFrame(step);
+            }
+            function setSelectedNote(id: string) {
+                document.querySelectorAll(".note-selected").forEach((el) => {
+                    el.classList.remove("note-selected");
+                    el.removeAttribute("aria-current");
+                });
+                const target = document.getElementById(id);
+                if (target) {
+                    target.classList.add("note-selected");
+                    target.setAttribute("aria-current", "true");
                 }
             }
-            requestAnimationFrame(step);
-        }
-        function setSelectedNote(id: string) {
-            document.querySelectorAll(".note-selected").forEach((el) => {
-                el.classList.remove("note-selected");
-                el.removeAttribute("aria-current");
-            });
-            const target = document.getElementById(id);
-            if (target) {
-                target.classList.add("note-selected");
-                target.setAttribute("aria-current", "true");
+            // Initialize selection from existing hash if present
+            if (location.hash && location.hash.length > 1) {
+                const id = location.hash.slice(1);
+                const target = document.getElementById(id);
+                if (target) {
+                    setSelectedNote(id);
+                }
             }
-        }
-        // Initialize selection from existing hash if present
-        if (location.hash && location.hash.length > 1) {
-            const id = location.hash.slice(1);
-            const target = document.getElementById(id);
-            if (target) {
-                setSelectedNote(id);
+
+            function attachListeners() {
+                // View Mode Toggle
+                const toggleBtn = document.getElementById("toggle-view-mode");
+                if (toggleBtn) {
+                    toggleBtn.addEventListener("click", () => {
+                        const currentMode = toggleBtn.getAttribute("data-mode");
+                        const newMode = currentMode === "full" ? "partial" : "full";
+                        const text = document.getElementById("toggle-text");
+                        const icon = document.getElementById("eye-icon");
+
+                        toggleBtn.setAttribute("data-mode", newMode);
+
+                        if (newMode === "partial") {
+                            if (text) text.textContent = "Ver todo";
+                            if (icon) {
+                                icon.innerHTML =
+                                    '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>';
+                                icon.classList.remove("lucide-eye-off");
+                                icon.classList.add("lucide-eye");
+                            }
+                            document
+                                .querySelectorAll(".not-highlighted")
+                                .forEach((el) => {
+                                    (el as HTMLElement).style.display = "none";
+                                });
+                        } else {
+                            if (text) text.textContent = "Ver solo requeridos";
+                            if (icon) {
+                                icon.innerHTML =
+                                    '<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/>';
+                                icon.classList.remove("lucide-eye");
+                                icon.classList.add("lucide-eye-off");
+                            }
+                            document
+                                .querySelectorAll(".not-highlighted")
+                                .forEach((el) => {
+                                    (el as HTMLElement).style.display = "block";
+                                });
+                        }
+                    });
+                }
+
+                // Smooth scroll for footnotes
+                document
+                    .querySelectorAll('a[href^="#note-"]')
+                    .forEach((anchor) => {
+                        anchor.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            const id = anchor.getAttribute("href")?.slice(1);
+                            const target = id ? document.getElementById(id) : null;
+                            if (target) {
+                                animateScrollTo(target);
+                                if (id) {
+                                    history.pushState(null, "", `#${id}`);
+                                    setSelectedNote(id);
+                                }
+                            }
+                        });
+                    });
+
+                // Smooth scroll for commentary anchors (if any are local)
+                document
+                    .querySelectorAll('a[href^="#com-"]')
+                    .forEach((anchor) => {
+                        anchor.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            const id = anchor.getAttribute("href")?.slice(1);
+                            const target = id ? document.getElementById(id) : null;
+                            if (target) {
+                                animateScrollTo(target);
+                                if (id) {
+                                    history.pushState(null, "", `#${id}`);
+                                }
+                            }
+                        });
+                    });
+
+                // Verse highlights
+                document.querySelectorAll("[data-verse-id]").forEach((el) => {
+                    el.addEventListener("click", (e) => {
+                        const target = e.target as HTMLElement;
+                        if (target.closest("a")) return;
+
+                        const id = el.getAttribute("data-verse-id");
+                        if (id) {
+                            toggleHighlight(id);
+                        }
+                    });
+                });
             }
+
+            attachListeners();
         }
+
+        // Run on initial load
+        initReader();
+        // Run after ViewTransitions swap
+        document.addEventListener("astro:after-swap", initReader);
+
         // Keep single selection when hash changes externally
         window.addEventListener("hashchange", () => {
             if (location.hash && location.hash.length > 1) {
                 const id = location.hash.slice(1);
-                setSelectedNote(id);
+                const target = id ? document.getElementById(id) : null;
+                if (target) {
+                    document.querySelectorAll(".note-selected").forEach((el) => {
+                        el.classList.remove("note-selected");
+                        el.removeAttribute("aria-current");
+                    });
+                    target.classList.add("note-selected");
+                    target.setAttribute("aria-current", "true");
+                }
             }
         });
-
-        function attachListeners() {
-            // View Mode Toggle
-            const toggleBtn = document.getElementById("toggle-view-mode");
-            if (toggleBtn) {
-                toggleBtn.addEventListener("click", () => {
-                    const currentMode = toggleBtn.getAttribute("data-mode");
-                    const newMode = currentMode === "full" ? "partial" : "full";
-                    const text = document.getElementById("toggle-text");
-                    const icon = document.getElementById("eye-icon");
-
-                    toggleBtn.setAttribute("data-mode", newMode);
-
-                    if (newMode === "partial") {
-                        if (text) text.textContent = "Ver todo";
-                        if (icon) {
-                            icon.innerHTML =
-                                '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>';
-                            icon.classList.remove("lucide-eye-off");
-                            icon.classList.add("lucide-eye");
-                        }
-                        document
-                            .querySelectorAll(".not-highlighted")
-                            .forEach((el) => {
-                                (el as HTMLElement).style.display = "none";
-                            });
-                    } else {
-                        if (text) text.textContent = "Ver solo requeridos";
-                        if (icon) {
-                            icon.innerHTML =
-                                '<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/>';
-                            icon.classList.remove("lucide-eye");
-                            icon.classList.add("lucide-eye-off");
-                        }
-                        document
-                            .querySelectorAll(".not-highlighted")
-                            .forEach((el) => {
-                                (el as HTMLElement).style.display = "block";
-                            });
-                    }
-                });
-            }
-
-            const verses = document.querySelectorAll("[data-verse-id]");
-            verses.forEach((el) => {
-                el.addEventListener("click", () => {
-                    const id = el.getAttribute("data-verse-id");
-                    if (id) toggleHighlight(id);
-                });
-            });
-            document.addEventListener(
-                "click",
-                (ev: Event) => {
-                    const t = ev.target as HTMLElement | null;
-                    const a = t
-                        ? (t.closest(
-                              'a[href^="#note-"]',
-                          ) as HTMLAnchorElement | null)
-                        : null;
-                    if (!a) return;
-                    ev.preventDefault();
-                    ev.stopPropagation();
-                    const href = a.getAttribute("href") || "";
-                    const id = href.startsWith("#") ? href.slice(1) : href;
-                    const target = id ? document.getElementById(id) : null;
-                    if (target) {
-                        animateScrollTo(target as HTMLElement, 112, 400, () => {
-                            window.history.replaceState(null, "", `#${id}`);
-                            setSelectedNote(id);
-                            (target as HTMLElement).focus({
-                                preventScroll: true,
-                            });
-                        });
-                    }
-                },
-                { capture: true },
-            );
-            document.addEventListener(
-                "keydown",
-                (ev: Event) => {
-                    const k = ev as KeyboardEvent;
-                    const t = ev.target as HTMLElement | null;
-                    const a =
-                        t instanceof HTMLAnchorElement &&
-                        t.matches('a[href^="#note-"]')
-                            ? (t as HTMLAnchorElement)
-                            : null;
-                    if (!a) return;
-                    if (k.key === "Enter" || k.key === " ") {
-                        ev.preventDefault();
-                        const href = a.getAttribute("href") || "";
-                        const id = href.startsWith("#") ? href.slice(1) : href;
-                        const target = id ? document.getElementById(id) : null;
-                        if (target) {
-                            animateScrollTo(
-                                target as HTMLElement,
-                                112,
-                                400,
-                                () => {
-                                    window.history.replaceState(
-                                        null,
-                                        "",
-                                        `#${id}`,
-                                    );
-                                    setSelectedNote(id);
-                                    (target as HTMLElement).focus({
-                                        preventScroll: true,
-                                    });
-                                },
-                            );
-                        }
-                    }
-                },
-                { capture: true },
-            );
-        }
-        attachListeners();
-
-        // Client-side chapter navigation with smooth swap
-        let navBusy = false;
-        const qs = (sel: string) =>
-            document.querySelector(sel) as HTMLElement | null;
-        const applyFadeOut = () => {
-            const content = qs("#chapter-content");
-            const foot = qs("#footnotes");
-            if (content) {
-                content.classList.remove("animate-fade-in");
-                content.classList.add("animate-fade-out");
-            }
-            if (foot) {
-                foot.classList.remove("animate-fade-in");
-                foot.classList.add("animate-fade-out");
-            }
-        };
-        const applyFadeIn = () => {
-            const content = qs("#chapter-content");
-            const foot = qs("#footnotes");
-            if (content) {
-                content.classList.remove("animate-fade-out");
-                content.classList.add("animate-fade-in");
-            }
-            if (foot) {
-                foot.classList.remove("animate-fade-out");
-                foot.classList.add("animate-fade-in");
-            }
-        };
-        async function swapChapter(url: string) {
-            const res = await fetch(url, {
-                headers: { "X-Requested-With": "fetch" },
-            });
-            const html = await res.text();
-            const doc = new DOMParser().parseFromString(html, "text/html");
-            const newTitle = doc.querySelector("article h1");
-            const newContent = doc.querySelector("#chapter-content");
-            const newFootnotes = doc.querySelector("#footnotes");
-            const newPrev = doc.querySelector("[data-chapter-link='prev']");
-            const newNext = doc.querySelector("[data-chapter-link='next']");
-
-            if (newTitle) {
-                const currentTitle = document.querySelector("article h1");
-                if (currentTitle) currentTitle.innerHTML = newTitle.innerHTML;
-            }
-            if (newContent) {
-                const current = qs("#chapter-content");
-                if (current) current.innerHTML = newContent.innerHTML;
-            }
-
-            // Handle Footnotes
-            const currentF = qs("#footnotes");
-            if (newFootnotes) {
-                if (currentF) {
-                    currentF.innerHTML = newFootnotes.innerHTML;
-                } else {
-                    const content = qs("#chapter-content");
-                    if (content && content.parentNode) {
-                        content.parentNode.appendChild(
-                            document.importNode(newFootnotes, true),
-                        );
-                    }
-                }
-            } else {
-                if (currentF) currentF.remove();
-            }
-
-            // Handle Navigation Buttons
-            const updateNavButton = (
-                selector: string,
-                newEl: Element | null,
-            ) => {
-                const currentEl = document.querySelector(selector);
-                if (newEl) {
-                    if (currentEl) {
-                        (currentEl as HTMLAnchorElement).href = (
-                            newEl as HTMLAnchorElement
-                        ).href;
-                    } else {
-                        const article =
-                            document.querySelector(".reader-content");
-                        const content =
-                            document.querySelector("#chapter-content");
-                        if (article && content) {
-                            article.insertBefore(
-                                document.importNode(newEl, true),
-                                content,
-                            );
-                        }
-                    }
-                } else {
-                    if (currentEl) currentEl.remove();
-                }
-            };
-
-            updateNavButton("[data-chapter-link='prev']", newPrev);
-            updateNavButton("[data-chapter-link='next']", newNext);
-
-            attachListeners();
-            applyFadeIn();
-            window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
-        }
-        async function navigateTo(url: string) {
-            if (navBusy) return;
-            navBusy = true;
-            applyFadeOut();
-            setTimeout(async () => {
-                await swapChapter(url);
-                history.pushState(null, "", url);
-                navBusy = false;
-            }, 160);
-        }
-        window.addEventListener("popstate", () => {
-            const url = location.pathname + location.search + location.hash;
-            swapChapter(url);
-        });
-        document.addEventListener(
-            "click",
-            (ev: Event) => {
-                const t = ev.target as HTMLElement | null;
-                const link = t
-                    ? (t.closest(
-                          "[data-chapter-link]",
-                      ) as HTMLAnchorElement | null)
-                    : null;
-                if (!link) return;
-                ev.preventDefault();
-                navigateTo(link.href);
-            },
-            { capture: true },
-        );
 
         // Navigation arrows auto-hide logic
-        const arrows = document.querySelectorAll(".nav-arrow");
-        let hideTimeout: number;
-        let showDelayTimeout: number;
+        function initArrows() {
+            const arrows = document.querySelectorAll(".nav-arrow");
+            if (arrows.length === 0) return;
 
-        function showArrows() {
-            clearTimeout(hideTimeout);
-            clearTimeout(showDelayTimeout);
+            let hideTimeout: number;
+            let showDelayTimeout: number;
 
-            // 200ms delay before showing to avoid accidental triggers
-            showDelayTimeout = window.setTimeout(() => {
-                arrows.forEach((arrow) => arrow.classList.add("visible"));
+            function showArrows() {
+                clearTimeout(hideTimeout);
+                clearTimeout(showDelayTimeout);
 
-                // Keep visible for 3s after last interaction (longer on mobile)
-                const duration = window.innerWidth < 768 ? 4000 : 2500;
-                hideTimeout = window.setTimeout(() => {
-                    arrows.forEach((arrow) =>
-                        arrow.classList.remove("visible"),
-                    );
-                }, duration);
-            }, 200);
-        }
+                // 100ms delay instead of 200ms for better responsiveness
+                showDelayTimeout = window.setTimeout(() => {
+                    arrows.forEach((arrow) => arrow.classList.add("visible"));
 
-        // 1. Touch interaction
-        document.addEventListener("touchstart", showArrows, { passive: true });
+                    // Keep visible for 3s (longer on mobile)
+                    const duration = window.innerWidth < 768 ? 4000 : 3000;
+                    hideTimeout = window.setTimeout(() => {
+                        arrows.forEach((arrow) =>
+                            arrow.classList.remove("visible"),
+                        );
+                    }, duration);
+                }, 100);
+            }
 
-        // 2. Vertical scroll
-        let lastScrollY = window.scrollY;
-        window.addEventListener(
-            "scroll",
-            () => {
+            // 1. Touch interaction
+            document.addEventListener("touchstart", showArrows, { passive: true });
+
+            // 2. Vertical scroll
+            let lastScrollY = window.scrollY;
+            const handleScroll = () => {
                 const currentScrollY = window.scrollY;
                 if (Math.abs(currentScrollY - lastScrollY) > 10) {
                     showArrows();
                 }
                 lastScrollY = currentScrollY;
-            },
-            { passive: true },
-        );
+            };
+            window.addEventListener("scroll", handleScroll, { passive: true });
 
-        // Initial show on load (optional, but helpful for UX)
-        showArrows();
+            // 3. Mouse move near edges (Desktop)
+            const handleMouseMove = (e: MouseEvent) => {
+                const threshold = 100;
+                if (e.clientX < threshold || e.clientX > window.innerWidth - threshold) {
+                    showArrows();
+                }
+            };
+            document.addEventListener("mousemove", handleMouseMove, { passive: true });
 
-        // Cleanup on navigation (handled by Astro)
+            // Initial show on load
+            showArrows();
+            
+            // Cleanup on swap to avoid double listeners
+            document.addEventListener("astro:before-swap", () => {
+                document.removeEventListener("touchstart", showArrows);
+                window.removeEventListener("scroll", handleScroll);
+                document.removeEventListener("mousemove", handleMouseMove);
+            }, { once: true });
+        }
+
+        initArrows();
+        document.addEventListener("astro:after-swap", initArrows);
     </script>
 </article>

@@ -1,0 +1,311 @@
+---
+import { ArrowLeft, ArrowRight, Library, BookOpen } from "lucide-preact";
+import booksIndex from "../../../data/books-index.json";
+import CommentarySelector from "./CommentarySelector";
+
+const url = Astro.url;
+const params = url.searchParams;
+const getParam = (key: string, fallback: string) => params.get(key) || fallback;
+const bookKey = getParam("book", "gen");
+const chapterKey = getParam("chapter", "1");
+
+const currentBookEntry = booksIndex.find((b) => b.code === bookKey);
+
+if (!currentBookEntry) {
+    return Astro.redirect(`/commentary?book=gen&chapter=1`);
+}
+
+const loadCommentaryData = async (code: string) => {
+    const commentaries = import.meta.glob("../../../data/commentary/*.json");
+    const loader = commentaries[`../../../data/commentary/${code}.json`];
+    if (!loader) return null;
+    const mod = await loader();
+    return (mod as any).default ?? mod;
+};
+
+const commentaryData = await loadCommentaryData(bookKey);
+
+// Navigation Logic
+const currentBookIndex = booksIndex.findIndex((b) => b.code === bookKey);
+const bookChaptersCount = currentBookEntry.chapters;
+const safeParseInt = (s: string) => {
+    const n = Number.parseInt(s, 10);
+    return Number.isNaN(n) ? null : n;
+};
+const currentChapNumInt = safeParseInt(chapterKey);
+
+// Validate chapterKey
+if (
+    currentChapNumInt === null ||
+    currentChapNumInt < 1 ||
+    currentChapNumInt > bookChaptersCount
+) {
+    return Astro.redirect(`/commentary?book=${bookKey}&chapter=1`);
+}
+
+let prevLink = null;
+let nextLink = null;
+
+// Prev Logic
+if (currentChapNumInt > 1) {
+    prevLink = `/commentary?book=${bookKey}&chapter=${currentChapNumInt - 1}`;
+} else if (currentBookIndex > 0) {
+    const prevBook = booksIndex[currentBookIndex - 1];
+    prevLink = `/commentary?book=${prevBook.code}&chapter=${prevBook.chapters}`;
+}
+
+// Next Logic
+if (currentChapNumInt < bookChaptersCount) {
+    nextLink = `/commentary?book=${bookKey}&chapter=${currentChapNumInt + 1}`;
+} else if (currentBookIndex < booksIndex.length - 1) {
+    const nextBook = booksIndex[currentBookIndex + 1];
+    nextLink = `/commentary?book=${nextBook.code}&chapter=1`;
+}
+
+const currentCommentaryChapter = commentaryData?.chapters?.find(
+    (c: any) => c.chapter === currentChapNumInt
+);
+const currentChapterCommentaryVerses = currentCommentaryChapter?.verses || [];
+const bookName = currentBookEntry.name;
+---
+
+<style>
+    .nav-arrow {
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 300ms ease-in-out,
+            visibility 300ms ease-in-out,
+            transform 300ms ease-in-out;
+        width: 40px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: color-mix(
+            in srgb,
+            var(--color-text),
+            transparent 92%
+        ) !important;
+        color: var(--color-text);
+        z-index: 40;
+    }
+
+    .nav-arrow:hover {
+        background-color: color-mix(
+            in srgb,
+            var(--color-text),
+            transparent 85%
+        ) !important;
+    }
+
+    .nav-arrow-prev {
+        left: 0;
+        border-radius: 0 40px 40px 0;
+        transform: translateX(-5px);
+    }
+
+    .nav-arrow-next {
+        right: 0;
+        border-radius: 40px 0 0 40px;
+        transform: translateX(5px);
+    }
+
+    .nav-arrow.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    @media (max-width: 768px) {
+        .nav-arrow {
+            height: 60px;
+            width: 32px;
+            background-color: color-mix(
+                in srgb,
+                var(--color-text),
+                transparent 90%
+            ) !important;
+            z-index: 100;
+        }
+        .nav-arrow-prev {
+            left: 0;
+            border-radius: 0 30px 30px 0;
+            transform: none;
+        }
+        .nav-arrow-next {
+            right: 0;
+            border-radius: 30px 0 0 30px;
+            transform: none;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .nav-arrow-prev {
+            left: calc(var(--sidebar-offset-left, 0px) + 1rem);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+        }
+        .nav-arrow-next {
+            right: 1rem;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+        }
+    }
+</style>
+
+<article class="commentary-content max-w-3xl mx-auto pb-32 px-4 md:px-0 relative">
+    <div class="mb-8 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-[var(--color-link)] mb-6">
+            Comentario Bíblico
+        </h1>
+        
+        <CommentarySelector 
+            client:load 
+            currentBook={bookKey} 
+            currentChapter={currentChapNumInt} 
+            books={booksIndex} 
+        />
+    </div>
+
+    {
+        currentChapNumInt === 1 && commentaryData?.introduction && (
+            <div class="mb-12 p-6 rounded-2xl border border-theme-text/10 bg-theme-text/5">
+                <h2 class="text-2xl font-bold mb-4 text-[var(--color-link)]">
+                    {commentaryData.introduction.fullTitle}
+                </h2>
+                {commentaryData.introduction.subtitle && (
+                    <p class="text-lg italic mb-6 opacity-80">
+                        {commentaryData.introduction.subtitle}
+                    </p>
+                )}
+                <div class="space-y-6 reader-text">
+                    {commentaryData.introduction.sections.map(
+                        (section: any) => (
+                            <div>
+                                <h3 class="font-bold text-lg mb-2 opacity-90">
+                                    {section.title}
+                                </h3>
+                                <p class="leading-relaxed opacity-80 whitespace-pre-line">
+                                    {section.content}
+                                </p>
+                            </div>
+                        ),
+                    )}
+                </div>
+            </div>
+        )
+    }
+
+    <div class="commentary-sections space-y-12" id="commentary-container">
+        {
+            currentChapterCommentaryVerses.length > 0 ? (
+                <div class="space-y-8">
+                    {currentChapterCommentaryVerses.map((com: any) => (
+                        <div
+                            class="commentary-item scroll-mt-28 p-4 rounded-xl hover:bg-theme-text/5 transition-colors"
+                            id={`com-${com.verse}`}
+                        >
+                            <h4 class="font-bold text-lg mb-2 flex items-baseline gap-2">
+                                <span class="text-[var(--color-link)]">
+                                    {com.verse}.
+                                </span>
+                                <span class="opacity-90">{com.phrase}</span>
+                            </h4>
+                            <div class="reader-text opacity-80 whitespace-pre-line pl-4 border-l-2 border-theme-text/10">
+                                {com.content}
+                            </div>
+                            {com.references && com.references.length > 0 && (
+                                <div class="mt-2 pl-4 text-xs opacity-60 italic">
+                                    Referencias: {com.references.join("; ")}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div class="text-center py-20 opacity-60">
+                    <Library class="w-12 h-12 mx-auto mb-4 opacity-20" />
+                    <p>No hay comentario disponible para este capítulo.</p>
+                </div>
+            )
+        }
+    </div>
+
+    {/* Fixed Side Navigation */}
+    {
+        prevLink && (
+            <a
+                href={prevLink}
+                class="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-40"
+                aria-label="Capítulo Anterior"
+            >
+                <ArrowLeft class="w-5 h-5" />
+            </a>
+        )
+    }
+
+    {
+        nextLink && (
+            <a
+                href={nextLink}
+                class="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-40"
+                aria-label="Capítulo Siguiente"
+            >
+                <ArrowRight class="w-5 h-5" />
+            </a>
+        )
+    }
+</article>
+
+<script>
+    import { lastCommentaryPosition } from "../../../stores/navigation";
+
+    function initCommentary() {
+        // Guardar posición actual
+        const params = new URLSearchParams(window.location.search);
+        const book = params.get('book');
+        const chapter = params.get('chapter');
+        if (book && chapter) {
+            lastCommentaryPosition.set({ lastBook: book, lastChapter: chapter });
+        }
+
+        function handleNavArrows() {
+            const arrows = document.querySelectorAll('.nav-arrow');
+            
+            const show = () => arrows.forEach(a => a.classList.add('visible'));
+            const hide = () => arrows.forEach(a => a.classList.remove('visible'));
+
+            let timeout: any;
+            window.addEventListener('mousemove', () => {
+                show();
+                clearTimeout(timeout);
+                timeout = setTimeout(hide, 3000);
+            });
+
+            // For touch devices
+            window.addEventListener('touchstart', show);
+        }
+
+        handleNavArrows();
+
+        // Handle hash scrolling if present
+        if (window.location.hash) {
+            setTimeout(() => {
+                const id = window.location.hash.slice(1);
+                const el = document.getElementById(id);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    el.classList.add('bg-[var(--color-link)]/5');
+                }
+            }, 500);
+        }
+    }
+
+    // Run on initial load
+    initCommentary();
+    // Run after ViewTransitions swap
+    document.addEventListener("astro:after-swap", initCommentary);
+</script>

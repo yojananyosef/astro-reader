@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from "preact/hooks";
-import { BookOpen, Menu, ChevronRight, Bookmark, Star, MessageSquare, ChevronLeft } from "lucide-preact";
+import { BookOpen, Menu, ChevronRight, Bookmark, Star, MessageSquare, ChevronLeft, Library } from "lucide-preact";
 
 type Book = { code: string; name: string; chapters: number; section: string };
 
@@ -19,11 +19,13 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
     const path = window.location.pathname;
     if (path.includes("/tracker")) return "tracking";
     if (path.includes("/plans")) return "plans";
+    if (path.includes("/commentary")) return "commentary";
     return "bible";
   });
 
   const mainNav = [
     { id: "bible", label: "Biblia", icon: BookOpen, url: "/" },
+    { id: "commentary", label: "Comentario", icon: Library, url: "/commentary" },
     { id: "tracking", label: "Seguimiento", icon: Bookmark, url: "/tracker" },
     { id: "plans", label: "Planes", icon: Star, url: "/plans" },
   ];
@@ -52,21 +54,14 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
       if (typeof localStorage !== "undefined") {
         localStorage.setItem("reader-sidebar-collapsed", collapsed ? "true" : "false");
       }
+      // Actualizar el atributo en el documentElement para que el CSS del Layout responda
       document.documentElement.setAttribute("data-sidebar-collapsed", collapsed ? "true" : "false");
     } catch { }
   }, [collapsed]);
-  useLayoutEffect(() => {
-    const applyOffset = () => {
-      const isDesktop = typeof window !== "undefined" && window.innerWidth >= 768;
-      const value = mode === "inline" && isDesktop && !collapsed ? "18rem" : "0.5rem";
-      document.documentElement.style.setProperty("--sidebar-offset-left", value);
-    };
-    applyOffset();
-    const onResize = () => applyOffset();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [mode, collapsed]);
 
+  // ELIMINADO: Ya no necesitamos useLayoutEffect para calcular offsets manuales con JS
+  // ya que lo maneja el CSS Grid en ReaderLayout.astro
+  
   const goTo = (url: string) => {
     if (url === "#") return;
     window.location.href = url;
@@ -94,7 +89,7 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
 
       {mode === "inline" && (
         <div
-          className={`hidden md:flex shrink-0 sticky top-16 h-[calc(100vh-4rem)] transition-all duration-300 ease-in-out ${collapsed ? 'w-0' : 'w-64'}`}
+          className={`hidden md:flex shrink-0 h-full transition-all duration-300 ease-in-out ${collapsed ? 'w-0' : 'w-64'}`}
           style={{ backgroundColor: "transparent", overflow: "hidden" }}
         >
           <aside
@@ -103,7 +98,7 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
             data-role="reader-inline-sidebar"
             aria-hidden={collapsed}
           >
-            <div className="p-2 border-b flex justify-end" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
+            <div className="p-1 border-b flex justify-end" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
               <div
                 role="button"
                 tabIndex={0}
@@ -112,14 +107,14 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
                     setCollapsed(true);
                   }
                 }}
-                className={`p-2 rounded-md border surface-card cursor-pointer transition-opacity duration-200 ${collapsed ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+                className={`p-1.5 rounded-md border surface-card cursor-pointer transition-opacity duration-200 ${collapsed ? "opacity-0 pointer-events-none" : "opacity-100"}`}
                 aria-label="Colapsar sidebar"
                 onClick={() => setCollapsed(true)}
               >
                 <ChevronLeft className="w-4 h-4" />
               </div>
             </div>
-            <nav className="flex-1 p-4 space-y-2 overflow-y-auto custom-scrollbar">
+            <nav className="flex-1 p-3 space-y-1 overflow-y-auto custom-scrollbar">
               {mainNav.map((item) => {
                 const isActive = activeItem === item.id;
                 return (

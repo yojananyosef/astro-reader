@@ -82,7 +82,9 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
 
     const navigateToChapter = (chapter: number) => {
         if (selectedBook) {
-            window.location.href = `/?book=${selectedBook.code}&chapter=${chapter}`;
+            const isCommentary = window.location.pathname.includes('/commentary');
+            const baseUrl = isCommentary ? '/commentary' : '/';
+            window.location.href = `${baseUrl}?book=${selectedBook.code}&chapter=${chapter}`;
             setIsOpen(false);
         }
     };
@@ -91,9 +93,9 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
         <>
             <ReaderRuler />
 
-            {/* Fixed Navbar */}
+            {/* Navbar */}
             <nav
-                className="fixed top-0 left-0 right-0 h-16 border-b z-50 flex items-center justify-between px-4 md:px-8 transition-colors duration-300"
+                className="w-full h-16 border-b flex items-center justify-between px-4 md:px-8 transition-colors duration-300"
                 style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)', borderColor: 'color-mix(in srgb, var(--color-text), transparent 85%)' }}
             >
                 <div className="flex items-center gap-3">

@@ -1,26 +1,22 @@
 ---
 import ReaderLayout from "../features/reader/layouts/ReaderLayout.astro";
 import ReaderContent from "../features/reader/components/ReaderContent.astro";
-import ReaderControls from "../features/reader/components/ReaderControls";
-import SidebarNav from "../features/reader/components/SidebarNav";
-import booksIndex from "../data/books-index.json";
-
-const books = booksIndex;
 ---
 
 <ReaderLayout>
-	<div style="padding-top: 4rem;">
-		<ReaderControls client:only="preact" books={books} />
-		<div class="flex gap-6">
-			<SidebarNav
-				client:only="preact"
-				books={books}
-				showTrigger={false}
-				mode="inline"
-			/>
-			<div class="flex-1">
-				<ReaderContent />
-			</div>
-		</div>
-	</div>
+	<script is:inline>
+		// Redirección a la última posición guardada de la Biblia
+		if (!window.location.search) {
+			try {
+				const stored = localStorage.getItem('bible-last-position');
+				if (stored) {
+					const { lastBook, lastChapter } = JSON.parse(stored);
+					if (lastBook && lastChapter) {
+						window.location.replace(`/?book=${lastBook}&chapter=${lastChapter}`);
+					}
+				}
+			} catch (e) {}
+		}
+	</script>
+	<ReaderContent />
 </ReaderLayout>

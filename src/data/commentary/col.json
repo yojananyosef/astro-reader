@@ -1,0 +1,987 @@
+{
+    "metadata": {
+        "name": "Colosenses",
+        "abbreviation": "col",
+        "totalChapters": 4
+    },
+    "introduction": {
+        "fullTitle": "La Epístola del Apóstol",
+        "subtitle": "San Pablo a los",
+        "sections": [
+            {
+                "title": "INTRODUCCIÓN",
+                "content": ""
+            },
+            {
+                "title": "1. Título",
+                "content": "Es probable que esta epístola, como otras de Pablo, originalmente no llevara ningún título, pues es una carta. Los manuscritos existentes más antiguos tienen el sencillo título, Pros kolossáeis (\"A [los] Colosenses\"), lo que sin duda fue añadido por algún antiguo escriba cuando se recopilaron las cartas de Pablo y se publicaron en conjunto. Pero es evidente que este título es correcto (cap. 1: 2)."
+            },
+            {
+                "title": "2. Autor",
+                "content": "Esta epístola lleva los nombres de Pablo y Timoteo como sus autores (cap. 1: 1); sin embargo, las repetidas referencias que hay en la carta demuestran que en realidad fue Pablo el que la escribió (cap. 2: 1; 4: 3-4, 7-8, 13, 18) en su nombre como en el de su colaborador más joven. La iglesia primitiva unánimemente atribuyó la carta a Pablo. Aunque los críticos más extremistas de los siglos XIX y XX sostienen que esta epístola no fue escrita por Pablo, por lo general los eruditos actuales la atribuyen a él. Acerca de la fecha cuando se escribió, ver t. VI, pp. 108-109."
+            },
+            {
+                "title": "3. Marco histórico",
+                "content": "No se sabe con exactitud cómo, cuándo o quién fundó la iglesia de Colosas. Pablo utilizó a Efeso como el centro de sus actividades misioneras durante unos tres años (Hech. 20: 31). La energía con que llevó a cabo su evangelización durante ese tiempo, indujo a Lucas a declarar: \"Todos los que habitaban en Asia, judíos y griegos, oyeron la palabra del Señor Jesús (Hech. 19: 10), y hasta Demetrio afirmó: \"Este Pablo. . . en casi toda Asia, ha apartado a muchas gentes con persuasión\" (Hech. 19: 26) del paganismo. Escribiendo a los corintios cerca del fin de su permanencia en Efeso y sus alrededores, el apóstol les envió saludos de \"las iglesias de Asia\" (1 Cor. 16: 19). Esto significa que la provincia romana de Asia era en ese tiempo el campo misionero del apóstol (cf. 2 Cor. 1: 8; Rom. 16: 5, donde la evidencia textual establece el texto \"Asia\" [BJ, BC, BA, NC] y no \"Acaya\"). Visitantes de toda Asia acudían al gran puerto marítimo de Efeso, y los mensajes de Pablo tuvieron que ser ampliamente difundidos por los viajeros que regresaban a sus lugares de origen (Hech. 19: 10). De esa manera dos ciudadanos de Colosas -Epafras (Col. 4: 12) y Filemón (File. 1; cf. File. 10-11; Col. 4: 9) -quizá oyeron las buenas nuevas de la salvación; y junto con otros pudieron haber llevado el Evangelio a sus conciudadanos (cf. cap. 1: 7). Por lo tanto, aunque Pablo pudo no ser el fundador de la iglesia de Colosas (ver com. cap. 2: 1), probablemente fue en sentido muy real, su padre. Según esta epístola es evidente que él se sentía responsable por la condición espiritual de los cristianos colosenses, y que conocía bien sus necesidades y los peligros en que estaban. Parece que esa información le fue llevada a Roma por Epafras (Col. 1: 7; cf. File. 23), y ésa fue la razón inmediata de que les escribiera la epístola. El peligro que asechaba a los creyentes de Colosas lo producían las falsas enseñanzas que se estaban propagando entre ellos. No se pueden determinar los detalles precisos de esas enseñanzas. Algunos eruditos las han identificado como provenientes de dos focos: los judaizantes y los gnósticos. Indudablemente contenían elementos judaizantes, y algunas de las falsas doctrinas a las que se hace alusión en esta epístola son similares a las que sostenían ciertos gnósticos en los siglos II y III. Sin embargo, en vista de la gran incertidumbre que hay en cuanto a la situación de ese entonces, probablemente sea preferible entender que las falsas enseñanzas de Colosas eran una mezcla de judaísmo y de alguna clase de paganismo oriental (quizá una forma antigua de gnosticismo) y no dos sistemas separados de enseñanzas. La literatura apocalíptica judía y los Manuscritos del Mar Muerto muestran que tales mezclas eran frecuentes entre los judíos de ese tiempo. El concepto de los ángeles organizados en categorías (ver com. Col. 1: 16) es familiar en la literatura apócrifa judía; y tal como se describe ese concepto en Colosenses, parece estar muy cerca de la idea de \"emanaciones\", como se encuentra en escritos gnósticos posteriores (ver t. VI, pp. 57-58). Los términos \"misterio\" (cap. 1: 26-27) y \"conocimiento\" (cap. 2: 3) -que Pablo aquí parece estar tomando de los falsos maestros y usándolos en un sentido cristiano- aparecen en los Manuscritos del Mar Muerto como términos religiosos aceptados. Esas palabras tenían sin duda un sentido claramente religioso en los misterios paganos y en el gnosticismo. La \"plenitud\" (Gr. pl'rÇma, cap. 1: 19), que según Pablo se halla en Cristo, por lo menos posteriormente fue un término gnóstico común para referirse a las \"emanaciones\", los seres subsidiarios intermedios que se pensaba que emanaban de Dios y que eran intermediarios entre él y el mundo. Es imposible decir hasta dónde se habían introducido esos conceptos en Colosas. Sin embargo, lo siguiente parece ser claro: los falsos maestros de Colosas enseñaban la existencia de seres angelicales dispuestos en órdenes diferentes, intermediarios entre Dios y el mundo, que actuaban como mediadores de los hombres, les proporcionaban salvación y merecían que se les rindiera culto. Esos maestros insistían al mismo tiempo en un ceremonialismo extremadamente legalista que seguía los moldes judaicos y ponía énfasis en la circuncisión, en tabúes, en asuntos de comidas y bebidas y la observancia de festividades. Pablo escribió la Epístola a los Colosenses para atacar tales enseñanzas. Esta epístola fue redactada sin duda en Roma alrededor del año 62 d. C., durante el primer encarcelamiento de Pablo (ver t. VI, pp. 108-109)."
+            },
+            {
+                "title": "4. Tema",
+                "content": "En la Epístola a los Colosenses Pablo se expresa enfáticamente contra la herejía prevaleciente en esa iglesia. En Gálatas y en otros escritos refuta únicamente a los judaizantes, pero aquí su propósito es mixto: no sólo se preocupa por refutar el legalismo judaizante, sino que también se opone a ciertos elementos paganos que procuraban degradar o eclipsar el ministerio de Cristo. Por lo tanto, ataca la idea de intermediarios angélicos como agentes de creación y mediación, y declara que únicamente Cristo es Creador y Mediador (cap. 1: 16, 20). Cristo es la \"cabeza\" tanto de las cosas materiales como de las espirituales (cap. 1: 18; 2: 19). En él no hay ningún dualismo. Jesús está por encima de todo (cap. 1: 18). Por él subsisten todas las cosas (vers. 17). Es Dios (vers. 15). En él mora la \"plenitud\" (vers. 19). No necesita de subordinados o emanaciones. Pablo asegura que en Cristo están \"todos los tesoros de la sabiduría y del conocimiento (cap. 2: 3). El misterio consumado y salvador no es un conocimiento esotérico referente a diferentes órdenes de ángeles (ver com. cap. 1: 16), sino \"Cristo en vosotros, la esperanza de gloria\" (vers. 27). Por eso condena el culto a los ángeles que los falsos maestros propiciaban como una negación de la perfección de Cristo como Sustentador y Mediador (cap. 2: 18-19). El apóstol también trata de los resultados morales de esas herejías. Prohibe por igual los extremos de un ascetismo demasiado rígido y de la licencia desenfrenada (cap. 2: 16, 20-21; 3: 5, 8-9). Ambas herejías sostenían que la voluntad humana es soberana. Este \"culto a la voluntad\" es una humildad falsa o fingida, y por lo tanto condenable. Todas las complacencias carnales (y la lista del apóstol es casi exhaustiva) son rigurosamente condenadas. Pablo presenta a Cristo como el Creador y el Sustentador del universo, Cabeza, Mediador y Emancipador de la iglesia. En Cristo los principios sustituyen a las ceremonias. El apóstol escribe clara, lógica y vigorosamente a sus amigos de Colosas, persuadiéndolos a que se vuelvan de las vanas e inútiles especulaciones a la realidad del Evangelio de Cristo."
+            },
+            {
+                "title": "5. Bosquejo",
+                "content": "I. Introducción, 1: 1-13. A. Saludos iniciales, 1: 1-2. B. Gratitud de Pablo por el progreso de los colosenses, 1: 3-8. C. Oración por un futuro progreso en conocimiento y buenas obras, 1: 9-11. D. Acción de gracias por las bendiciones de Dios, 1: 12-13. II. Sección doctrinal, 1: 14 a 2: 3. A. La preeminencia de Cristo, 1: 14-19. B. La obra de Cristo, 1: 20-22. C. El ministerio de Pablo, pastor subordinado a Cristo, 1: 23 a 2: 3. III. Sección didáctica, 2: 4-23. A. Amonestación contra el error, 2: 4-8. B. Cristo, la solución de los problemas doctrinales, 2: 9-23. 1. Cristo, la plenitud de Dios, 2: 9. 2. Cristo, cabeza de todo principado y toda potestad, 2:10. 3. Cristo, el medio y el poder que motiva la conversión, 2:11-13. 4. Cristo, la terminación del ya caduco sistema legalista, 2: 14-17. 5. Amonestaciones contra las filosofías y falsas especulaciones, 2: 18-23. IV. Sección exhortatoria, 3: 1 a 4: 6. A. El cristiano muerto al mundo sólo vive para Cristo, 3: 1-4. B. Las pasiones de la carne eliminadas por el poder de Cristo, 3: 5-11. C. Verdadera semejanza a Cristo desarrollada por el creyente cristiano, 3: 12-17. D. Deberes de las relaciones sociales, 3: 18 a 4: 1. 1. De esposas y esposos, 3: 18-19. 2. De hijos y padres, 3: 20-21. 3. De esclavos y amos, 3: 22 a 4: 1. E. Instrucción general, 4: 26. V. Conclusión, 4: 7-18. A. Explicaciones personales, 4: 7-9. B. Saludos, 4: 10-18. LA IGLESIA AL FINAL DEL MINISTERIO DE PABLO"
+            }
+        ]
+    },
+    "chapters": [
+        {
+            "chapter": 1,
+            "verses": [
+                {
+                    "verse": 1,
+                    "phrase": "Pablo, apóstol.",
+                    "content": "En cuanto al estilo de la introducción y el significado de los términos, ver com. Rom. 1: 1; cf. com. Hech. 1: 2. Pablo se llama a sí mismo apóstol porque desea destacar que es el embajador del Señor. Voluntad de Dios. Ver com. Efe. 1: 1. Timoteo. Acerca de Timoteo, ver com. Hech. 16: 1. Pablo incluye a Timoteo en su saludo apostólico en otras de sus epístolas (2 Cor. 1: 1; Fil. 1: 1; 1 Tes. 1: 1; 2 Tes. 1: 1; File. 1).",
+                    "references": [
+                        "2 Cor. 1: 1; Fil. 1: 1; 1 Tes. 1: 1; 2 Tes. 1: 1; File. 1"
+                    ]
+                },
+                {
+                    "verse": 2,
+                    "phrase": "Santos.",
+                    "content": "Gr. hágios (ver com. Rom. 1: 7). Fieles hermanos. Esta frase está en aposición a \"santos\". Pablo alaba a los miembros de la iglesia de Colosas por su fidelidad, integridad y lealtad inmutable. En Cristo. Ver com. Efe. 1: 1. Colosas. Ciudad de Frigia a unos km al este de Efeso. En los días de Pablo Frigia formaba parte de la provincia romana de Asia. Colosas se hallaba a orillas del río Lico, a unos 20 km tanto de Hierápolis como de Laodicea. En siglos anteriores Colosas había alcanzado gran importancia. El ejército persa de Jerjes pasó por ella cuando iba en camino para atacar a Grecia. Jenofonte la llama \"ciudad populosa, próspera y extensa\" (Anábasis i. 2. 6). Pero en los días del NT la población se había reducido mucho. En cuanto al origen de la iglesia allí, ver la p. 189. Gracia y paz. Ver com. Rom. 1: 7; 3: 24. Dios nuestro Padre. Ver com. Rom. 1: 7. Señor Jesucristo. La evidencia textual favorece (cf. p. 10) la omisión de estas palabras. Parece que fueron añadidas del pasaje paralelo de Efe. 1: 2. Las omiten la BJ, BA, BC y NC. La BJ (nota) las atribuye a una adición propia de la Vulgata.",
+                    "references": [
+                        "ver com. Rom. 1: 7",
+                        "Anábasis i. 2. 6"
+                    ]
+                },
+                {
+                    "verse": 3,
+                    "phrase": "Damos gracias.",
+                    "content": "Cf. com. Efe. 1: 16. La causa de este agradecimiento se presenta en Col. 1: 4-5. Dios, Padre. O \"Dios, el mismo Padre\". Señor Jesucristo. Ver com. Efe. 1: 17.",
+                    "references": []
+                },
+                {
+                    "verse": 4,
+                    "phrase": "Habiendo oído.",
+                    "content": "Epafras (vers. 7 y 8) había llevado a Pablo noticias de la iglesia de Colosas. Fe. La fe en Cristo no es sólo confianza y seguridad en él como una persona, sino una completa subordinación a la voluntad de Dios y una confianza plena en el programa divino. Es la aceptación humana de los caminos de Dios. En Cristo Jesús. Pablo describe a Cristo como la esfera dentro de la cual vive el cristiano, en la misma forma en que el aire es el elemento en el cual existe su cuerpo. El que está \"en Cristo\" se halla rodeado y limitado por los principios y las leyes de su Salvador; vive por ellos y en ellos. Jesús es el origen y amparo de su vida. La verdadera fe actúa dentro de este círculo que abarca todo aquello que presenta a Jesús como el Cristo de Dios (Efe. 1: 15; 1 Tim. 3: 13; 2 Tim. 1: 13; 3: 15). Amor. Gr. agáp' (ver com. 1 Cor. 13: 1). Todos los cristianos se unen movidos por los principios del amor a Dios y a sus hermanos. Esta actitud hace que haya amor por todos los santos. Una fe genuina en Dios no puede producir un resultado menor. Pablo se regocija sobremanera ante el progreso de la vida cristiana de los creyentes de Colosas.",
+                    "references": [
+                        "Efe. 1: 15; 1 Tim. 3: 13; 2 Tim. 1: 13; 3: 15",
+                        "ver com. 1 Cor. 13: 1"
+                    ]
+                },
+                {
+                    "verse": 5,
+                    "phrase": "Esperanza.",
+                    "content": "Ver com. Rom. 8: 24; 12: 12. Pablo llega ahora a la tercera de su tríada de virtudes cristianas. La fe y el amor no sólo reciben de la esperanza su poder impelente, sino que la esperanza es también su meta. Los colosenses habían escuchado el mensaje de la redención, y la esperanza había nacido en su corazón. Esa esperanza era la fuerza motriz en su experiencia cristiana y en la filosofía de su vida. De ese modo la esperanza precede a la fe. Como Dios forjó el plan de salvación, es posible que haya esperanza para el hombre caído. En los cielos. El cristiano tiene la esperanza de \"una herencia incorruptible, incontaminada e inmarcesible, reservada en los cielos\" para él (1 Ped. 1: 4; cf. Fil. 3: 21). La esperanza de que finalmente se cumpla el propósito de Dios de tener un universo sin pecado y armonioso, era el suelo fructífero del cual brotaban la fe y el amor que habían manifestado los creyentes de Colosas. De la cual ya habéis oído. Pablo recuerda a los creyentes el gozo y entusiasmo de ellos cuando les llegó por primera vez el mensaje evangélico. Deseaba que los colosenses contrastaran la fe que entonces tenían y el gozo que inundaba sus almas, con las dudas y tendencias perturbadoras creadas por los mensajes presentados por los falsos maestros (cf. vers. 23; cap. 2: 6-8, 16-23). Palabra verdadera. Es decir, el mensaje que contiene la verdad, las buenas nuevas de toda la voluntad revelada de Dios (ver com. Juan 8: 32). La verdad es una revelación del pensamiento de Dios, y se ocupa de las realidades últimas y eternas. Del evangelio. Ver com. Mar. 1: 1.",
+                    "references": [
+                        "1 Ped. 1: 4; cf. Fil. 3: 21",
+                        "ver com. Juan 8: 32"
+                    ]
+                },
+                {
+                    "verse": 6,
+                    "phrase": "Que ha llegado hasta vosotros.",
+                    "content": "Cf. vers. 23. A todo el mundo. Ver com. vers. 23. Lleva fruto. Un árbol produce fruto porque vive y está floreciente. El cristiano continuamente produce el fruto del Espíritu (Gál. 5: 22-23) porque la vida de Cristo es un principio vital dentro de él (Mar. 4: 20, 28; Rom. 7: 4-5; Fil. 4: 17). El sentido de la expresión de Pablo es que el Evangelio produce fruto continuamente dondequiera que se predica. También en vosotros. Pablo se desvía de la verdad general de que el Evangelio invariablemente produce fruto doquiera que se proclama, al hecho particular de que lo había producido también en Colosas. Por lo tanto, esa iglesia estaba vinculada con el propósito universal de Dios para la redención de los seres humanos. El día. En cuanto a la manera en que el Evangelio llegó a Colosas, ver la p. 189. Conocisteis. Del verbo griego epiginÇskÇ, \"reconocer\", \"conocer plenamente\", \"conocer por experiencia\". Sería mejor la traducción \"conocisteis plenamente\". Ese conocimiento completo sólo proviene de la experiencia, por lo tanto es sólo para los que aceptan la gracia de Cristo. El verdadero conocimiento de Dios y la gracia de Dios son inseparables. Gracia. Ver com. Rom. 3: 24. Verdad. Es decir, verdaderamente. Pablo presenta constantemente sutiles contrastes con las enseñanzas falsas que está a punto de mencionar.",
+                    "references": [
+                        "Gál. 5: 22-23",
+                        "Mar. 4: 20, 28; Rom. 7: 4-5; Fil. 4: 17"
+                    ]
+                },
+                {
+                    "verse": 7,
+                    "phrase": "Epafras.",
+                    "content": "El mensajero que quizá había llevado el mensaje de salvación a Colosas (ver p. 189). Pablo lo llama \"nuestro consiervo amado\". Cuando escribió a Filemón, habla de él como \"mi compañero de prisiones\" (Fil. 23). Evidentemente Epafras era oriundo de Colosas (Col. 4: 12) Se conjetura que podría haber escuchado el Evangelio en Efeso, y que después de consagrarse al servicio de Dios, se convirtió en misionero para su propia gente. Fiel. Pablo respalda los mensajes y las labores de Epafras, un fiel colaborador. Ministro. Gr. diákonos (ver com. Efe. 6: 21). Para vosotros. Si bien algunas versiones (por ejemplo, la BJ) dicen \"para nosotros\", la evidencia textual se inclina (cf. p. 10) por el texto de la RVR, \"para vosotros\". Ambos pronombres tienen una grafía muy similar en griego (humÇn y h'mÇn), por lo que pueden confundirse fácilmente. Dentro del contexto cualquiera de las dos variantes es posible.",
+                    "references": [
+                        "Fil. 23",
+                        "Col. 4: 12",
+                        "ver com. Efe. 6: 21",
+                        "por ejemplo, la BJ"
+                    ]
+                },
+                {
+                    "verse": 8,
+                    "phrase": "Quien también nos ha declarado.",
+                    "content": "Epafras había llevado a Pablo noticias de la condición de la iglesia de Colosas. En el Espíritu. Sencillamente, \"en espíritu\". No es seguro si Pablo quiere decir el Espíritu Santo o si se refiere al espíritu humano. El verdadero amor es producto de la presencia del Espíritu Santo en la vida; pero Pablo quizá destaque aquí la respuesta amante y de buena voluntad que cada cristiano debe manifestar ante las vicisitudes de la vida.",
+                    "references": []
+                },
+                {
+                    "verse": 9,
+                    "phrase": "Por lo cual.",
+                    "content": "Es decir, en vista de lo que ha sido dicho en los vers. 4-8, Pablo recuerda la fe de los creyentes de Colosas en Cristo, lo genuino de su amor por los hermanos y su firme esperanza en la recompensa celestial. Todas esas virtudes habían alegrado el corazón del apóstol. La causa inmediata de su regocijo eran las buenas noticias que Epafras le había llevado desde Colosas. Su magnífico informe había reanimado el corazón del anciano Pablo. El día que lo oímos. La llegada de Epafras fue un día memorable para Pablo. El apóstol hace comenzar desde ese momento una experiencia de mayor consagración y gratitud. No cesamos de orar. Pablo ya había llamado la atención a sus oraciones por los creyentes de Colosas (vers. 3). Las noticias de esta iglesia, que había recibido por medio de Epafras, hicieron que pudiera orar con una intención y un gozo crecientes. La frase \"no cesamos de orar\" significa que Pablo habitualmente oraba por los cristianos colosenses. No podía decirse que alguna vez hubiera dejado de orar por ellos. Pedir. Pablo estaba agradecido, pero al mismo tiempo preocupado. No estaba satisfecho con los progresos que ya habían alcanzado los creyentes de Colosas, y por eso anhelaba que siguieran progresando. Conocimiento. Gr. epígnÇsis, \"conocimiento pleno, preciso\" (ver com. Rom. 3: 20; Efe. 1: 17; cf. com. Col. 1: 6). Su voluntad. Específicamente el conocimiento de la voluntad de Dios acerca de la conducta de ellos (vers. 10). En un sentido más general, la comprensión de la suma total del propósito de Dios que todo lo abarca. Para el que posee este conocimiento, cada detalle de la vida, con sus problemas y misterios inexplicables, adquiere un nuevo significado. El cristiano comprende que Dios tiene un plan para su vida, y su meta es cumplir el propósito divino. Sabiduría. Gr. sofía. Ver com. Luc. 2: 52. Sabiduría es la capacidad de aplicar los hechos del conocimiento a las situaciones de la vida. Desgraciadamente no siempre el que tiene conocimiento también posee sabiduría. Por eso Pablo oraba para que los creyentes de Colosas pudieran estar dotados de la sabiduría del cielo. Inteligencia. La inteligencia dada por el Espíritu es el discernimiento que capacita al cristiano para juzgar entre lo correcto y lo falso. El que está iluminado por el Espíritu Santo reconoce las tentaciones y las trampas del adversario. Y si toda la voluntad está entregada a Dios y está inmersa en las cosas de valor eterno, el cristiano prefiere ocuparse únicamente en aquellas cosas que Dios quiere que haga. Espiritual. Adjetivo que se aplica a los dos sustantivos que lo preceden: \"sabiduría\" e \"inteligencia\".",
+                    "references": [
+                        "ver com. Rom. 3: 20; Efe. 1: 17; cf. com. Col. 1: 6"
+                    ]
+                },
+                {
+                    "verse": 10,
+                    "phrase": "Andéis.",
+                    "content": "Gr. peripatéÇ, \"andar en torno\", figuradamente \"vivir\" (ver com. Efe. 2: 2). El propósito del conocimiento práctico de las verdades celestiales y de la sabiduría e inteligencia espiritual para discernir entre lo correcto y lo falso en relación con el propósito de Dios, que todo lo domina, es producir, como resultado, una conducta o forma de vida adecuada para el hijo de Dios. Agradándole. La norma de conducta del cristiano es la voluntad de Dios; el propósito es que podamos agradar a Dios todos nuestros días. Somos creados para complacer a Dios. Somos redimidos para que pueda completarse el plan original del Señor. Lo que a él le desagrada es el Pecado. Hablando de su relación con su Padre celestial, dijo Jesús: \"Yo hago siempre lo que le agrada\" (Juan 8: 29). Llevando fruto. La fecundidad de un árbol es el resultado de su vida interior. El fruto demuestra la existencia de la vida. Dar fruto no capacita al árbol para vivir; el árbol da fruto porque vive. Así ilustra el apóstol el resultado de la presencia viviente de Cristo en el corazón. Una vida cristiana que resulta de esta unión de lo divino y lo humano no puede menos que dar buen fruto (Gál. 5: 22-23; cf. 2 Ped. 1: 8). En toda buena obra. Aquí se hace énfasis en el carácter cristiano completo en todo sentido. Cristo no desea seguidores a medias o asimétricos. El ideal que él presenta ante nosotros es el desarrollo armonioso de todo el ser humano. Cf. Efe. 4: 13; 1 Tes. 5: 23. Creciendo. Paralelo al progreso en testificar mediante palabras y hechos, debe haber un discernimiento y conocimiento espiritual que vayan gradualmente adquiriendo mayor profundidad. El proceso de captar la verdad es progresivo. El seguidor de Cristo debe poder mirar hacia atrás y hacia adelante, para que vea que ha hecho progresos visibles pero que hay nuevas alturas que escalar. Conocimiento. Gr. epígnÇsis (ver com. vers. 9).",
+                    "references": [
+                        "ver com. Efe. 2: 2",
+                        "Juan 8: 29",
+                        "Gál. 5: 22-23; cf. 2 Ped. 1: 8"
+                    ]
+                },
+                {
+                    "verse": 11,
+                    "phrase": "Fortalecidos con todo poder.",
+                    "content": "Cf. Efe:19. El poder divino capacita al hombre para hacer frente a todos los problemas de su vida diaria, ya sea que éstos se produzcan en su trato con sus prójimos o por un conflicto directo con los agentes satánicos. Pablo deseaba que los creyentes de Colosas recibieran esa fortaleza interior mediante la presencia permanente del Espíritu Santo, lo que se manifestaría en grandes hechos para su Señor. A medida que aumentara la necesidad podrían obtener la fortaleza adecuada para hacerle frente. Conforme a la potencia de su gloria. La norma por la cual este don de poder celestial se concede a la humanidad es el poder de Dios y su capacidad, y no la necesidad del hombre. En cuanto al significado de \"gloria\" ver com. Rom. 3: 23. Paciencia. Gr. hupomon'. Ver com. Rom. 2: 7. Longanimidad. Gr. makrothumía (ver com. Col. 3: 12; cf. com. 1 Cor. 13: 4; 2 Cor. 6: 6). Cuando el poder de Dios obra en el alma, la clemencia y la tolerancia dominan las pasiones. El hijo de Dios observa cómo su Señor y Maestro cumple pacientemente sus designios, y él también aprende paciencia. Y al hacer frente a los obstáculos, se desarrollan en su vida paciencia y firmeza, y paz ante la misma muerte. Paciencia es lo opuesto a desaliento o cobardía, mientras que longanimidad es lo contrario de ira o venganza. La paciencia está estrechamente unida con la esperanza (cf. 1 Tes. 1: 3), y la longanimidad con frecuencia se relaciona con la misericordia (Exo. 34: 6).",
+                    "references": [
+                        "ver com. Col. 3: 12; cf. com. 1 Cor. 13: 4; 2 Cor. 6: 6",
+                        "cf. 1 Tes. 1: 3",
+                        "Exo. 34: 6"
+                    ]
+                },
+                {
+                    "verse": 12,
+                    "phrase": "Con gozo.",
+                    "content": "Cf com. Rom. 14: 17. Dando gracias. Un corazón agradecido es una prueba de que se cultiva en forma habitual y positiva una conformidad agradecida hacia la voluntad del gran Dador (cf. Efe. 5: 4; Fil. 4: 6; Col. 2: 7; 3: 17; 4: 2; ver com. Efe. 5: 20). La falta de gratitud es la raíz de la rebelión y la anarquía (Rom. 1: 21). El agradecimiento de corazón es un requisito diario para el crecimiento en la vida cristiana. Esta acción de gracias no sólo consiste en el reconocimiento de que Dios diaria y repetidamente nos concede sus dádivas, es también reconocer con reverencia que merece el honor que debemos a su santo nombre y grandioso poder. Al Padre. Los vers. 12 y 13 presentan al Padre como Aquel que dio comienzo al plan de salvación. El fue quien entregó a su Unigénito. Nos hizo aptos. La evidencia textual se inclina (cf. p. 10) por el pronombre \"os\". \"Nos\", por el sentido, tiene el respaldo del vers. 13. Esta idoneidad no es ganada por el hombre. Es concedida a los que por fe aceptan al Señor Jesucristo (ver com. Efe. 2: 8). Para participar de la herencia. Ver com. Rom. 8: 17. Santos. Ver com. Rom. 1: 7. En luz. Esta palabra está en contraste con \"tinieblas\" (vers. 13), por lo que \"en luz\" equivale al \"reino de su amado Hijo\" (vers 13). Ver com. Juan 1: 5; 1 Juan 1:",
+                    "references": [
+                        "cf. Efe. 5: 4; Fil. 4: 6; Col. 2: 7; 3: 17; 4: 2; ver com. Efe. 5: 20",
+                        "Rom. 1: 21",
+                        "ver com. Efe. 2: 8"
+                    ]
+                },
+                {
+                    "verse": 5,
+                    "phrase": "13.",
+                    "content": "Librado. Gr. rúomai, \"rescatar\". Pablo usa este verbo en Rom. 7: 24 para expresar su angustioso clamor: \"¿Quién me librará de este cuerpo de muerte?\" El Libertador que \"vendrá a Sion\" (Rom. 11: 26) es ho ruómenos \"el rescatador\". En este pasaje se presenta al Padre como Aquel que rescata a los hombres de la servidumbre de Satanás. Potestad. Gr. exousía, \"autoridad\". El Vencedor divino ha rescatado a sus santos del reino del mal donde preside el príncipe de las tinieblas como un tirano implacable. Ya no están sujetos a una autoridad usurpada. Tinieblas. Nótese el contraste con \"herencia... en luz\" (vers. 12). El hijo de Dios es trasladado de la autoridad del príncipe de las tinieblas al reino de la luz. Trasladado. Gr. methíst'mi, \"transportar\", \"mudar\". Compárese con el uso que se le da en Luc. 16: 4; Hech. 13: 22; 19: 26 y de una forma parecida en 1 Cor. 13: 2. Josefo usa la palabra al hablar de la migración de los israelitas al reino de Asiria durante la invasión de Tiglat-pileser III (Antigüedades ix. 11. 1). Reino. Es decir, el reino de la gracia (ver com. Mat. 4: 17; 5: 3). De su amado Hijo. Literalmente \"del Hijo de su amor\" (BJ, BC, NC), que probablemente signifique el Hijo que es objeto del amor de Dios (cf. com. Mat. 3: 17; Efe. 1: 6).",
+                    "references": [
+                        "Rom. 11: 26",
+                        "Antigüedades ix. 11. 1",
+                        "ver com. Mat. 4: 17; 5: 3",
+                        "BJ, BC, NC",
+                        "cf. com. Mat. 3: 17; Efe. 1: 6"
+                    ]
+                },
+                {
+                    "verse": 14,
+                    "phrase": "Tenemos redención.",
+                    "content": "Este versículo es paralelo a Efe. 1: 7 (ver el comentario respectivo). Cristo es Aquel mediante cuya muerte expiatorio los hombres obtienen la redención (ver com. Rom. 3: 24). Por su sangre. La evidencia textual establece (cf. p. 10) la omisión de esta frase. La omiten la BJ, BC, BA y NC; sin embargo, esa enseñanza está bien establecida en el pasaje paralelo de Efe. 1: 7 (ver el comentario respectivo). Ver Problems in Bible Translation, p. 223. Perdón. Gr. áfesis, \"liberación\", \"perdón\". Ver com. Luc. 3: 3. Así termina Pablo la introducción a esta epístola (vers. 1-14). Ha agradecido a Dios por lo que ha oído del progreso de los cristianos colosenses. Ha pedido ayuda del cielo para que crezcan en el verdadero conocimiento de la voluntad divina. Estas peticiones continuamente surgían del corazón del apóstol, especialmente desde que recibió un informe directo acerca de los creyentes de Colosas. Después les recuerda sus privilegios por haber sido trasladados al reino de la luz, y cuál debería ser su gozo por su liberación del poder de las tinieblas.",
+                    "references": [
+                        "ver com. Rom. 3: 24"
+                    ]
+                },
+                {
+                    "verse": 15,
+                    "phrase": "El es.",
+                    "content": "Después de terminar su prólogo (vers. 1-14), el apóstol se ocupa de su tema principal: la persona y la posición de Cristo. Imagen. Gr. éikÇn, \"similitud\", \"semejanza\". Cf. cap. 3: 10, donde Pablo declara que el cristiano es renovado \"conforme a la imagen [ékÇn] del que lo creó\". La imagen del emperador romano en las monedas antiguas era llamada éikÇn (Mat. 22: 20). Dios invisible. \"A Dios nadie le vio jamás\"; pero Jesús, \"la imagen del Dios invisible\", vino para revelarlo a los hombres (ver com. Juan 1: 18). Primogénito. Gr. prÇtótokos (ver com. Rom. 8: 29). PrÇtótokos se usa en Mat. 1: 25 y Luc. 2: 7 para referirse a Cristo como el primogénito de María. En Heb. 11: 28 se emplea para especificar a los primogénitos de Egipto que perecieron, en la décima plaga. En Heb. 12: 23 describe a los miembros de \"la congregación de los primogénitos\". En las referencias restantes (Rom. 8: 29; Col. 1: 15, 18; Heb. 1: 6; Apoc. 1: 5) prÇtótokos se aplica a Cristo (ver los comentarios de estos pasajes). A través de los siglos se ha debatido mucho el significado de prÇtótokos en Col. 1: 15. Los más antiguos padres de la iglesia aplicaban esta palabra a Cristo como el eterno Hijo de Dios. Los arrianos usaron este versículo para mostrar que Cristo era un ser creado. Esta interpretación, aunque es posible en este pasaje por medio de la gramática, queda refutada por otras porciones de las Escrituras (ver Nota Adicional de Juan 1). El pasaje puede ser entendido de modo que armonice plenamente con la enseñanza general de la Biblia. Esto concuerda con los principios sanos de la exégesis bíblica. En Heb. 1: 6 prÇtótokos claramente se refiere a la encarnación, y algunos han tratado de hacer la misma aplicación en Col. 1: 15. Otros creen que en Colosenses Pablo se está refiriendo a la resurrección (ver com. Hech. 13: 33). Sin embargo, ninguna de las dos interpretaciones se ajusta al contexto, pues Cristo es presentado aquí como el Creador (cf. Col. 1: 16) y anterior a la creación (cf. com. Juan 1: 1-3, 14). Por lo tanto, parece mejor considerar que prÇtótokos se usa en sentido figurado para describir a Jesucristo como primero en categoría. Esta figura deriva de la dignidad y la posición pertenecientes al primogénito de una familia humana o, más específicamente, al primogénito de una familia real. La jerarquía de Cristo es única en su género, autorizada y absoluta. Se le han confiado todas las prerrogativas y toda la autoridad en el cielo y en la tierra. Pablo destaca la posición de Cristo porque está procurando hacer frente a los argumentos de los falsos maestros, quienes declaraban que Cristo era creado y negaban su supremacía. Creación. Gr. ktísis, \"creación\", en el sentido del acto de la creación o también de algo creado, \"criatura\" (RVA, NC). El vocablo griego puede traducirse \"creación\" o \"criatura\". El contexto parece favorecer \"toda criatura\" (RVA, NC). Cristo es presentado en una posición por encima de toda cosa creada. Ver com. Apoc, 3:",
+                    "references": [
+                        "Mat. 22: 20",
+                        "ver com. Juan 1: 18",
+                        "ver com. Rom. 8: 29",
+                        "Rom. 8: 29; Col. 1: 15, 18; Heb. 1: 6; Apoc. 1: 5",
+                        "ver Nota Adicional de Juan 1",
+                        "ver com. Hech. 13: 33",
+                        "cf. Col. 1: 16",
+                        "cf. com. Juan 1: 1-3, 14",
+                        "RVA, NC"
+                    ]
+                },
+                {
+                    "verse": 14,
+                    "phrase": "16.",
+                    "content": "Porque en él. Esta traducción corresponde literalmente con el texto griego: hóti en autÇ, que destaca que Cristo es el centro, la fuente, la esfera en que se originó la creación. Fueron creadas todas las cosas. Acerca de Cristo como Creador, ver com. Juan 1: 3. La acción del poder creador era una prueba de la divinidad de Cristo. Cielos. . . tierra. Esta expresión parece incluir todo el universo. Mediante estos términos se designan todas las cosas materiales o inmateriales. Invisibles. Sin duda una referencia a seres y poderes espirituales (ver com. \"tronos... potestades\"). Tronos. . . potestades. Ver com. Rom, 8: 38; Efe. 1: 21. Estos términos evidentemente eran usados por los falsos maestros de Colosas para describir su clasificación de las jerarquías angélicas. Esos maestros herejes quizá clasificaban a Cristo dentro de esas jerarquías. Si así fue, Pablo atacó de frente esa doctrina declarando que ya fuera que existieran o no tales jerarquías, Cristo las creó a todas y por lo tanto las superaba muchísimo en dignidad. Fue creado. Esta flexión del verbo es diferente de la que se traduce \"fueron creadas\" al comienzo de este versículo. El griego destaca con el pretérito perfecto la continuidad o permanencia de la creación, mientras que en la primera se refiere a la creación simplemente como un acto específico que ocurrió en algún momento de la historia. Por medio de él. Gr. di' autóu. \"Por medio de él\" expresa quién es el agente, es decir, quién hizo la creación. Ver com. Juan 1: 3. Para él. Cristo es la meta y el origen de toda la creación. Es la razón de ser de su existencia. Da sentido a su vida. El es \"el principio y el fin, el primero y el último\" (Apoc. 22: 13).",
+                    "references": [
+                        "Apoc. 22: 13"
+                    ]
+                },
+                {
+                    "verse": 17,
+                    "phrase": "El.",
+                    "content": "Pronombre enfático en griego, significa \"El mismo\". Se contrasta a Cristo con los seres creados. Es. Flexión del verbo eimí, \"ser\", que como 'n en Juan 1: 1, expresa continuidad de existencia (ver el comentario respectivo). \"El es\" puede compararse con la expresión \"Yo soy\" (ver com. Juan 6: 20; 8: 58). Antes. Tanto en tiempo como en posición. Cuando en alas de la imaginación penetramos en la eternidad pasada, no hay un momento antes del cual Cristo no existiera (ver com. Juan 1: 1; Nota Adicional de Juan 1). En él. Cristo es la esfera dentro de la cual todo existe. Subsisten. Gr. suníst'mi, \"mantenerse juntos\" o \"tener coherencia\". \"Y todo tiene en él su consistencia\" (BJ). \"Y todas las cosas tienen en él su consistencia\" (BC). La flexión del verbo griego pone el énfasis en el continuo mantenimiento de una organización original. El poder que mantiene con precisión matemática los inmensos astros del universo en sus órbitas señaladas, el poder que sostiene las partículas del átomo en sus órbitas predeterminadas, es el mismo. Todas las cosas existen por el poder de Cristo. No sólo las creó, también las sostiene en cada momento.",
+                    "references": [
+                        "ver com. Juan 6: 20; 8: 58",
+                        "ver com. Juan 1: 1; Nota Adicional de Juan 1"
+                    ]
+                },
+                {
+                    "verse": 18,
+                    "phrase": "El es.",
+                    "content": "Gr. autos estín, \"él mismo es\", las mismas palabras con que comienza el vers. 17 (ver el comentario respectivo). Cabeza del cuerpo. Así como la cabeza tiene la capacidad de hacer los planes para el cuerpos al cual gobierna y por el cual hace decisiones, y así como todas las actividades del cuerpo dependen completa y continuamente del funcionamiento de la cabeza, Cristo también es la cabeza del cuerpo espiritual. Es una figura frecuente en los escritos de Pablo (ver com. 1 Cor. 12: 12-27; Efe. 1: 22). Iglesia. Gr. ekkl'sía. Ver com. Mat. 18: 17. Principio. Esta expresión puede entenderse en forma pasiva, para mostrar la precedencia de Cristo en lo que concierne a tiempo y categoría, o en forma activa, en el sentido de que Cristo es el originador (cf. com. Apoc. 1: 8). Algunos entienden que se aplica especialmente a lo que sigue, para afirmar que Cristo es el \"principio\" de los que serán resucitados de los muertos. Pablo también llama a Cristo \"primicias de los que durmieron\" (ver com. 1 Cor. 15: 20, 23). Es cierto que Moisés y Lázaro fueron resucitados antes de que Cristo saliera de la tumba, pero lo hicieron en virtud de la resurrección de Jesús; sólo por él volvieron a vivir Jesús es presentado aquí ante los creyentes no sólo como el que tiene primacía y precedencia en el tiempo, sino también como el que es superior en poder y prestigio. Como él es antes de todas las cosas, no puede ser una emanación o una forma de creación inferior o subsidiaria. La declaración de Pablo hace frente a los argumentos de los falsos maestros de Colosas. Primogénito. Gr. prÇtótokos (ver com. vers. 15). De entre los muertos. Como habiendo sido uno de ellos, según lo implica el griego (cf. com. Apoc. 1: 18). En todo. Como en el contexto inmediato la precedencia de Cristo tiene que ver con la iglesia, su posición en cuanto a \"todo\" también atañe a la iglesia (ver Col. 3: 11; cf. Efe. 1: 23); sin embargo, esta afirmación también es verdad respecto a su soberanía y primacía en cuanto al universo entero. Tenga la preeminencia. O \"para que tenga él la primacía\". Cristo \"fue declarado Hijo de Dios con poder... por la resurrección de entre los muertos\" (Rom. 1:4; cf. Fil. 2:9).",
+                    "references": [
+                        "ver com. 1 Cor. 12: 12-27; Efe. 1: 22",
+                        "cf. com. Apoc. 1: 8",
+                        "ver com. 1 Cor. 15: 20, 23",
+                        "cf. com. Apoc. 1: 18",
+                        "ver Col. 3: 11; cf. Efe. 1: 23",
+                        "Rom. 1:4; cf. Fil. 2:9"
+                    ]
+                },
+                {
+                    "verse": 19,
+                    "phrase": "Agradó al Padre.",
+                    "content": "Las palabras \"al Padre\" son añadidas, puesto que la evidencia textual establece (cf. p. 10) su omisión. El griego sugiere la traducción \"la plenitud se complació habitar en él\", que resulta difícil de interpretar. En esta construcción, la \"plenitud\" es el sujeto. Por otra parte, el Padre parece ser el sujeto en el vers. 20, por lo tanto es posible que también tácitamente lo sea en el vers. 19. Ambas formas se amoldan bien al contexto. Habitase. Del verbo griego katoikéÇ, \"residir\", \"morar\", \"establecerse\" (cf. cap. 2: 9). Los falsos maestros sostenían que la Divinidad residía en Jesús sólo parcial y transitoriamente; pero Pablo les explica a los colosenses la verdad al respecto. Jesús posee como una prerrogativa permanente no sólo la plenitud del propósito y del poder divino, sino que también expresa completamente los rasgos de la personalidad divina (Efe. 1: 23; 3: 19; 4: 13; Col. 2: 9). El Salvador era la expresión de la gloria del Padre, la imagen visible de la persona de Dios (cap. 1: 15). En Cristo se manifiesta la expresión perfecta de la Divinidad completa y eternamente. Esta expresión de la Deidad sólo alcanzó su manifestación plena cuando se consumó el sacrificio del Salvador, porque la fase del sacrificio expiatorio de su perfección divina no se había visto antes de la muerte de Jesús. Plenitud. Gr. pl'rÇma, \"plenitud\", \"hartura\", \"lo que ha sido completado\", \"complemento\" . Pl'rÇma se usaba en el griego secular para designar una tripulación completa en un navío, o un grupo completo de reservistas o una población que había alcanzado a un número máximo, o para indicar la suma total necesaria para completar una transacción comercial o para referirse a los materiales necesarios para completar un edificio. En el NT generalmente tiene este significado de algo íntegro (Mar. 2: 21; 6: 43; Rom. 13: 10; 1 Cor. 10: 26; Gál. 4: 4; Efe. 1: 10, 23). Parece que los falsos maestros de Colosas, como los gnósticos posteriores, enseñaban que algunas de las funciones de la Deidad, como la mediación y ciertos atributos creadores, también las poseían los ángeles o jerarquías inferiores de seres creados. Pablo está diciendo a los que pervertían la verdad que en Cristo reside la suma total de todos los atributos de la Deidad. Por lo tanto, él es el Señor de todas las cosas creadas. Esta plenitud residió en Cristo desde el principio.",
+                    "references": [
+                        "Efe. 1: 23; 3: 19; 4: 13; Col. 2: 9",
+                        "Mar. 2: 21; 6: 43; Rom. 13: 10; 1 Cor. 10: 26; Gál. 4: 4; Efe. 1: 10, 23"
+                    ]
+                },
+                {
+                    "verse": 20,
+                    "phrase": "Por medio de él.",
+                    "content": "Esta frase aparece dos veces en el texto original: \"por medio de él reconciliar... por medio de él haciendo la paz...\" Jesús es Aquel por medio del cual se llevó a cabo la reconciliación. Reconciliar. Gr. apokatallássÇ, verbo más enfático que katallássÇ (ver com. Rom. 5: 10), que Pablo usa por lo general para referirse a la reconciliación. Todas las cosas. Se ha debatido mucho si esta expresión incluye a los seres irracionales y a los inanimados. ¿En qué sentido necesitarían esos seres de la reconciliación? El apóstol quizá esté tratando de los amplios efectos de la entrada del pecado en el universo, y por eso incluye los efectos del pecado y de la redención no sólo sobre los seres inteligentes sino también sobre los irracionales y los inanimados (cf. com. Rom. 8: 19). En la tierra. La transgresión de Adán afectó a toda la tierra. La degeneración se extendió desde el hombre -la obra maestra y cumbre del Creador- hasta las plantas, los insectos, los animales marinos y aun los seres inanimados. Pero el acto redentor de Cristo finalmente restaurará la perfección y la armonía. En los cielos. Algunos comentadores afirman que aunque sólo un tercio de los ángeles se rebelaron en el cielo contra el gobierno de Dios y fueron expulsados de allí, el resto de las huestes angélicas no entendió plenamente la realidad del pecado ni sus horrendos resultados hasta que Cristo murió en la cruz. Los seres celestiales comprendieron como nunca antes, después de este acontecimiento, que los caminos de Dios son verdaderos y justos y que el programa de Satanás conduce a la muerte. De ese modo todas las cosas, tanto materiales como espirituales, tanto celestiales como terrenales, serán conducidas a un estado de perfecta armonía mediante la cruz y todo lo que ella representa. El tiempo y el despliegue de los propósitos de Dios mediante Cristo desenmascararán a Satanás y a los que simpatizan con él, y cuando sean aniquilados se verá la justicia de Dios. El plan de la redención cumplirá así su propósito más amplio y profundo, a saber: la vindicación del carácter de Dios ante el universo (PP 54). Haciendo la paz. La paz es necesaria porque la entrada del pecado en el universo introdujo la desunión. Es evidente que los falsos maestros enseñaban que la paz se estaba logrando debido a la mediación de los ángeles. Sangre de su cruz. En cuanto al significado de la sangre de Cristo en el plan de salvación, ver com. Rom. 3: 25. La cruz de Cristo es el núcleo del plan de salvación. La cruz era el tema en el que Pablo se gloriaba (Gál. 6: 14), y será la ciencia y el canto de los redimidos por los siglos eternos (CS 709).",
+                    "references": [
+                        "ver com. Rom. 5: 10",
+                        "cf. com. Rom. 8: 19",
+                        "PP 54",
+                        "Gál. 6: 14",
+                        "CS 709"
+                    ]
+                },
+                {
+                    "verse": 21,
+                    "phrase": "Y a vosotros.",
+                    "content": "Pablo hace ahora aplicaciones personales para sus hermanos colosenses, de las doctrinas que ha estado tratando. Ha sostenido que todo el mundo depende de la sangre de Cristo para la reconciliación (ver com. vers. 19). Ahora dice a los colosenses que ellos pueden disfrutar de ese glorioso estado de armonía y gozo sólo por ese mismo camino. Su declaración implica una advertencia a no aceptar los conceptos de los falsos maestros que podrían sugerir otros medios de reconciliación, como el ministerio de los ángeles y de otros espíritus (cf. cap. 2: 8, 18- 19). Hay sólo un medio de salvación (Hech. 4: 12). En otro tiempo extraños. O \"anteriormente extraños\". Los creyentes de Colosas habrían continuado en esa desventurada condición si Cristo no hubiera muerto por ellos. La cruz del Calvario proporcionaba expiación para el pecado que había causado esa separación. La actitud hostil del pecador había cambiado y Dios había aceptado al pecador. Enemigos. Los colosenses no sólo estaban alejados de Dios, ignoraban sus propósitos para la humanidad y eran indiferentes a su ley antes de su conversión, sino que también abierta y decididamente eran hostiles a Dios. En vuestra mente. La mente es el centro que dirige a los seres racionales (Efe. 4: 18). Pablo recuerda a los colosenses que todo el pensamiento de ellos había estado alejado de Dios y era hostil al Señor. Todos sus planes y proyectos estaban opuestos a Dios o eran indiferentes a él. Se hallaban perdidos y en situación desesperada; era menester que la influencia celestial los llevara a una condición en la que pudieran ser salvos. Haciendo malas obras. O \"en las malas obras\", es decir, \"en la esfera de las obras impías\". Un hombre actúa según su modo de pensar (cf. Prov. 23: 7). Es imposible que una mente impía produzca algo que no sea obras de impiedad. En el caso de los colosenses, sus acciones demostraban el estado de su mente. El registro de sus vidas demostraba irrefutablemente que antes de su conversión estaban alejados de Dios y eran sus enemigos. Ahora. Pero Dios actuó a pesar del alejamiento de los colosenses. Su ministerio de la reconciliación se hace efectivo en el momento en que los hombres lo aceptan. Os ha reconciliado. Ver com. Rom. 5: 10; Col. 1: 20. Cristo, por decirlo así, había tomado de la mano a los creyentes de Colosas, y los había presentado ante el Padre no como a siervos o enemigos, sino como a sus amigos (Juan 15: 14-16). La cruz del Calvario había desterrado la hostilidad de ellos, había cambiado la tendencia de sus pensamientos y los había transformado a la semejanza de Cristo.",
+                    "references": [
+                        "Hech. 4: 12",
+                        "Efe. 4: 18",
+                        "cf. Prov. 23: 7",
+                        "Juan 15: 14-16"
+                    ]
+                },
+                {
+                    "verse": 22,
+                    "phrase": "Su cuerpo de carne.",
+                    "content": "Algunos creen que Pablo combate aquí una herejía que entró muy temprano en la iglesia cristiana: que Cristo no tenía cuerpo humano. Según esta herejía, el cuerpo humano es esencialmente pecaminoso y por lo tanto no podría haber sido parte del Hijo de Dios. La encarnación era un paso fundamental en la reconciliación del hombre con Dios. La Divinidad se había revestido con la humanidad. Jesús tomó posesión de la humanidad caída para que ésta pudiera unirse de nuevo con el trono de Dios. Participó de carne y sangre para poder liberar al hombre de la esclavitud del pecado. Cristo logró en su cuerpo de carne la victoria de la reconciliación (1 Ped. 2: 24). Ver t. V, pp. 894-895; t. VI, p. 59. Por medio de la muerte. La paga del pecado es muerte (Rom. 6: 23); todos hemos pecado (Rom. 3: 23); por lo tanto nadie puede escapar de la muerte. Cuando Cristo participó de la condición humana, se propuso pagar el precio del castigo del pecado de la humanidad. Murió por cada ser humano. Este hecho estaba simbolizado en todo verdadero sacrificio desde el día cuando Adán ofreció la primera víctima por orden de Dios. La muerte de la víctima vicaria señalaba de antemano la gran expiación que se ofrecería por la sangre de Cristo. Todas esas ceremonias de sacrificios que simbolizaban una mediación, señalaban por anticipado la reconciliación final con Dios. La muerte era la base de todo sacrificio. Para presentaros. Cuando la reconciliación haya sido alcanzada, los que estuvieron alejados de Dios y le fueron hostiles serán presentados ante el universo como trofeos de la cruz (2 Cor. 4: 14; Efe. 5: 27; Col. 1: 28). Santos y sin mancha. Gr. hágios, \"santo\" y ámÇmos, \"sin tacha\" (ver com. Efe. 1: 4). Irreprensibles. Gr. anégkl'tos, \"irreprochable\", \"irreprensible\". Compárese con el uso de esta palabra en 1 Cor. 1: 8. Anégkl'tos va más lejos que ámomos en su descripción del proceso de la santificación. Pone de relieve que no debe haber ninguna posibilidad de que se haga alguna acusación contra aquel a quien Dios se propone presentar perfecto delante del universo. El acusador de los hermanos será silenciado cuando el Señor lo reprenda y haga notar que los santos están vestidos con la justicia de Cristo (Zac. 3: 1-5; Apoc. 12: 10-11). Delante de él. Todos los seres humanos pasarán ante el ojo escrutador de Dios. El juez de toda la tierra examinará todo. Los hombres pueden no tomar esto en serio en esta vida, y Satanás puede todavía encontrar faltas; pero la pregunta más importante es: ¿qué es lo que ve Dios, y qué es lo que piensa? (ver 2 Cor. 5: 10; Efe. 1: 4). La estimación divina es lo que vale.",
+                    "references": [
+                        "1 Ped. 2: 24",
+                        "Rom. 6: 23",
+                        "Rom. 3: 23",
+                        "2 Cor. 4: 14; Efe. 5: 27; Col. 1: 28",
+                        "ver com. Efe. 1: 4",
+                        "Zac. 3: 1-5; Apoc. 12: 10-11",
+                        "ver 2 Cor. 5: 10; Efe. 1: 4"
+                    ]
+                },
+                {
+                    "verse": 23,
+                    "phrase": "Si. . . permanecéis.",
+                    "content": "Los colosenses habían oído la palabra de vida. Habían aceptado la fe y sido reconciliados por la sangre de Cristo. Eran \"santos y fieles hermanos\" (vers. 2). Pero todos sus esfuerzos resultarían inútiles si no \"Permanecían\". El apóstol destaca la necesidad que tenían de continuar y permanecer en su confianza en el Evangelio. Fundados. Gr. themelióÇ, \"establecer un fundamento\", \"fundar\". La casa espiritual debe tener su fundamento afirmado en la Roca sólida, que es Cristo; no sobre la arena, como la casa del necio de la parábola de Cristo (Luc. 6: 49; Mat. 7: 24-27; 1 Cor. 10: 4). Firmes. Gr. hedráios, \"arraigado\", \"inmutable\"; \"inconmovible\" (BJ); \"estables\" (BC, NC). El creyente cristiano debe estar firmemente establecido en su fundamento. Pablo amonestaba a los colosenses a no apartarse de la posición que tomaron cuando oyeron por primera vez el Evangelio. En la fe. Cf. vers. 4. Lo que se había comenzado por la fe en la vida de los creyentes de Colosas, debía continuarse también por medio de la fe. Sin moveros. Literalmente \"no siendo removidos\". Este es el aspecto negativo de lo que Pablo ha dicho. Es como si dijera: \"No permitáis que las artimañas filosóficas de los falsos maestros o las tentaciones seductoras del pecado os desvíen de vuestra posición\". El tiempo del verbo en griego permite la traducción: \"No estéis continuamente cambiando\" de una posición a otra (cf 1 Cor. 15: 58). Esperanza del evangelio. Es decir, la esperanza que proporciona el Evangelio. El ya ha indicado (ver com. vers. 5) que esta esperanza es la fuerza motriz del plan de salvación. Se la descubre por el mensaje del Evangelio; pertenece al Evangelio. Cuando finalmente se alcance esa esperanza en el reino de Dios, se habrán cumplido los propósitos del plan de salvación. Que habéis oído. Ver com. vers. 5. Se predica en toda la creación. \"A toda criatura\" (BJ, NC). El pasaje destaca que el Evangelio que habían oído los colosenses era el mismo que se predicaba en dondequiera que había penetrado el Evangelio. Pablo no quiere decir que el Evangelio había llegado completamente a todas partes. Esto es claro por sus afirmaciones en otros pasajes acerca del progreso del Evangelio. Al escribir unos pocos años antes a los romanos, resumía así el progreso del Evangelio: \"Desde Jerusalén, y por los alrededores hasta Ilírico, todo lo he llenado del evangelio de Cristo\" (Rom. 15: 19). En ese tiempo esperaba visitar a Roma y desde allí llevar el Evangelio a España (Rom. 15: 24). Pero su arresto y encarcelamiento le impidieron cumplir sus planes. En vez de ir a Roma en libertad como un heraldo del Evangelio, llegó encadenado, y ya preso no pudo visitar a España. Es dudoso que alguna obra importante hubiera sido comenzada allí. Además, no hay ninguna evidencia posterior de que por esa época temprana el Evangelio hubiera penetrado en las regiones de los bárbaros, al norte del mundo civilizado de ese entonces. Este era sin duda el caso de otras regiones apartadas. Es, pues, claro que la afirmación de que el Evangelio había sido predicado a toda criatura debajo del cielo no tenía el propósito de que se la tomara en un sentido absoluto. En forma semejante a la declaración \"así como a todo el mundo\" (Col. 1: 6), el énfasis recae en el hecho de que el Evangelio predicado en Colosas es el mismo que se está proclamando en todo el mundo. Cf. Mat. 24: 14; 1 Tes. 1: 8; Apoc. 5: 13; 14: 6-7; DTG 587. Del cual yo Pablo. Súbitamente el apóstol se presenta a sí mismo en su argumentación, así como había introducido a los creyentes de Colosas en el vers. 21. Fui hecho. O \"he llegado a ser\" (BJ). Cf. Efe. 3: 7. Pablo se refiere a la comisión divina de predicar el Evangelio. Dios ahora lo estaba usando para el cumplimiento de deberes eternos (ver Efe. 3: 8; 1 Tim. 1: 11-16; cf. Gál. 1: 11-17). Una mano divina lo había hecho entrar en el plan total de la salvación de los hombres. Cuando los colosenses compararan a Pablo con los falsos maestros, pensarían en los propósitos eternos de Dios y comprenderían que el que les estaba escribiendo formaba parte del gran plan para la salvación de ellos. Por lo tanto el mensaje de Pablo contaba con la autorización divina. La fe de los creyentes se fortalecería y se aumentaría su firmeza con este pensamiento. Ministro. Gr. diákonos (ver com. Mar. 9: 35). Compárese con el uso de esta palabra en Mat. 20: 26; Rom. 13: 4; Efe. 6: 21; 1 Tim. 4: 6.",
+                    "references": [
+                        "Luc. 6: 49; Mat. 7: 24-27; 1 Cor. 10: 4",
+                        "BC, NC",
+                        "cf 1 Cor. 15: 58",
+                        "BJ, NC",
+                        "Rom. 15: 19",
+                        "Rom. 15: 24",
+                        "Col. 1: 6",
+                        "ver Efe. 3: 8; 1 Tim. 1: 11-16; cf. Gál. 1: 11-17",
+                        "ver com. Mar. 9: 35"
+                    ]
+                },
+                {
+                    "verse": 24,
+                    "phrase": "Ahora me gozo.",
+                    "content": "Pablo irrumpe en una gozosa acción de gracias porque la causa de Dios está progresando. Cf. Hech. 16: 25; Rom. 5: 3; 2 Cor. 11: 16-33; Fil. 2:17. Lo que padezco por vosotros. Cf. Efe. 3: 1. Pablo se regocijaba al sufrir persecuciones por causa de Cristo, si así podía aumentarse la fe de los cristianos. Cumplo. O \"estoy completando\". Gr. antanapl'róÇ, \"completar en lugar de otro\". Este vocablo sólo aparece aquí en el NT. En mi carne. Es decir, los sufrimientos personales de Pablo. Lo que falta. Las tribulaciones y las aflicciones son la suerte del cristiano (Hech. 14: 22; Fil. 1: 29; cf 2 Cor. 1: 5; 4: 10; 1 Tes. 3: 3). Pablo piensa en los sufrimientos que tendrá que soportar. Está contento de poder sufrir aflicciones por la causa de Cristo. Aflicciones de Cristo. Es decir, aflicciones por Cristo. No debe entenderse que estas palabras se refieren a los sufrimientos que soportó Cristo, pues si así fuera significaría que faltaba algo en los sufrimientos de Cristo. Además, la palabra traducida \"aflicciones\" en ninguna otra parte se usa para referirse a los sufrimientos de Cristo. Por su cuerpo. Es decir, por causa del cuerpo de Cristo: su iglesia (cf. Efe. 1: 22-23).",
+                    "references": [
+                        "Hech. 14: 22; Fil. 1: 29; cf 2 Cor. 1: 5; 4: 10; 1 Tes. 3: 3",
+                        "cf. Efe. 1: 22-23"
+                    ]
+                },
+                {
+                    "verse": 25,
+                    "phrase": "Fui hecho ministro.",
+                    "content": "O \"he llegado a ser ministro\" (BJ). Ver com. vers. 23. Administración. Gr. oikonomía, \"mayordomía\" (ver com. Efe. 1: 10; 3:2). El gran principio que gobernaba a Pablo era el de colaborar con el plan y el propósito supremo de Dios. Declara que se le ha asignado una mayordomía en esa providencia suprema de Dios. Cumplidamente la palabra de Dios. El propósito de la mayordomía de Pablo era predicar la Palabra de Dios. Su meta era cumplirla hasta el máximo.",
+                    "references": [
+                        "ver com. Efe. 1: 10; 3:2"
+                    ]
+                },
+                {
+                    "verse": 26,
+                    "phrase": "Misterio.",
+                    "content": "Gr. must'rion (ver com. Rom. 11: 25). Oculto desde los siglos. Cf. Rom. 16: 25; Efe. 3: 3, 5, 9. Las bendiciones plenas de la era del Evangelio fueron comprendidas sólo vagamente por los patriarcas y las generaciones siguientes. Ahora ha sido manifestado. Ver com. 1 Cor. 2: 9-10; Efe. 3: 5.",
+                    "references": [
+                        "ver com. Rom. 11: 25"
+                    ]
+                },
+                {
+                    "verse": 27,
+                    "phrase": "Dios quiso dar a conocer.",
+                    "content": "El plan de Dios es que los suyos penetren en los misterios más profundos del conocimiento divino mediante la ayuda de su Espíritu Santo. Cuando reciban esta revelación Dios transformará de tal manera sus inclinaciones, que alcanzarán la santificación de sus caracteres. Riquezas de la gloria. Cf. com. Rom. 9: 23; cf. Efe. 1: 7, 18; 2: 7; 3: 8, 16. Gentiles. Los judíos sufrieron una verdadera conmoción al saber que este glorioso misterio debía también alcanzar a los gentiles. Pero Dios no hace acepción de personas (Hech. 10: 34). Su misericordia se extiende a todos los que lo aceptan. El apóstol destaca la universalidad de los alcances del plan de salvación. Cristo en vosotros. La presencia interior de Jesús en el corazón humano es la manifestación del misterio eterno (ver com. Gál. 2: 20; Efe. 1: 1). Ezperanza de gloria. Cf. vers. 5. Con el comienzo del plan de salvación Dios colocó frente a la humanidad caída la esperanza de su restauración ante la presencia divina. La encarnación de Cristo hizo que el hombre sintiera más próxima la cristalización de esta esperanza. La presencia interior de Cristo en el corazón del individuo demuestra que el poder de la gracia está actuando para transformar el carácter. Esto hace que sea real la esperanza de glorificación. El cristiano vive ahora en el reino de la gracia, lo que le da la seguridad de que llegará un día cuando vivirá con Cristo en el reino de gloria. Cf. Rom. 8: 18; 1 Tim. 1: 1.",
+                    "references": [
+                        "Hech. 10: 34",
+                        "ver com. Gál. 2: 20; Efe. 1: 1"
+                    ]
+                },
+                {
+                    "verse": 28,
+                    "phrase": "A quien anunciamos.",
+                    "content": "Pablo establece el contraste entre él y sus colaboradores por un lado y los falsos maestros por el otro. Amonestando. Gr. nouthetéÇ, \"inculcar\", \"advertir\", \"amonestar\" (cf. com. Efe. 6: 4). Todo hombre. La triple repetición de esta frase en este versículo subraya la universalidad del Evangelio. No hay exclusivismo en las enseñanzas de Pablo, como lo había en las de los falsos maestros. Todas las clases sociales deben ser alcanzadas con el Evangelio de salvación. Enseñando. Pablo amonesta, pero también instruye. Así debe hacerse en toda predicación. En toda sabiduría. Algunos comentadores entienden que estas palabras muestran la forma de las enseñanzas de Pablo (cf. Efe. 1: 8; Col. 4: 5); otros, que el texto de estudio para este ministerio docente abarca todos los alcances de la sabiduría. La primera opinión parece estar más en armonía con el griego. \"Con toda sabiduría\" (BJ, BA). A fin de presentar Cf. com. vers. 22. El apóstol se ha identificado con la obra de ganar almas, y ahora presenta la meta de su ministerio. Perfecto. Gr. téleios (ver com. Mat. 5: 48). En Fil. 3: 12-15 (ver el comentario respectivo) Pablo aclara la perfección de la cual habla en sus epístolas. En Cristo Jesús. Estas son las palabras claves de la Epístola a los Efesios (ver com. Efe. 1: 1). También son frecuentes en las otras epístolas de Pablo. Sólo en Cristo pueden los santos alcanzar la perfección.",
+                    "references": [
+                        "cf. com. Efe. 6: 4",
+                        "cf. Efe. 1: 8; Col. 4: 5",
+                        "BJ, BA",
+                        "ver com. Mat. 5: 48",
+                        "ver com. Efe. 1: 1"
+                    ]
+                },
+                {
+                    "verse": 29,
+                    "phrase": "Para lo cual.",
+                    "content": "Es decir, con el propósito de presentar a \"todo hombre\" (vers. 28) perfecto en Cristo. Trabajo. Gr. kopiáÇ, \"esforzarse\", \"afanarse\", \"bregar\". Compárese con el uso de este vocablo en 1 Cor. 15: 10; Gál. 4: 11; Fil. 2: 16. Luchando. Del verbo griego agÇnízomai, \"contender\", \"combatir\" (ver com. Luc. 13: 24). Esta palabra sugiere el esfuerzo máximo que era desplegado por los participantes en los juegos atléticos. Potencia. Gr. enérgeia, \"energía\", poder operante, a diferencia de dúnamis, que denota poder potencial. \"Energía\" deriva de enérgeia. Compárese con el uso de enérgeia en Efe. l: 19; 3: 7; 4: 16; Fil. 3: 21; etc. Actúa. Del verbo griego energéò, \"obrar\", \"producir\", \"ejecutar\". Compárese con el sustantivo energeía (ver com. \"potencia\"). Pablo comprendía que la realización de sus deberes requería un ferviente esfuerzo. Además, se daba cuenta de que el resultado sería eficaz para el bien hasta donde el esfuerzo individual estuviera combinado con el gran poder de Dios que diera energía a cada facultad del agente humano. Poderosamente. Pablo podía dar testimonio del poder del Salvador porque ese poder había obrado intensamente en su propia vida.",
+                    "references": [
+                        "ver com. Luc. 13: 24"
+                    ]
+                }
+            ],
+            "egwReferences": "1-29  TM 221  \n \n2    HAp 375  \n \n4    ECFP 112 \n \n7-12  HAp. 375; 4T 316 \n \n9    HAp 381; MeM 113 \n \n9-10  5T 746 \n \n9-11  CS 530; ECFP 112; MC 333 \n \n9-12  2T 521 \n \n11   MeM 53 \n \n\n11-13   HAp 381 \n \n12   CMC 139; CS 15; DMJ 13 \n \n13   CC 114; DTG 286 \n \n14   OE 153; 6T 60 \n \n14-17 6T 59 \n \n16   CS 547;  PP 12 \n \n16-17 Ed 128; HAp 376 \n \n18    Ed 261 \n \n19    DMJ 22; Ed 27; 1JT 217 \n \n20    HAp 170 \n \n21-22 CM 144; HAp 376 \n \n23   DTG 587; Ed 91; FV 155; HAp 474; 3JT 207, 209; 1T 355; 3T 225; 4T 409,  \n556; 8T 26  \n \n24   PVGM 149-150  \n \n25-28 TM 222  \n \n25-29 HAp 296; OE 61; 2T 502, 552; 4T 269, 314 \n \n27   CC 47; CH 362; CM 186, 539; DMJ 109; Ed 168, 298; Ev 373; FE 263, 279, \n466; HAd 104; HAp 264, 380, 404; 1JT 56; MB 42; MeM 26, 86, 310; MJ 140; NB \n472; OE 63, 300, 379; IT 566; 2 T 73; 7T 116 \n \n28   Ev 427; HAp 168; MeM 294; OE 382; 4T 315; 5T 300, 372; TM 153 \n \n28-29 2T 609 \n \n29 DMJ 12l; 4T 315"
+        },
+        {
+            "chapter": 2,
+            "verses": [
+                {
+                    "verse": 1,
+                    "phrase": "Quiero que sepáis.",
+                    "content": "Cf. 1 Cor. 11: 3. Compárese con la expresión \"Tampoco queremos, hermanos, que ignoréis\" (1 Tes. 4: 13; cf. Rom. 11: 25; 1 Cor. 10: 1). Lucha. Gr. agón, \"conflicto\", \"lucha\", \"prueba\", aquí \"lucha mental\", \"ansiedad\". En cuanto al verbo de la misma raíz -agonízomai- ver com. cap. 1: 29. Pablo deseaba que los colosenses conocieran toda su ansiedad, las lágrimas que derramaba, la angustiosa lucha que había sostenido con el adversario. Poco comprendían los creyentes de Colosas de las horas que Pablo había pasado intercediendo por ellos. Laodicea. Esa ciudad estaba situada a unos 20 km de la ciudad de Colosas. Es evidente que el estado de ambas iglesias era similar. Por eso Pablo incluía a los laodicenses en sus súplicas. Nunca han visto. Debido a estas palabras muchos comentadores han llegado a la conclusión de que Pablo no fue el fundador de la iglesia de Colosas y, además, que nunca la visitó. Creen que de acuerdo con el registro de los viajes de Pablo que constan en el libro de los Hechos, no se puede afirmar que visitara alguna parte del valle del río Lico, donde estaba situada Colosas. Creen que las referencias a Frigia no necesariamente implican una visita al valle del Lico, pues Frigia abarcaba una gran región vagamente delimitada. Se piensa que ese territorio estaba muy al norte y al este del valle del Lico. En su primer viaje misionero es probable que Pablo no se acercara a menos de unos km de Colosas. En su segundo viaje y en el tercero, el apóstol no necesitó aproximarse a la región de Colosas. Viajando desde Galacia, en el extremo norte y este, podría haber viajado a Efeso por el camino romano que pasaba por Sardis. Esto lo habría llevado bien al norte del valle del Lico. Además, en esos viajes se limitó a visitar de nuevo las iglesias que ya había establecido, y no hay indicio alguno de que Colosas fuera una de ellas en esa temprana época. De modo que el libro de Hechos hace que sea sumamente improbable la visita de Pablo a Colosas. Otros afirman que de Col. 2: 1 no necesariamente se deduce que Pablo nunca hubiera visitado a Colosas. Sostienen que es sumamente improbable que en sus dos visitas a Frigia (Hech. 16: 6; 18: 23) pudiera haber pasado por alto completamente a Colosas. También sostienen que puesto que en su Epístola a los Colosenses él manifiesta una relación tan íntima con muchos miembros de esa iglesia, lo más probable es que hubiera estado allí. Interpretan Col. 2: 1 de esta manera: \"Siento mucha ansiedad no sólo por vosotros, sino aun por aquellos que nunca me han visto\". Con esta interpretación los colosenses son colocados en un grupo que contrasta con otro cuyos miembros no habían visto a Pablo personalmente. Hay otros hechos que permiten comprender mejor este asunto. En su carta a los creyentes de Colosas el apóstol habla como si nunca hubiera visitado esa ciudad. Se presenta a sí mismo como \"habiendo oído\" de la fe de ellos en Cristo y de su amor por los santos (cap. 1: 4). Recuerda el tiempo cuando había sido reanimado al saber de la profesión de fe cristiana de ellos y su celo por los principios del Evangelio (cap. 1: 9; cf. vers. 6). Muchas veces, en el transcurso de la epístola, Pablo tuvo amplia oportunidad de hacer referencia a su relación personal con los creyentes de Colosas; pero nunca lo hace. Escribe que habían sido enseñados en los principios del Evangelio por otro y también se refiere a su propia predicación. Pero ni una sola vez une las dos ideas, aunque ambas afirmaciones son paralelas (cf cap. 1: 5-8, 21-23, 25, 28-29; 2: 5-6). Si Pablo hubiera visitado a Colosas y trabajado en esa ciudad, es de esperarse que hubiera una referencia en la epístola a algún episodio relacionado con la visita; pero en Colosenses no hay una sola alusión. Aunque el argumento del silencio no puede ser considerado como decisivo, la mayoría de los comentadores concuerdan en que es muy improbable que Pablo fuera el fundador de la iglesia de Colosas. Aunque quizá haya menos certeza en cuanto a la posibilidad de una visita del apóstol a esa ciudad, esto también parece improbable.",
+                    "references": [
+                        "1 Tes. 4: 13; cf. Rom. 11: 25; 1 Cor. 10: 1",
+                        "Hech. 16: 6; 18: 23"
+                    ]
+                },
+                {
+                    "verse": 2,
+                    "phrase": "Consolados.",
+                    "content": "Gr. parakaléo, \"consolar\", exhortar\", \"alegrar\", \"animar\". Corazones. Aquí significa la sede de las emociones y del intelecto. El apóstol deseaba que toda la personalidad del creyente quedara satisfecha con paz y certeza permanentes (cf. com. Efe. 6: 22). Unidos. Gr. sumbibázò, \"reunir\", \"unir\". Pablo anhelaba que mantuvieran su unidad y estabilidad en afectuosa consideración mutua y para con Dios. Cf. Efe. 4: 16; Col. 2: 19. Riquezas de pleno entendimiento. Cf. 1 Tes. 1: 5; Heb. 6: 11; 10: 22. A medida que los creyentes aprenden las verdades más profundas de las enseñanzas de Dios, su seguridad se hace más firme. Cuando los cristianos conocen verdaderamente los caminos del Señor, les es fácil confiar, y esta confianza se basa en su comprensión. A fin de conocer. Gr. epígnòsis, \"conocimiento preciso\", \"conocimiento completo\". Cf. Efe. 1: 17. \"Perfecto conocimiento\" (BJ); \"pleno conocimiento\" (BC); \"plena inteligencia\" (NC). Misterio. Gr. mustérion (ver com. Rom. 11: 25). De Dios el Padre. La evidencia textual favorece (cf. p. 10) el texto \"Misterio de Dios Cristo\". Si se hubiera usado puntuación, la aposición habría sido clara: \"Misterio de Dios, Cristo\" (BC) (cf cap. 1: 26-27). Este misterio, que es Cristo, abarca su encarnación y ministerio personal (1 Tim. 3: 16). También incluye el propósito más amplio de la encarnación al hacer posible que todos los que creen, incluso los gentiles, lleguen a ser miembros del cuerpo místico de Cristo: su iglesia (Rom. 11: 25; Efe. 3: 4-6). La proclamación al mundo de estas buenas nuevas -que todos tienen la oportunidad de la salvación ejerciendo fe en un Salvador que murió por todos- es imprescindible para hacer conocer este misterio (Efe. 6: 19).",
+                    "references": [
+                        "cf. com. Efe. 6: 22",
+                        "ver com. Rom. 11: 25",
+                        "1 Tim. 3: 16",
+                        "Rom. 11: 25; Efe. 3: 4-6",
+                        "Efe. 6: 19"
+                    ]
+                },
+                {
+                    "verse": 3,
+                    "phrase": "Están escondidos.",
+                    "content": "O \"están acumulados\". En Cristo, en su dignidad y funciones, en su persona y ministerio, en el hecho de que es tanto el Hijo de Dios como el Hijo del Hombre, están grabados los detalles del misterio de Dios. El es la fuente y el arca de los tesoros de las bendiciones de Dios. Pablo deseaba elevar los pensamientos de los cristianos colosenses por encima y más allá de las meras ideas humanas hacia el Hijo de Dios y las virtudes y realidades eternas reveladas en él. En Cristo se puede descubrir todo lo que Dios se propone revelar en forma de bendiciones para la humanidad. ¿Por qué, pues, habrían de prestar atención los colosenses a especulaciones humanas? (Ver com. vers. 4.) Todos los tesoros. Jesús es la mina de donde proceden todas las verdaderas riquezas. A quienes lo reciben les da la verdad en su plenitud. Otros maestros han dado vislumbres parciales y oscuras de conocimiento; pero en Cristo, la Palabra viviente, reside el conocimiento esencial. Ver PVGM 75-86. Sabiduría. . . conocimiento. Cristo es el cofre de la sabiduría divina y del conocimiento de Dios (1 Cor. 1: 22, 24; Efe. 3: 9-11). Los que reciben a Jesús, han llegado a la fuente misma de todo lo que necesitan para esta vida y para el más allá.",
+                    "references": [
+                        "Ver com. vers. 4.",
+                        "1 Cor. 1: 22, 24; Efe. 3: 9-11"
+                    ]
+                },
+                {
+                    "verse": 4,
+                    "phrase": "Esto lo digo.",
+                    "content": "Ahora Pablo da la razón de lo que ha estado diciendo en los vers. 1-3. No debe haber error alguno en cuanto a la naturaleza vital de su tema y a la grave responsabilidad que se asume si se descuida el adquirir un conocimiento pleno del misterio de Dios, que es Cristo (ver com. vers. 2; cap. 1: 27). Nadie os engañe. Pablo ahora aborda la aplicación práctica de su mensaje. Siempre está la posibilidad de ser engañado. El cristiano debe estar alerta ante las sutilezas que procuran desviarlo de la línea recta de la verdad. Palabras persuasivas. Cf. Rom. 16: 18; 1 Cor. 2: 4. Estas pueden hallar cabida en la mente de los desprevenidos. Los argumentos lisonjeros y las ideas sutiles y enredadas pueden sorprender al cristiano que no está en guardia; pero el error está dentro de esos razonamientos. Pablo amonesta a los creyentes a probar los argumentos y las afirmaciones de los falsos maestros (cf. Col. 2: 8).",
+                    "references": [
+                        "cf. Col. 2: 8"
+                    ]
+                },
+                {
+                    "verse": 5,
+                    "phrase": "Ausente en cuerpo.",
+                    "content": "El apóstol quería que los creyentes comprendieran su preocupación personal por ellos aunque no estuviera presente corporalmente. En espíritu estoy con vosotros. Pablo podía estar encarcelado en la lejana Roma, pero en su corazón había cabida para los conversos que él amaba. Con el pensamiento buscaba soluciones para los problemas de ellos. Sus plegarias se elevaban en agradecimiento e intercesión ante el Padre celestial. El apóstol recalca en esta forma el contraste entre los que se esforzaban por seducirlos con sofisterías y él, su padre espiritual, que, de ser necesario, habría dado su vida por ellos. Esos falsos maestros tenían motivos ocultos; Pablo era completamente abnegado. Gozándome y mirando. Epafras había llevado a Pablo noticias de la permanente fidelidad de los creyentes de Colosas (cap. 1: 7-8). Desde Roma, con la imaginación, Pablo veía a los miembros de la distante Colosas mientras cumplían con sus tareas de vivir y testificar para Jesús. Orden. Gr. táxis, \"orden\", \"arreglo\", \"fila\". Era un término común en el ejército. Sugiere organización, firmeza y un bien dispuesto orden de batalla (compárese con su uso en 1 Cor 14: 40; Heb. 5: 6). Sin duda Pablo había visto más de una parada militar y había contemplado a más de un centurión a la cabeza de su compañía bien entrenada y perfectamente disciplinada. La iglesia de Colosas debía luchar de esa manera contra el pecado. Firmeza. Epafras había hecho una buena obra. La iglesia de Colosas era una comunidad espiritual compacta que avanzaba con confianza para hacer frente al enemigo común. La batalla se reñía dentro de la esfera de la fe de ellos y de su confianza en todo lo relacionado con Cristo. Pablo les sugería que debían continuar en esa feliz y bendita condición.",
+                    "references": [
+                        "compárese con su uso en 1 Cor 14: 40; Heb. 5: 6"
+                    ]
+                },
+                {
+                    "verse": 6,
+                    "phrase": "De la manera que habéis recibido.",
+                    "content": "Se refiere a la forma en que habían recibido el mensaje de salvación predicado por Epafras (cap. 1: 7). El apóstol se regocijaba con ellos por la medida de fidelidad que habían alcanzado (cap. 2: 5); bondadosa, pero firmemente, sin embargo, al mismo tiempo, los amonestaba a que perseveraran. Señor Jesucristo. Estos títulos del Mesías implican de por sí la plenitud de su posición y atributos. Su misión como Salvador está implícita en el nombre \"Jesús\" (Mat. 1: 21),\"Cristo\" sugiere su ministerio mesiánico, y \"Señor\" su identificación -por lo menos en algunos casos- con el Jehová del AT (ver com. 1 Con 12: 3). Andad. GR. peripatéò, \"comportarse\" (ver com. Efe. 2: 2). Pablo insta a los creyentes a seguir comportándose y manejando sus asuntos dentro de la esfera señalada por su confianza en Jesús, haciendo sólo lo que Cristo haría e interesándose únicamente en las cosas que a él le agradarían.",
+                    "references": [
+                        "Mat. 1: 21",
+                        "ver com. 1 Con 12: 3",
+                        "ver com. Efe. 2: 2"
+                    ]
+                },
+                {
+                    "verse": 7,
+                    "phrase": "Arraigados.",
+                    "content": "El significado de la palabra griega sugiere firmeza y estabilidad permanente. Sobreedificados. En el caso de los creyentes de Colosas, el fundamento de su edificación espiritual era Jesús (cf. com. 1 Cor. 3: 11). En él. Pablo vincula tres metáforas: los creyentes deben andar, arraigarse y ser sobreedificados como un magnífico templo para el Señor. Todas esas funciones deben llevarse a cabo \"en él\". Jesucristo es el Modelo de acuerdo con el cual deben comportarse; es la raíz de la cual deben extraer savia y nutrición; es la Roca viva, el Fundamento seguro sobre el cual deben edificar los judíos y los gentiles. El \"es bastante ancho para todos, y bastante fuerte para sostener el peso y la carga de todo el mundo\" (HAp 142). Confirmados. Gr. bebaióò, \"confirmar\", \"establecer\". La flexión del verbo griego muestra que Pablo destaca un proceso continuo de fortalecimiento. Los colosenses diariamente debían quedar establecidos con mayor firmeza. Como habéis sido enseñados. Se destaca de nuevo la eficiencia de Epafras como \"ministro de Cristo\" (cap. 1: 7). El los había instruido correctamente. Habían aprendido en quién creer y cómo vivir con él a fin de lograr justicia y vida eterna. Abundando. O \"abundando de continuo\". La palabra sugiere un estado de \"sobreabundancia\"; \"rebosando\" (BJ, BA, BC). Es posible que nosotros abundamos continuamente, pues los recursos del cielo son mayores, mucho mayores que nuestra más grande necesidad. La provisión es ilimitada, por lo tanto los cristianos deben tomar de ella todo lo que necesitan. El Cristo omnipotente nos dará \"mucho más abundantemente de lo que pedimos o entendemos\" (Efe. 3: 20). En acciones de gracias. El progreso en la vida cristiana sólo es posible cuando el creyente se allega a Dios con corazón agradecido. ¿Cómo podríamos dejar de estar agradecidos cuando nos hallamos rodeados por los ilimitados recursos de la Omnipotencia? Puesto que Cristo es el todo y en todos y con todos, ¿qué debe temer el ser humano? El secreto de la verdadera felicidad consiste en confiar siempre en Cristo. El agradecimiento es el fruto de esa confianza.",
+                    "references": [
+                        "cf. com. 1 Cor. 3: 11",
+                        "HAp 142",
+                        "BJ, BA, BC",
+                        "Efe. 3: 20"
+                    ]
+                },
+                {
+                    "verse": 8,
+                    "phrase": "Mirad.",
+                    "content": "Había un grave peligro ante los creyentes de Colosas. Pablo aquí les llama la atención a ese peligro, y con una solemne advertencia les aconseja que le hagan frente. El astuto adversario estaba procurando arrebatarles los beneficios que habían ganado. Trataba de despojarlos de sus progresos espirituales y de apoderarse de ellos como una presa, conduciéndolos a la destrucción como cautivos engañados por el error. Os engañe. Gr. sulagògéò, \"llevar como despojo\", \"robar\", \"saquear\". \"Os coja como presa\" (BC); \"os esclavice\" (BJ). Este verbo podría referirse a que los creyentes pudieran verse privados de los privilegios y las bendiciones de los cuales gozaban o que los creyentes mismos fueran tomados como rehenes y esclavizados por Satanás. Filosofías y huecas sutilezas. Es decir, filosofía engañosa, insustancial, supercherías sutiles. \"Filosofia(s) y vana(s) falacia(s)\" (BC, NC); \"la vana falacia de una filosofía\" (BJ). Pablo no condena a la filosofía como tal ni acusa a los filósofos. Está advirtiendo contra la clase de filosofía de la cual hacían alarde los falsos maestros de Colosas, filosofía insustancial y vana que promovían mediante sutilezas. El contexto sugiere que esta filosofía tenía que ver con observancias ceremoniales, con creencias humanas, con tradiciones, hábitos y puntos de vista materialistas, todo lo cual tendía a alejar del Evangelio de Dios. Sin duda también contenía inútiles especulaciones acerca de cuestiones pueriles, un hueco alarde de argumentos engañosos sin base real. Esa clase de filosofía se ocupa siempre de los detalles sobre cuestiones difíciles referentes a teorías que parecen verosímiles, pero que tienden a engañar a los que se ocupan de ellas y a negar la predicación del Evangelio de Dios. El centro de esa filosofía es el ensalzamiento del hombre, entre tanto que Dios queda completamente excluido e ignorado (1 JT 96). El cristiano debe estar alerta y preparado contra los que la enseñan. Su fin es muerte eterna. Tradiciones. Gr. parádosis (ver com. Mar. 7: 3). Las tradiciones son los patrones habituales de conducta y creencias humanas, las cuales se transmiten de generación a generación. Las tradiciones pueden ser buenas o malas. Pablo advierte contra las que alejan de la verdad, pues son de origen humano y no divino. Cf. Gál. 1: 14. Pablo usa esta palabra en buen sentido en 2 Tes. 2: 15; 3: 6. Rudimentos. Gr. stoijéion, \"elemento\"; \"elementos\" (BJ, NC). Ver com. Gál. 4: 3. El significado técnico de stoijéion, en el lenguaje filosófico, era materia elemental. En la mitología se representaba a los elementos mediante diversos espíritus, de modo que stoijéion también llegó a aplicarse a los espíritus. En los escritos extrabíblicos stoijéion también se aplicaba a malos espíritus, a estrellas y a deidades estelares. Parece que en Colosas había una secta bastante respetable que se ocupaba de los stoijéion. Esa secta estaba penetrando mediante su propaganda en la comunidad cristiana de esa ciudad. No se conocen los alcances exactos de su penetración. Al pregonar su advertencia Pablo usa la terminología de la secta.4 Según Cristo. La norma siempre debe ser estar de acuerdo con Cristo. Se presenta a Cristo en oposición a todas las filosofías engañosas. Los argumentos usados por los falsos maestros siempre deben compararse con las doctrinas del gran Maestro. Cristo, el Creador y Sustentador, es la norma para medir todo verdadero conocimiento.",
+                    "references": [
+                        "BC, NC",
+                        "1 JT 96",
+                        "ver com. Mar. 7: 3",
+                        "BJ, NC"
+                    ]
+                },
+                {
+                    "verse": 9,
+                    "phrase": "En él habita.",
+                    "content": "Ver com. cap. 1: 19. En Cristo habita la suma total de la naturaleza y de los atributos de Dios. Todos los derechos y poderes de la Deidad residen permanentemente en él. Toda la plenitud de Dios se revela en Cristo. Corporalmente. Sin duda es una referencia al cuerpo glorificado de Cristo (Fil. 3: 21) con el cual ascendió al cielo (cf. DTG 771). La plenitud de la Deidad reside en él corporalmente. Sin duda esta afirmación servía para contrarrestar las falsas filosofías que se difundían en Colosas (ver p. 190). Plenitud. Gr. plèròma (ver com. Efe. 1: 23; Col. 1: 19). Los alcances abarcados por este término son ilimitados en tiempo, espacio y poder. En Cristo se encuentra todo lo que Dios es, cada cualidad de la Deidad: dignidad, autoridad, excelencia, poder para crear y ordenar el mundo, energía para sostener y guiar el universo, amor para redimir a la humanidad, previsión para suministrar todo lo necesario a cada una de sus criaturas. Deidad. Gr. theótès, \"deidad\", \"naturaleza divina\". Compárese con theiótès, \"naturaleza de Dios\" (ver com. Rom. 1: 20).",
+                    "references": [
+                        "Fil. 3: 21",
+                        "cf. DTG 771",
+                        "ver com. Efe. 1: 23; Col. 1: 19",
+                        "ver com. Rom. 1: 20"
+                    ]
+                },
+                {
+                    "verse": 10,
+                    "phrase": "Estáis completos en él.",
+                    "content": "Literalmente \"en él habéis sido completados\". Cf. Efe. 3: 19; 5: 18. Dentro de la esfera de Cristo el hombre no sólo puede ver su meta de perfección, sino también puede recibir poder para alcanzarla. Cuando aceptamos su sabiduría nos hacemos sabios. Mediante una comunión diaria con él, la semejanza de lo divino se convierte en una realidad dentro del alma humana. No hay nada para esta vida o para la eternidad que el hombre no pueda recibir por medio de la unión espiritual con Cristo. Podemos llegar a ser completos en él. Todo principado y potestad. Cf. com. Rom. 8: 38; Efe. 1: 21; Col. 1: 16. Pablo destaca nuevamente que Cristo es la cabeza de todo poder y de toda autoridad. Su fuerza soberana es la fuente de la vida. Lo que el apóstol quiere decir es que, cuando Cristo mora en nosotros, su misma autoridad victoriosa y poder creador nos capacitarán para triunfar.",
+                    "references": []
+                },
+                {
+                    "verse": 11,
+                    "phrase": "Fuisteis circuncidados.",
+                    "content": "Lo que quizá esté implicado es que esos falsos maestros enseñaban que antes de allegarse a Cristo debían cumplirse la circuncisión y los detalles de la ley ceremonial (cf. Gál. 6: 15). Por lo menos algunos de esos maestros pueden haber pretendido que eran superiores por estar circuncidados. No hecha a mano El rito de la circuncisión se hacía con la mano, pero su significado y valor residían en su propósito interior. Era una señal o signo externo de un estado interno de fe y gracia. Mediante ella Abrahán demostró su fe de que era Dios, y no él, quien tenía vida y podía dar la vida a otros. Esta señal peculiar debía distinguir a todos los varones del antiguo Israel. La circuncisión indicaba la completa consagración de Israel a Jehová y su obediencia a todos los mandamientos divinos. En la historia de Israel se encuentra una ilustración de su verdadero significado. En el tiempo de la rebelión de Israel, en Cades, el pueblo rechazó a Dios, y Dios, a su vez, rechazó al pueblo por un tiempo. Como demostraron que no eran fieles al pacto divino, se les prohibió recibir la señal de ese pacto. La circuncisión fue suspendida durante 38 años (ver PP 430). Cuando un Israel creyente y obediente, cruzó por fin el jordán, se sintió de nuevo dispuesto a entrar plenamente en la relación del pacto con Dios; y entonces se practicó otra vez el rito por orden de Dios (ver Jos. 5: 2-9). Por lo tanto, la verdadera circuncisión tiene que ver con el corazón (Deut. 10: 16). La circuncisión que los cristianos de Colosas habían recibido no era externa, en la carne; era un cambio interno de corazón y de vida simbolizado por su bautismo (ver com. Col. 2: 12). Al echar de vosotros el cuerpo. Cf. com. Rom. 6: 6; cf. Efe. 4: 22. Pecaminoso. La evidencia textual establece (cf. p. 10) la omisión de esta palabra. La omiten la BJ, BA, BC y NC. Carnal. Es decir, la naturaleza carnal (ver Rom. 7: 14-25; 8: 1-13). Circuncisión de Cristo. Es decir, la circuncisión que Cristo hace, no la que le fue hecha a él. La verdadera circuncisión espiritual, la eliminación y el sepultamiento de las malas tendencias del corazón, se produce mediante Jesucristo mismo. Sólo su poder puede eliminar la vida antigua y crear un hombre nuevo. De la ceremonia de la circuncisión Pablo deduce una lección espiritual para el cristiano.",
+                    "references": [
+                        "cf. Gál. 6: 15",
+                        "ver PP 430",
+                        "ver Jos. 5: 2-9",
+                        "Deut. 10: 16",
+                        "ver com. Col. 2: 12",
+                        "ver Rom. 7: 14-25; 8: 1-13"
+                    ]
+                },
+                {
+                    "verse": 12,
+                    "phrase": "Sepultados con él.",
+                    "content": "La muerte precede al entierro. Cristo depuso su vida antes de que fuera sepultado en la tumba de José. Antes de que el cristiano pueda ser sepultado con Cristo, debe haber sometido su vida a Cristo. Todas las ambiciones de su corazón y los impulsos y anhelos de sus pasiones carnales deben ser entregados a su Maestro. En lo que a él concierne, su vieja naturaleza debe morir. El bautismo es la señal de esta renuncia al yo, de la muerte del hombre viejo y de su sepultamiento en la tumba de agua. Cf. com. Rom. 6: 3-4. Fuisteis también resucitados. El bautismo significa la renuncia al yo mediante la muerte de la naturaleza pecaminosa y el entierro de esa naturaleza y, además, el nacimiento de una nueva criatura en Cristo Jesús (ver com. Rom. 6: 4). Le levantó de los muertos. Cf. Efe. 1: 19-20. El mismo poder que levantó a Jesús de los muertos obra una transformación en el creyente.",
+                    "references": [
+                        "ver com. Rom. 6: 4"
+                    ]
+                },
+                {
+                    "verse": 13,
+                    "phrase": "Muertos en pecados.",
+                    "content": "La frase griega puede entenderse \"en vuestros pecados\", o \"por vuestros pecados\", como también \"a vuestros pecados\". Por esa razón podría entenderse en dos formas: (1) que Pablo describe la condición espiritual anterior de los creyentes de Colosas: sus corazones, mentes y cuerpos estaban muertos o insensibles a todas las cosas espirituales (cf. com. Efe. 2: 1, 5); (2) que los creyentes están ahora muertos a las incitaciones e influencias de sus propensiones pecaminosas (cf com. Rom. 6: 2). Este pensamiento es una prolongación de lo que Pablo ha dicho en el versículo previo. Habiéndose despojado de sus prácticas pecaminosas al aceptar a Cristo en sus corazones y habiendo testificado de ese cambio al ser bautizados, los colosenses podían considerarse entonces como muertos a sus pecados. Por fe habían pagado la pena de muerte mediante Cristo. Incircuncisión de vuestra carne. Esta expresión muestra que aquellos a quienes Pablo escribía y de quienes hablaba como que habían recibido la verdadera circuncisión, eran gentiles (vers. 11). También describe el estado común de toda la humanidad. Todo el que nace en el mundo está fuera del pacto de la gracia (Efe. 2: 12). Las dos ideas -\"muertos en pecados\" e \"incircuncisión de vuestra carne\"- abarcan lo que el hombre personalmente merece debido a sus malas elecciones o rebelión deliberada contra Dios, y también el estado natural de condenación en que todos hemos nacido. Las tendencias al pecado, cultivadas y heredadas, son vencidas por medio de Jesús. Os dio vida juntamente con él. Cf. com. Efe. 2: 5. Así como el Padre resucitó a Jesús, también serán resucitados todos los creyentes, convirtiéndose en nuevas criaturas. Esta afirmación describe el misterio del nuevo nacimiento. El poder divino sacó a Jesús de la tumba para vida eterna, y dentro del dominio del corazón y de la mente del ser humano, obra el mismo poder divino a través de la voluntad humana perfectamente entregada, y eleva a la persona haciéndola penetrar en las maravillas de la nueva vida de victoria. Perdonándoos. La evidencia textual establece (cf. p. 10) el texto: \"Habiéndonos perdonado\" (BA). El perdón de Dios precede a la vida que él nos imparte. Pecados. Gr. paráptoma, literalmente, \"resbalón lateral\"; \"delitos\" (BJ, BA, BC, NC). Ver com. Mat. 6: 14. La palabra puede usarse para describir una flecha que cae a un lado del blanco, o a un soldado que se retira de las filas de su compañía en marcha. Los hombres han abandonado sus ideales. El perdón de los pecados incluye la restauración del hombre caído a sus privilegios y posición que perdió.",
+                    "references": [
+                        "cf. com. Efe. 2: 1, 5",
+                        "cf com. Rom. 6: 2",
+                        "Efe. 2: 12",
+                        "BJ, BA, BC, NC"
+                    ]
+                },
+                {
+                    "verse": 14,
+                    "phrase": "Anulando.",
+                    "content": "Gr. exaléifò, \"borrar\", \"cancelar\", \"limpiar\"; \"canceló\" (BJ); \"cancelando\" (BC). En el griego clásico este verbo se usaba para indicar que se había borrado algo escrito. La flexión del verbo que aparece en este versículo debería traducirse \"habiendo borrado\". El acta. Gr. jeirógrafon, \"documento escrito a mano\"; \"el documento de deuda\" (BA); \"la nota de cargo\" (BJ). Esta palabra sólo aparece aquí en el NT. Fuera de la Biblia se usaba con frecuencia para documentos escritos a mano, con frecuencia de carácter legal, como un pagaré firmado por un deudor. Compárese con File. 19. La \"anulación\" de un pagaré tal se efectuaba únicamente después de que la deuda había sido pagada y se habían cumplido plenamente las condiciones del mismo. Con frecuencia se hacía esto cruzándolo como con una \"X\", como lo muestran los ejemplos de los papiros. La tinta soluble en agua con que se escribía el papiro también podía ser lavada o borrada; luego se escribía de nuevo en el mismo papiro. Algunos comentadores sostienen que el apóstol está diciendo a la iglesia de Colosas que la regeneración de sus miembros mediante el poder de la resurrección proveniente de Dios y la restauración dentro de ellos de la imagen divina, se efectuaron cuando Dios borró o canceló el pagaré que ellos debían pagar. Otros ven una referencia a la ley mosaica, especialmente tal como la interpretaban los judíos. El parecido del lenguaje con Efe. 2: 15 y la similitud entre las dos epístolas, ha hecho pensar que \"el acta de los decretos\" y la \"ley de los mandamientos expresados en ordenanzas\" son una misma cosa (ver com. Efe. 2: 15). Sin embargo, corresponde notar que las palabras griegas no son las mismas y que, además, lo que desaparece en Efesios es la \"pared intermedia\" que separa a judíos y gentiles, interpretada por muchos como una pequeña parte de la ley ceremonial, la circuncisión. Ver Nota Adicional al final de este capítulo. Igualar al jeirógrafon con la ley moral, como algunos lo han intentado, no tiene base lingüística ni teológico. En este pasaje no se habla de los Diez Mandamientos. El jeirógrafon es un \"pagaré\", una nota de débito. La ley moral señala el pecado (Rom. 3: 20; 7: 7), pero también es una representación del carácter \"santo, justo y bueno\" de quien la promulgó (Rom. 7: 12). Jesús afirmó que no podría cambiarse \"ni una jota ni una tilde\" de la ley (Mat. 5: 17-18). Pablo afirmó que su Evangelio no invalidaba la ley, sino la confirmaba (Rom. 3: 31l). Los credos históricos, tanto protestantes como católicos, señalan al unísono la inmutabilidad de la ley Decretos. Gr. dógma, \"decreto\", \"estatuto\"; \"prescripciones\" (BJ, BC). La frase \"el acta de los decretos\" se traduce mejor \"el documento con sus requerimientos\". Es necesario tomar toda la frase como unidad. Con frecuencia se ha interpretado que aquí se habla de la ley ceremonial judía, Ver com. Efe. 2: 15 y Nota Adicional al final de este capítulo. Contra nosotros. \"El acta\" era, gramaticalmente en griego, lo que estaba \"contra nosotros\" y \"era contraría\" a nosotros. Algunos han entendido que se refiere al pagaré escrito contra todos, tanto judíos como gentiles. Otros, que se refiere al sistema legal judío. En cuanto a la manera en que este sistema era contrario a judíos y a gentiles, ver com. Hech. 15: 10; Efe. 2: 15. Quitándola de en medio. Lo que se eliminó fue \"el acta\" (ver com. respectivo), el pagaré, lo que era contrario, lo que condenaba. Ver com. del pasaje paralelo (Efe. 2: 15). Clavándola en la cruz. La cruz marca la transición de un sistema (el judío) al otro (el cristiano). Esta misma idea se expresa en Efe. 2: 16, donde se explica que la reconciliación tuvo lugar en la cruz.",
+                    "references": [
+                        "ver com. Efe. 2: 15",
+                        "Rom. 3: 20; 7: 7",
+                        "Rom. 7: 12",
+                        "Mat. 5: 17-18",
+                        "Rom. 3: 31l",
+                        "BJ, BC",
+                        "Efe. 2: 15"
+                    ]
+                },
+                {
+                    "verse": 15,
+                    "phrase": "Despojando.",
+                    "content": "Gr. apekdúomai, literalmente \"quitar los vestidos\"; aquí quizá \"quitar la armadura\", \"despojar\". Se ha debatido mucho en cuanto al sujeto de la acción. Algunos afirman que es el Padre, pues él es el sujeto de \"os dio vida\" (vers. 13). Otros creen que el pasaje más bien se aplica a Cristo. Gramaticalmente no se puede establecer el sujeto, por lo que debe resolverse de acuerdo con el contexto del pasaje (ver más adelante). Principados. . . potestades. Estos términos pueden referirse a gobernantes terrenales (Luc. 12: 11; Tito 3: 1), o a seres sobrenaturales (ver com. Efe. 6: 12). Si se tiene en cuenta a los falsos maestros de Colosas, quizá haya aquí una alusión a los supuestos poderes angelicales y a las deidades de los elementos (ver p. 190; com. Col. 2: 8). En realidad Cristo triunfó de un modo contundente sobre Satanás y sus ángeles. Su muerte en la cruz hizo que Satanás perdiera más la simpatía del mundo celestial (ver com. Apoc. 12: 9). Satanás estuvo cerca de Jesús durante todo su ministerio para tentarlo y acosarlo. La vida de Cristo fue una continua serie de luchas, pero venció en todo encuentro. Cada esfuerzo de Satanás para destruirlo sólo hizo que fueran más claras y manifiestas las maniobras del engañador. La vida victoriosa de Cristo, que culminó en el Calvario, significó la condenación del diablo. Le fue quitado el disfraz a Satanás. Sus artimañas fueron descubiertas ante los ángeles y todo el universo celestial. Su verdadera naturaleza quedó expuesta. Ver DTG 98, 709. Cristo despojó mediante su cruz a los principados y potestades de las tinieblas de su posición y de su autoridad como príncipes de este mundo, y de su impenetrable armadura con que luchaban contra el bien. Por eso parece preferible considerar a Jesús como el sujeto de la acción expresada por \"despojando\" (ver com. anterior). Los exhibió públicamente. La cruel muerte de Cristo en la cruz hizo que Satanás y sus legiones quedaran al descubierto ante el universo, como eran: asesinos y espíritus de maldad. Triunfando. Gr. thriambéuò (ver com. 2 Cor. 2: 14). En la cruz. Gr. en autó, \"en él\" o \"en ello\". La forma del pronombre permite que el antecedente sea la cruz o el acta. Por otra parte \"en él\" podría referirse a Cristo si el Padre es considerado como el sujeto de la acción expresada en el versículo (ver \"despojando\").",
+                    "references": [
+                        "Luc. 12: 11; Tito 3: 1",
+                        "ver com. Efe. 6: 12",
+                        "ver p. 190; com. Col. 2: 8",
+                        "ver com. Apoc. 12: 9",
+                        "ver com. 2 Cor. 2: 14"
+                    ]
+                },
+                {
+                    "verse": 16,
+                    "phrase": "Por tanto.",
+                    "content": "Es decir, en vista de que el \"acta\" había sido anulada y la cruz había dado lugar a un nuevo sistema (ver com. Efe. 2: 15). Juzgue. Evidentemente se refiere a los falsos maestros que, entre otras cosas, insistían en la vigencia de las prescripciones del sistema ceremonial judío (ver p. 190). En comida o en bebida. Las palabras griegas usadas aquí, brósis y pósis, se refieren más a la manera de comer y beber que a lo que se bebe y se come. Hay varias interpretaciones en cuanto al significado de esta frase. Algunos sugieren que se refiere a alimentos y libaciones presentados como parte del sistema ceremonial judío. Otros, notando el contexto de la epístola, piensan más bien que tiene que ver con instrucciones o prohibiciones añadidas por los falsos maestros, judaizantes o gnósticos. Ver Nota Adicional al final de este capítulo. Algunos, equivocadamente, han llegado a la conclusión de que esta afirmación de Pablo indica la abolición de la distinción entre carnes inmundas y limpias (Lev. 11), por lo cual un cristiano estaría libre de comer cualquier carne. Que Pablo no dice tal cosa se puede ver por lo siguiente: 1)Este pasaje ni siquiera menciona el tema de alimentos limpios e inmundos. Si bien se habla de no tocar ni gustar (vers. 21), no hay mención alguna de carnes inmundas. (2)La distinción entre carnes limpias e inmundas (Lev. 11) no es parte de la ley mosaica. Ya aparece en Gén. 7: 2. Si bien las razones de la prohibición de comer ciertas carnes no son claramente dadas, sabemos que la complacencia del apetito cuando se comen alimentos impuros frustra los perfectos designios del Creador (PP 316; CRA 51). El apóstol no estaba autorizando a los cristianos de Colosas a comer y a beber todo tipo de alimento, sin discriminación. Lo que les dice es que no presten atención a quienes los critican por no cumplir con reglamentos humanos - ya sean de origen judío, gnóstico o pagano- que el cristiano no necesita observar. Días de fiesta. Las ordenanzas ceremoniales incluían órdenes para la observancia de diversos días de fiesta: la pascua, la fiesta de los panes sin levadura, el pentecostés, el día de la expiación y la fiesta de los tabernáculos (Lev. 23). Luna nueva. El primer día de cada mes, o día de luna nueva (Núm. 10: 10; 28: 11; cf 1 Sam. 20: 5; Isa. 66: 23). Días de reposo. Gr. sábbaton, \"sábado\", aquí en su forma plural, sábbata. En el NT sábbaton aparece 67 veces. En 59 casos designa al día sábado, séptimo de la semana, \"día de reposo\" en la RVR. En los otros casos, se usa sábbaton para referirse a la semana, a un período de siete días que comienza a partir del sábado. De las 59 veces que se usa sábbaton para hablar del sábado, 40 veces aparece en plural (en caso nominativo, sábbata). Sólo en Hech. 17: 2 tiene un claro sentido plural. Se ha pensado que quizá sábbata no sea tanto una forma plural como una transliteración del arameo shabbeta o shabbata', que es singular. Otros han sugerido que simplemente se trata de la palabra hebrea shabbath con una a añadida para facilitar su pronunciación en griego. Sea como fuere, en el Pentateuco la LXX emplea siempre el plural sábbata para designar al sábado, sin importar que en el hebreo esté en singular o en plural. El uso de la forma plural evidentemente no da a entender pluralidad de días.* En la LXX sábbaton (en el Pentateuco aparece siempre en su forma plural sábbata) designa al sábado semanal y al séptimo año cuando la tierra debía descansar. Es también una de las palabras que se emplea para designar las fiestas anuales (en Lev. 16: 31 y 23: 32 se usa sábbata sabbátòn, \"sábado de sábados\", para distinguir entre sábados anuales y semanales). Históricamente los adventistas han afirmado que los sábados de Col. 2: 16 son esas grandes fiestas anuales de los judíos, que prefiguraban o eran \"sombra\" (Col. 2: 17) del sacrificio de Cristo. Ver la nota al final del comentario de este capítulo donde se presenta otra posible interpretación.",
+                    "references": [
+                        "ver com. Efe. 2: 15",
+                        "Lev. 11",
+                        "PP 316; CRA 51",
+                        "Lev. 23",
+                        "Núm. 10: 10; 28: 11; cf 1 Sam. 20: 5; Isa. 66: 23",
+                        "en el Pentateuco aparece siempre en su forma plural sábbata",
+                        "en Lev. 16: 31 y 23: 32 se usa sábbata sabbátòn, \"sábado de sábados\", para distinguir entre sábados anuales y semanales",
+                        "Col. 2: 17"
+                    ]
+                },
+                {
+                    "verse": 17,
+                    "phrase": "Lo cual es sombra.",
+                    "content": "Esta es la frase clave para comprender el vers. 16. La manera de comer, beber y observar los días que el apóstol enumera en el vers. 16 son una \"sombra\" o símbolo que se refiere a la realidad que es Cristo. Una sombra no tiene sustancia porque sólo es la proyección de algo sustancial. Compárese con el uso de la palabra \"sombra\" en Heb. 8: 5 y 10: 1. Las ceremonias judías eran sombras proyectadas por realidades celestiales; las realidades son la vida de Cristo, su ministerio y su reino. La representación de esto en la ley ceremonial era tan sólo la sombra. Ver Nota Adicional al final del capítulo. El ministro y comentador presbiteriano Albert Barnes afirma con acierto acerca de este trozo: \"En este pasaje no hay evidencia alguna de que él [Pablo] enseñe que no había obligación de observar ningún día como sagrado, pues no hay ni la más mínima razón para creer que quería enseñar que uno de los Diez Mandamientos había cesado de ser obligatorio para la humanidad. Si Pablo hubiera usado la palabra en número singular, 'sábado', entonces sería claro, por supuesto, que quería enseñar que el [cuarto] mandamiento había dejado de ser obligatorio y que el sábado ya no debía guardarse. Pero el uso de la palabra en número plural y su conexión, demuestran que Pablo estaba pensando en los numerosos días que eran observados por los hebreos como fiestas, como una parte de su ley típica y ceremonial, y no en la ley moral o Diez Mandamientos. De ninguna parte de la ley moral, de ninguno de los Diez Mandamientos podría decirse que 'es sombra de lo porvenir'. Estos mandamientos son, por la naturaleza de la ley moral, de perpetua y universal obligación\" (Notes on New Testament, t. 7, p. 267). De lo que ha de venir. O \"de cosas futuras\". El cuerpo es de Cristo. Jesús es, en contraste con la sombra, la plenitud de la realidad. Cada símbolo se refiere a él, y cada uno de ellos encuentra en él su plenitud. Cuando los cristianos se encuentran con Cristo le dan la espalda a los perfiles simbólicos que son sólo sombras, para caminar en la plenitud de la presencia divina. En estos versículos Pablo destruye completamente la base de las enseñanzas de los falsos maestros judaizantes. Ellos propiciaban el retorno a las imposiciones ceremoniales judaicas. El apóstol hace frente a sus argumentos afirmando que las sombras ya cumplieron su propósito porque Cristo, la realidad, vino. Pablo no disminuye en nada en toda su argumentación las demandas del Decálogo o del sábado, séptimo día semanal. La ley moral es eterna y perfecta (ver com. Rom. 14: 1; Efe. 2: 15).",
+                    "references": [
+                        "Notes on New Testament, t. 7, p. 267",
+                        "ver com. Rom. 14: 1; Efe. 2: 15"
+                    ]
+                },
+                {
+                    "verse": 18,
+                    "phrase": "Nadie os prive de vuestro premio.",
+                    "content": "Gr. katabrabéuò, \"emitir un juicio adverso\", \"decidir contra\", \"condenar\". \"Que nadie decida en contra vuestra\" (BJ, nota). Hay una posible alusión al árbitro que descalificaba a un concursante, pues brabéus significa \"árbitro'. El apóstol ahora se refiere a otro motivo de peligro que amenazaba a los creyentes de Colosas. Se ocupa de los problemas peculiares producidos por las falsas enseñanzas que se debatían entre ellos (ver p. 190) Afectando humildad. El orgullo engendra una humildad artificial que tiene el propósito de aumentar los méritos, una autohumillación que degenera en un ascetismo innecesario y sin valor. Se hace para ganar méritos mediante él esfuerzo personal. Quienes así proceden, niegan la justicia de Cristo; no le dan lugar para que actúe en el corazón humano mediante la fe. Cf. 1JT 96. Culto a los ángeles. Esos falsos maestros que aparentemente aceptaban que eran guiados por ángeles, pues los consideraban como emanaciones inferiores de Dios, se ocupaban de la debilidad del hombre, de su inferioridad ante Dios y de la distancia que lo separa del Señor grande y eterno. Quizá esto era una prolongación de la humildad voluntaria que propiciaban. Si el cuerpo del hombre era completamente indigno, no se podía aproximar a Dios; necesitaba intermediarios. De modo que rendían culto a los ángeles como a seres superiores al hombre y, en cierto sentido, como prolongaciones de la Deidad. Pablo amonesta a los colosenses contra la aceptación de esta creencia, pues está contra las enseñanzas de Cristo. Jesús, citando a Deut. 6: 13, declaró: \"Al Señor tu Dios adorarás, y a él sólo servirás\" (Mat. 4: 10). Los ángeles celestiales prohibieron que se los adorara (Apoc. 22: 9). Entremetiéndose. Gr. embatéuò, literalmente \"meterse en\", \"interesarse en\", \"entrar en\", como en el caso de la invasión de un país; en sentido figurado \"investigar\", \"curiosear\", \"entremeterse\". Embatéuò se usaba en la terminología de las religiones de misterio, como lo demuestran varias inscripciones procedentes del Asia Menor, aproximadamente del siglo 11 d. C. El término posiblemente era usado con frecuencia por los falsos maestros y quizá también pudo haberse utilizado en la iniciación de los misterios de una secta, en cuyo caso el significado sería \"iniciar\". Lo que no ha visto. La evidencia textual favorece (cf. p. 10) la omisión de la negación; entonces el texto diría: \"lo que ha visto\" (BJ), \"lo que vio\" (NC), que en este caso podría significar \"visiones\" (BC). Compárese con la traducción de Straubinger: \"Haciendo alarde de las cosas que pretende haber visto\". Si el verbo embatéuò (ver \"entremetiéndose\") se traduce como \"iniciar\", el pasaje podría traducirse: \"lo que han visto mientras estaban siendo iniciados\". Vanamente hinchado. Indica glorificación propia y autosatisfacción. Mente carnal. Es decir, una mente dominada por la carne, en contraste con una mente dominada por el Espíritu (cf. Rom. 8: 1-13).",
+                    "references": [
+                        "BJ, nota",
+                        "Mat. 4: 10",
+                        "Apoc. 22: 9",
+                        "cf. Rom. 8: 1-13"
+                    ]
+                },
+                {
+                    "verse": 19,
+                    "phrase": "Cabeza.",
+                    "content": "Es decir, Cristo (cf. com. Efe. 4: 15-16). El propósito final de esta filosofía, como la enseñaban los falsos maestros de Colosas, era una negación de Cristo. Nutriéndose. Gr. epijorègéò, \"proporcionar\", \"proveer\", \"sostener\". La BJ traduce: \"La Cabeza, de la cual todo el Cuerpo, por medio de junturas y ligamentos, recibe nutrición y cohesión\". Uniéndose. Cf. Efe. 4: 16; Col. 2: 2. La flexión del verbo griego indica un proceso de desarrollo continuo. Coyunturas y ligamentos. Así como los miembros del cuerpo se mantienen unidos por medio de articulaciones y tendones que son parte del cuerpo, así también deben estar unidos los miembros de la iglesia cristiana, el cuerpo místico de Cristo. El cuerpo simbólico recibe su fortaleza y mantiene su cohesión mediante una unión personal con el Señor Jesús. Nada, ni aun los ángeles, debiera interponerse entre nosotros y nuestro Salvador. Crecimiento que da Dios. La fuerza misteriosa que produce el crecimiento es el poder de Dios. El crecimiento sería imposible sin este poderoso principio de vida. El carácter verdaderamente armonioso sólo puede desarrollarse cuando el poder divino se une con el esfuerzo humano. Este es el resultado externo y visible de la justificación por la fe.",
+                    "references": [
+                        "cf. com. Efe. 4: 15-16"
+                    ]
+                },
+                {
+                    "verse": 20,
+                    "phrase": "Si habéis muerto con Cristo.",
+                    "content": "Literalmente \"si morís con Cristo\" (ver com. Rom. 6: 5-8). Rudimentos del mundo. Pablo usa esta expresión con referencia especial a la filosofía de los falsos maestros de Colosas (ver com. vers. 8). En sentido más general, los \"rudimentos del mundo\" podrían entenderse como los elementos fundamentales de los cuales depende el mundo para su vida, el ABC de su estructura. \"Mundo\" está colocado en contraste con cielo, y significa la época en que vivimos dominados por sus impulsos e intereses. La persona que está viva para el mundo, que vive de acuerdo con las costumbres del mundo y con su filosofía, está muerta para las cosas de Dios; y lo opuesto es igualmente verdadero: el que está \"muerto con Cristo\" y vive movido por los principios del reino de los cielos, para siempre ha dado la espalda a los rudimentos básicos de este mundo y vive para Dios. ¿Por qué, como si vivieseis ... ? Pablo pregunta en esencia a los colosenses: \"Habiendo abandonado la falsa filosofía y las ambiciones y los fundamentos de este mundo al morir con Cristo, ¿por qué vivís como si todavía estuvierais atados por estas cosas?\" ¿Os sometéis a preceptos? O \"¿continuáis sometiéndoos a decretos?\" como las ordenanzas caducas del judaísmo (ver com vers. 16). También puede haber una referencia a restricciones ascéticas y a requerimientos provenientes de sectas. La falsa filosofía de Colosas contenía elementos judaicos y paganos (ver p. 190). Pablo pregunta: \"Ahora bien, puesto que no estáis obligados a guardar esos preceptos, ¿por qué todavía os preocupáis por ellos?\"",
+                    "references": [
+                        "ver com. Rom. 6: 5-8"
+                    ]
+                },
+                {
+                    "verse": 21,
+                    "phrase": "No manejes.",
+                    "content": "\"No tomes\" (BJ, BC, NC); \"no manipules\" (BA). El ritual mosaico estaba lleno de prohibiciones respecto a tocar leprosos, flujos inmundos, cadáveres y otras cosas contaminadas (Lev. 12-15; Núm. 19: 11-22). La lección contenida en esas prohibiciones era que el verdadero seguidor de Dios debía mantenerse limpio y puro de toda contaminación moral y física para que pudiera glorificar a Dios. Los falsos maestros quizá añadían otros tabúes. Ni gustes. La referencia sin duda es a varias restricciones alimentarías principalmente inventadas por hombres (vers. 8), como las mencionadas en 1 Tim. 4: 3-5. En cuanto a la evidencia de que Pablo no está eliminando la restricción de consumir alimentos inmundos, ver com. Col. 2: 16. Los falsos maestros de Colosas quizá imponían muchos tabúes en asuntos de alimentación. Ni aun toques. Una referencia a los diversos tabúes que los falsos maestros imponían a los cristianos colosenses. Algunos de esos tabúes eran de origen judaico; otros procedían de filosofías orientales.",
+                    "references": [
+                        "BJ, BC, NC",
+                        "Lev. 12-15; Núm. 19: 11-22"
+                    ]
+                },
+                {
+                    "verse": 22,
+                    "phrase": "De hombres.",
+                    "content": "Los decretos y tabúes de los falsos maestros, aunque en cierta medida eran parecidos a los requerimientos del sistema ceremonial judaico, eran todos requisitos de origen humano. Dios no los había impuesto a los hombres. La muerte de Cristo había puesto fin a la ley ceremonial, y lo que estaba más allá de esa ley, Dios nunca lo había exigido. Se destruyen. \"Destinadas a perecer\" (BJ). Todas esas cosas prohibidas estaban destinadas a perecer. Eran de naturaleza transitoria y no de un valor espiritual o moral perdurable.",
+                    "references": []
+                },
+                {
+                    "verse": 23,
+                    "phrase": "Reputación de sabiduría.",
+                    "content": "\"Apariencia de sabiduría\" (BJ); \"color de sabiduría\" (BC). Pablo amonesta contra ser engañados o extraviados por las apariencias. Culto voluntario. O \"religión propia\", autocreada o autoimpuesta. La base de todo esfuerzo puramente humano dedicado a ceremonias es culto propio, pues el adorador depende de sí mismo; confía en sus esfuerzos personales para ganar el favor de Dios. En la vigilancia que se impone a sí mismo, en las torturas espirituales a que se somete, en los rituales de invención humana para dar forma a un culto creado por el hombre, los factores que se ensalzan son su propia voluntad y sus obras. Pero la filosofía cristiana pone a la voluntad humana en un lugar completamente diferente. La voluntad del hombre debe usarse única y constantemente para escoger a Cristo, y de este modo el Salvador es supremo en el alma humana, y el ser humano ya no ejerce más su voluntad en forma independiente (ver com. Gál. 2: 20). Su oración de consagración diaria es igual a la de su Salvador: \"No se haga mi voluntad, sino la tuya\" (Luc. 22: 42). Humildad. \"Piedad afectada\" (BJ). Pablo se refiere a un remedo de humildad como la que ponían de manifiesto los fariseos y los ascetas que, en realidad, eran culpables del orgullo del exhibicionismo. Tales personas eran desmedidamente orgullosas de su humildad, con lo que demostraban que su humildad no era genuina. Este era el caso de los maestros heréticos de Colosas. Duro trato del cuerpo. Los extremistas religiosos de Colosas indudablemente consideraban que el cuerpo en sí mismo era pecaminoso. Su trato severo con el cuerpo sin duda era extremo y no estaba en armonía con la enseñanza cristiana de que es el \"templo del Espíritu Santo\" (1 Cor. 6: 19), y contradecía la enseñanza de presentar el cuerpo como un sacrificio vivo (ver com. Rom. 12: 1). Apetitos de la carne. Literalmente \"hartura de la carne\". Se ha afirmado que la última parte de este versículo es la más difícil de toda la epístola. Sólo se puede conjeturar su significado. Una interpretación común es que el cumplimiento de todas esas leyes y especulaciones humanas no tiene valor contra la complacencia excesiva de la carne. Lo único que puede lograr esto es una entrega completa del corazón a Cristo y la muerte de la voluntad frente a las atracciones del mundo. NOTA ADICIONAL DEL CAPÍTULO 2 Es evidente que en este capítulo Pablo dirige sus advertencias en contra de falsos maestros que han intentado extraviar a los colosenses. No hay registro alguno de las enseñanzas de quienes perturbaban la paz de la iglesia. Las referencias a \"tradiciones\" (2: 8), a \"filosofías\" (2: 8), a los \"rudimentos del mundo\" (2: 8), a \"plenitud\" (2: 9), a \"los principados y a las potestades\" (2: 15), a \"comida\" y \"bebida\" (2: 16), junto con conceptos tales como la observancia de días especiales (2: 16), la adoración de ángeles (2: 18) y el ascetismo (2: 21), sugieren doctrinas que bien podrían calzar dentro del judaísmo, del gnosticismo y de alguna secta pagana. Lo que claramente puede deducirse del contenido de la epístola es que las enseñanzas a las cuales Pablo se oponía aumentaban la importancia del ritualismo, quitándole así a Cristo el lugar principal que le correspondía. El tema de Colosenses es la auténtica libertad del cristiano, quien no necesita cumplir con ceremonias y rituales a fin de obtener la salvación ni la aceptación ante Cristo, pues el Señor Jesús ha triunfado y ha borrado el pagaré. Dentro de este marco, los comentarios de esta nota condensan ideas de diversos eruditos adventistas de tiempos recientes.* El acta de los decretos (2:14). Mejor \"el documento con sus requerimientos\". Como ya se señalara, la palabra griega jeirógrafon se emplea en los papiros para designar al documento firmado, por el cual una persona se compromete a pagar o a hacer algo. Este certificado de deuda o pagaré es el instrumento legal que establece obligación o culpa; en él se detallan todas las exigencias, las multas, las demandas, a las cuales está obligado el que lo firma. En el judaísmo rabínico, se representaba la relación entre el hombre y Dios como la relación entre el deudor y el acreedor. Cuando el hombre pecaba, se constituía en deudor; cuando se arrepentía y Dios lo perdonaba, la deuda era borrada. Hasta hoy en las oraciones de año nuevo los judíos ruegan: \"Por causa de tu gran misericordia, borra todos los documentos que nos son contrarios\". En una obra apócrifa del primer siglo, se denomina jeirógrafon al libro donde el ángel registra las faltas del fiel .* Así la idea judía y la palabra griega parecen unirse para expresar un concepto cristiano: con la muerte de Jesús en la cruz fue cancelada la deuda del hombre. Lo que Cristo clavó en la cruz mediante su muerte fue el pagaré: el registro de la deuda, la condenación del hombre. A fin de reconciliar la interpretación tradicional adventista con el sentido de la palabra jeirógrafon, algunos han explicado que cuando el pecado entró en este mundo, Dios instituyó un sistema ceremonial de sacrificios cruentos para enseñar a los seres humanos cuál era el precio de la transgresión. Cada vez que se degollaba un cordero, los que participaban en la ceremonia recordaban su deuda para con Dios, pensando en la muerte, no sólo del animal, sino del Redentor al cual representaba. En este sentido, el sistema ceremonial era un \"pagaré\", una evidencia de la deuda de los habitantes de la tierra, un indicio de la magnitud de su condenación. Cuando en la cruz el pagaré fue borrado, el sistema ceremonial, que por milenios había sido evidencia de la culpa de los seres humanos, quedó invalidado para siempre. Los que señalan que la ley fue clavada en la cruz harían bien en notar que en toda la Epístola a los Colosenses no se habla para nada de ley. Por otra parte, es difícil aceptar que Pablo, quien sostenía la santidad de la ley (Rom. 7: 12) y su inmutabilidad (Rom. 3: 31), aquí la hiciera invalidar. Para evitar esta anomalía, se ha afirmado que lo que se clavó fue la ley ceremonial, la que regía los sacrificios e incluía la circuncisión. En cuanto a esto cabe señalar que Pablo no parece hacer una clara distinción entre la ley moral y la ley ceremonial. En comida o en bebida (2:16). Las palabras griegas pósis y brósis empleadas aquí no se refieren tanto a lo que se come y se bebe como a la forma de comer y beber. Parecen estar involucrados aquí reglamentos en cuanto a cómo y cuándo comer o dejar de comer. Hay un estrecho paralelismo entre esta frase y los preceptos del vers. 21: \"No manejes, ni gustes, ni aun toques\". Los judíos en general ayunaban dos veces a la semana (Luc. 18: 12); la secta judía de los esenios era aún más dada al ayuno. La Didajé, un escrito cristiano de comienzos del siglo II, insta a los cristianos a ayunar el miércoles y el viernes a diferencia de los judíos que ayunaban el lunes y el jueves (Didajé 8: 1). Posiblemente el problema de la \"diferencia entre día y día\" de Rom. 14: 5 tuviera que ver con problemas de ayuno.* El asunto de comer o no comer parece haber tenido cierta relevancia en esos tiempos. Evidentemente los falsos maestros estaban imponiendo restricciones alimentarias, añadidas sin duda a la de la ley mosaica, que sólo hacía distinción entre alimentos limpios e inmundos (Lev.11) y no decía nada en cuanto a bebidas. Días de fiesta, luna nueva o días de reposo (2:16). Dentro del marco de las enseñanzas de los falsos maestros de Colosas -que evidentemente enseñaban el ritualísmo y el ascetismo como medio de obtener la salvación- es natural que figuraran los días de culto. La serie de fiestas que aquí se presenta aparece, aunque no siempre en el mismo orden ni con las mismísimas palabras, al menos siete veces en el AT (1 Crón. 23: 31; 2 Crón. 2: 4; 8: 13; 31: 3; Neh. 10: 33; Eze. 45: 17; Ose. 2: 11). En todos los casos parece referirse a una misma serie de días de culto: las fiestas anuales (pascua, Pentecostés, día de la expiación), el novilunio (primer día del mes) y el sábado semanal. Si en este pasaje sábbata se refiere a las fiestas ceremoniales, sería la única vez que aparece con ese sentido en el NT. El contexto sugiere más bien que aquí sábbata es el sábado, séptimo día de la semana, día de reposo. Surge la pregunta: si los sábados de Col. 2: 16 no son sábados ceremoniales, si se habla de sábados semanales, ¿significa esto que Pablo elimina aquí la observancia del sábado? ¡De ningún modo! La vigencia del cuarto mandamiento ni entra en cuestión. Se habla sólo de una falsa observancia del sábado. Los falsos maestros estaban imponiendo reglas y requisitos inventados por ellos, que iban más allá de lo que el mismo judaísmo exigía (2: 20-23). Por la Epístola a los Gálatas, sabemos que la herejía que se propagaba en Galacia inducía a guardar \"los días, los meses, los tiempos y los años\" (cap. 4: 10). Al parecer, Pablo, tanto en Gálatas como en Colosenses, no habla de guardar o no guardar las fiestas, siendo que él mismo se proponía asistir a la celebración de Pentecostés en Jerusalén (Hech. 20: 16). Tampoco podría entenderse que había repudiado la observancia del sábado, pues no hay mención de cosa tal y él mismo lo guardó. Sí está hablando de la imposición de reglamentos humanos en cuanto a la celebración del culto a Dios en el día sábado, los novilunios y las fiestas anuales. Al igual que en el asunto de la comida y la bebida, Pablo ataca a quienes pretenden mejorar lo que Dios ha enseñado. Y sobre todo se opone a quienes enseñaban que los colosenses debían poner su fe en esas prácticas y no en Cristo, quien había borrado el pagaré (Col. 2: 14), había triunfado sobre las potestades (2: 15) y había hecho la paz mediante su sangre (1: 20). Sombra de lo que ha de venir (2:17). La palabra griega skiá, \"sombra\", se usa sólo tres veces en el NT para sugerir la idea de representación: aquí y en Heb. 8: 5 y 10: 1. Una sombra no es sustancia, no es realidad. El cuerpo proyecta una sombra; sin cuerpo no habría sombra. Aquí parece trazarse la distinción entre lo que es en parte y lo que es en plenitud; entre lo que es menos y lo que es más; entre sombra y realidad. Es indiscutible que las fiestas y ceremonias eran un anticipo, una representación, una \"sombra\" del sacrificio de Cristo. Aquí, sin embargo, se habla de una \"sombra\" en contraposición con la \"realidad\", de rituales en lugar de Cristo. En cuanto a esto dice William Barclay: \"Una religión que se funda en comer y beber ciertas clases de alimentos y abstenerse de otros, una religión que se basa en la observancia del sábado y en otros requerimientos, es sólo una sombra de la verdadera religión. La verdadera religión es comunión con Cristo\".* Pablo deja en claro en Col. 2 que la salvación no le logra por una observancia rigurosa de ciertos días, ni por la obediencia a reglamentos en cuanto a la forma de comer y beber, ni por adorar a ángeles, ni por participar en prácticas \"en conformidad a mandamientos y doctrinas de hombres\" (vers. 22). Elena de White se lamenta por quienes \"confían en que sus buenas obras les permitirán alcanzar la salvación, esperando en vano ganarse el cielo por sus obras meritorias, en vez de confiar, como debiera hacerlo todo pecador, en los méritos de un Salvador crucificado, resucitado y exaltado\" (1T 556; ver también 1SM 388). \"El reino de Dios no es comida (pósis) ni bebida (brósis), sino justicia, paz y gozo en el Espíritu Santo\" (Rom. 14: 17). Sólo en Cristo, el Señor del sábado (Mar. 2: 28), quien pagó nuestra deuda, con todas sus exigencias, podemos tener paz, vida y salvación. Jesús, el Creador y Sustentador de todo (Col. 1: 15, 17), es también quien triunfa sobre los principados y potestades (Col. 2: 15) y se constituye en Cabeza de la iglesia (Col. 2: 19).",
+                    "references": [
+                        "ver com. Gál. 2: 20",
+                        "Luc. 22: 42",
+                        "1 Cor. 6: 19",
+                        "ver com. Rom. 12: 1",
+                        "Rom. 7: 12",
+                        "Rom. 3: 31",
+                        "Luc. 18: 12",
+                        "Didajé 8: 1",
+                        "Lev.11",
+                        "1 Crón. 23: 31; 2 Crón. 2: 4; 8: 13; 31: 3; Neh. 10: 33; Eze. 45: 17; Ose. 2: 11",
+                        "pascua, Pentecostés, día de la expiación",
+                        "Hech. 20: 16",
+                        "Col. 2: 14",
+                        "1T 556; ver también 1SM 388",
+                        "Rom. 14: 17",
+                        "Mar. 2: 28",
+                        "Col. 1: 15, 17",
+                        "Col. 2: 15",
+                        "Col. 2: 19"
+                    ]
+                }
+            ],
+            "egwReferences": "1-4 HAp 377 \n \n2-4 3JT 273; OE 320 217 \n \n3 CC 15, 111; DMJ 33; DTG 430; Ed 11; FE 177,181; 2JT 308; MeM 37 l; PVGM \n12,87; 2T 510 \n \n4 HAp 378 \n \n6-7 CC 52, 69; FE 303  \n \n6-8 CH 584; PE 25  \n \n6-10 HAp 377; 3JT 273; OE 321  \n \n7 FE 231, 304; HAp 142  \n \n8 1JT 96; OE 16  \n \n8-10 3JT 188  \n \n9 DMJ 33, 67; Ev 172, 446; PR 439 \n \n9-10 DTG 152; FE 306; MJ 53; OE 58; PVGM 87; 8T 334 \n \n10 CH 369, 593; CM 19,474; DMJ 22; Ed 251; FE 303, 376, 429, 446; 2JT 433; MeM \n15, 284, 351; MM 41, 219; OE 118; 7T 248 \n \n14 HAp 158; PE 33; PP 380 \n \n\n15,17 DTG 138 \n \n17-19 4TS 325 \n \n18 FE 304; 1JT 96, 98 \n \n19 1JT 99 \n \n21 1JT 425; OE 403; Te 256 \n \n23 2T 612"
+        },
+        {
+            "chapter": 3,
+            "verses": [
+                {
+                    "verse": 1,
+                    "phrase": "Si.",
+                    "content": "En el texto griego no se implica duda. La construcción gramatical señala que la condición ya se ha cumplido. Resucitado con Cristo. Estas palabras podrían parafrasearse de esta manera: \"Puesto que habéis resucitado con Cristo\". La frase \"puesto que\" nos hace volver al pasaje del cap. 2: 20 y aún más atrás, a los vers. 12 y 13. Pablo destaca la posición gloriosa y los privilegios que el creyente tiene en su Salvador. Es inútil y vano recurrir a una religión legalista o rutinaria, llena sólo de prácticas ritualistas y tabúes que contrastan con un cristianismo vital y pujante. Buscad. Es decir, buscad habitualmente, seguid buscando, como lo implica el griego (cf. Mat. 6: 33). Las cosas. El impulso de la voluntad, vitalizada por el poder de Jesús, debe ser dirigido hacia las cosas celestiales. Los propósitos y los esfuerzos del hombre, apartados de \"los rudimentos del mundo\", deben enfocarse en las realidades celestiales. De arriba. En contraste con los \"rudimentos del mundo\" (cap. 2: 20). Está... sentado. La flexión del verbo sugiere la continuidad de su misión (cf. Mar 14: 62). El trono de Cristo está en los cielos. Diestra de Dios. Lugar de autoridad y honor (ver com. Hech. 2: 33; Rom. 8: 34). En sentido figurado describe la unión de Cristo con el Padre en el gobierno del universo (ver com. Fil. 2: 5-8; cf. com. Efe. 1: 20).",
+                    "references": [
+                        "cf. Mat. 6: 33",
+                        "cf. Mar 14: 62",
+                        "ver com. Hech. 2: 33; Rom. 8: 34",
+                        "ver com. Fil. 2: 5-8; cf. com. Efe. 1: 20"
+                    ]
+                },
+                {
+                    "verse": 2,
+                    "phrase": "Poned la mira.",
+                    "content": "Más bien \"aspirad a las cosas de arriba\" (BJ, BC); \"pensad en las cosas de arriba\" (NC). Cosas de arriba. Es decir, las del cielo (cf. com. vers. 1). Donde está el tesoro de una persona, allí estará su corazón (Mat. 6: 2l). La tierra. En contraste con \"cielo\", implícito en \"arriba\". Las cosas celestiales pertenecen a Cristo y a la vida eterna pero las terrenales tienen que ver con el programa instaurado por Satanás en su rebelión contra Dios, y de éstas debe apartarse el cristiano porque no son su meta.",
+                    "references": [
+                        "BJ, BC",
+                        "Mat. 6: 2l"
+                    ]
+                },
+                {
+                    "verse": 3,
+                    "phrase": "Porque habéis muerto.",
+                    "content": "Mejor \"porque moristeis\", es decir, simbólicamente en el bautismo (ver com. Rom. 6: 2-4). La muerte precede a la nueva vida. Hay una clara distinción entre la naturaleza carnal y la regenerada. La muerte espiritual de que habla Pablo es el resultado de una entrega completa de la voluntad humana a Dios mediante la fe en Cristo. Escondida con Cristo. La flexión del verbo griego indica que el acto de esconderse fue completo y que su efecto aún continúa. La vida sigue oculta. La vida de la cual aquí se habla es la que el creyente recibe cuando acepta a Cristo. Jesús dijo: \"El que cree en el Hijo tiene vida eterna\" (Juan 3: 36). Esa vida es suya ahora, y se traducirá en gloriosa inmortalidad cuando Cristo venga por segunda vez (ver com. Juan 8: 51).",
+                    "references": [
+                        "ver com. Rom. 6: 2-4",
+                        "Juan 3: 36",
+                        "ver com. Juan 8: 51"
+                    ]
+                },
+                {
+                    "verse": 4,
+                    "phrase": "Cristo, vuestra vida.",
+                    "content": "Cf. com. Juan 1: 4. Jesús no sólo es el autor de la vida cristiana y el propósito final de los esfuerzos humanos. También es la fuente diaria de fortaleza y orientación para los hijos y las hijas de Dios, y la garantía de la vida inmortal futura. La vida del cristiano es inseparable de la de Cristo. Se manifieste. Gr. faneróò, \"hacer visible\", manifestar\". Cuando faneróò se refiere a la segunda venida de Cristo, destaca el hecho de que él, que ahora está oculto de la vista de los humanos, será revelado al hombre cuando venga en las nubes de los cielos (cf. Apoc. 1: 7). Faneróo también se aplica al segundo advenimiento en 1 Ped. 5: 4 y 1 Juan 3: 2. Manifestados. . . en gloria. Faneróò también se aplica a los santos (cf. com. \"se manifieste\"), quienes serán manifestados \"en gloria\", con cuerpos semejantes \"al cuerpo de la gloria suya [de Cristo]\" (Fil. 3: 21). \"Cuando él se manifieste, seremos semejantes a él\" (1 Juan 3: 2). Entonces se cumplirá la oración de Cristo: \"Aquellos que me has dado, quiero que donde yo estoy, también ellos estén conmigo\" (Juan 17: 24). Los que han sido súbditos del reino de la gracia de Cristo en la tierra, serán entonces ciudadanos del reino de la gloria.",
+                    "references": [
+                        "cf. Apoc. 1: 7",
+                        "Fil. 3: 21",
+                        "1 Juan 3: 2",
+                        "Juan 17: 24"
+                    ]
+                },
+                {
+                    "verse": 5,
+                    "phrase": "Haced morir.",
+                    "content": "Ver los comentarios respectivos de Rom. 8: 13 y Gál. 5: 24. Pues. Es decir, en vista de lo que el apóstol acaba de decir (vers. 2-4). Lo terrenal. Con mayor precisión, \"vuestros miembros terrenos\" (BJ, NC); es decir, los órganos y facultades del cuerpo que aquí quizá deba entenderse que atañen al viejo hombre, como lo indican las palabras \"lo terrenal\". El viejo hombre, con sus miembros empleados como instrumentos de injusticia, debe morir. Fornicación. Gr. pornéia, término genérico para referirse a relaciones sexuales ilícitas de cualquier clase (cf. Efe. 5: 3). Impureza. O \"contaminación moral\". Pasiones desordenadas. Gr. páthos, \"pasión\", \"deseo apasionado\"; en el NT se usa para referirse a un deseo malo. En Rom. 1: 26 páthos se usa con atimía, \"deshonra\", y se traduce \"pasiones vergonzosas\". Malos deseos. Gr. epithumía, \"concupiscencia\" (ver com. Rom. 7: 7). Avaricia. Gr. pleonexía, \"deseo de tener más\"; \"codicia\" (BJ, BC). Compárese con el uso que se le da en Rom. 1: 29; 2 Cor 9: 5; Efe. 4: 19; 5: 3; etc. La codicia hace que perjudiquemos a otros, pues es un deseo egoísta que puede impulsamos a apoderarnos de lo que les corresponde a otros. Idolatría. Todo lo que ocupe en el corazón el lugar que corresponde a Dios, es idolatría (cf. com. Gál. 5: 20).",
+                    "references": [
+                        "BJ, NC",
+                        "cf. Efe. 5: 3",
+                        "ver com. Rom. 7: 7",
+                        "BJ, BC",
+                        "cf. com. Gál. 5: 20"
+                    ]
+                },
+                {
+                    "verse": 6,
+                    "phrase": "La ira de Dios.",
+                    "content": "Ver com. Rom. 1: 18. Sobre los hijos de desobediencia. Si bien muchos MSS omiten esta frase, la evidencia textual sugiere (cf. p. 10) su inclusión. En cuanto a la expresión \"hijos de desobediencia\", ver com. Efe. 2: 2.",
+                    "references": []
+                },
+                {
+                    "verse": 7,
+                    "phrase": "Anduvisteis.",
+                    "content": "Gr. peripatéò, \"andar\", pero en sentido figurado, \"comportarse\"; \"practicasteis\" (BJ). Ver com. Efe. 2: 2, 10. En otro tiempo. O \"anteriormente\".",
+                    "references": []
+                },
+                {
+                    "verse": 8,
+                    "phrase": "Pero ahora.",
+                    "content": "En contraste con \"en otro tiempo\" (vers. 7). Dejad. Gr. apotíthèmi, \"sacarse de encima\" como quitarse un vestido (Hech. 7: 58). Metafóricamente \"quitarse\", \"poner de lado\" (cf. com. Rom. 13: 12). Pablo está ordenando a los colosenses que mediante un acto de su voluntad dejen, pongan a un lado, todo lo que está por enumerar Ira. Gr. Orgè, palabra que se usa en el vers. 6 para referirse a la \"ira de Dios\". Ver com. Rom. 2: 8; cf com. Efe. 4: 26, 31 . Enojo. Gr. thumós (ver com. Rom. 2: 8). Malicia. Gr. kakía (ver com. Rom. 1: 29). Blasfemia Gr. blasfèmía, \"difamación\", \"lenguaje ultrajante\"; \"maledicencia\" (BJ, BC, NC), palabras dirigidas contra el prójimo o contra Dios (Mar. 2: 7; 7: 22; cf. com. Apoc. 13: 1). Palabras deshonestas. Gr. aisjrología, \"lenguaje vergonzoso\" (BJ); \"palabras torpes\" (BC). Esta es la única vez en que se usa este vocablo en el NT. Sugiere no sólo un habla sucia, sino también injurias verbales. Cf. com. Efe. 4: 29. De vuestra boca. El que emplea \"palabras deshonestas\" sólo está dejando al descubierto la impureza de su alma (cf Mat. 15: 11- 18); pero el que domina su lengua y no ofende con palabras, \"éste es varón perfecto\" (Sant. 3: 2). El cristiano debe poner guarda a su boca (Sal. 141: 3).",
+                    "references": [
+                        "Hech. 7: 58",
+                        "cf. com. Rom. 13: 12",
+                        "ver com. Rom. 2: 8",
+                        "ver com. Rom. 1: 29",
+                        "BJ, BC, NC",
+                        "Mar. 2: 7; 7: 22; cf. com. Apoc. 13: 1",
+                        "cf Mat. 15: 11- 18",
+                        "Sant. 3: 2",
+                        "Sal. 141: 3"
+                    ]
+                },
+                {
+                    "verse": 9,
+                    "phrase": "No mintáis.",
+                    "content": "Ver com. Efe. 4: 25. Habiéndoos despojado. Gr. apekdúomai (ver com. cap. 2: 15). La figura es la de quitarse un vestido. Viejo hombre. Ver com. Rom. 6: 6; Efe. 4: 22; cf. com. Juan 3: 3, 5. Sus hechos. O prácticas como las que se enumeran en los vers. 5, 8, 9.",
+                    "references": []
+                },
+                {
+                    "verse": 10,
+                    "phrase": "Revestido.",
+                    "content": "Lo opuesto al proceso de despojarse de un vestido. Nuevo. Ver el comentario de Efe. 4: 24; cf. DTG 147; 3JT 288, 294. El cual. . . se va renovando. La raíz griega de este verbo destaca novedad en calidad. La figura corresponde con un desarrollo gradual hasta el conocimiento pleno de Dios. El crecimiento es el producto y la demostración de que hay vida tanto en el aspecto físico como en el espiritual. El poder del Dador de la vida es el único medio por el cual se puede mantener el crecimiento. Conforme a la imagen. Ver com. Rom. 8: 29. Del que lo creó. Es decir, que creó al hombre nuevo. Así como Cristo es la imagen misma de su Padre (Heb. 1: 3), así también el cristiano debe crecer hasta ser \"un varón perfecto, a la medida de la estatura de la plenitud de Cristo\" (ver com. Efe. 4: 13). Conocimiento pleno. Gr. epígnòsis, \"conocimiento pleno, completo y cabal\". Cf. cap. 1: 9-10; 2: 2. Este conocimiento es la comprensión experimental y el entendimiento de los principios celestiales, y es el propósito hacia el cual tiende la \"renovación\".",
+                    "references": [
+                        "Heb. 1: 3",
+                        "ver com. Efe. 4: 13"
+                    ]
+                },
+                {
+                    "verse": 11,
+                    "phrase": "Griego ni judío.",
+                    "content": "En el nuevo orden de la vida cristiana desaparecen todas las distinciones de nacionalidades (ver com. Rom. 10: 12; Gál. 3: 28; cf. com. Rom. 1: 6). Pablo repite esta verdad a través de todas sus epístolas. Circuncisión ni incircuncisión. Ver com. Rom. 2: 25-29; Gál. 5: 6. Bárbaro. Ver com. Hech. 28: 2; Rom. 1: 14. Escita. Sinónimo de los bárbaros más incultos. Siervo ni libre. O \"esclavo ni libre\". El apóstol habla aquí de diferencias sociales. Declara que no existen barreras nacionales, religiosas, raciales o sociales en la esfera de Cristo y en el proceso de permitir que la energía creadora de Dios produzca una nueva criatura, \"Por su vida, Cristo estableció una religión sin castas, merced a la cual judíos y paganos, libres y esclavos quedan unidos por un vínculo fraternal de igualdad delante de Dios\" (3JT 387). Cristo es el todo, y en todos. Una descripción de Cristo como la meta de una realización final. El es \"la plenitud de Aquel que todo lo llena en todo\" (Efe. 1: 23). Puesto que su carácter está en todos los suyos, ¿cómo puede haber distinción alguna entre ellos? No puede haber rivalidades o enemistades entre los miembros del cuerpo de Cristo. Jesús pertenece a todos sus santos. El es el ideal, la meta en la edificación del carácter de todos ellos, y también es el medio por el cual se logra esa hermandad de vencedores.",
+                    "references": [
+                        "ver com. Rom. 10: 12; Gál. 3: 28; cf. com. Rom. 1: 6",
+                        "3JT 387",
+                        "Efe. 1: 23"
+                    ]
+                },
+                {
+                    "verse": 12,
+                    "phrase": "Vestíos, pues.",
+                    "content": "Teniendo en cuenta lo dicho, Pablo destaca la necesidad de un acto voluntario por el cual el cristiano asume la semejanza de Cristo y de su carácter. Ver com. vers. 10. Escogidos de Dios. Estos son los súbditos del reino de los cielos. Todos los que han aceptado a Cristo -sin tener en cuenta diferencias nacionales, religiosas, raciales y sociales- son los elegidos de Dios, la sal de la tierra, la luz del mundo. Ver TM 422; com. Rom. 8: 33; cf. PP 207-208. Santos. Los que han sido apartados están separados del mundo y dedicados al servicio de Dios (ver com. Rom. 1: 7). La santidad es la manifestación de una vida en perfecta concordancia con Dios. \"Así como Dios es santo en su esfera, el hombre caído, por medio de la fe en Cristo, debe ser santo en la suya\" (HAp 446). Amados. Esto es, amados por Dios. Entrañable. Gr. splágjnon, literalmente, entrañas\". En sentido figurado, la sede de las emociones. \"Entrañas de misericordia\" (BJ, BC, NC, VM). Misericordia. Gr. oiktirmós, \"ternísima compasión\" (ver com. Rom. 12: 1). Un corazón lleno de compasión es un rasgo distintivo del verdadero cristianismo. Benignidad. Gr. jrèstótès, \"bondad\", \"gentileza\", \"excelencia\" (cf. Rom. 3: 12; Gál. 5: 22 Efe. 2: 7). Este vocablo expresa el amor en acción (1 Cor. 13: 4). Describe la consideración gentil, bondadosa y amable tanto en disposición como en acción hacia las necesidades de nuestro prójimo. Humildad. Gr. tapeinofrosúnè (ver com. Hech. 20: 19; Efe. 4: 2). Compárese con el uso de este vocablo en Fil. 2: 3; 1 Ped. 5: 5. En Col. 2: 18, 23 se describe una falsa humildad. El hijo de Dios \"debe trabajar constantemente para obtener la humildad de espíritu, y ese ánimo manso y sereno que es de gran valor a los ojos de Dios\" (1JT 249). Mansedumbre. Mansedumbre es la ausencia de justificación propia, lo opuesto a agresividad. Es una ecuanimidad dulce y bondadosa. Nuestro Salvador fue el ejemplo perfecto de verdadera mansedumbre durante sus horas de prueba más acerba (DTG 682). El verdadero cristiano debe esforzarse por imitar ese Modelo en su vida diaria (DTG 320). Ver com. Mat. 5: 5; cf. Gál. 5: 23. Paciencia. Gr. makrothumía, \"paciencia\", \"sufrimiento paciente\". Compárese con el uso del verbo afín makrothuméò, en 1 Cor. 13: 4; Sant. 5: 7. Makrothumía describe la sujeción máxima del alma, su permanente decisión de no rendirse a ninguna pasión, especialmente la ira. Cf. com. 2 Cor. 6: 6; Col. 1: 11.",
+                    "references": [
+                        "ver com. Rom. 1: 7",
+                        "HAp 446",
+                        "BJ, BC, NC, VM",
+                        "ver com. Rom. 12: 1",
+                        "cf. Rom. 3: 12; Gál. 5: 22 Efe. 2: 7",
+                        "1 Cor. 13: 4",
+                        "ver com. Hech. 20: 19; Efe. 4: 2",
+                        "1JT 249",
+                        "DTG 682",
+                        "DTG 320"
+                    ]
+                },
+                {
+                    "verse": 13,
+                    "phrase": "Soportándoos unos a otros.",
+                    "content": "O \"tolerándoos mutuamente\". Perdonándoos unos a otros. En nuestras relaciones con nuestros hermanos en Cristo debe haber una moderación habitual externa, o indulgencia en palabras o actos, y además el hábito de pasar por alto en nuestra mente las faltas, las equivocaciones, o debilidades de los otros. Este es el verdadero perdón (cf. Mar. 11: 25; Efe. 4: 32). Queja. Gr. momfè, \"queja\", \"causa de queja\", \"censura\". Este vocablo griego sólo aparece aquí en el NT. Cristo. Aunque en algunos MSS se lee \"Señor\", la evidencia textual se inclina (cf p. 10) por \"Cristo\". La gran norma del perdón del hombre para con el hombre es el perdón de Dios a la familia humana (cf. Efe. 4: 32; DMJ 92-93; 5T 170).",
+                    "references": [
+                        "cf. Mar. 11: 25; Efe. 4: 32",
+                        "cf. Efe. 4: 32; DMJ 92-93; 5T 170"
+                    ]
+                },
+                {
+                    "verse": 14,
+                    "phrase": "Amor.",
+                    "content": "Gr. agápè. Ver com. Mat. 5: 43; 1 Cor. 13: 1. El amor es la virtud que debe dar cohesión a todas las demás virtudes. No importa cuánto haga alarde de su fe el cristiano nominal, si su alma no está llena del amor a Dios y a sus prójimos, no es un verdadero discípulo de Cristo (ver com. 1 Cor. 13: 1-3). Vínculo. Gr. súndesmos, \"lo que mantiene unido\", \"vínculo\". En otro pasaje de esta epístola (cap. 2: 19) se refiere a las \"coyunturas y ligamentos\" del cuerpo. El amor mantiene juntas con perfecta unidad las virtudes del cristiano y también a los diversos miembros del cuerpo místico de Cristo. Perfecto. O \"maduro\". Cada uno en su propia esfera debe alcanzar el máximo desarrollo posible. \"Primero hierba, luego espiga, después grano lleno\" (Mar. 4: 28). Así como Dios es perfecto en su esfera, así también el cristiano debe serlo en la suya (Mat. 5: 48; PVGM 45; HAp 423-424).",
+                    "references": [
+                        "ver com. 1 Cor. 13: 1-3",
+                        "Mar. 4: 28",
+                        "Mat. 5: 48; PVGM 45; HAp 423-424"
+                    ]
+                },
+                {
+                    "verse": 15,
+                    "phrase": "Dios.",
+                    "content": "La evidencia textual establece (cf. p.10) el texto \"Cristo\". Aquí se describe la paz de Cristo no como una virtud estática sino como un poder activo. Esta paz capacita al hombre para vivir tranquilo, imperturbable y confiado en medio de las más difíciles circunstancias de la vida. Cristo, la fuente de esta paz, se convierte en el piloto del alma y conduce serenamente el barco de la vida hasta el puerto seguro (Juan 14: 27; Efe. 2: 14; Fil. 4: 7). Gobierne. Gr. brabéuò, \"actuar como árbitro\", por lo tanto, \"conceder el premio\" (el sustantivo afín brabéion, \"premio\", se halla en 1 Cor. 9: 24; Fil. 3: 14), \"pronunciar decisiones\", \"arbitrar\". Del corazón provienen las decisiones y las normas que no sólo afectan al individuo sino también a la iglesia y a la sociedad. Pablo está diciendo a los cristianos colosenses que entronicen en su vida a Cristo, el \"árbitro\" de su vida, de quien proviene la paz. Fuisteis llamados. La paz de Cristo que disfrutan los verdaderos creyentes, es una parte esencial del propósito de Dios mediante el Evangelio. Es imposible imaginar que un genuino cristiano esté en guerra con Dios y con sus hermanos. En un solo cuerpo. El cuerpo místico de Cristo es el grupo organizado de creyentes, cuya meta es el firme establecimiento de los propósitos divinos (ver Efe. 1: 22-23; 2: 16; 4: 4). Como todos los verdaderos cristianos son parte del cuerpo de Cristo, no puede haber disputas sin que sea perjudicado cada miembro, y entonces todo el cuerpo queda enfermo. Dios desea que todos posean espíritu de cooperación, unidos en amor y servicio. Sed agradecidos. Es un deber cristiano el ser agradecidos. La gratitud a Dios puede compararse con la tierra en la que prospera la tierna planta de la paz (ver Fil. 4: 6-7). Agradecer es reconocer que Dios es el Dador de toda dádiva buena y perfecta y el Guía del cristiano en cada paso de la senda de esta vida. Puesto que Dios hace que todas las cosas ayuden a bien de todos los que le aman (ver com. Rom. 8: 28) y nada está oculto de los ojos de Aquel de quien dependemos, ¿qué necesidad hay de temer? El cristiano que ahora eleva su voz en alabanza, algún día se unirá al coro de \"aleluyas\" de los seres humanos redimidos y de los ángeles que no cayeron.",
+                    "references": [
+                        "Juan 14: 27; Efe. 2: 14; Fil. 4: 7",
+                        "el sustantivo afín brabéion, \"premio\", se halla en 1 Cor. 9: 24; Fil. 3: 14",
+                        "ver Efe. 1: 22-23; 2: 16; 4: 4",
+                        "ver Fil. 4: 6-7",
+                        "ver com. Rom. 8: 28"
+                    ]
+                },
+                {
+                    "verse": 16,
+                    "phrase": "La palabra de Cristo.",
+                    "content": "Podría entenderse tanto del mensaje que proviene de Cristo como del Evangelio que trata de él. Compárese con las expresiones \"palabra del Señor\" (2 Tes. 3: 1) y \"mi palabra\" (Juan 5: 24). More. O \"se establezca\", \"se domicilie\" en vosotros. En abundancia. Esta expresión destaca la abundancia desbordante que enriquece al alma. El relato del Evangelio en los labios de los colosenses, dentro de sus corazones, guiando sus pensamientos y acciones, los enriquecería en todo lo relacionado con el reino de los cielos. Enseñándoos. Es decir, la comunicación del conocimiento. Aquel en cuyo corazón vive la Palabra de Dios, debe enseñar paciente y sistemáticamente sus principios a otros, comenzando con lo más sencillo y avanzando hacia lo más profundo, y todo mientras les da ejemplo con su propia vida. Cf. com. 1 Cor. 12: 28; Efe. 4:",
+                    "references": [
+                        "2 Tes. 3: 1",
+                        "Juan 5: 24"
+                    ]
+                },
+                {
+                    "verse": 11,
+                    "phrase": "Exhorandoos.",
+                    "content": "Gr. nouthetéò (ver com. cap. 1: 28). En toda sabiduría. Esta frase se puede relacionar con lo precedente como en la RVA y BC, o con lo que sigue: \"enseñándoos y exhortándoos unos a otros en toda sabiduría...\" Con gracia. Gr. járis (ver com. Rom. 3: 24). Muchos eruditos piensan que aquí corresponde la traducción \"agradecimiento\"; \"agradecidos\" (BJ); otros piensan que es una referencia a la gracia divina. Ver com. Efe. 5: 20. En vuestros corazones. La melodía de los labios debe primero llenar el alma, y sólo entonces será eficaz para conmover a otros. Cuando el corazón experimenta el significado de lo que se está cantando, la voz expresará las virtudes internas. Al Señor. La evidencia textual favorece (cf. p. 10) el texto \"a Dios\" (BJ, BA, BC, NC). El apóstol ha reunido en este versículo la plenitud del ministerio de aquel cuyo corazón está enriquecido con la presencia permanente de la palabra de Cristo. Enseña mediante sus mensajes y cantos, y amonesta a su hermano y alaba y ensalza a Dios. Salmos. Gr. psalmós, un salmo del AT o un himno de alabanza que quizá se cantaba con el acompañamiento de instrumentos de cuerda. El verbo afín psállò con frecuencia significa tocar un instrumento (1 Sam. 16: 16, LXX), aunque sencillamente podría significar \"cantar alabanzas\". Himnos. Gr. húmnos, de donde deriva la palabra \"himno\"; con esto el apóstol quizá se refería a cantos típicamente cristianos. Cánticos espirituales. Es decir, cantos sagrados.",
+                    "references": [
+                        "ver com. Rom. 3: 24",
+                        "BJ, BA, BC, NC",
+                        "1 Sam. 16: 16, LXX"
+                    ]
+                },
+                {
+                    "verse": 17,
+                    "phrase": "De palabra o de hecho.",
+                    "content": "Las dos grandes maneras en que se expresan la vida y la conducta humanas. Los hijos de Cristo no deben hacer ni decir nada indigno de él. En el nombre. Es decir, en el espíritu y carácter del que verdaderamente sirve a Cristo y con referencia a Cristo. El cristiano siempre debe tener en cuenta que día tras día está edificando un carácter para la eternidad. Debe colocarse constantemente bajo el dominio de Dios, precaverse en todo lo que dice y hace y tener en cuenta que en su vida \"la religión no es simplemente una influencia entre otras; ha de ser la influencia que domine todas las demás\" (CM 374). Dando gracias. La alabanza debe acompañar a todo lo que el cristiano piensa y hace (cf Efe. 5: 4, 20; 1 Tes. 5: 18). Repetidas veces el apóstol pone énfasis en la necesidad de expresar nuestra gratitud y agradecimiento a Dios (Col. 1: 12; 2: 7; 3: 15; 4: 2). Dios Padre. El objeto de la alabanza del cristiano es Dios, quien es su Padre. Jesús es Aquel mediante el cual extendemos nuestra gratitud al Padre.",
+                    "references": [
+                        "CM 374",
+                        "cf Efe. 5: 4, 20; 1 Tes. 5: 18",
+                        "Col. 1: 12; 2: 7; 3: 15; 4: 2"
+                    ]
+                },
+                {
+                    "verse": 18,
+                    "phrase": "Casadas, estad sujetas.",
+                    "content": "Ver com. Efe. 5:22. Conviene. O \"es propio\", \"es adecuado\". En el Señor. Ver com. Efe. 1: 4.",
+                    "references": []
+                },
+                {
+                    "verse": 19,
+                    "phrase": "Amad a vuestras mujeres.",
+                    "content": "Ver com. Efe. 5: 25.",
+                    "references": []
+                },
+                {
+                    "verse": 20,
+                    "phrase": "Hijos, obedeced a vuestros padres.",
+                    "content": "Ver com. Efe. 6: 1. En todo. No debe interpretarse que esta frase incluye cualquier exigencia contraria a la voluntad de Dios. Una orden que implique pecado no es obligatoria para un hijo. Pablo se está dirigiendo a familias cristianas, por lo tanto no hay por qué interpretarlo de esa manera. Al Señor. La evidencia textual establece (cf. p. 10) el texto \"en el Señor\" (BJ, BC, NC). Así hay un paralelo con el vers. 18. El centro de la obediencia es el Señor, y agradarle debe ser el propósito supremo de los hijos. Mientras cumplen con las órdenes de sus padres, están agradando a Dios.",
+                    "references": [
+                        "BJ, BC, NC"
+                    ]
+                },
+                {
+                    "verse": 21,
+                    "phrase": "Exasperéis.",
+                    "content": "Gr. erethízò, \"provocar\", \"excitar\", ya sea en un buen sentido, como en 2 Cor. 9: 2, o en un mal sentido, como aquí. Los continuos regaños y observaciones, las reprensiones y censuras frecuentes pueden exasperar los sentimientos de los hijos y hacer que repudien todo tipo de disciplina. Desalienten. Gr. athuméò, \"descorazonarse\", \"abatirse\", \"desanimarse\"; \"no se vuelvan apocados\" (BJ). Este vocablo aparece sólo aquí en el NT. El joven que es hostigado continuamente puede descorazonarse en sus intentos por alcanzar la victoria sobre sus debilidades, y renunciar completamente a la vida cristiana. Los propósitos de su padre pueden haber sido correctos, pero su método desafortunado de tratar de lograr la perfección en su hijo produce un resultado desastroso. Cf Efe. 6: 4.",
+                    "references": []
+                },
+                {
+                    "verse": 22,
+                    "phrase": "Siervos, obedeced.",
+                    "content": "Ver com. Efe. 6: 5. No sirviendo al ojo, como los que quieren agradar. El motivo del servicio no debe ser únicamente satisfacer una norma humana, trabajar mientras el supervisor observa y rendir lo mínimo posible. Estos siervos pueden pensar que sólo están agradando a sus patrones humanos, pero éste es un motivo indigno para los cristianos. Ver com. Efe 6: 6. Sincero. Gr. haplótès, \"sencillez\", \"sinceridad\" (ver com. Rom. 12: 8). Esto es exactamente lo opuesto de \"servir al ojo\". Es un hipócrita el que sólo procura agradar a su amo únicamente mientras este lo vigila, pero en otras oportunidades no trabaja nada. ver el comentario de Efe. 6: 5. Temiendo a Dios. O \"reverenciando a Dios\". El es el Amo supremo. Sus normas son las que deben impulsar a los cristianos en cualquier trabajo en que se ocupen, para que actúen reconociendo que el Señor es Aquel ante quien tendrán finalmente que rendir cuentas.",
+                    "references": [
+                        "ver com. Rom. 12: 8"
+                    ]
+                },
+                {
+                    "verse": 23,
+                    "phrase": "De corazón.",
+                    "content": "Ver com. Efe. 6: 6; cf. Deut. 6: 5; Mar. 12: 30. Para el Señor. Ver com. Efe. 6: 7.",
+                    "references": []
+                },
+                {
+                    "verse": 24,
+                    "phrase": "Recibiréis.",
+                    "content": "Ver com. Efe. 6: 8. La recompensa de la herencia. Es decir, \"la recompensa que es la herencia\". En lo que se refiere al reino de Dios, no hay diferencia entre \"siervo ni libre\" (ver com. vers. 11), y por esa razón Pablo ahora magnifica esa idea declarando que el esclavo también puede recibir la recompensa de la herencia. Porque. La evidencia textual establece (cf. p. 10) la omisión de esta conjunción. La omiten la BJ, BA y NC. Servís. Con la omisión de la conjunción causal \"porque\" (ver com. \"porque\"), este verbo se traduce mejor en imperativo: \"servid\" (NC). Ambas traducciones concuerdan con el contexto. Es cierto que los siervos deben recibir órdenes de sus amos terrenales, pero sus normas de servicio y su propósito final deben ser agradar a Cristo.",
+                    "references": []
+                },
+                {
+                    "verse": 25,
+                    "phrase": "El que hace injusticia.",
+                    "content": "Algunos entienden que estas palabras se aplican al siervo que no rinde un servicio completo; otros, que se refieren al amo que trata mal a su siervo. Hay quienes consideran que es una declaración de alcances generales. En contra de la opinión de que es una amonestación al siervo, se hace notar que la declaración \"no hay acepción de personas\" generalmente se aplica a quienes ocupan una jerarquía más elevada. Una comparación con Efe. 6: 9 sugiere que la segunda opinión probablemente es la correcta. Recibirá. Gr. komízo, \"ganar\", \"obtener', recobrar\". Compárese con el uso de este vocablo en 2 Cor. 5: 10. Sin duda Pablo se está refiriendo al juicio final, cuando los amos opresores o los siervos desleales recibirán la sanción por su conducta injusta. No hay acepción de personas. Literalmente \"no recibe rostros\" (ver com. Efe. 6: 9; cf. com. Rom. 2: 11).",
+                    "references": [
+                        "ver com. Efe. 6: 9; cf. com. Rom. 2: 11"
+                    ]
+                }
+            ],
+            "egwReferences": "1 DMJ 78; EC 108; MJ 315; 1T 705  \n \n1-2 CMC 142; 2JT 208  \n \n1-3 HAp 379; 2JT 397; 2T 177  \n \n1-4 CM 245; 1T 508  \n \n1-6 MM 147 \n \n2 CM 222; MeM 108, 370; MJ 102; 1T 279;  2T 184,  675, 690  \n \n2-3 CMC 164; 2T 690 \n \n3 CH 342; CM 143; DMJ 19,26; DTG 196, 486;  EC 107; ECFP 15; Ev 328, 467; FE \n289; HAp 408, 474; HR 334; 3Jt 312, 341;  MC 97; MeM 281, 285, 328; MJ 150; MM \n144; OE 386; PP 479; 2T 158, 425; 4T 614; 5T 573; 6T 51; 7T 194; Te 101; TM 143 \n \n3-4 DTG 731; FV 119; 1JT 176; MJ 82; MM 7; 4T 357; TM 512 \n\n \n5   CMC 30, 89, 235; HAp 380; 1JT 366; 2Jt 256; PP 469, 530; PVGM 205; 3T 130, \n201, 250, 513; 4T 476  \n \n7-8 HAp 380  \n \n8 MeM 344 \n \n10 MC 332 \n \n11 HAp 200, 313; 1JT 534  \n \n12 HAd 99; 3Jt 96; 1T 165; 2T 332  \n \n12-15 HAp 380; 4T 243, 257; 5T 169  \n \n12-17 ECFP 114; 2JT 397  \n \n14-17 IT 508  \n \n15 1JT 495; MC 195; SC 301; 5T 75  \n \n17 CM 472; MM 42; 5T 170  \n \n18-19 HAd 100  \n \n20 HAd 266  \n \n21 CN 261 \n \n22-24 MJ 227 \n \n23 CC 83; DMJ 84; 2JT 160; MeM 226; 4T 572; 5T 726; 9T 221  \n \n23-24 CN 274; Ed 222; 7T 180  \n \n24 PVGM 281 224"
+        },
+        {
+            "chapter": 4,
+            "verses": [
+                {
+                    "verse": 1,
+                    "phrase": "Amos.",
+                    "content": "Ver com. Efe. 6: 9. Haced. \"Dad\" (BJ). Gr. paréjÇ, \"ofrecer a\", \"suministrar\", aquí en una forma que implica \"de vuestra parte\". Lo que es justo. El amo no debe ser movido por meros caprichos. El esclavo tiene, como ser humano, derechos inalienables. Estos derechos deben ser respetados, y sus necesidades básicas, suplidas. Recto. Gr. isót's, \"equidad\", \"justicia\", \"trato imparcial\" (ver Lev. 25: 39-43; Deut. 15: 12-14; com. Gál. 3: 28; Efe. 6: 9). Siervos. Gr. dóulos (ver com. Rom. 1: 1; Efe. 6: 9). También vosotros tenéis un Amo. El amo no es más que un mayordomo de Cristo. La riqueza que posee y su capacidad para manejar sus asuntos le fueron dadas por su Señor celestial. Esta filosofía es la prolongación de la regla de oro, la cual se proyecta en las relaciones entre el amo y sus siervos. En realidad, Pablo está diciendo: \"Tratad a vuestros esclavos como quisierais que os trate vuestro Amo celestial\". Cf. Mat. 23: 8; Efe. 6: 9.",
+                    "references": [
+                        "ver Lev. 25: 39-43; Deut. 15: 12-14; com. Gál. 3: 28; Efe. 6: 9",
+                        "ver com. Rom. 1: 1; Efe. 6: 9"
+                    ]
+                },
+                {
+                    "verse": 2,
+                    "phrase": "Perseverad.",
+                    "content": "Gr. proskarteréÇ (ver com. Rom. 12: 12). Cf. com. Efe. 6: 18; 1 Tes. 5: 17. Velando. La admonición del apóstol destaca la necesidad de una vigilancia continua en la oración. Debemos estar continuamente en guardia para que el adversario no nos distraiga, y para que no dejemos de estar alertas y nos cansemos. Con acción de gracias. O \"en agradecimiento\". Cf. com. Efe. 6: 18; ver com. 1 Tes. 5: 18. La oración y la vigilancia siempre deben hallarse junto con la gratitud a Dios. Diariamente necesitamos ayuda y conducción; sin embargo, tenemos mucho por lo cual siempre debiéramos estar agradecidos.",
+                    "references": [
+                        "ver com. Rom. 12: 12"
+                    ]
+                },
+                {
+                    "verse": 3,
+                    "phrase": "Orando... por nosotros.",
+                    "content": "Ver com. Efe. 6: 19. En su Epístola a los Colosenses, Pablo incluye a sus colaboradores en su pedido de oraciones intercesoras. Puerta para la palabra. Puerta para la predicación. Compárese con la figura de una puerta en Hech. 14: 27; 1 Cor. 16: 9; 2 Cor. 2: 12. Las oportunidades para predicar el Evangelio son consideradas como puertas completamente abiertas para que el predicador penetre con las buenas nuevas. Pablo deseaba ser liberado, pues la predicación del Evangelio estaba estorbada porque él estaba preso. Sabía que sólo Dios podía sacarlo de la cárcel, y por eso quería que los creyentes de Colosas intercedieran ante el cielo para que el Señor interviniera. Una oración tal uniría a los creyentes de Colosas en las grandes empresas del Evangelio y los impulsaría a una mayor actividad. Misterio de Cristo. Ver com. Rom. 11: 25; cf. Efe. 3: 3-6. El misterio de Cristo es el misterio que Cristo ha revelado. Los vastos propósitos de Dios son desconocidos para el hombre, excepto lo que Cristo ha revelado. Preso. Pablo estaba preso porque predicaba el misterio de Cristo. Había sido apresado en Jerusalén como resultado directo de la hostilidad de los judíos hacia el mensaje que él predicaba.",
+                    "references": []
+                },
+                {
+                    "verse": 4,
+                    "phrase": "Para que lo manifieste.",
+                    "content": "O \"revelarlo\". Lo que daba a conocer era el \"misterio\". El gran anhelo de todo predicador es revelar claramente esta verdad del Evangelio. Como debo hablar. O \"como es necesario que yo hable\". El propósito de Dios era que Pablo predicara el Evangelio sin impedimentos en países lejanos y cercanos; pero como estaba preso no podía cumplir esa comisión (cf. 1 Tes. 2: 18).",
+                    "references": [
+                        "cf. 1 Tes. 2: 18"
+                    ]
+                },
+                {
+                    "verse": 5,
+                    "phrase": "Andad.",
+                    "content": "Gr. peripatéÇ, \"andar\", \"comportarse\"; \"Portaos\" (BJ); \"proceded\" (BC). La manera de vivir del cristiano, incluso sus relaciones con Dios y el hombre, se incluyen en esta palabra (ver com. Efe. 2: 2). Sabiamente. Es decir, con sabiduría cristiana práctica (cf. com. Prov. 1: 2-3). Con los de afuera. O con los que no son cristianos. Cf. 1 Cor. 5: 12; 1 Tes. 4: 12. La ambición del verdadero discípulo de Cristo debe ser la de buscar discípulos entre \"los de afuera\". El método más eficaz para hacerlo es mediante el ejemplo de una vida cristiana virtuosa. No hay argumentos posibles contra esta clase de vida. Redimiendo el tiempo. O \"procurándoos el tiempo oportuno\" (ver com. Efe. 5: 16). \"Aprovechando bien el tiempo presente\" (BJ).",
+                    "references": [
+                        "ver com. Efe. 2: 2",
+                        "cf. com. Prov. 1: 2-3",
+                        "ver com. Efe. 5: 16"
+                    ]
+                },
+                {
+                    "verse": 6,
+                    "phrase": "Sea vuestra palabra.",
+                    "content": "La forma cristiana de vivir y las palabras del cristiano, corren paralelas. Esto es especialmente verdadero en sus relaciones \"con los de afuera\" (vers. 5). No sólo las palabras sino la manera en que se las pronuncia y aun el tono de la voz, hacen una impresión para bien o para mal en aquellos con quienes trata. Debe, pues, ser precavido en sus palabras y en su comportamiento. Gracia. Gr. járis (ver com. Rom. 3: 24), que aquí podría definirse como \"bondad\", \"amabilidad\". Cuando Jesús habló, los que estaban en la sinagoga del pueblo donde vivía quedaron impresionados por sus \"palabras de gracia\"; \"palabras llenas de gracia\" (Luc. 4: 22, BJ, BA, NC). Las palabras del cristiano deben llevar consigo el poder y la influencia del cielo. Sazonada con sal. La sal le da sabor al alimento. Aquí significa lo que hace atrayente y estimulante la conversación y agradable al oído. Lo opuesto sería el habla fuera de lugar, insípida o descuidada (ver com. Mat. 12: 36). Cuando el cristiano abre la boca deben fluir palabras agradables, provechosas, edificantes. Responder a cada uno. La responsabilidad de los cristianos es estar \"siempre preparados para presentar defensa... ante todo el que os demande razón de la esperanza que ay en vosotros\" (ver com. 1 Ped. 3: 15). El testimonio personal es una parte esencial de vida cristiana. Para testificar eficazmente es esencial que nuestras palabras sean de la naturaleza que aquí se describe.",
+                    "references": [
+                        "ver com. Rom. 3: 24",
+                        "Luc. 4: 22, BJ, BA, NC",
+                        "ver com. Mat. 12: 36",
+                        "ver com. 1 Ped. 3: 15"
+                    ]
+                },
+                {
+                    "verse": 7,
+                    "phrase": "Todo lo que a mí se refiere.",
+                    "content": "Cf. Fil.1: 12. Pablo suponía que los colosenses tendrían interés en los detalles de su encarcelamiento. Tíquico. Ver com. Efe. 6: 21. Consiervo. Título honorífico, pues coloca Tíquico al nivel de Pablo. Esto que concierne a Tíquico no se menciona en Efe. 6: 21. En el Señor. Tíquico ejercía su ministerio según la voluntad del maestro y bajo la influencia de Cristo. La voluntad del Maestro era el elemento permanente y activo que mantenía unidos a sus siervos; y, sin duda, Tíquico estaba feliz de estar unido a un Maestro tal, de tener comunión con sus siervos y cumplir las órdenes del Señor.",
+                    "references": []
+                },
+                {
+                    "verse": 8,
+                    "phrase": "El cual he enviado.",
+                    "content": "Cf. Efe. 6: 22. Tíquico era el portador de la carta de Pablo a los colosenses y también de un mensaje personal del apóstol. Para que conozca lo que a vosotros se refiere. La evidencia textual se inclina (cf. p. 10) por el texto \"para que sepáis nuestra situación\" (ver BJ, BC, BA, NC). Esto concuerda con lo que Pablo dice en el vers. 7 y con la afirmación paralela de Efe. 6: 21. Tíquico debía explicar a los miembros de la iglesia de Colosas cómo le iba a Pablo; debía animarlos a continuar en la senda cristiana, y quizá tenía que conseguir ayuda financiera para sostener a Pablo en la prisión. Conforte vuestros corazones. Ver com. Efe. 6: 22.",
+                    "references": [
+                        "ver BJ, BC, BA, NC"
+                    ]
+                },
+                {
+                    "verse": 9,
+                    "phrase": "Onésimo.",
+                    "content": "Esclavo fugitivo procedente de Colosas, que se había convertido en Roma por la obra misionera de Pablo (ver com. File. 10). Amado y fiel. Onésimo había sido antes indigno de confianza; ahora su vida había cambiado completamente. Uno de vosotros. Onésimo era de Colosas, y como cristiano ahora pertenecía a la hermandad de los creyentes (ver com. Gál. 3: 28; cf. File. 10-12). Os lo harán saber. Pablo les confió a Onésimo y a Tíquico el mensaje que debía ser entregado oficialmente, para mostrar que tenía plena confianza en la conversión e integridad del primero.",
+                    "references": [
+                        "ver com. File. 10",
+                        "ver com. Gál. 3: 28; cf. File. 10-12"
+                    ]
+                },
+                {
+                    "verse": 10,
+                    "phrase": "Aristarco.",
+                    "content": "Compañero de Pablo, oriundo de Tesalónica (Hech. 27: 2). Había compartido con el apóstol los episodios del tumulto de Efeso (Hech. 19: 29). Cuando la delegación apostólica viajó de Corinto a Jerusalén, es posible que Aristarco llevara la ofrenda de Tesalónica a la iglesia madre de Palestina (Hech. 20: 4). También acompañó a Pablo, por lo menos en parte del camino, cuando el apóstol viajó como preso de Jerusalén a Roma (Hech. 27: 2). En File. 24 está incluido entre los \"colaboradores\" de Pablo. Compañero de prisiones. Algunos han conjeturado que Aristarco voluntariamente había decidido compartir las penalidades de la prisión de Pablo para poder socorrerlo. Se afirma que los romanos lo permitían. Sobrino. Gr. anepsiós, \"primo\". La traducción \"sobrino\" quizá refleje el texto de la Vulgata, consobrinus, que podría significar \"sobrino\", pero, en otro sentido, también \"primo\" (BJ, BC, BA, NC). Una diferencia de opinión acerca de Juan Marcos hizo que Pablo y Bernabé se separaran una vez (Hech. 15: 36-40); pero después de esa separación, Bernabé, primo de Marcos, lo tomó bajo su cuidado. \"Bajo la bendición de Dios y la sabia enseñanza de Bernabé, se transformó en un valioso obrero\" (HAp 138). Pablo reconoció con alegría el gran cambio, y después aceptó a Marcos como a uno de sus \"colaboradores\" (File. 24; cf. 2 Tim. 4: 11).",
+                    "references": [
+                        "Hech. 27: 2",
+                        "Hech. 19: 29",
+                        "Hech. 20: 4",
+                        "BJ, BC, BA, NC",
+                        "Hech. 15: 36-40",
+                        "HAp 138",
+                        "File. 24; cf. 2 Tim. 4: 11"
+                    ]
+                },
+                {
+                    "verse": 11,
+                    "phrase": "Jesús, llamado Justo.",
+                    "content": "Es la única vez que se menciona este nombre en la Biblia, aunque \"Justo\", como \"sobrenombre\", aparece en Hech. 1: 23; y en Hech. 18: 7 figura \"uno llamado Justo\". De la circuncisión. Es decir, judíos. Se refiere a cristianos de origen judío.",
+                    "references": []
+                },
+                {
+                    "verse": 12,
+                    "phrase": "Epafras... uno de vosotros.",
+                    "content": "Epafras era natural de Colosas. Había trabajado allí y quizá también en Laodicea y Hierápolis. El había informado a Pablo acerca de la situación de su iglesia de origen (cf. cap. 1: 7-8). Es obvio que había permanecido en Roma más tiempo del que había planeado al principio, para poder ayudar a Pablo en su ministerio. Se une al apóstol al enviar saludos. Siempre rogando encarecidamente. Mejor \"que siempre lucha por vosotros\" (cf. cap. 1: 29). Aunque Epafras se había quedado en Roma, no había olvidado a los creyentes de su iglesia. Se esforzaba en favor de ellos intercediendo en oración. Perfectos y completos. O \"maduros y cumplidos\". Algunos MSS dicen \"maduros y plenamente convencidos\", pero la evidencia textual establece (cf. p. 10) el texto \"maduros y cumplidos\". El cielo considera como perfecto al cristiano que, por la gracia de Dios, ha alcanzado la meta en cada etapa de su conocimiento y experiencia crecientes (ver com. Mat. 5: 48). En todo lo que Dios quiere. Ver com. cap. 1: 9. Comprende todo el designio de Cristo para la salvación de los suyos.",
+                    "references": [
+                        "ver com. Mat. 5: 48"
+                    ]
+                },
+                {
+                    "verse": 13,
+                    "phrase": "Solicitud.",
+                    "content": "Mejor \"ardua labor\" o \"sufrimiento\". \"Se toma mucho trabajo por vosotros\" (BC, NC). Laodicea... Hierápolis. Estas dos ciudades estaban en el valle del Lico, a unos 10 km de distancia entre sí. Esas iglesias quizá fueron establecidas aproximadamente al mismo tiempo que la de Colosas, y sin duda Epafras las atendía como a la iglesia de Colosas. Acerca de Laodicea, ver pp. 105-106; com. Apoc. 3: 14.",
+                    "references": [
+                        "BC, NC"
+                    ]
+                },
+                {
+                    "verse": 14,
+                    "phrase": "Lucas.",
+                    "content": "Hay una biografía de Lucas en el t. V, pp. 649-650; cf. com. Hech. 16: 10. La compañía de Lucas era siempre un motivo de consuelo y fortaleza. Demas. Sólo se menciona aquí y en 2 Tim. 4: 10 y File. 24. En ese momento Demas sin duda era fiel; pero después se produjo un cambio. Durante su segundo encarcelamiento, Pablo se lamentaba: \"Demás me ha desamparado, amando este mundo, y se ha ido\" (2 Tim. 4: 10).",
+                    "references": [
+                        "2 Tim. 4: 10"
+                    ]
+                },
+                {
+                    "verse": 15,
+                    "phrase": "Laodicea.",
+                    "content": "Ver com. vers. 13. Sin duda había frecuentes relaciones entre los creyentes de las tres ciudades próximas, situadas en el valle del Lico. Ninfas. No se sabe nada más en cuanto a esta persona, ni se sabe el género del nombre Ninfas. Algunos MSS dicen: \"Ninfas y la casa de él\"; otros dicen: \"Ninfas y la casa de ellos\", pero la evidencia textual se inclina (cf. p. 10) por el texto \"Ninfas y la casa de ella\", sugiriendo así que se trataba de una mujer. Es obvio que la persona en cuestión estaba llena de celo por la causa de Dios, que generosamente ofrecía su cómodo hogar para las reuniones de los creyentes de la pequeña iglesia de Laodicea.",
+                    "references": []
+                },
+                {
+                    "verse": 16,
+                    "phrase": "Haced que también se lea.",
+                    "content": "Una costumbre como ésta debe haber sido general entre los cristianos primitivos. La historia testifica que los escritos del NT eran copiados y recopiados, y que tenían amplia circulación. La de Laodicea. No significa que la epístola hubiese sido escrita en Laodicea, sino que fue escrita a Laodicea, y que desde esta ciudad debía devolverse a Colosas. Para los colosenses era, entonces, \"la de Laodicea\". Respecto a la identidad de esta epístola no se sabe nada definido. Muchos sostienen que \"esta carta\" es la Epístola a los Efesios. Pablo escribió Efesios aproximadamente por el Mismo tiempo que escribió Colosenses. Ambas fueron confiadas a Tíquico, como mensajero (cf. Efe. 6: 21; Col. 4: 7); pero esto es sólo una conjetura. En cuanto al problema del autor de Efesios, ver t. VI, pp. 991-992.",
+                    "references": [
+                        "cf. Efe. 6: 21; Col. 4: 7"
+                    ]
+                },
+                {
+                    "verse": 17,
+                    "phrase": "Arquipo.",
+                    "content": "Sólo se menciona aquí y en File. 2. En Filemón aparece muy cerca de los nombres de Filemón y Apia. Los comentadores han considerado que Apia era la esposa de Filemón, y Arquipo quizá era hijo de ellos. Esto coincidiría con la declaración que hace Pablo aquí (ver com. \"Ministerio\"). Pablo llama a Arquipo \"compañero de milicia\", y menciona la iglesia que está en la casa de Filemón, de la cual Arquipo pudo haber sido un dirigente (File. 2). Filemón, como Ninfas, evidentemente había abierto su casa para que los hermanos se reunieran allí, y Arquipo lo acompañaba en su ministerio ocupándose de algún cargo. Ministerio. Gr. diakonía (ver com. Rom. 12: 7). Podría referirse al cargo de diácono (Rom. 12: 7). Indica un servicio que se presta (Hech. 12: 25), y podría incluir las funciones de pastor o anciano. Se exhorta a Arquipo a que continuamente esté atento a sus deberes y que los cumpla con todo empeño y con solícita dedicación. Recibiste en el Señor. Pablo le recuerda a Arquipo que el Señor le había confiado su servicio. En el ministerio evangélico, como era de rigor con los sacerdotes en el AT, \"nadie toma para sí esta honra, sino el que es llamado por Dios\" (Heb. 5: 4).",
+                    "references": [
+                        "ver com. \"Ministerio\"",
+                        "File. 2",
+                        "ver com. Rom. 12: 7",
+                        "Rom. 12: 7",
+                        "Hech. 12: 25",
+                        "Heb. 5: 4"
+                    ]
+                },
+                {
+                    "verse": 18,
+                    "phrase": "La salutación... de Pablo.",
+                    "content": "Es evidente que en este punto Pablo tomó la pluma de manos de su amanuense, y escribió sus saludos de despedida (ver com. 1 Cor. 16: 21; Gál. 6: 11). Esta expresión demuestra su afecto y añade un toque de legitimidad y autoridad personal a su carta. Acordaos de mis prisiones Sin duda Pablo menciona estas circunstancias para despertar la simpatía y el amor de los colosenses. Ellos se darían cuenta de que él, aunque estaba encadenado en la prisión, los recordaba. Sentirían que se renovaba el afecto de Pablo por ellos y la intercesión del apóstol en favor de sus hermanos en Cristo. La gracia sea con vosotros. Cf. 1 Tim. 6: 21; 2 Tim. 4: 22. En cuanto al significado del saludo, ver com. Rom. 1: 7. Amén. La evidencia textual tiende a confirmar (cf. p. 10) la omisión de esta palabra. (No la incluyen la BJ, BC, BA y NC.) Según la BJ (nota) es una añadidura de la Vulgata. En la RVA se agregaba: \"Escrita de Roma a los Colosenses; enviada con TichTco [Tíquico] y Onésimo\". Esta añadidura no está en los manuscritos antiguos; no es parte del registro inspirado.",
+                    "references": [
+                        "ver com. 1 Cor. 16: 21; Gál. 6: 11",
+                        "No la incluyen la BJ, BC, BA y NC."
+                    ]
+                }
+            ],
+            "egwReferences": "2 CC 97; CMC 288; MeM 16 \n \n\n5 CE (1967) 72; 1JT 411; PVGM 277 \n \n5-6 2T 317 \n \n6 CM 428; CW 19; DMJ 61; HAd 395; 1JT 532; MeM 117; OE 128, PVGM 271; 1T 648; \n2T 317, 338; 4T 135; 3TS 372 \n \n7-14 HAp 363  \n \n10 HAp 351 \n \n10-11 HAp 138 \n \n14 CH 498; Ev 396; HAp 363; 2JT 490; MC 100 231 \n \nSUCESOS ASOCIADOS CON LA ESCRITURA DE LAS EPÍSTOLAS DE PABLO A LOS \nTESALONICENSES"
+        }
+    ]
+}

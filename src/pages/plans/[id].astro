@@ -1,12 +1,8 @@
 ---
 import ReaderLayout from "../../features/reader/layouts/ReaderLayout.astro";
-import ReaderControls from "../../features/reader/components/ReaderControls";
-import SidebarNav from "../../features/reader/components/SidebarNav";
 import PlanDetail from "../../features/plans/components/PlanDetail";
-import booksIndex from "../../data/books-index.json";
 import plans from "../../data/plans.json";
 
-const books = booksIndex;
 const { id } = Astro.params;
 const plan = (plans as any[]).find((p) => p.id === id);
 if (!plan) {
@@ -15,18 +11,5 @@ if (!plan) {
 ---
 
 <ReaderLayout>
-  <div style="padding-top: 4rem;">
-    <ReaderControls client:only="preact" books={books} />
-    <div class="flex gap-6">
-      <SidebarNav
-        client:only="preact"
-        books={books}
-        showTrigger={false}
-        mode="inline"
-      />
-      <div class="flex-1">
-        <PlanDetail client:only="preact" plan={plan} />
-      </div>
-    </div>
-  </div>
+  <PlanDetail client:only="preact" plan={plan} />
 </ReaderLayout>
