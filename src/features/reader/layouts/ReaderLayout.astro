@@ -20,6 +20,7 @@ const books = booksIndex;
                 --sidebar-width: 16rem;
                 --sidebar-collapsed-width: 0rem;
                 --sidebar-current-width: var(--sidebar-width);
+                --nav-height: 4rem;
             }
 
             /* Sincronizar variable CSS con el estado del sidebar */
@@ -49,7 +50,7 @@ const books = booksIndex;
             .grid-sidebar { 
                 grid-area: sidebar;
                 position: sticky;
-                top: 4rem; /* Debajo del nav */
+                top: 4rem;
                 z-index: 40;
                 height: calc(100vh - 4rem);
                 width: var(--sidebar-current-width);

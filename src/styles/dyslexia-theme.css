@@ -137,9 +137,12 @@ body {
 }
 
 .reader-content,
-.reader-text {
+.reader-text,
+.reader-text p,
+.reader-text div,
+.prose.reader-text p {
     font-size: var(--reader-font-size);
-    line-height: var(--reader-line-height);
+    line-height: var(--reader-line-height) !important;
     letter-spacing: var(--reader-letter-spacing);
     word-spacing: var(--reader-word-spacing);
     transition: max-width 0.3s ease-in-out;

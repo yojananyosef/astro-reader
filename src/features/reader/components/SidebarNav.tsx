@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from "preact/hooks";
-import { BookOpen, Menu, ChevronRight, Bookmark, Star, MessageSquare, ChevronLeft, Library } from "lucide-preact";
+import { BookOpen, Menu, ChevronRight, Bookmark, Star, MessageSquare, ChevronLeft, Library, X } from "lucide-preact";
 
 type Book = { code: string; name: string; chapters: number; section: string };
 
@@ -36,7 +36,13 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
     } catch { }
     const openHandler = () => setOpen(true);
     const closeHandler = () => setOpen(false);
-    const toggleHandler = () => setOpen(prev => !prev);
+    const toggleHandler = () => {
+      if (window.innerWidth < 768) {
+        setOpen(prev => !prev);
+      } else {
+        setCollapsed(prev => !prev);
+      }
+    };
 
     window.addEventListener("open-sidebar", openHandler as EventListener);
     window.addEventListener("close-sidebar", closeHandler as EventListener);
@@ -64,6 +70,7 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
   
   const goTo = (url: string) => {
     if (url === "#") return;
+    setOpen(false); // Cerrar el overlay si está abierto
     window.location.href = url;
   };
 
@@ -187,33 +194,27 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
         </div>
       )}
       <div className={`fixed inset-0 z-[60] transition-opacity duration-300 md:hidden ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
-        <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setOpen(false)} />
+        <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setOpen(false)} style={{ top: "var(--nav-height, 4rem)" }} />
         <aside
-          className={`absolute left-0 top-0 bottom-0 w-full max-w-sm border-r shadow-2xl transform transition-transform duration-300 flex flex-col ${open ? "translate-x-0" : "-translate-x-full"}`}
-          style={{ backgroundColor: "var(--color-bg)", color: "var(--color-text)", borderRight: "1px solid color-mix(in srgb, var(--color-text), transparent 85%)" }}
+          className={`absolute left-0 bottom-0 w-full max-w-[280px] shadow-2xl transform transition-transform duration-300 flex flex-col ${open ? "translate-x-0" : "-translate-x-full"}`}
+          style={{ 
+            backgroundColor: "var(--color-bg)", 
+            color: "var(--color-text)",
+            top: "var(--nav-height, 4rem)"
+          }}
         >
-          <div className="flex items-center justify-between p-6 border-b" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
-            <div className="flex items-center gap-2">
-              <BookOpen className="w-5 h-5 text-[var(--color-link)]" />
-              <h2 className="text-lg font-bold">Navegación</h2>
-            </div>
+          <div className="relative h-16 flex items-center justify-center border-b px-4" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
+            <h2 className="text-lg font-bold m-0 leading-none">Menú</h2>
             <div
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  setOpen(false);
-                }
-              }}
-              className="p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors cursor-pointer"
               onClick={() => setOpen(false)}
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors cursor-pointer flex items-center justify-center"
               aria-label="Cerrar menú"
             >
-              <ChevronRight className="w-5 h-5 rotate-180" />
+              <X className="w-6 h-6" />
             </div>
           </div>
 
-          <nav className="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-2">
+          <nav className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-2">
             {mainNav.map((item) => {
               const isActive = activeItem === item.id;
               return (

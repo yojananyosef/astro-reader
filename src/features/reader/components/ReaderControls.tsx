@@ -155,21 +155,17 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
 
                     <div
                         onClick={() => {
-                            if (window.innerWidth < 768) {
-                                window.dispatchEvent(new CustomEvent('toggle-sidebar'));
-                            }
+                            window.dispatchEvent(new CustomEvent('toggle-sidebar'));
                         }}
                         role="button"
                         tabIndex={0}
                         onKeyDown={(e) => {
                             if (e.key === 'Enter' || e.key === ' ') {
-                                if (window.innerWidth < 768) {
-                                    window.dispatchEvent(new CustomEvent('toggle-sidebar'));
-                                }
+                                window.dispatchEvent(new CustomEvent('toggle-sidebar'));
                             }
                         }}
-                        className="md:hidden p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors flex items-center gap-2 cursor-pointer"
-                        aria-label="Abrir menú lateral"
+                        className="p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors flex items-center gap-2 cursor-pointer"
+                        aria-label="Alternar menú lateral"
                     >
                         <Menu className="w-6 h-6" />
                     </div>

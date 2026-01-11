@@ -195,7 +195,7 @@ export default function CommentaryView() {
                                 </span>
                             </div>
                             <div 
-                                class="text-[var(--color-text)] leading-relaxed prose prose-slate max-w-none"
+                                class="text-[var(--color-text)] reader-text prose prose-slate max-w-none"
                                 dangerouslySetInnerHTML={{ __html: v.content }}
                             />
                         </div>
