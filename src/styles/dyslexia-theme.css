@@ -137,12 +137,74 @@ body {
 }
 
 /* Estilos específicos para el contenido de lectura */
-.reader-text,
-.reader-text * {
+.reader-text {
     font-size: var(--reader-font-size) !important;
     line-height: var(--reader-line-height) !important;
     letter-spacing: var(--reader-letter-spacing) !important;
     word-spacing: var(--reader-word-spacing) !important;
+}
+
+/* Permitir que elementos específicos tengan su propio tamaño proporcional */
+.reader-text sup,
+.reader-text .verse-num,
+.reader-text .footnote-ref,
+.reader-text .commentary-icon {
+    font-size: 0.65em !important; 
+    line-height: 1 !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle; /* Volvemos a middle para alineación centralizada */
+    position: relative;
+    user-select: none;
+}
+
+.reader-text .verse-num {
+    min-width: 1.2em;
+    margin-right: 0.4em;
+    opacity: 0.4;
+    font-weight: 800;
+    vertical-align: baseline; /* Los números de versículo sí van en la base */
+}
+
+.reader-text .commentary-icon,
+.reader-text .footnote-ref {
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    margin: 0 0.15em;
+    padding: 0; /* Quitamos padding para controlar el tamaño exacto */
+    border-radius: 4px;
+    width: 1.6em; /* Tamaño fijo igual para ambos */
+    height: 1.6em;
+}
+
+.reader-text .commentary-icon {
+    background-color: color-mix(in srgb, var(--color-link), transparent 92%);
+}
+
+.reader-text .commentary-icon svg {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+.reader-text .commentary-icon:hover {
+    background-color: color-mix(in srgb, var(--color-link), transparent 80%);
+    opacity: 1 !important;
+}
+
+.reader-text .footnote-ref {
+    color: var(--color-link);
+    font-weight: bold;
+    background-color: color-mix(in srgb, var(--color-link), transparent 95%);
+    border: 1px solid color-mix(in srgb, var(--color-link), transparent 85%);
+    font-size: 0.55em !important; /* Un poco más pequeño el número para que quepa bien */
+}
+
+.reader-text .footnote-ref:hover {
+    background-color: color-mix(in srgb, var(--color-link), transparent 85%);
 }
 
 /* Asegurar que los controles de la interfaz (UI) mantengan su estilo original */

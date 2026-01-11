@@ -309,36 +309,37 @@ export default function ReaderView() {
                             key={verse.number}
                             id={`v-${verse.number}`}
                             onClick={() => toggleHighlight(verseId)}
-                            class={`relative p-2 -mx-2 rounded transition-all cursor-pointer verse-item 
+                            class={`relative p-2 -mx-2 rounded transition-all cursor-pointer verse-item group
                                 ${verse.isHighlighted ? "is-plan-highlighted" : ""} 
                                 ${isGlobalHighlighted ? 'is-user-highlighted' : ''} 
                                 ${activeNote === `v-${verse.number}` ? 'verse-selected' : ''}
                             `}
                             style={{ color: 'var(--color-text)' }}
                         >
-                            <sup class={`text-xs font-bold mr-1 ${verse.isHighlighted ? "text-[var(--color-link)] opacity-100" : "opacity-40"}`}>
+                            <span class={`verse-num inline-block font-bold mr-2 select-none align-baseline ${verse.isHighlighted ? "text-[var(--color-link)] opacity-100" : "opacity-40"}`}>
                                 {verse.number}
-                            </sup>
+                            </span>
                             <span class={verse.isHighlighted ? "font-medium" : ""}>
                                 {verse.text}
                             </span>
                             {currentChapterCommentaryVerses.some((c: any) => c.verse === parseInt(verse.number)) && (
                                 <a
                                     href={`/commentary?book=${bookKey}&chapter=${chapterKey}#com-${verse.number}`}
-                                    class="ml-1 text-[var(--color-link)] opacity-60 hover:opacity-100 transition-opacity inline-flex items-center align-middle"
+                                    class="commentary-icon inline-flex"
+                                    title="Ver comentario"
                                     onClick={(e) => e.stopPropagation()}
                                 >
-                                    <Library class="w-3.5 h-3.5" />
+                                    <Library class="w-full h-full" />
                                 </a>
                             )}
                             {verse.noteIndices.map((idx) => (
                                 <a
                                     key={idx}
                                     href={`#note-${idx}`}
-                                    class="ml-0.5 text-[var(--color-link)] font-bold cursor-pointer no-underline hover:underline text-xs align-super"
+                                    class="footnote-ref"
                                     onClick={(e) => e.stopPropagation()}
                                 >
-                                    [{idx}]
+                                    {idx}
                                 </a>
                             ))}
                         </p>

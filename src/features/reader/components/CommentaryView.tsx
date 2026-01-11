@@ -182,6 +182,37 @@ export default function CommentaryView() {
             )}
 
             <div class="space-y-6 md:space-y-12">
+                {/* Book Introduction (only on chapter 1) */}
+                {currentChapNumInt === 1 && commentaryData?.introduction && (
+                    <div class="mb-12 p-6 md:p-8 rounded-2xl bg-theme-text/5 border border-theme-text/10 shadow-sm">
+                        {commentaryData.introduction.fullTitle && (
+                            <h2 class="text-xl md:text-2xl font-bold mb-2 text-center text-[var(--color-link)]">
+                                {commentaryData.introduction.fullTitle}
+                            </h2>
+                        )}
+                        {commentaryData.introduction.subtitle && (
+                            <h3 class="text-lg md:text-xl font-medium mb-6 text-center opacity-70 italic">
+                                {commentaryData.introduction.subtitle}
+                            </h3>
+                        )}
+                        <div class="space-y-6 mt-8">
+                            {commentaryData.introduction.sections?.map((section: any, sIdx: number) => (
+                                <div key={sIdx} class="prose prose-slate max-w-none">
+                                    {section.title && (
+                                        <h4 class="text-lg font-bold mb-2 text-[var(--color-link)]">
+                                            {section.title}
+                                        </h4>
+                                    )}
+                                    <div 
+                                        class="text-[var(--color-text)] reader-text"
+                                        dangerouslySetInnerHTML={{ __html: section.content }}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
                 {currentChapterCommentaryVerses.length > 0 ? (
                     currentChapterCommentaryVerses.map((v: any, idx: number) => (
                         <div 
@@ -194,10 +225,23 @@ export default function CommentaryView() {
                                     Versículo {v.verse}
                                 </span>
                             </div>
-                            <div 
-                                class="text-[var(--color-text)] reader-text prose prose-slate max-w-none"
-                                dangerouslySetInnerHTML={{ __html: v.content }}
-                            />
+                            <div class="text-[var(--color-text)] reader-text prose prose-slate max-w-none">
+                                {v.phrase && (
+                                    <span class="font-bold mr-2 text-[var(--color-link)] italic">
+                                        {v.phrase}
+                                    </span>
+                                )}
+                                <span dangerouslySetInnerHTML={{ __html: v.content }} />
+                            </div>
+                            {v.references && v.references.length > 0 && (
+                                <div class="mt-4 pt-2 border-t border-theme-text/10 flex flex-wrap gap-2">
+                                    {v.references.map((ref: string, rIdx: number) => (
+                                        <span key={rIdx} class="text-[10px] opacity-50 bg-theme-text/5 px-1.5 py-0.5 rounded">
+                                            {ref}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     ))
                 ) : (

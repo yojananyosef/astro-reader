@@ -19,17 +19,27 @@ interface ReaderControlsProps {
 export default function ReaderControls({ books = [] }: ReaderControlsProps) {
     const $preferences = useStore(preferences);
     const [isOpen, setIsOpen] = useState(false);
-    const { isPlaying, isPaused, play, stop, setRate } = useTTS();
+    const { isPlaying, isPaused, isLoading, play, stop, setRate } = useTTS();
 
     const handleAutoPlay = () => {
         // Encontrar el botón de "siguiente capítulo" en el DOM si existe
         const nextBtn = document.querySelector('[data-nav-next]') as HTMLElement;
         if (nextBtn) {
             nextBtn.click();
-            // Esperar a que el contenido cargue y empezar a leer
-            setTimeout(() => {
-                play('.reader-content p, .reader-content h1', handleAutoPlay);
-            }, 1500);
+            
+            // Re-intentar encontrar contenido para empezar a leer
+            let retries = 0;
+            const tryPlay = () => {
+                const elements = document.querySelectorAll('.reader-content p, .reader-content h1');
+                if (elements.length > 0) {
+                    play('.reader-content p, .reader-content h1', handleAutoPlay);
+                } else if (retries < 10) {
+                    retries++;
+                    setTimeout(tryPlay, 500);
+                }
+            };
+            
+            setTimeout(tryPlay, 1000);
         }
     };
 
@@ -99,18 +109,12 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                 style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)', borderColor: 'color-mix(in srgb, var(--color-text), transparent 85%)' }}
             >
                 <div className="flex items-center gap-3">
-                    <BookOpen className="w-6 h-6 text-[var(--color-link)]" />
                     <h1 className="text-xl font-bold text-[var(--color-link)] m-0" style={{ margin: 0 }}>Lectura Accesible</h1>
                 </div>
                 <div className="flex gap-2">
-                    {/* Quick TTS Toggle */}
                     <div
                         onClick={() => {
-                            if (isPlaying && !isPaused) {
-                                play('.reader-content p, .reader-content h1', handleAutoPlay);
-                            } else {
-                                play('.reader-content p, .reader-content h1', handleAutoPlay);
-                            }
+                            play('.reader-content p, .reader-content h1', handleAutoPlay);
                         }}
                         onContextMenu={(e) => {
                             e.preventDefault();
@@ -123,10 +127,12 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                 play('.reader-content p, .reader-content h1', handleAutoPlay);
                             }
                         }}
-                        className={`p-2 rounded-md transition-colors cursor-pointer ${isPlaying ? 'bg-[var(--surface-active-bg)] text-[var(--color-link)]' : 'hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)]'}`}
+                        className={`p-2 rounded-md transition-colors cursor-pointer flex items-center justify-center min-w-[40px] ${isPlaying ? 'bg-[var(--surface-active-bg)] text-[var(--color-link)]' : 'hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)]'}`}
                         aria-label={isPlaying ? (isPaused ? "Reanudar lectura" : "Pausar lectura") : "Leer en voz alta"}
                     >
-                        {isPlaying ? (
+                        {isLoading ? (
+                            <div className="w-5 h-5 border-2 border-[var(--color-link)] border-t-transparent rounded-full animate-spin" />
+                        ) : isPlaying ? (
                             isPaused ? <Play className="w-5 h-5 fill-current" /> : <Pause className="w-5 h-5 fill-current" />
                         ) : (
                             <Play className="w-5 h-5" />
@@ -149,8 +155,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                         className="p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors flex items-center gap-2 cursor-pointer"
                         aria-label="Abrir navegación de libros"
                     >
-                        <BookOpen className="w-6 h-6" />
-                        <span className="hidden md:inline text-sm font-semibold">Libros</span>
+                        <span className="text-sm font-semibold">Libros</span>
                     </div>
 
                     <div
@@ -164,7 +169,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                 window.dispatchEvent(new CustomEvent('toggle-sidebar'));
                             }
                         }}
-                        className="p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors flex items-center gap-2 cursor-pointer"
+                        className="p-2 rounded-md hover:bg-[var(--surface-hover-bg)] text-[var(--color-link)] transition-colors flex md:hidden items-center gap-2 cursor-pointer"
                         aria-label="Alternar menú lateral"
                     >
                         <Menu className="w-6 h-6" />
@@ -227,7 +232,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                             )}
                             <h2 className="text-lg font-bold flex items-center gap-2">
                                 {view === 'settings' && <><Settings className="w-5 h-5" /> Configuración</>}
-                                {view === 'books' && <><BookOpen className="w-5 h-5" /> Libros</>}
+                                {view === 'books' && <>Libros</>}
                                 {view === 'chapters' && selectedBook?.name}
                             </h2>
                         </div>
