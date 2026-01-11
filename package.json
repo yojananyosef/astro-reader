@@ -20,9 +20,6 @@
     "tailwindcss": "4.1.18"
   },
   "devDependencies": {
-    "@types/pdf-parse": "^1.1.5",
-    "pdf-parse": "^2.4.5",
-    "pdf-parse-fork": "^1.2.0",
     "typescript": "5.9.3"
   }
 }

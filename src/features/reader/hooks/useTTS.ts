@@ -28,6 +28,18 @@ export function useTTS() {
             };
             window.addEventListener('touchstart', wakeUp);
             window.addEventListener('click', wakeUp);
+
+            // Chrome/Mobile fix: long texts can time out
+            const keepAlive = () => {
+                if (synth.current?.speaking && !synth.current?.paused) {
+                    synth.current.pause();
+                    synth.current.resume();
+                }
+                if (isPlaying) {
+                    setTimeout(keepAlive, 10000);
+                }
+            };
+            if (isPlaying) keepAlive();
         }
 
         return () => {
@@ -35,7 +47,7 @@ export function useTTS() {
                 synth.current.cancel();
             }
         };
-    }, []);
+    }, [isPlaying]);
 
     const stop = () => {
         isStoppingRef.current = true;
@@ -59,12 +71,23 @@ export function useTTS() {
         if (synth.current && isPlaying && !isPaused) {
             synth.current.pause();
             setIsPaused(true);
+            // On some browsers, pause/resume is buggy. 
+            // We'll store the state to handle it in resume()
         }
     };
 
     const resume = () => {
         if (synth.current && isPlaying && isPaused) {
-            synth.current.resume();
+            // Safari/Chrome on Mobile sometimes lose context on pause
+            if (synth.current.paused) {
+                synth.current.resume();
+            } else {
+                // If not actually paused in the engine but our state says so,
+                // it might have lost the utterance. Restarting from current element is safer.
+                if (utterance.current) {
+                    synth.current.speak(utterance.current);
+                }
+            }
             setIsPaused(false);
         }
     };

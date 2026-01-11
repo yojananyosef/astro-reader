@@ -6,6 +6,13 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+		<script>
+			import { applyThemeToDocument } from '../features/reader/scripts/theme-manager';
+			import { preferences } from '../stores/preferences';
+			
+			// Initial theme application
+			applyThemeToDocument(preferences.get());
+		</script>
 	</head>
 	<body>
 		<slot />
