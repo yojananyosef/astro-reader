@@ -13,12 +13,9 @@
     "@nanostores/persistent": "^1.2.0",
     "@nanostores/preact": "1.0.0",
     "@tailwindcss/vite": "4.1.18",
-    "@types/pdf-parse": "^1.1.5",
     "astro": "5.16.6",
     "lucide-preact": "0.555.0",
     "nanostores": "1.1.0",
-    "pdf-parse": "^2.4.5",
-    "pdf-parse-fork": "^1.2.0",
     "preact": "10.28.1",
     "tailwindcss": "4.1.18"
   },
@@ -26,6 +23,9 @@
     "@astrojs/node": "9.5.1",
     "@astrojs/cloudflare": "12.6.12",
     "@astrojs/vercel": "9.0.2",
+    "@types/pdf-parse": "^1.1.5",
+    "pdf-parse": "^2.4.5",
+    "pdf-parse-fork": "^1.2.0",
     "typescript": "5.9.3"
   }
 }

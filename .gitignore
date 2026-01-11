@@ -25,3 +25,9 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Source data (original PDFs and scripts)
+src/data/*.pdf
+scripts/
+extract-cba.ts
+pdf-parse.d.ts

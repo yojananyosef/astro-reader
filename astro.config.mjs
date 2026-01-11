@@ -15,6 +15,11 @@ export default defineConfig({
   output: 'server',
   adapter: pickAdapter(),
   integrations: [preact()],
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/noop'
+    }
+  },
   vite: {
     plugins: [tailwindcss()]
   }
