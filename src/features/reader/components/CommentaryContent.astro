@@ -16,11 +16,14 @@ if (!currentBookEntry) {
 }
 
 const loadCommentaryData = async (code: string) => {
-    const commentaries = import.meta.glob("../../../data/commentary/*.json");
-    const loader = commentaries[`../../../data/commentary/${code}.json`];
-    if (!loader) return null;
-    const mod = await loader();
-    return (mod as any).default ?? mod;
+    try {
+        const response = await fetch(new URL(`/data/commentary/${code}.json`, url));
+        if (!response.ok) return null;
+        return await response.json();
+    } catch (e) {
+        console.error(`Error loading commentary ${code}:`, e);
+        return null;
+    }
 };
 
 const commentaryData = await loadCommentaryData(bookKey);

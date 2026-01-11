@@ -1,10 +1,1 @@
-[
-  {
-    "id": "annual-thematic",
-    "title": "Plan Anual Temático",
-    "description": "Recorre la Biblia en 12 temas clave, con lecturas diarias y enfoque accesible.",
-    "durationDays": 365,
-    "category": "Anual",
-    "url": "#"
-  }
-]
+[{"id":"annual-thematic","title":"Plan Anual Temático","description":"Recorre la Biblia en 12 temas clave, con lecturas diarias y enfoque accesible.","durationDays":365,"category":"Anual","url":"#"}]

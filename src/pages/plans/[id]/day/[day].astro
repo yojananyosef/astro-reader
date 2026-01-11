@@ -27,16 +27,9 @@ let dayContent = {
 };
 
 try {
-  const planContents = import.meta.glob(
-    "../../../../data/plan-content/*.json",
-    { eager: true },
-  );
-  const contentFile = Object.entries(planContents).find(([path]) =>
-    path.endsWith(`${id}.json`),
-  );
-
-  if (contentFile) {
-    const data = (contentFile[1] as any).default || contentFile[1];
+  const response = await fetch(new URL(`/data/plan-content/${id}.json`, Astro.url));
+  if (response.ok) {
+    const data = await response.json();
     if (data[parsedDay]) {
       dayContent = data[parsedDay];
     }

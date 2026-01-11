@@ -202,16 +202,12 @@ export default function PlanDay({
     setViewMode(r.verses ? "partial" : "full");
 
     try {
-      const books = import.meta.glob("../../../data/books/*.json");
-      const bookKey = Object.keys(books).find(k => k.toLowerCase().endsWith(`/${r.book.toLowerCase()}.json`));
-      const loader = bookKey ? books[bookKey] : null;
-
-      if (!loader) {
+      const response = await fetch(`/data/books/${r.book.toLowerCase()}.json`);
+      if (!response.ok) {
         setIsLoadingContent(false);
         return;
       }
-      const mod = await loader();
-      const data = (mod as any).default ?? mod;
+      const data = await response.json();
       const rawVerses = data?.capitulo?.[String(r.chapter)] ?? {};
 
       const requiredVerses = r.verses ? parseVerseRange(r.verses) : [];
@@ -246,12 +242,9 @@ export default function PlanDay({
     if (r.chapterId && !r.content) {
       setIsLoadingContent(true);
       try {
-        const egwFiles = import.meta.glob("../../../data/plan-content/*.json");
-        const fileKey = Object.keys(egwFiles).find(k => k.endsWith("/es_PP54(PP).json"));
-
-        if (fileKey) {
-          const mod = await egwFiles[fileKey]();
-          const data = (mod as any).default ?? mod;
+        const response = await fetch(`/data/plan-content/es_PP54(PP).json`);
+        if (response.ok) {
+          const data = await response.json();
           const chapter = data.chapters?.find((c: any) => c.number === r.chapterId);
           if (chapter) {
             const content = chapter.sections?.map((s: any) => s.content).join("\n\n") || "";
