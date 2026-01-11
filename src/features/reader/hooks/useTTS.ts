@@ -29,23 +29,44 @@ export function useTTS() {
             window.addEventListener('touchstart', wakeUp);
             window.addEventListener('click', wakeUp);
 
-            // Chrome/Mobile fix: long texts can time out
-            const keepAlive = () => {
-                if (synth.current?.speaking && !synth.current?.paused) {
-                    synth.current.pause();
-                    synth.current.resume();
-                }
-                if (isPlaying) {
-                    setTimeout(keepAlive, 10000);
+            // CRITICAL: Stop TTS when navigating to a new page or chapter
+            const handleBeforeUnload = () => {
+                if (synth.current) {
+                    synth.current.cancel();
                 }
             };
-            if (isPlaying) keepAlive();
+            window.addEventListener('beforeunload', handleBeforeUnload);
+            window.addEventListener('popstate', handleBeforeUnload);
+
+            return () => {
+                window.removeEventListener('beforeunload', handleBeforeUnload);
+                window.removeEventListener('popstate', handleBeforeUnload);
+                if (synth.current) {
+                    synth.current.cancel();
+                }
+            };
+        }
+    }, []); // Only on mount
+
+    // Separate effect for keepAlive to avoid re-triggering logic on isPlaying change
+    useEffect(() => {
+        let timeoutId: any;
+        const keepAlive = () => {
+            if (synth.current?.speaking && !synth.current?.paused) {
+                synth.current.pause();
+                synth.current.resume();
+            }
+            if (isPlaying) {
+                timeoutId = setTimeout(keepAlive, 10000);
+            }
+        };
+
+        if (isPlaying) {
+            keepAlive();
         }
 
         return () => {
-            if (synth.current) {
-                synth.current.cancel();
-            }
+            if (timeoutId) clearTimeout(timeoutId);
         };
     }, [isPlaying]);
 
@@ -113,130 +134,151 @@ export function useTTS() {
             return;
         }
 
-        // Cancel any current speech before starting new one
+        // IMPORTANT: Always reset engine and clear everything before starting new audio
+        // to prevent context loss bugs on chapter changes
         synth.current.cancel();
         
-        setIsLoading(true);
-        setIsPlaying(true);
-        setIsPaused(false);
+        // Wait for cancel to propagate (especially on mobile)
+        setTimeout(() => {
+            setIsLoading(true);
+            setIsPlaying(true);
+            setIsPaused(false);
+            isStoppingRef.current = false;
 
-        // Get all readable elements
-        const elements = Array.from(document.querySelectorAll(textBlocksSelector));
-        if (elements.length === 0) {
-            setIsLoading(false);
-            setIsPlaying(false);
-            return;
-        }
-
-        elementsRef.current = elements;
-        currentIndexRef.current = 0;
-
-        const speakNext = () => {
-            if (isStoppingRef.current) return;
-
-            if (currentIndexRef.current >= elementsRef.current.length) {
-                stop();
-                if (onComplete) onComplete();
-                return;
-            }
-
-            const element = elementsRef.current[currentIndexRef.current];
-            // Cloning to process text without altering DOM
-            const clone = element.cloneNode(true) as HTMLElement;
-            const currentPrefs = preferences.get();
-
-            // FIX: Skip verse numbers (both new .verse-num and old sup)
-            if (currentPrefs.skipVerses) {
-                clone.querySelectorAll('.verse-num, sup').forEach(el => {
-                    // Replace with a space to avoid joining words incorrectly
-                    el.textContent = ' ';
-                    el.remove();
-                });
-            }
-
-            // FIX: Skip footnotes and other links
-            if (currentPrefs.skipFootnotes) {
-                clone.querySelectorAll('.footnote-ref, a').forEach(el => {
-                    el.textContent = ' ';
-                    el.remove();
-                });
-            }
-
-            // Remove icons, svgs, or buttons that might be in the text
-            clone.querySelectorAll('.commentary-icon, svg, button, .select-none-ui').forEach(el => {
-                el.textContent = ' ';
-                el.remove();
-            });
-
-            // Final text cleanup: replace multiple spaces and remove hidden characters
-            const text = clone.innerText
-                .replace(/\s+/g, ' ')
-                .trim();
-
-            if (!text) {
-                currentIndexRef.current++;
-                speakNext();
-                return;
-            }
-
-            // Create utterance
-            const u = new SpeechSynthesisUtterance(text);
-            u.rate = rate;
-            u.lang = 'es-ES'; // Default to Spanish
-
-            u.onstart = () => {
-                if (isStoppingRef.current) return;
+            // Get all readable elements
+            const elements = Array.from(document.querySelectorAll(textBlocksSelector));
+            if (elements.length === 0) {
                 setIsLoading(false);
-                
-                // Highlight current element
-                document.querySelectorAll('.speaking-highlight').forEach(el =>
-                    el.classList.remove('speaking-highlight')
-                );
-                element.classList.add('speaking-highlight');
-                
-                // Ensure element is visible
-                const rect = element.getBoundingClientRect();
-                const isVisible = (rect.top >= 0 && rect.bottom <= window.innerHeight);
-                if (!isVisible) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            };
+                setIsPlaying(false);
+                return;
+            }
 
-            u.onend = () => {
+            elementsRef.current = elements;
+            currentIndexRef.current = 0;
+            
+            const speakNext = () => {
                 if (isStoppingRef.current) return;
-                element.classList.remove('speaking-highlight');
-                currentIndexRef.current++;
-                speakNext();
-            };
 
-            u.onerror = (event) => {
-                console.error('TTS Error:', event);
-                element.classList.remove('speaking-highlight');
-                
-                // On some browsers, 'interrupted' happens on normal stop or quick play clicks
-                if (event.error === 'interrupted' && !isStoppingRef.current) {
-                    // Try to recover or just move on
-                    setTimeout(speakNext, 100);
+                if (currentIndexRef.current >= elementsRef.current.length) {
+                    stop();
+                    if (onComplete) onComplete();
                     return;
                 }
-                
-                if (event.error !== 'interrupted') {
+
+                const element = elementsRef.current[currentIndexRef.current];
+                // Ensure element still exists in the DOM (important after navigation)
+                if (!element || !document.body.contains(element)) {
                     stop();
+                    return;
                 }
+
+                // Cloning to process text without altering DOM
+                const clone = element.cloneNode(true) as HTMLElement;
+                const currentPrefs = preferences.get();
+
+                // FIX: Skip verse numbers (both new .verse-num and old sup)
+                if (currentPrefs.skipVerses) {
+                    clone.querySelectorAll('.verse-num, sup').forEach(el => {
+                        // Replace with a space to avoid joining words incorrectly
+                        el.textContent = ' ';
+                        el.remove();
+                    });
+                }
+
+                // FIX: Skip footnotes and other links
+                if (currentPrefs.skipFootnotes) {
+                    clone.querySelectorAll('.footnote-ref, a').forEach(el => {
+                        el.textContent = ' ';
+                        el.remove();
+                    });
+                }
+
+                // Remove icons, svgs, or buttons that might be in the text
+                clone.querySelectorAll('.commentary-icon, svg, button, .select-none-ui').forEach(el => {
+                    el.textContent = ' ';
+                    el.remove();
+                });
+
+                // Final text cleanup: replace multiple spaces and remove hidden characters
+                const text = clone.innerText
+                    .replace(/\s+/g, ' ')
+                    .trim();
+
+                if (!text) {
+                    currentIndexRef.current++;
+                    speakNext();
+                    return;
+                }
+
+                // Create utterance
+                const u = new SpeechSynthesisUtterance(text);
+                u.rate = rate;
+                u.lang = 'es-ES'; // Default to Spanish
+
+                u.onstart = () => {
+                    if (isStoppingRef.current) return;
+                    setIsLoading(false);
+                    
+                    // Highlight current element - FIRST REMOVE OTHERS
+                    document.querySelectorAll('.speaking-highlight').forEach(el =>
+                        el.classList.remove('speaking-highlight')
+                    );
+                    
+                    // THEN ADD TO CURRENT
+                    element.classList.add('speaking-highlight');
+                    
+                    // Ensure element is visible
+                    const rect = element.getBoundingClientRect();
+                    const isVisible = (rect.top >= 50 && rect.bottom <= window.innerHeight - 50);
+                    if (!isVisible) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                };
+
+                u.onend = () => {
+                    if (isStoppingRef.current) return;
+                    
+                    // Only increment and continue if the engine is not stopping
+                    currentIndexRef.current++;
+                    
+                    // Double check if we are still on the same page and have more elements
+                    if (document.body.contains(element) && currentIndexRef.current < elementsRef.current.length) {
+                        speakNext();
+                    } else if (currentIndexRef.current >= elementsRef.current.length) {
+                        stop();
+                        if (onComplete) onComplete();
+                    } else {
+                        stop();
+                    }
+                };
+
+                u.onerror = (event) => {
+                    console.error('TTS Error:', event);
+                    
+                    // On some browsers, 'interrupted' happens on normal stop or quick play clicks
+                    if (event.error === 'interrupted' && !isStoppingRef.current) {
+                        // Try to recover or just move on
+                        setTimeout(speakNext, 100);
+                        return;
+                    }
+                    
+                    if (event.error !== 'interrupted') {
+                        stop();
+                    }
+                };
+
+                utterance.current = u;
+                
+                // Tiny delay between utterances for better stability on some browsers
+                setTimeout(() => {
+                    if (!isStoppingRef.current && synth.current) {
+                        synth.current.speak(u);
+                    }
+                }, 50);
             };
 
-            utterance.current = u;
-            
-            // Tiny delay between utterances for better stability on some browsers
-            setTimeout(() => {
-                if (!isStoppingRef.current && synth.current) {
-                    synth.current.speak(u);
-                }
-            }, 50);
-        };
-
-        // Initial delay to let the cancel() call finish properly
-        setTimeout(speakNext, 100);
+            speakNext();
+        }, 150);
     };
 
     return { isPlaying, isPaused, isLoading, play, stop, pause, resume, rate, setRate };
