@@ -200,13 +200,13 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
 
                 {/* Panel */}
                 <div
-                    className={`absolute right-0 top-0 bottom-0 w-full max-w-sm border-l border-theme-text/10 shadow-2xl transform transition-transform duration-300 flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    className={`absolute right-0 top-0 bottom-0 w-[85%] sm:w-full sm:max-w-sm border-l border-theme-text/10 shadow-2xl transform transition-transform duration-300 flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
                     style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }}
                 >
 
                     {/* Header */}
                     <div
-                        className="flex items-center justify-between p-6 border-b"
+                        className="flex items-center justify-between p-4 sm:p-6 border-b"
                         style={{ borderColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' }}
                     >
                         <div className="flex items-center gap-2">
@@ -248,7 +248,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 overflow-y-auto custom-scrollbar p-6">
+                    <div className="flex-1 overflow-y-auto custom-scrollbar p-4 sm:p-6">
 
                         {/* VIEW: SETTINGS */}
                         {view === 'settings' && (
@@ -301,18 +301,18 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                                 <Play className="w-5 h-5 opacity-60" style={{ color: 'var(--color-text)' }} />
                                                 <span className="font-medium text-sm">Velocidad de Voz</span>
                                             </div>
-                                            <span className="text-xs font-mono px-2 py-0.5 rounded" style={{ backgroundColor: 'var(--surface-muted-border)' }}>x{$preferences.speechRate}</span>
-                                        </div>
-                                        <input
-                                            type="range"
-                                            min="0.5"
-                                            max="2"
-                                            step="0.1"
-                                            value={$preferences.speechRate}
-                                            onInput={(e) => update('speechRate', Number((e.target as HTMLInputElement).value))}
-                                            className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[var(--color-link)]"
-                                            style={{ backgroundColor: 'var(--surface-muted-border)' }}
-                                        />
+                                            <span className="text-xs font-mono px-2 py-0.5 rounded" style={{ backgroundColor: 'var(--surface-muted-border)', fontSize: '12px' }}>x{$preferences.speechRate}</span>
+                    </div>
+                    <input
+                        type="range"
+                        min="0.5"
+                        max="2"
+                        step="0.1"
+                        value={$preferences.speechRate}
+                        onInput={(e) => update('speechRate', Number((e.target as HTMLInputElement).value))}
+                        className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[var(--color-link)]"
+                        style={{ backgroundColor: 'var(--surface-muted-border)', height: '8px' }}
+                    />
                                     </div>
 
                                     {/* Skip Options */}
@@ -459,7 +459,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                                 <Type className="w-4 h-4" />
                                                 <label>Tamaño</label>
                                             </div>
-                                            <span className="text-xs px-2 py-0.5 rounded font-mono" style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' }}>{$preferences.fontSize}px</span>
+                                            <span className="text-xs px-2 py-0.5 rounded font-mono" style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 90%)', fontSize: '12px' }}>{$preferences.fontSize}px</span>
                                         </div>
                                         <input
                                             type="range"
@@ -468,7 +468,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                                             value={$preferences.fontSize}
                                             onInput={(e) => update('fontSize', Number((e.target as HTMLInputElement).value))}
                                             className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[var(--color-link)]"
-                                            style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' }}
+                                            style={{ backgroundColor: 'color-mix(in srgb, var(--color-text), transparent 90%)', height: '8px' }}
                                         />
                                     </div>
 

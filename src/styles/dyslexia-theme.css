@@ -136,15 +136,63 @@ body {
     -webkit-tap-highlight-color: transparent; /* Remove mobile blue highlight */
 }
 
-.reader-content,
+/* Estilos específicos para el contenido de lectura */
 .reader-text,
+.reader-text * {
+    font-size: var(--reader-font-size) !important;
+    line-height: var(--reader-line-height) !important;
+    letter-spacing: var(--reader-letter-spacing) !important;
+    word-spacing: var(--reader-word-spacing) !important;
+}
+
+/* Asegurar que los controles de la interfaz (UI) mantengan su estilo original */
+/* Usamos selectores más específicos para que la UI no se vea afectada */
+.app-grid nav, 
+.app-grid aside, 
+.app-grid header,
+.fixed.inset-0, /* Para los modales/sheets de configuración */
+.surface-card {
+    font-size: 16px !important;
+}
+
+/* Resetear estilos de texto dentro de la UI para que no hereden los del lector */
+.app-grid nav *, 
+.app-grid aside *, 
+.app-grid header *,
+.fixed.inset-0 * {
+    font-size: inherit;
+    line-height: 1.5 !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+}
+
+/* Reducir márgenes de elementos de bloque en modo lectura para evitar espacios excesivos */
 .reader-text p,
 .reader-text div,
-.prose.reader-text p {
-    font-size: var(--reader-font-size);
-    line-height: var(--reader-line-height) !important;
-    letter-spacing: var(--reader-letter-spacing);
-    word-spacing: var(--reader-word-spacing);
+.reader-text h1,
+.reader-text h2,
+.reader-text h3,
+.prose.reader-text p,
+.prose.reader-text div {
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
+}
+
+/* Evitar que el texto se rompa de forma agresiva en móviles */
+@media (max-width: 767px) {
+    .reader-content {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+    }
+    
+    .reader-text {
+        /* En móvil, si la fuente es muy grande, reducimos un poco el factor de escala */
+        font-size: calc(var(--reader-font-size) * 0.9);
+    }
+}
+
+.reader-content,
+.reader-text {
     transition: max-width 0.3s ease-in-out;
 }
 

@@ -157,9 +157,9 @@ export default function CommentaryView() {
     }
 
     return (
-        <article class="reader-content max-w-3xl mx-auto pb-32 px-4 md:px-0 relative">
-            <div class="mb-8 text-center">
-                <h1 class="text-3xl md:text-4xl font-bold text-[var(--color-link)] mb-4">
+        <article class="reader-content max-w-3xl mx-auto pb-32 px-2 md:px-0 relative">
+            <div class="mb-8 text-center px-2">
+                <h1 class="text-2xl md:text-4xl font-bold text-[var(--color-link)] mb-4">
                     Comentario: {currentBookEntry.name} {currentChapNumInt}
                 </h1>
                 <CommentarySelector 
@@ -181,16 +181,16 @@ export default function CommentaryView() {
                 </a>
             )}
 
-            <div class="space-y-12">
+            <div class="space-y-6 md:space-y-12">
                 {currentChapterCommentaryVerses.length > 0 ? (
                     currentChapterCommentaryVerses.map((v: any, idx: number) => (
                         <div 
                             id={`com-${v.verse}`} 
                             key={v.verse} 
-                            class={`p-4 rounded-xl transition-all duration-300 ${activeCommentary === `com-${v.verse}` ? 'commentary-selected shadow-sm' : 'hover:bg-theme-text/5'}`}
+                            class={`p-2 md:p-4 rounded-xl transition-all duration-300 ${activeCommentary === `com-${v.verse}` ? 'commentary-selected shadow-sm' : 'hover:bg-theme-text/5'}`}
                         >
                             <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-[var(--color-link)] text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                                <span class="bg-[var(--color-link)] text-white text-[10px] md:text-xs font-bold px-2 py-0.5 rounded-full">
                                     Versículo {v.verse}
                                 </span>
                             </div>

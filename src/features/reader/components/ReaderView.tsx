@@ -245,9 +245,9 @@ export default function ReaderView() {
     const filteredVerses = viewMode === 'partial' ? versesList.filter(v => v.isHighlighted) : versesList;
 
     return (
-        <article class="reader-content max-w-3xl mx-auto pb-32 px-4 md:px-0 relative">
-            <div class="mb-8 text-center">
-                <h1 class="text-3xl md:text-4xl font-bold text-[var(--color-link)] mb-2">
+        <article class="reader-content max-w-3xl mx-auto pb-32 px-2 md:px-0 relative">
+            <div class="mb-8 text-center px-2">
+                <h1 class="text-2xl md:text-4xl font-bold text-[var(--color-link)] mb-2">
                     {bookData?.nombre || currentBookEntry.name} {chapterKey}
                 </h1>
                 {versesRange && (
@@ -299,7 +299,7 @@ export default function ReaderView() {
                 </a>
             )}
 
-            <div class="verses space-y-4">
+            <div class="verses space-y-4 reader-text">
                 {filteredVerses.map((verse) => {
                     const verseId = `${bookKey}-${chapterKey}-${verse.number}`;
                     const isGlobalHighlighted = $highlights[verseId];
