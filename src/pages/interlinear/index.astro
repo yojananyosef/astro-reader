@@ -39,7 +39,7 @@ import InterlinearView from "../../features/interlinear/components/InterlinearVi
           transparent 92%
       ) !important;
       color: var(--color-text);
-      z-index: 100;
+      z-index: 200;
   }
 
   .nav-arrow:hover {
@@ -80,7 +80,7 @@ import InterlinearView from "../../features/interlinear/components/InterlinearVi
       transform: translateY(-50%) translateX(0);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
       .nav-arrow {
           height: 60px;
           width: 32px;
@@ -89,17 +89,22 @@ import InterlinearView from "../../features/interlinear/components/InterlinearVi
               var(--color-text),
               transparent 90%
           ) !important;
-          z-index: 100;
+          z-index: 200;
       }
       .nav-arrow-prev {
           left: 0 !important;
           border-radius: 0 30px 30px 0;
-          transform: translateY(-50%);
+          transform: translateY(-50%) translateX(-5px);
       }
       .nav-arrow-next {
           right: 0;
           border-radius: 30px 0 0 30px;
-          transform: translateY(-50%);
+          transform: translateY(-50%) translateX(5px);
+      }
+
+      .nav-arrow-prev.visible,
+      .nav-arrow-next.visible {
+          transform: translateY(-50%) translateX(0);
       }
   }
 

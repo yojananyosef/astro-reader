@@ -112,7 +112,6 @@ export default function InterlinearView() {
         const response = await fetch(`/data/books/${params.book}.json`);
         if (response.ok && isMounted) {
           const data = await response.json();
-          console.log("Spanish book loaded:", params.book);
           setBookData(data);
         } else {
           console.error("Failed to load spanish book:", params.book, response.status);
@@ -366,7 +365,7 @@ export default function InterlinearView() {
              navigateVerse(-1);
            }}
            href="#"
-           className="nav-arrow nav-arrow-prev visible"
+           className="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-50 visible"
            aria-label="Versículo anterior"
          >
            <ArrowLeft className="w-5 h-5" />
@@ -380,7 +379,7 @@ export default function InterlinearView() {
              navigateVerse(1);
            }}
            href="#"
-           className="nav-arrow nav-arrow-next visible"
+           className="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-50 visible"
            aria-label="Siguiente versículo"
          >
            <ArrowRight className="w-5 h-5" />

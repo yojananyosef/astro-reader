@@ -202,7 +202,7 @@ export default function CommentaryView() {
                 <a 
                     href={prevLink} 
                     onClick={(e) => { e.preventDefault(); handleNavigate(prevLink); }}
-                    class="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-40 visible" 
+                    class="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-50 visible" 
                     aria-label="Capítulo Anterior"
                     data-nav-prev
                 >
@@ -214,7 +214,7 @@ export default function CommentaryView() {
                 <a 
                     href={nextLink} 
                     onClick={(e) => { e.preventDefault(); handleNavigate(nextLink); }}
-                    class="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-40 visible" 
+                    class="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-50 visible" 
                     aria-label="Capítulo Siguiente"
                     data-nav-next
                 >
