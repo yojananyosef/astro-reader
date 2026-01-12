@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from "preact/hooks";
-import { BookOpen, Menu, ChevronRight, Bookmark, Star, MessageSquare, ChevronLeft, Library, X } from "lucide-preact";
+import { BookOpen, Menu, ChevronRight, Bookmark, Star, MessageSquare, ChevronLeft, Library, X, Languages } from "lucide-preact";
 
 type Book = { code: string; name: string; chapters: number; section: string };
 
@@ -20,11 +20,13 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
     if (path.includes("/tracker")) return "tracking";
     if (path.includes("/plans")) return "plans";
     if (path.includes("/commentary")) return "commentary";
+    if (path.includes("/interlinear")) return "interlinear";
     return "bible";
   });
 
   const mainNav = [
     { id: "bible", label: "Biblia", icon: BookOpen, url: "/" },
+    { id: "interlinear", label: "Interlineal", icon: Languages, url: "/interlinear" },
     { id: "commentary", label: "Comentario", icon: Library, url: "/commentary" },
     { id: "tracking", label: "Seguimiento", icon: Bookmark, url: "/tracker" },
     { id: "plans", label: "Planes", icon: Star, url: "/plans" },
@@ -159,14 +161,16 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
               })}
             </nav>
             <div className="p-4 border-t" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
-              <div
-                role="button"
-                tabIndex={0}
-                className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3 cursor-pointer hover:opacity-100 transition-opacity text-[var(--color-link)]"
+              <a
+                href="https://wa.me/56930599095"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3 cursor-pointer hover:bg-[var(--surface-hover-bg)] transition-all text-[var(--color-link)]"
+                style={{ textDecoration: 'none' }}
               >
                 <MessageSquare className="w-4 h-4" />
                 <span className="text-sm">Contáctanos</span>
-              </div>
+              </a>
             </div>
           </aside>
         </div>
@@ -252,19 +256,16 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
             })}
           </nav>
           <div className="p-4 border-t" style={{ borderColor: "color-mix(in srgb, var(--color-text), transparent 85%)" }}>
-            <div
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  // Handle contact
-                }
-              }}
-              className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3 cursor-pointer hover:opacity-100 transition-opacity"
+            <a
+              href="https://wa.me/56930599095"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-left p-3 rounded-lg border surface-card flex items-center gap-3 cursor-pointer hover:bg-[var(--surface-hover-bg)] transition-all text-[var(--color-link)]"
+              style={{ textDecoration: 'none' }}
             >
               <MessageSquare className="w-4 h-4" />
               <span className="text-sm">Contáctanos</span>
-            </div>
+            </a>
           </div>
         </aside>
       </div>

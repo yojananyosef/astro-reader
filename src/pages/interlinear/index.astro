@@ -1,0 +1,20 @@
+---
+import ReaderLayout from "../../features/reader/layouts/ReaderLayout.astro";
+import InterlinearView from "../../features/interlinear/components/InterlinearView";
+---
+
+<ReaderLayout>
+  <div class="py-4">
+    <InterlinearView client:only="preact" />
+  </div>
+</ReaderLayout>
+
+<style is:global>
+  /* Importar fuente para hebreo si es necesario, 
+     o usar una genérica con buen soporte de diacríticos */
+  @import url('https://fonts.googleapis.com/css2?family=SBL+Hebrew&family=Noto+Sans+Hebrew:wght@400;700&display=swap');
+
+  .font-hebrew {
+    font-family: 'SBL Hebrew', 'Noto Sans Hebrew', serif;
+  }
+</style>

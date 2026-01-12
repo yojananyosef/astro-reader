@@ -1,0 +1,32 @@
+{
+  "book": "Génesis",
+  "chapter": 1,
+  "verses": [
+    {
+      "number": 1,
+      "translation": "En el principio, Dios creó los cielos y la tierra.",
+      "words": [
+        { "text": "בְּרֵאשִׁית", "gloss": "En el principio", "strong": "9001" },
+        { "text": "בָּרָא", "gloss": "creó", "strong": "1254" },
+        { "text": "אֱלֹהִים", "gloss": "Dios", "strong": "430" },
+        { "text": "אֵת", "gloss": "[marcador de objeto]", "strong": "853" },
+        { "text": "הַשָּׁמַיִם", "gloss": "los cielos", "strong": "9006" },
+        { "text": "וְאֵת", "gloss": "y", "strong": "9005" },
+        { "text": "הָאָרֶץ", "gloss": "la tierra", "strong": "9006" }
+      ]
+    },
+    {
+      "number": 2,
+      "translation": "Y la tierra estaba desordenada y vacía, y las tinieblas estaban sobre la faz del abismo, y el Espíritu de Dios se movía sobre la faz de las aguas.",
+      "words": [
+        { "text": "וְהָאָרֶץ", "gloss": "Y la tierra", "strong": "9006" },
+        { "text": "הָיְתָה", "gloss": "estaba", "strong": "1961" },
+        { "text": "תֹהוּ", "gloss": "desordenada", "strong": "8414" },
+        { "text": "וָבֹהוּ", "gloss": "y vacía", "strong": "922" },
+        { "text": "וְחֹשֶׁךְ", "gloss": "y las tinieblas", "strong": "2822" },
+        { "text": "עַל־פְּנֵי", "gloss": "sobre la faz de", "strong": "6440" },
+        { "text": "תְהוֹם", "gloss": "abismo", "strong": "8415" }
+      ]
+    }
+  ]
+}

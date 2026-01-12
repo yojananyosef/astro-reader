@@ -1,0 +1,511 @@
+import { useState, useEffect, useMemo, useRef } from "preact/hooks";
+import { ChevronLeft, ChevronRight, Info, ExternalLink, ChevronDown, Book, Hash, Check } from "lucide-preact";
+import type { InterlinearWord, InterlinearVerse, InterlinearData } from "../types";
+import booksIndex from "../../../data/books-index.json";
+import { lastBiblePosition } from "../../../stores/navigation";
+import { useStore } from "@nanostores/preact";
+import { preferences } from "../../../stores/preferences";
+
+const bookMapping: Record<string, string> = {
+  gen: "genesis",
+  exo: "exodus",
+  lev: "leviticus",
+  num: "numbers",
+  deu: "deuteronomy",
+  jos: "joshua",
+  jdg: "judges",
+  rut: "ruth",
+  "1sa": "1_samuel",
+  "2sa": "2_samuel",
+  "1ki": "1_kings",
+  "2ki": "2_kings",
+  "1ch": "1_chronicles",
+  "2ch": "2_chronicles",
+  ezr: "ezra",
+  neh: "nehemiah",
+  est: "esther",
+  job: "job",
+  psa: "psalms",
+  pro: "proverbs",
+  ecc: "ecclesiastes",
+  sol: "song_of_songs",
+  isa: "isaiah",
+  jer: "jeremiah",
+  lam: "lamentations",
+  eze: "ezekiel",
+  dan: "daniel",
+  hos: "hosea",
+  joe: "joel",
+  amo: "amos",
+  oba: "obadiah",
+  jon: "jonah",
+  mic: "micah",
+  nah: "nahum",
+  hab: "habakkuk",
+  zep: "zephaniah",
+  hag: "haggai",
+  zec: "zechariah",
+  mal: "malachi",
+};
+
+export default function InterlinearView() {
+  const $preferences = useStore(preferences);
+  const [params, setParams] = useState(() => {
+    if (typeof window === "undefined") return { book: "gen", chapter: "1", verse: "1" };
+    const searchParams = new URLSearchParams(window.location.search);
+    
+    // Si no hay parámetros en la URL, intentar cargar de localStorage
+    if (!searchParams.get("book")) {
+      try {
+        const stored = localStorage.getItem('bible-last-position');
+        if (stored) {
+          const { lastBook, lastChapter } = JSON.parse(stored);
+          if (lastBook && lastChapter) {
+            return { book: lastBook, chapter: lastChapter, verse: "1" };
+          }
+        }
+      } catch (e) {}
+    }
+
+    return {
+      book: searchParams.get("book") || "gen",
+      chapter: searchParams.get("chapter") || "1",
+      verse: searchParams.get("verse") || "1"
+    };
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [chapterData, setChapterData] = useState<InterlinearVerse[]>([]);
+  const [verseData, setVerseData] = useState<InterlinearVerse | null>(null);
+  const [bookData, setBookData] = useState<any>(null);
+
+  // Estados para los selectores custom
+  const [isBookOpen, setIsBookOpen] = useState(false);
+  const [isChapterOpen, setIsChapterOpen] = useState(false);
+  const [isVerseOpen, setIsVerseOpen] = useState(false);
+  
+  const bookRef = useRef<HTMLDivElement>(null);
+  const chapterRef = useRef<HTMLDivElement>(null);
+  const verseRef = useRef<HTMLDivElement>(null);
+
+  const books = useMemo(() => booksIndex.filter(b => b.section === 'at'), []);
+  const currentBook = useMemo(() => books.find(b => b.code === params.book), [params.book, books]);
+
+  // Cerrar selectores al hacer click fuera
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (bookRef.current && !bookRef.current.contains(event.target as Node)) setIsBookOpen(false);
+      if (chapterRef.current && !chapterRef.current.contains(event.target as Node)) setIsChapterOpen(false);
+      if (verseRef.current && !verseRef.current.contains(event.target as Node)) setIsVerseOpen(false);
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Cargar datos del libro (español)
+  useEffect(() => {
+    let isMounted = true;
+    async function loadSpanishBook() {
+      if (!params.book) return;
+      try {
+        const response = await fetch(`/data/books/${params.book}.json`);
+        if (response.ok && isMounted) {
+          const data = await response.json();
+          console.log("Spanish book loaded:", params.book);
+          setBookData(data);
+        } else {
+          console.error("Failed to load spanish book:", params.book, response.status);
+          if (isMounted) setBookData(null);
+        }
+      } catch (err) {
+        console.error("Error loading spanish book:", err);
+        if (isMounted) setBookData(null);
+      }
+    }
+    loadSpanishBook();
+    return () => { isMounted = false; };
+  }, [params.book]);
+
+  const spanishVerse = useMemo(() => {
+    if (!bookData || !params.chapter || !params.verse) return null;
+    
+    const chapterData = bookData.capitulo || bookData.capitulos;
+    if (!chapterData) return null;
+    
+    const chapter = chapterData[params.chapter];
+    if (!chapter) return null;
+    
+    const content = chapter[params.verse];
+    if (!content) return null;
+    
+    if (typeof content === "string") return content;
+    if (typeof content === "object") return content.texto || content.text || null;
+    return null;
+  }, [bookData, params.chapter, params.verse]);
+
+  // Actualizar URL cuando cambian los parámetros
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("book", params.book);
+    url.searchParams.set("chapter", params.chapter);
+    url.searchParams.set("verse", params.verse);
+    window.history.replaceState({}, "", url.toString());
+
+    // Guardar última posición
+    lastBiblePosition.set({ lastBook: params.book, lastChapter: params.chapter });
+  }, [params.book, params.chapter, params.verse]);
+
+  // Cargar datos del capítulo hebreo
+  useEffect(() => {
+    let isMounted = true;
+    const fetchInterlinearData = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const fileName = bookMapping[params.book] || params.book;
+        const response = await fetch(`/data/bible/hebrew/${fileName}.json`);
+        
+        if (!response.ok) {
+          throw new Error(`No se pudo cargar el archivo: ${fileName}.json (Status: ${response.status})`);
+        }
+
+        const data: InterlinearData = await response.json();
+        if (!isMounted) return;
+
+        // Filtrar solo los versículos del capítulo actual
+        const chapterVerses = data.filter(v => v.chapter === parseInt(params.chapter));
+        setChapterData(chapterVerses);
+        
+        // Encontrar el versículo específico
+        const verse = chapterVerses.find(v => v.verse === parseInt(params.verse));
+        if (verse) {
+          setVerseData(verse);
+        } else if (chapterVerses.length > 0) {
+          setVerseData(chapterVerses[0]);
+          setParams(prev => ({ ...prev, verse: String(chapterVerses[0].verse) }));
+        } else {
+          setVerseData(null);
+        }
+      } catch (err: any) {
+        console.error("Error loading interlinear data:", err);
+        if (isMounted) {
+          setError(err.message);
+          setVerseData(null);
+        }
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    };
+
+    fetchInterlinearData();
+    return () => { isMounted = false; };
+  }, [params.book, params.chapter]);
+
+  // Actualizar versículo cuando cambian los parámetros de versículo (sin recargar todo el capítulo)
+  useEffect(() => {
+    if (chapterData.length > 0) {
+      const verse = chapterData.find(v => v.verse === parseInt(params.verse));
+      if (verse) {
+        setVerseData(verse);
+      }
+    }
+  }, [params.verse, chapterData]);
+
+  const handleBookChange = (code: string) => {
+    setParams(prev => ({ ...prev, book: code, chapter: "1", verse: "1" }));
+    setIsBookOpen(false);
+  };
+
+  const handleChapterChange = (chapter: string) => {
+    setParams(prev => ({ ...prev, chapter, verse: "1" }));
+    setIsChapterOpen(false);
+  };
+
+  const handleVerseChange = (verse: string) => {
+    setParams(prev => ({ ...prev, verse }));
+    setIsVerseOpen(false);
+  };
+
+  const navigateVerse = (direction: number) => {
+    const currentVerse = parseInt(params.verse);
+    const newVerse = currentVerse + direction;
+    
+    // Verificar si el nuevo versículo existe en el capítulo actual
+    const exists = chapterData.some(v => v.verse === newVerse);
+    
+    if (exists) {
+      setParams(prev => ({ ...prev, verse: String(newVerse) }));
+    } else if (direction > 0) {
+      // Ir al siguiente capítulo si es posible
+      const nextChapter = parseInt(params.chapter) + 1;
+      if (currentBook && nextChapter <= currentBook.chapters) {
+        setParams(prev => ({ ...prev, chapter: String(nextChapter), verse: "1" }));
+      }
+    } else if (direction < 0) {
+      // Ir al capítulo anterior si es posible
+      const prevChapter = parseInt(params.chapter) - 1;
+      if (prevChapter > 0) {
+        setParams(prev => ({ ...prev, chapter: String(prevChapter), verse: "1" }));
+      }
+    }
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-700">
+      <header className="text-center space-y-2">
+        <h1 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-link)] opacity-60">
+          Antiguo Testamento Interlineal
+        </h1>
+      </header>
+
+      {/* Selectores Custom */}
+      <div className="flex flex-wrap items-center justify-center gap-3 p-2 rounded-2xl bg-theme-text/5 border border-theme-text/10 max-w-fit mx-auto relative z-50 shadow-sm transition-colors duration-300">
+        {/* Book Selector */}
+        <div className="relative" ref={bookRef}>
+          <button
+            onClick={() => { setIsBookOpen(!isBookOpen); setIsChapterOpen(false); setIsVerseOpen(false); }}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-200 border text-sm ${isBookOpen ? 'bg-[var(--color-link)] text-white shadow-lg border-transparent' : 'hover:bg-theme-text/5 text-[var(--color-text)] border-theme-text/10 shadow-sm'}`}
+          >
+            <div className={`p-1 rounded-lg ${isBookOpen ? 'bg-white/20' : 'bg-[var(--color-link)]/10 text-[var(--color-link)]'}`}>
+              <Book className="w-3.5 h-3.5" />
+            </div>
+            <span className="font-bold truncate max-w-[120px]">
+              {currentBook?.name}
+            </span>
+            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isBookOpen ? 'rotate-180' : ''}`} />
+          </button>
+
+          {isBookOpen && (
+            <div className="absolute top-full left-0 mt-2 w-56 max-h-[350px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60]">
+              <div className="grid grid-cols-1 gap-0.5">
+                {books.map(b => (
+                  <button
+                    key={b.code}
+                    onClick={() => handleBookChange(b.code)}
+                    className={`flex items-center justify-between px-3 py-2 rounded-lg text-left text-xs transition-colors ${b.code === params.book ? 'bg-[var(--color-link)]/10 text-[var(--color-link)] font-bold' : 'hover:bg-theme-text/5 text-[var(--color-text)] opacity-80 hover:opacity-100'}`}
+                  >
+                    <span>{b.name}</span>
+                    {b.code === params.book && <Check className="w-3.5 h-3.5" />}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="h-6 w-px bg-theme-text/10 hidden sm:block" />
+
+        {/* Chapter Selector */}
+        <div className="relative" ref={chapterRef}>
+          <button
+            onClick={() => { setIsChapterOpen(!isChapterOpen); setIsBookOpen(false); setIsVerseOpen(false); }}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-200 border text-sm ${isChapterOpen ? 'bg-[var(--color-link)] text-white shadow-lg border-transparent' : 'hover:bg-theme-text/5 text-[var(--color-text)] border-theme-text/10 shadow-sm'}`}
+          >
+            <div className={`p-1 rounded-lg ${isChapterOpen ? 'bg-white/20' : 'bg-[var(--color-link)]/10 text-[var(--color-link)]'}`}>
+              <Hash className="w-3.5 h-3.5" />
+            </div>
+            <span className="font-bold">{params.chapter}</span>
+            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isChapterOpen ? 'rotate-180' : ''}`} />
+          </button>
+
+          {isChapterOpen && (
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 max-h-[300px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60]">
+              <div className="grid grid-cols-4 gap-1">
+                {Array.from({ length: currentBook?.chapters || 1 }, (_, i) => String(i + 1)).map(num => (
+                  <button
+                    key={num}
+                    onClick={() => handleChapterChange(num)}
+                    className={`flex items-center justify-center aspect-square rounded-lg text-xs transition-colors ${num === params.chapter ? 'bg-[var(--color-link)] text-white font-bold' : 'hover:bg-theme-text/5 text-[var(--color-text)] opacity-80 hover:opacity-100'}`}
+                  >
+                    {num}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="h-6 w-px bg-theme-text/10 hidden sm:block" />
+
+        {/* Verse Selector */}
+        <div className="relative" ref={verseRef}>
+          <button
+            onClick={() => { setIsVerseOpen(!isVerseOpen); setIsBookOpen(false); setIsChapterOpen(false); }}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-200 border text-sm ${isVerseOpen ? 'bg-[var(--color-link)] text-white shadow-lg border-transparent' : 'hover:bg-theme-text/5 text-[var(--color-text)] border-theme-text/10 shadow-sm'}`}
+          >
+            <div className={`p-1 rounded-lg ${isVerseOpen ? 'bg-white/20' : 'bg-[var(--color-link)]/10 text-[var(--color-link)]'}`}>
+              <Hash className="w-3.5 h-3.5" />
+            </div>
+            <span className="font-bold">{params.verse}</span>
+            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isVerseOpen ? 'rotate-180' : ''}`} />
+          </button>
+
+          {isVerseOpen && (
+            <div className="absolute top-full right-0 mt-2 w-48 max-h-[300px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60]">
+              <div className="grid grid-cols-4 gap-1">
+                {(chapterData.length > 0 ? chapterData.map(v => String(v.verse)) : [params.verse]).map(num => (
+                  <button
+                    key={num}
+                    onClick={() => handleVerseChange(num)}
+                    className={`flex items-center justify-center aspect-square rounded-lg text-xs transition-colors ${num === params.verse ? 'bg-[var(--color-link)] text-white font-bold' : 'hover:bg-theme-text/5 text-[var(--color-text)] opacity-80 hover:opacity-100'}`}
+                  >
+                    {num}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Área Interlineal */}
+      <div 
+        className="relative border rounded-3xl p-6 sm:p-10 min-h-[450px] flex flex-col shadow-sm transition-all duration-300"
+        style={{ 
+          backgroundColor: 'var(--color-bg)', 
+          color: 'var(--color-text)', 
+          borderColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' 
+        }}
+      >
+        <div className="flex items-center justify-between mb-10">
+          <button 
+            onClick={() => navigateVerse(-1)}
+            disabled={parseInt(params.chapter) === 1 && parseInt(params.verse) === 1}
+            className="p-3 rounded-2xl hover:bg-[var(--surface-hover-bg)] transition-all duration-200 disabled:opacity-10 text-[var(--color-link)] bg-[var(--color-link)]/5 border border-transparent hover:border-[var(--color-link)]/20"
+            title="Versículo anterior"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          
+          <div className="text-center group cursor-default">
+            <h2 className="text-2xl font-black tracking-tight text-[var(--color-text)]">
+              {currentBook?.name} <span className="text-[var(--color-link)]">{params.chapter}:{params.verse}</span>
+            </h2>
+            <div className="h-1 w-8 bg-[var(--color-link)] mx-auto mt-1 rounded-full opacity-30 group-hover:w-16 transition-all duration-500" />
+          </div>
+
+          <button 
+            onClick={() => navigateVerse(1)}
+            className="p-3 rounded-2xl hover:bg-[var(--surface-hover-bg)] transition-all duration-200 text-[var(--color-link)] bg-[var(--color-link)]/5 border border-transparent hover:border-[var(--color-link)]/20"
+            title="Siguiente versículo"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+
+        {loading ? (
+          <div className="flex-1 flex items-center justify-center">
+            <div className="flex flex-col items-center gap-6">
+              <div className="w-16 h-16 border-4 border-[var(--color-link)]/10 border-t-[var(--color-link)] rounded-full animate-spin"></div>
+              <div className="animate-pulse text-lg opacity-40 font-bold tracking-widest uppercase text-xs">Cargando Hebreo</div>
+            </div>
+          </div>
+        ) : error ? (
+          <div className="flex-1 flex flex-col items-center justify-center text-center p-8 space-y-6">
+            <div className="w-20 h-20 rounded-3xl bg-red-500/10 flex items-center justify-center text-red-500 rotate-3">
+              <Info className="w-10 h-10" />
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-black">Datos no disponibles</h3>
+              <p className="opacity-50 max-w-sm text-sm leading-relaxed">
+                Lo sentimos, no pudimos localizar los datos interlineales para esta selección.
+              </p>
+            </div>
+            <button 
+              onClick={() => window.location.reload()}
+              className="px-8 py-3 bg-[var(--color-link)] text-white rounded-2xl font-bold shadow-lg shadow-[var(--color-link)]/20 hover:scale-105 transition-transform"
+            >
+              Reintentar carga
+            </button>
+          </div>
+        ) : (
+          <div className="flex-1 flex flex-col">
+            <div 
+              className="flex flex-wrap justify-start gap-x-8 gap-y-16 mb-16 py-8"
+              dir="rtl"
+            >
+              {verseData?.words.map((word, idx) => (
+                <div key={idx} className="flex flex-col items-center group relative min-w-[70px]">
+                  {/* Parsing Tooltip */}
+                  <div className="absolute -top-10 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20 translate-y-2 group-hover:translate-y-0">
+                    <span className="text-[10px] font-bold bg-[var(--color-text)] text-[var(--color-bg)] px-2 py-1 rounded-lg shadow-xl whitespace-nowrap">
+                      {word.parsing}
+                    </span>
+                    <div className="w-2 h-2 bg-[var(--color-text)] rotate-45 -mt-1" />
+                  </div>
+                  
+                  {word.strong && (
+                    <a 
+                      href={`https://www.blueletterbible.org/lang/lexicon/lexicon.cfm?strongs=H${word.strong}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[11px] opacity-20 hover:opacity-100 hover:text-[var(--color-link)] transition-all absolute -top-5 font-bold tracking-tighter"
+                      title={`Lexicón: H${word.strong}`}
+                    >
+                      {word.strong}
+                    </a>
+                  )}
+                  
+                  <span 
+                    className="font-hebrew text-[var(--color-text)] leading-relaxed mb-4 hover:text-[var(--color-link)] transition-colors cursor-default select-none drop-shadow-sm"
+                    dir="rtl"
+                    style={{ fontSize: `${$preferences.fontSize * 2.5}px` }}
+                  >
+                    {word.hebrew || word.hebrew_aramaic}
+                  </span>
+                  
+                  <span 
+                    className="font-bold opacity-60 text-center max-w-[140px] leading-tight group-hover:opacity-100 transition-opacity" 
+                    dir="ltr"
+                    style={{ fontSize: `${$preferences.fontSize * 0.75}px` }}
+                  >
+                    {word.spanish}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Traducción de referencia en español */}
+            {spanishVerse && (
+              <div className="mt-auto mb-8 p-6 sm:p-8 rounded-3xl bg-theme-text/5 border border-theme-text/10 flex gap-5 items-start animate-in fade-in slide-in-from-bottom-4 duration-1000">
+                <div className="p-3 rounded-2xl bg-[var(--color-link)]/10 text-[var(--color-link)] shadow-inner">
+                  <Info className="w-6 h-6" />
+                </div>
+                <div className="space-y-2">
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--color-link)] opacity-50">Versión Biblia Libre</span>
+                  <p 
+                    className="leading-relaxed font-medium italic opacity-80"
+                    style={{ 
+                      fontSize: `${$preferences.fontSize * 1.2}px`,
+                      lineHeight: $preferences.lineHeight,
+                      letterSpacing: `${$preferences.letterSpacing}em`
+                    }}
+                  >
+                    {spanishVerse}
+                  </p>
+                </div>
+              </div>
+            )}
+            {!spanishVerse && !loading && (
+              <div className="mt-auto mb-8 p-6 text-center border-2 border-dashed border-theme-text/10 rounded-3xl opacity-30 text-sm font-medium italic">
+                Traducción de referencia no disponible para este versículo.
+              </div>
+            )}
+            
+            {/* Pie de página */}
+            <div className="pt-8 border-t border-theme-text/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-widest opacity-30">
+              <div className="flex items-center gap-2">
+                <Info className="w-3.5 h-3.5" />
+                <span>Explora la morfología pasando el cursor</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span>Biblia Hebraica</span>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
