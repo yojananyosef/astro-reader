@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from "preact/hooks";
-import { ChevronLeft, ChevronRight, Info, ExternalLink, ChevronDown, Book, Hash, Check } from "lucide-preact";
+import { ArrowLeft, ArrowRight, Info, ExternalLink, ChevronDown, Book, Hash, Check } from "lucide-preact";
 import type { InterlinearWord, InterlinearVerse, InterlinearData } from "../types";
 import booksIndex from "../../../data/books-index.json";
 import { lastBiblePosition } from "../../../stores/navigation";
@@ -359,6 +359,35 @@ export default function InterlinearView() {
         </div>
       </div>
 
+      {/* Botones de navegación fijos (estilo Biblia/Comentario) */}
+      {!(params.book === 'gen' && params.chapter === '1' && params.verse === '1') && (
+         <a 
+           onClick={(e) => {
+             e.preventDefault();
+             navigateVerse(-1);
+           }}
+           href="#"
+           className="nav-arrow nav-arrow-prev visible"
+           aria-label="Versículo anterior"
+         >
+           <ArrowLeft className="w-5 h-5" />
+         </a>
+       )}
+ 
+       {!(params.book === 'mal' && params.chapter === '4' && params.verse === '6') && (
+         <a 
+           onClick={(e) => {
+             e.preventDefault();
+             navigateVerse(1);
+           }}
+           href="#"
+           className="nav-arrow nav-arrow-next visible"
+           aria-label="Siguiente versículo"
+         >
+           <ArrowRight className="w-5 h-5" />
+         </a>
+       )}
+
       {/* Área Interlineal */}
       <div 
         className="relative border rounded-3xl p-6 sm:p-10 min-h-[450px] flex flex-col shadow-sm transition-all duration-300"
@@ -368,30 +397,14 @@ export default function InterlinearView() {
           borderColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' 
         }}
       >
-        <div className="flex items-center justify-between mb-10">
-          <button 
-            onClick={() => navigateVerse(-1)}
-            disabled={parseInt(params.chapter) === 1 && parseInt(params.verse) === 1}
-            className="p-3 rounded-2xl hover:bg-[var(--surface-hover-bg)] transition-all duration-200 disabled:opacity-10 text-[var(--color-link)] bg-[var(--color-link)]/5 border border-transparent hover:border-[var(--color-link)]/20"
-            title="Versículo anterior"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          
+
+        <div className="flex items-center justify-center mb-10">
           <div className="text-center group cursor-default">
             <h2 className="text-2xl font-black tracking-tight text-[var(--color-text)]">
               {currentBook?.name} <span className="text-[var(--color-link)]">{params.chapter}:{params.verse}</span>
             </h2>
             <div className="h-1 w-8 bg-[var(--color-link)] mx-auto mt-1 rounded-full opacity-30 group-hover:w-16 transition-all duration-500" />
           </div>
-
-          <button 
-            onClick={() => navigateVerse(1)}
-            className="p-3 rounded-2xl hover:bg-[var(--surface-hover-bg)] transition-all duration-200 text-[var(--color-link)] bg-[var(--color-link)]/5 border border-transparent hover:border-[var(--color-link)]/20"
-            title="Siguiente versículo"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
         </div>
 
         {loading ? (
