@@ -37,6 +37,10 @@ export default function PlanDay({
   description,
   dayTitle,
 }: Props) {
+  const [localReadings, setLocalReadings] = useState<Reading[]>(readings);
+  const [localEgwReadings, setLocalEgwReadings] = useState<EGWReading[]>(egwReadings || []);
+  const [localDescription, setLocalDescription] = useState(description);
+  const [localDayTitle, setLocalDayTitle] = useState(dayTitle);
   const [progress, setProgress] = useState<PlanProgress>({});
   const [toast, setToast] = useState<string>("");
   const [openReading, setOpenReading] = useState<Reading | null>(null);
@@ -78,8 +82,8 @@ export default function PlanDay({
 
       const updatedReadings = Array.from(set);
       const allReadingKeys = [
-        ...readings.map(r => readingKey(r)),
-        ...egwReadings.map(r => egwKey(r))
+        ...localReadings.map(r => readingKey(r)),
+        ...localEgwReadings.map(r => egwKey(r))
       ];
 
       const isAllDone = allReadingKeys.every(k => updatedReadings.includes(k));
@@ -114,6 +118,30 @@ export default function PlanDay({
     } catch { }
   }, [progress]);
 
+  // Load plan content if missing
+  useEffect(() => {
+    if (localReadings.length === 0 && !localEgwReadings.length) {
+      async function loadPlanContent() {
+        try {
+          const response = await fetch(`/data/plan-content/${planId}.json`);
+          if (response.ok) {
+            const data = await response.json();
+            const dayData = data[day];
+            if (dayData) {
+              setLocalReadings(dayData.bible || []);
+              setLocalEgwReadings(dayData.egw || []);
+              setLocalDescription(dayData.description || "");
+              setLocalDayTitle(dayData.title || "");
+            }
+          }
+        } catch (e) {
+          console.error("Error loading plan content in component:", e);
+        }
+      }
+      loadPlanContent();
+    }
+  }, [planId, day]);
+
   const isCompleted =
     !!progress[planId]?.completedDays?.includes(day);
   const readingKey = (r: Reading) => `${r.book}-${r.chapter}`;
@@ -133,8 +161,8 @@ export default function PlanDay({
         set.add(day);
         // Marcar todas las lecturas del día como completadas
         const allReadingKeys = [
-          ...readings.map(r => readingKey(r)),
-          ...egwReadings.map(r => egwKey(r))
+          ...localReadings.map(r => readingKey(r)),
+          ...localEgwReadings.map(r => egwKey(r))
         ];
         perDay[day] = { readingsCompleted: allReadingKeys };
       } else {
@@ -168,8 +196,8 @@ export default function PlanDay({
 
       const updatedReadings = Array.from(set);
       const allReadingKeys = [
-        ...readings.map(r => readingKey(r)),
-        ...egwReadings.map(r => egwKey(r))
+        ...localReadings.map(r => readingKey(r)),
+        ...localEgwReadings.map(r => egwKey(r))
       ];
 
       const isAllDone = allReadingKeys.every(k => updatedReadings.includes(k));
@@ -315,12 +343,12 @@ export default function PlanDay({
         <h1 className="text-2xl md:text-3xl font-bold text-[var(--color-link)]">
           {planTitle} · Día {day}
         </h1>
-        {dayTitle && (
-          <h2 className="text-xl font-semibold opacity-90">{dayTitle}</h2>
+        {localDayTitle && (
+          <h2 className="text-xl font-semibold opacity-90">{localDayTitle}</h2>
         )}
-        {description && (
+        {localDescription && (
           <p className="p-4 rounded-lg border surface-card text-sm leading-relaxed border-l-4 border-l-[var(--color-link)]">
-            {description}
+            {localDescription}
           </p>
         )}
       </header>
@@ -328,13 +356,13 @@ export default function PlanDay({
       <section className="space-y-6">
         <div className="space-y-3">
           <h3 className="text-sm font-bold uppercase tracking-wider opacity-60">Lecturas Bíblicas</h3>
-          {readings.length === 0 && !egwReadings.length && (
+          {localReadings.length === 0 && !localEgwReadings.length && (
             <div className="p-4 rounded-lg border surface-card">
-              Aún no hay lecturas definidas para este día. Te mostraré la estructura al recibir las referencias finales.
+              Cargando lecturas...
             </div>
           )}
 
-          {readings.map((r) => (
+          {localReadings.map((r) => (
             <div
               key={`${r.book}-${r.chapter}`}
               onClick={() => openReadingModal(r)}
@@ -387,10 +415,10 @@ export default function PlanDay({
           ))}
         </div>
 
-        {egwReadings.length > 0 && (
+        {localEgwReadings.length > 0 && (
           <div className="space-y-3">
             <h3 className="text-sm font-bold uppercase tracking-wider opacity-60">Lecturas de Apoyo (EGW)</h3>
-            {egwReadings.map((r) => (
+            {localEgwReadings.map((r) => (
               <div
                 key={r.label}
                 className={`w-full p-3 rounded-lg border surface-card flex items-center justify-between ${(r.content || r.chapterId) ? "cursor-pointer" : ""}`}

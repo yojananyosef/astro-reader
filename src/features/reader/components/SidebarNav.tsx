@@ -98,7 +98,7 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
 
       {mode === "inline" && (
         <div
-          className={`hidden md:flex shrink-0 h-full transition-all duration-300 ease-in-out ${collapsed ? 'w-0' : 'w-64'}`}
+          className={`hidden md:flex shrink-0 h-full transition-all duration-300 ease-in-out ui-protect ${collapsed ? 'w-0' : 'w-64'}`}
           style={{ backgroundColor: "transparent", overflow: "hidden" }}
         >
           <aside
@@ -197,7 +197,7 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
           <ChevronRight className="w-4 h-4" />
         </div>
       )}
-      <div className={`fixed inset-0 z-[60] transition-opacity duration-300 md:hidden ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+      <div className={`fixed inset-0 z-[60] transition-opacity duration-300 md:hidden ui-protect ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
         <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setOpen(false)} style={{ top: "var(--nav-height, 4rem)" }} />
         <aside
           className={`absolute left-0 bottom-0 w-full max-w-[280px] shadow-2xl transform transition-transform duration-300 flex flex-col ${open ? "translate-x-0" : "-translate-x-full"}`}

@@ -116,7 +116,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
 
             {/* Navbar */}
             <nav
-                className="w-full h-16 border-b flex items-center justify-between px-4 md:px-8 transition-colors duration-300"
+                className="w-full h-16 border-b flex items-center justify-between px-4 md:px-8 transition-colors duration-300 ui-protect"
                 style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)', borderColor: 'color-mix(in srgb, var(--color-text), transparent 85%)' }}
             >
                 <div className="flex items-center gap-3">
@@ -207,7 +207,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
             </nav>
 
             {/* Settings Sheet (Sidebar) */}
-            <div className={`fixed inset-0 z-[60] transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+            <div className={`fixed inset-0 z-[60] ui-protect transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
                 {/* Backdrop */}
                 <div
                     className="absolute inset-0 bg-black/20 backdrop-blur-sm"
@@ -216,7 +216,7 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
 
                 {/* Panel */}
                 <div
-                    className={`absolute right-0 top-0 bottom-0 w-[85%] sm:w-full sm:max-w-sm border-l border-theme-text/10 shadow-2xl transform transition-transform duration-300 flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    className={`absolute right-0 top-0 bottom-0 w-[85%] sm:w-full sm:max-w-sm border-l border-theme-text/10 shadow-2xl transform transition-transform duration-300 flex flex-col ui-protect ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
                     style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }}
                 >
 

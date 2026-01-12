@@ -238,7 +238,7 @@ export default function CommentaryView() {
                         )}
                         <div class="space-y-6 mt-8">
                             {commentaryData.introduction.sections?.map((section: any, sIdx: number) => (
-                                <div key={sIdx} class="prose prose-slate max-w-none">
+                                <div key={sIdx} class="max-w-none">
                                     {section.title && (
                                         <h4 class="text-lg font-bold mb-2 text-[var(--color-link)]">
                                             {section.title}
@@ -266,7 +266,7 @@ export default function CommentaryView() {
                                     Versículo {v.verse}
                                 </span>
                             </div>
-                            <div class="text-[var(--color-text)] reader-text prose prose-slate max-w-none">
+                            <div class="text-[var(--color-text)] reader-text max-w-none">
                                 {v.phrase && (
                                     <span class="font-bold mr-2 text-[var(--color-link)] italic">
                                         {v.phrase}

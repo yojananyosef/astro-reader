@@ -144,6 +144,15 @@ body {
     word-spacing: var(--reader-word-spacing) !important;
 }
 
+.reader-text p,
+.reader-text span:not(.verse-num):not(.footnote-ref):not(.commentary-icon),
+.reader-text div:not(.commentary-icon) {
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    word-spacing: inherit !important;
+}
+
 /* Permitir que elementos específicos tengan su propio tamaño proporcional */
 .reader-text sup,
 .reader-text .verse-num,
@@ -212,20 +221,41 @@ body {
 .app-grid nav, 
 .app-grid aside, 
 .app-grid header,
-.fixed.inset-0, /* Para los modales/sheets de configuración */
-.surface-card {
+.fixed, /* Para los modales/sheets de configuración */
+.absolute.inset-0, /* Para el panel lateral de configuración */
+.surface-card,
+.ui-protect {
     font-size: 16px !important;
+    font-family: 'Arial', 'Verdana', 'Calibri', sans-serif !important;
+    line-height: 1.5 !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
 }
 
 /* Resetear estilos de texto dentro de la UI para que no hereden los del lector */
 .app-grid nav *, 
 .app-grid aside *, 
 .app-grid header *,
-.fixed.inset-0 * {
+.fixed *,
+.absolute.inset-0 *,
+.surface-card *,
+.ui-protect * {
     font-size: inherit;
-    line-height: 1.5 !important;
+    font-family: inherit;
+    line-height: inherit !important;
     letter-spacing: normal !important;
     word-spacing: normal !important;
+    text-transform: none; /* Evitar que transformaciones globales afecten la UI */
+}
+
+/* Casos específicos para sliders y botones que no deben heredar espaciados del lector */
+input[type="range"],
+button,
+[role="button"],
+.sidebar-item {
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    line-height: normal !important;
 }
 
 /* Reducir márgenes de elementos de bloque en modo lectura para evitar espacios excesivos */

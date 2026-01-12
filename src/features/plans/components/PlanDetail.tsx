@@ -20,6 +20,26 @@ export default function PlanDetail({ plan }: { plan: Plan }) {
   const perPage = 8;
   const [savedPlans, setSavedPlans] = useState<Record<string, true>>({});
   const [toast, setToast] = useState<string>("");
+  const [dayTitles, setDayTitles] = useState<Record<number, string>>({});
+
+  useEffect(() => {
+    async function loadDayTitles() {
+      try {
+        const response = await fetch(`/data/plan-content/${plan.id}.json`);
+        if (response.ok) {
+          const data = await response.json();
+          const titles: Record<number, string> = {};
+          Object.entries(data).forEach(([day, content]: [string, any]) => {
+            if (content.title) titles[parseInt(day)] = content.title;
+          });
+          setDayTitles(titles);
+        }
+      } catch (e) {
+        console.error("Error loading day titles:", e);
+      }
+    }
+    loadDayTitles();
+  }, [plan.id]);
 
   useEffect(() => {
     try {
@@ -230,30 +250,34 @@ export default function PlanDetail({ plan }: { plan: Plan }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 md:grid-cols-8 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {visibleDays.map((d) => (
             <a
               key={d}
               href={`/plans/${plan.id}/day/${d}`}
-              className={`text-center p-2 rounded-md border flex items-center justify-center gap-1 ${completedDays.includes(d) ? "animate-fade-in shadow-sm" : ""}`}
+              className={`p-4 rounded-xl border flex flex-col gap-1 transition-all hover:shadow-md ${completedDays.includes(d) ? "animate-fade-in" : ""}`}
               style={{
                 borderColor: completedDays.includes(d)
                   ? "var(--color-link)"
                   : "color-mix(in srgb, var(--color-text), transparent 85%)",
                 backgroundColor: completedDays.includes(d)
-                  ? "color-mix(in srgb, var(--color-link), transparent 92%)"
-                  : undefined,
-                color: completedDays.includes(d)
-                  ? "var(--color-link)"
-                  : undefined,
+                  ? "color-mix(in srgb, var(--color-link), transparent 96%)"
+                  : "var(--color-bg)",
                 textDecoration: "none",
                 borderWidth: completedDays.includes(d) ? "2px" : "1px"
               }}
             >
-              <span>{d}</span>
-              {completedDays.includes(d) && (
-                <Check className="w-3 h-3" strokeWidth={3} />
-              )}
+              <div className="flex items-center justify-between">
+                <span className={`text-xs font-bold uppercase tracking-wider ${completedDays.includes(d) ? "text-[var(--color-link)]" : "opacity-50"}`}>
+                  Día {d}
+                </span>
+                {completedDays.includes(d) && (
+                  <Check className="w-4 h-4 text-[var(--color-link)]" strokeWidth={3} />
+                )}
+              </div>
+              <span className={`font-semibold line-clamp-1 ${completedDays.includes(d) ? "text-[var(--color-link)]" : ""}`}>
+                {dayTitles[d] || `Lectura del día ${d}`}
+              </span>
             </a>
           ))}
         </div>
