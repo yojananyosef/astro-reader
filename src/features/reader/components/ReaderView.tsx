@@ -65,7 +65,6 @@ export default function ReaderView() {
             setLoading(true);
             try {
                 const bookCode = currentBookEntry.code;
-                console.log(`Cargando datos para ${bookCode} capítulo ${chapterKey}`);
                 
                 // Usar rutas relativas a la raíz para mayor compatibilidad
                 const [bookRes, commRes] = await Promise.all([
@@ -79,7 +78,6 @@ export default function ReaderView() {
                     const data = await bookRes.json();
                     setBookData(data);
                 } else {
-                    console.error(`Error al cargar libro: ${bookRes.status}`);
                     setBookData(null);
                 }
 

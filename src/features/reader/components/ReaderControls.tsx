@@ -53,7 +53,6 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
                     const current = preferences.get();
                     // Deep compare simplified
                     if (JSON.stringify(parsed) !== JSON.stringify(current)) {
-                        console.log('Syncing preferences from storage on mount');
                         preferences.set({ ...defaultPreferences, ...parsed });
                     }
                 }

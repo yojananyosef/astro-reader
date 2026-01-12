@@ -16,8 +16,6 @@ export function initPreferencesSync() {
     // Initial application is handled by inline script in Layout to prevent flash,
     // but we re-apply here to ensure state consistency with the store.
     applyThemeToDocument(preferences.get());
-
-    console.log('Preferences sync initialized');
 }
 
 // Auto-initialize if imported

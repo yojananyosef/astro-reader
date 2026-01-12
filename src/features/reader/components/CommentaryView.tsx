@@ -52,7 +52,6 @@ export default function CommentaryView() {
             setLoading(true);
             try {
                 const bookCode = currentBookEntry.code;
-                console.log(`Cargando comentarios para ${bookCode} capítulo ${chapterKey}`);
                 
                 const response = await fetch(`/data/commentary/${bookCode}.json`);
                 
@@ -62,7 +61,6 @@ export default function CommentaryView() {
                     const data = await response.json();
                     setCommentaryData(data);
                 } else {
-                    console.error(`Error al cargar comentarios: ${response.status}`);
                     setCommentaryData(null);
                 }
                 

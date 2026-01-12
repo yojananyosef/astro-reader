@@ -29,18 +29,35 @@ export function useTTS() {
             window.addEventListener('touchstart', wakeUp);
             window.addEventListener('click', wakeUp);
 
-            // CRITICAL: Stop TTS when navigating to a new page or chapter
-            const handleBeforeUnload = () => {
+            // CRITICAL: Stop TTS when navigating
+            const handleNavigation = () => {
                 if (synth.current) {
-                    synth.current.cancel();
+                    stop();
                 }
             };
-            window.addEventListener('beforeunload', handleBeforeUnload);
-            window.addEventListener('popstate', handleBeforeUnload);
+
+            window.addEventListener('beforeunload', handleNavigation);
+            window.addEventListener('popstate', handleNavigation);
+            
+            // Astro View Transitions support
+            document.addEventListener('astro:before-preparation', handleNavigation);
+            document.addEventListener('astro:after-swap', handleNavigation);
+
+            // Watch for URL changes manually for cases where popstate doesn't fire
+            let lastUrl = window.location.href;
+            const urlCheckInterval = setInterval(() => {
+                if (window.location.href !== lastUrl) {
+                    lastUrl = window.location.href;
+                    handleNavigation();
+                }
+            }, 500);
 
             return () => {
-                window.removeEventListener('beforeunload', handleBeforeUnload);
-                window.removeEventListener('popstate', handleBeforeUnload);
+                window.removeEventListener('beforeunload', handleNavigation);
+                window.removeEventListener('popstate', handleNavigation);
+                document.removeEventListener('astro:before-preparation', handleNavigation);
+                document.removeEventListener('astro:after-swap', handleNavigation);
+                clearInterval(urlCheckInterval);
                 if (synth.current) {
                     synth.current.cancel();
                 }
@@ -253,18 +270,18 @@ export function useTTS() {
                 };
 
                 u.onerror = (event) => {
-                    console.error('TTS Error:', event);
-                    
-                    // On some browsers, 'interrupted' happens on normal stop or quick play clicks
-                    if (event.error === 'interrupted' && !isStoppingRef.current) {
-                        // Try to recover or just move on
-                        setTimeout(speakNext, 100);
+                    // On some browsers, 'interrupted' happens on normal stop or quick play clicks.
+                    // We silence this in production as it's an expected behavior during navigation/cancellation.
+                    if (event.error === 'interrupted') {
+                        if (!isStoppingRef.current) {
+                            // Try to recover or just move on if it wasn't a deliberate stop
+                            setTimeout(speakNext, 100);
+                        }
                         return;
                     }
                     
-                    if (event.error !== 'interrupted') {
-                        stop();
-                    }
+                    console.error('TTS Error:', event);
+                    stop();
                 };
 
                 utterance.current = u;
