@@ -186,7 +186,7 @@ export default function CommentaryView() {
 
     return (
         <article class="reader-content max-w-3xl mx-auto pb-32 px-2 md:px-0 relative animate-in fade-in duration-700">
-            <div class="mb-8 text-center px-2">
+            <div class="mb-8 text-center px-2 ui-protect">
                 <h1 class="text-2xl md:text-4xl font-bold text-[var(--color-link)] mb-4">
                     Comentario: {currentBookEntry.name} {currentChapNumInt}
                 </h1>
@@ -227,12 +227,12 @@ export default function CommentaryView() {
                 {currentChapNumInt === 1 && commentaryData?.introduction && (
                     <div class="mb-12 p-6 md:p-8 rounded-2xl bg-theme-text/5 border border-theme-text/10 shadow-sm">
                         {commentaryData.introduction.fullTitle && (
-                            <h2 class="text-xl md:text-2xl font-bold mb-2 text-center text-[var(--color-link)]">
+                            <h2 class="text-xl md:text-2xl font-bold mb-2 text-center text-[var(--color-link)] ui-protect">
                                 {commentaryData.introduction.fullTitle}
                             </h2>
                         )}
                         {commentaryData.introduction.subtitle && (
-                            <h3 class="text-lg md:text-xl font-medium mb-6 text-center opacity-70 italic">
+                            <h3 class="text-lg md:text-xl font-medium mb-6 text-center opacity-70 italic ui-protect">
                                 {commentaryData.introduction.subtitle}
                             </h3>
                         )}
@@ -240,7 +240,7 @@ export default function CommentaryView() {
                             {commentaryData.introduction.sections?.map((section: any, sIdx: number) => (
                                 <div key={sIdx} class="max-w-none">
                                     {section.title && (
-                                        <h4 class="text-lg font-bold mb-2 text-[var(--color-link)]">
+                                        <h4 class="text-lg font-bold mb-2 text-[var(--color-link)] ui-protect">
                                             {section.title}
                                         </h4>
                                     )}
@@ -261,8 +261,8 @@ export default function CommentaryView() {
                             key={v.verse} 
                             class={`p-2 md:p-4 rounded-xl transition-all duration-300 ${activeCommentary === `com-${v.verse}` ? 'commentary-selected shadow-sm' : 'hover:bg-theme-text/5'}`}
                         >
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-[var(--color-link)] text-white text-[10px] md:text-xs font-bold px-2 py-0.5 rounded-full">
+                            <div class="flex items-center gap-2 mb-2 ui-protect">
+                                <span class="bg-[var(--color-link)] text-white text-[10px] md:text-xs font-bold px-2 py-0.5 rounded-full ui-protect">
                                     Versículo {v.verse}
                                 </span>
                             </div>

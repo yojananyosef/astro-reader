@@ -298,7 +298,7 @@ export default function PlanDay({
     <div className="max-w-3xl mx-auto pb-24 px-4 md:px-0 space-y-6">
       {toast && (
         <div
-          className="fixed bottom-8 left-1/2 -translate-x-1/2 px-6 py-3 rounded-full shadow-lg border animate-fade-in z-50 flex items-center gap-2 whitespace-nowrap"
+          className="fixed bottom-8 left-1/2 -translate-x-1/2 px-6 py-3 rounded-full shadow-lg border animate-fade-in z-50 flex items-center gap-2 whitespace-nowrap ui-protect"
           style={{
             backgroundColor: "var(--color-bg)",
             color: "var(--color-link)",
@@ -310,10 +310,10 @@ export default function PlanDay({
           <span className="font-semibold">{toast}</span>
         </div>
       )}
-      <div className="flex items-center justify-between mt-4 md:mt-6">
+      <div className="flex items-center justify-between mt-4 md:mt-6 ui-protect">
         <a
           href={`/plans/${planId}`}
-          className="p-2 rounded-md border surface-card flex items-center gap-2 transition-colors"
+          className="p-2 rounded-md border surface-card flex items-center gap-2 transition-colors ui-protect"
           style={{ textDecoration: "none" }}
         >
           <ChevronLeft className="w-4 h-4" />
@@ -328,7 +328,7 @@ export default function PlanDay({
               toggleCompleted();
             }
           }}
-          className={`p-2 rounded-md border surface-card flex items-center gap-2 transition-colors cursor-pointer ${isCompleted ? "animate-fade-in" : ""}`}
+          className={`p-2 rounded-md border surface-card flex items-center gap-2 transition-colors cursor-pointer ui-protect ${isCompleted ? "animate-fade-in" : ""}`}
         >
           <Check
             className={`w-5 h-5 ${isCompleted ? "text-[var(--color-link)]" : ""}`}
@@ -339,7 +339,7 @@ export default function PlanDay({
         </div>
       </div>
 
-      <header className="space-y-2">
+      <header className="space-y-2 ui-protect">
         <h1 className="text-2xl md:text-3xl font-bold text-[var(--color-link)]">
           {planTitle} · Día {day}
         </h1>

@@ -251,19 +251,19 @@ export default function InterlinearView() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-700">
-      <header className="text-center space-y-2">
+      <header className="text-center space-y-2 ui-protect">
         <h1 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-link)] opacity-60">
           Antiguo Testamento Interlineal
         </h1>
       </header>
 
       {/* Selectores Custom */}
-      <div className="flex flex-wrap items-center justify-center gap-3 p-2 rounded-2xl bg-theme-text/5 border border-theme-text/10 max-w-fit mx-auto relative z-50 shadow-sm transition-colors duration-300">
+      <div className="flex flex-wrap items-center justify-center gap-3 p-2 rounded-2xl bg-theme-text/5 border border-theme-text/10 max-w-fit mx-auto relative z-50 shadow-sm transition-colors duration-300 ui-protect">
         {/* Book Selector */}
         <div className="relative" ref={bookRef}>
           <button
             onClick={() => { setIsBookOpen(!isBookOpen); setIsChapterOpen(false); setIsVerseOpen(false); }}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-200 border text-sm ${isBookOpen ? 'bg-[var(--color-link)] text-white shadow-lg border-transparent' : 'hover:bg-theme-text/5 text-[var(--color-text)] border-theme-text/10 shadow-sm'}`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-200 border text-sm ui-protect ${isBookOpen ? 'bg-[var(--color-link)] text-white shadow-lg border-transparent' : 'hover:bg-theme-text/5 text-[var(--color-text)] border-theme-text/10 shadow-sm'}`}
           >
             <div className={`p-1 rounded-lg ${isBookOpen ? 'bg-white/20' : 'bg-[var(--color-link)]/10 text-[var(--color-link)]'}`}>
               <Book className="w-3.5 h-3.5" />
@@ -275,13 +275,13 @@ export default function InterlinearView() {
           </button>
 
           {isBookOpen && (
-            <div className="absolute top-full left-0 mt-2 w-56 max-h-[350px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60]">
+            <div className="absolute top-full left-0 mt-2 w-56 max-h-[350px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60] ui-protect">
               <div className="grid grid-cols-1 gap-0.5">
                 {books.map(b => (
                   <button
                     key={b.code}
                     onClick={() => handleBookChange(b.code)}
-                    className={`flex items-center justify-between px-3 py-2 rounded-lg text-left text-xs transition-colors ${b.code === params.book ? 'bg-[var(--color-link)]/10 text-[var(--color-link)] font-bold' : 'hover:bg-theme-text/5 text-[var(--color-text)] opacity-80 hover:opacity-100'}`}
+                    className={`flex items-center justify-between px-3 py-2 rounded-lg text-left text-xs transition-colors ui-protect ${b.code === params.book ? 'bg-[var(--color-link)]/10 text-[var(--color-link)] font-bold' : 'hover:bg-theme-text/5 text-[var(--color-text)] opacity-80 hover:opacity-100'}`}
                   >
                     <span>{b.name}</span>
                     {b.code === params.book && <Check className="w-3.5 h-3.5" />}
@@ -298,7 +298,7 @@ export default function InterlinearView() {
         <div className="relative" ref={chapterRef}>
           <button
             onClick={() => { setIsChapterOpen(!isChapterOpen); setIsBookOpen(false); setIsVerseOpen(false); }}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-200 border text-sm ${isChapterOpen ? 'bg-[var(--color-link)] text-white shadow-lg border-transparent' : 'hover:bg-theme-text/5 text-[var(--color-text)] border-theme-text/10 shadow-sm'}`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-200 border text-sm ui-protect ${isChapterOpen ? 'bg-[var(--color-link)] text-white shadow-lg border-transparent' : 'hover:bg-theme-text/5 text-[var(--color-text)] border-theme-text/10 shadow-sm'}`}
           >
             <div className={`p-1 rounded-lg ${isChapterOpen ? 'bg-white/20' : 'bg-[var(--color-link)]/10 text-[var(--color-link)]'}`}>
               <Hash className="w-3.5 h-3.5" />
@@ -308,13 +308,13 @@ export default function InterlinearView() {
           </button>
 
           {isChapterOpen && (
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 max-h-[300px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60]">
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 max-h-[300px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60] ui-protect">
               <div className="grid grid-cols-4 gap-1">
                 {Array.from({ length: currentBook?.chapters || 1 }, (_, i) => String(i + 1)).map(num => (
                   <button
                     key={num}
                     onClick={() => handleChapterChange(num)}
-                    className={`flex items-center justify-center aspect-square rounded-lg text-xs transition-colors ${num === params.chapter ? 'bg-[var(--color-link)] text-white font-bold' : 'hover:bg-theme-text/5 text-[var(--color-text)] opacity-80 hover:opacity-100'}`}
+                    className={`flex items-center justify-center aspect-square rounded-lg text-xs transition-colors ui-protect ${num === params.chapter ? 'bg-[var(--color-link)] text-white font-bold' : 'hover:bg-theme-text/5 text-[var(--color-text)] opacity-80 hover:opacity-100'}`}
                   >
                     {num}
                   </button>
@@ -330,7 +330,7 @@ export default function InterlinearView() {
         <div className="relative" ref={verseRef}>
           <button
             onClick={() => { setIsVerseOpen(!isVerseOpen); setIsBookOpen(false); setIsChapterOpen(false); }}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-200 border text-sm ${isVerseOpen ? 'bg-[var(--color-link)] text-white shadow-lg border-transparent' : 'hover:bg-theme-text/5 text-[var(--color-text)] border-theme-text/10 shadow-sm'}`}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-200 border text-sm ui-protect ${isVerseOpen ? 'bg-[var(--color-link)] text-white shadow-lg border-transparent' : 'hover:bg-theme-text/5 text-[var(--color-text)] border-theme-text/10 shadow-sm'}`}
           >
             <div className={`p-1 rounded-lg ${isVerseOpen ? 'bg-white/20' : 'bg-[var(--color-link)]/10 text-[var(--color-link)]'}`}>
               <Hash className="w-3.5 h-3.5" />
@@ -340,13 +340,13 @@ export default function InterlinearView() {
           </button>
 
           {isVerseOpen && (
-            <div className="absolute top-full right-0 mt-2 w-48 max-h-[300px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60]">
+            <div className="absolute top-full right-0 mt-2 w-48 max-h-[300px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60] ui-protect">
               <div className="grid grid-cols-4 gap-1">
                 {(chapterData.length > 0 ? chapterData.map(v => String(v.verse)) : [params.verse]).map(num => (
                   <button
                     key={num}
                     onClick={() => handleVerseChange(num)}
-                    className={`flex items-center justify-center aspect-square rounded-lg text-xs transition-colors ${num === params.verse ? 'bg-[var(--color-link)] text-white font-bold' : 'hover:bg-theme-text/5 text-[var(--color-text)] opacity-80 hover:opacity-100'}`}
+                    className={`flex items-center justify-center aspect-square rounded-lg text-xs transition-colors ui-protect ${num === params.verse ? 'bg-[var(--color-link)] text-white font-bold' : 'hover:bg-theme-text/5 text-[var(--color-text)] opacity-80 hover:opacity-100'}`}
                   >
                     {num}
                   </button>
@@ -413,11 +413,11 @@ export default function InterlinearView() {
             </div>
           </div>
         ) : error ? (
-          <div className="flex-1 flex flex-col items-center justify-center text-center p-8 space-y-6">
-            <div className="w-20 h-20 rounded-3xl bg-red-500/10 flex items-center justify-center text-red-500 rotate-3">
+          <div className="flex-1 flex flex-col items-center justify-center text-center p-8 space-y-6 ui-protect">
+            <div className="w-20 h-20 rounded-3xl bg-red-500/10 flex items-center justify-center text-red-500 rotate-3 ui-protect">
               <Info className="w-10 h-10" />
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 ui-protect">
               <h3 className="text-xl font-black">Datos no disponibles</h3>
               <p className="opacity-50 max-w-sm text-sm leading-relaxed">
                 Lo sentimos, no pudimos localizar los datos interlineales para esta selección.
@@ -425,7 +425,7 @@ export default function InterlinearView() {
             </div>
             <button 
               onClick={() => window.location.reload()}
-              className="px-8 py-3 bg-[var(--color-link)] text-white rounded-2xl font-bold shadow-lg shadow-[var(--color-link)]/20 hover:scale-105 transition-transform"
+              className="px-8 py-3 bg-[var(--color-link)] text-white rounded-2xl font-bold shadow-lg shadow-[var(--color-link)]/20 hover:scale-105 transition-transform ui-protect"
             >
               Reintentar carga
             </button>
@@ -433,17 +433,17 @@ export default function InterlinearView() {
         ) : (
           <div className="flex-1 flex flex-col">
             <div 
-              className="flex flex-wrap justify-start gap-x-8 gap-y-16 mb-16 py-8"
+              className="flex flex-wrap justify-start gap-x-8 gap-y-16 mb-16 py-8 interlinear-words-container"
               dir="rtl"
             >
               {verseData?.words.map((word, idx) => (
                 <div key={idx} className="flex flex-col items-center group relative min-w-[70px]">
                   {/* Parsing Tooltip */}
-                  <div className="absolute -top-10 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20 translate-y-2 group-hover:translate-y-0">
-                    <span className="text-[10px] font-bold bg-[var(--color-text)] text-[var(--color-bg)] px-2 py-1 rounded-lg shadow-xl whitespace-nowrap">
+                  <div className="absolute -top-10 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20 translate-y-2 group-hover:translate-y-0 ui-protect">
+                    <span className="text-[10px] font-bold bg-[var(--color-text)] text-[var(--color-bg)] px-2 py-1 rounded-lg shadow-xl whitespace-nowrap ui-protect">
                       {word.parsing}
                     </span>
-                    <div className="w-2 h-2 bg-[var(--color-text)] rotate-45 -mt-1" />
+                    <div className="w-2 h-2 bg-[var(--color-text)] rotate-45 -mt-1 ui-protect" />
                   </div>
                   
                   {word.strong && (
@@ -451,7 +451,7 @@ export default function InterlinearView() {
                       href={`https://www.blueletterbible.org/lang/lexicon/lexicon.cfm?strongs=H${word.strong}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[11px] opacity-20 hover:opacity-100 hover:text-[var(--color-link)] transition-all absolute -top-5 font-bold tracking-tighter"
+                      className="text-[11px] opacity-20 hover:opacity-100 hover:text-[var(--color-link)] transition-all absolute -top-5 font-bold tracking-tighter ui-protect"
                       title={`Lexicón: H${word.strong}`}
                     >
                       {word.strong}
@@ -461,7 +461,7 @@ export default function InterlinearView() {
                   <span 
                     className="font-hebrew text-[var(--color-text)] leading-relaxed mb-4 hover:text-[var(--color-link)] transition-colors cursor-default select-none drop-shadow-sm"
                     dir="rtl"
-                    style={{ fontSize: `${$preferences.fontSize * 2.5}px` }}
+                    style={{ fontSize: `clamp(32px, ${$preferences.fontSize * 2}px, 64px)` }}
                   >
                     {word.hebrew || word.hebrew_aramaic}
                   </span>
@@ -469,7 +469,7 @@ export default function InterlinearView() {
                   <span 
                     className="font-bold opacity-60 text-center max-w-[140px] leading-tight group-hover:opacity-100 transition-opacity" 
                     dir="ltr"
-                    style={{ fontSize: `${$preferences.fontSize * 0.75}px` }}
+                    style={{ fontSize: `clamp(12px, ${$preferences.fontSize * 0.7}px, 20px)` }}
                   >
                     {word.spanish}
                   </span>
@@ -480,17 +480,16 @@ export default function InterlinearView() {
             {/* Traducción de referencia en español */}
             {spanishVerse && (
               <div className="mt-auto mb-8 p-6 sm:p-8 rounded-3xl bg-theme-text/5 border border-theme-text/10 flex gap-5 items-start animate-in fade-in slide-in-from-bottom-4 duration-1000">
-                <div className="p-3 rounded-2xl bg-[var(--color-link)]/10 text-[var(--color-link)] shadow-inner">
+                <div className="p-3 rounded-2xl bg-[var(--color-link)]/10 text-[var(--color-link)] shadow-inner ui-protect flex items-center justify-center shrink-0">
                   <Info className="w-6 h-6" />
                 </div>
-                <div className="space-y-2">
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--color-link)] opacity-50">Versión Biblia Libre</span>
+                <div className="space-y-2 overflow-hidden">
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--color-link)] opacity-50 ui-protect">Versión Biblia Libre</span>
                   <p 
-                    className="leading-relaxed font-medium italic opacity-80"
+                    className="leading-relaxed font-medium italic opacity-80 reader-text"
                     style={{ 
-                      fontSize: `${$preferences.fontSize * 1.2}px`,
-                      lineHeight: $preferences.lineHeight,
-                      letterSpacing: `${$preferences.letterSpacing}em`
+                      fontSize: `clamp(16px, ${$preferences.fontSize * 1.1}px, 28px)`,
+                      /* Eliminamos line-height y letter-spacing inline para que mande el CSS con clamp */
                     }}
                   >
                     {spanishVerse}

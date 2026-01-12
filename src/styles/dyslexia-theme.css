@@ -224,12 +224,18 @@ body {
 .fixed, /* Para los modales/sheets de configuración */
 .absolute.inset-0, /* Para el panel lateral de configuración */
 .surface-card,
-.ui-protect {
+.nav-arrow,
+.ui-protect,
+[data-radix-popper-content-wrapper] { /* Popovers de Radix/UI */
     font-size: 16px !important;
     font-family: 'Arial', 'Verdana', 'Calibri', sans-serif !important;
-    line-height: 1.5 !important;
+    line-height: 1.4 !important; /* Reducido ligeramente para evitar scrollbars en elementos pequeños */
     letter-spacing: normal !important;
     word-spacing: normal !important;
+    font-size-adjust: none !important;
+    text-indent: 0 !important;
+    text-transform: none !important;
+    overflow: visible !important; /* Asegurar que no aparezcan scrollbars no deseados */
 }
 
 /* Resetear estilos de texto dentro de la UI para que no hereden los del lector */
@@ -239,23 +245,45 @@ body {
 .fixed *,
 .absolute.inset-0 *,
 .surface-card *,
-.ui-protect * {
+.nav-arrow *,
+.ui-protect *,
+[data-radix-popper-content-wrapper] * {
     font-size: inherit;
     font-family: inherit;
     line-height: inherit !important;
     letter-spacing: normal !important;
     word-spacing: normal !important;
-    text-transform: none; /* Evitar que transformaciones globales afecten la UI */
+    text-transform: none !important;
+    font-size-adjust: none !important;
+    text-indent: 0 !important;
+}
+
+/* Permitir tamaños de fuente pequeños en la UI protegida */
+.ui-protect.text-\[10px\],
+.ui-protect .text-\[10px\] {
+    font-size: 10px !important;
+}
+
+.ui-protect.text-xs,
+.ui-protect .text-xs {
+    font-size: 0.75rem !important;
+}
+
+.ui-protect.text-sm,
+.ui-protect .text-sm {
+    font-size: 0.875rem !important;
 }
 
 /* Casos específicos para sliders y botones que no deben heredar espaciados del lector */
 input[type="range"],
 button,
 [role="button"],
-.sidebar-item {
+.sidebar-item,
+select {
     letter-spacing: normal !important;
     word-spacing: normal !important;
     line-height: normal !important;
+    text-transform: none !important;
 }
 
 /* Reducir márgenes de elementos de bloque en modo lectura para evitar espacios excesivos */
@@ -266,20 +294,45 @@ button,
 .reader-text h3,
 .prose.reader-text p,
 .prose.reader-text div {
-    margin-top: 0.3em !important;
-    margin-bottom: 0.3em !important;
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
 }
 
 /* Evitar que el texto se rompa de forma agresiva en móviles */
 @media (max-width: 767px) {
     .reader-content {
-        padding-left: 0.25rem !important;
-        padding-right: 0.25rem !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
     
     .reader-text {
-        /* En móvil, si la fuente es muy grande, reducimos un poco el factor de escala */
-        font-size: calc(var(--reader-font-size) * 0.9);
+        /* En móvil, si la fuente es muy grande, reducimos el factor de escala */
+        /* y limitamos el máximo para que no rompa la pantalla */
+        font-size: clamp(16px, calc(var(--reader-font-size) * 0.85), 24px) !important;
+        line-height: clamp(1.4, var(--reader-line-height), 1.8) !important;
+        letter-spacing: clamp(0em, var(--reader-letter-spacing), 0.05em) !important;
+        word-spacing: clamp(0em, var(--reader-word-spacing), 0.1em) !important;
+    }
+
+    /* Protecciones extra para UI en móvil con settings máximos */
+    .ui-protect {
+        max-width: 100vw;
+    }
+
+    /* Ajustar flechas de navegación en móvil para que no estorben */
+    .nav-arrow {
+        width: 38px !important;
+        height: 38px !important;
+        opacity: 0.6;
+    }
+    
+    .nav-arrow:active {
+        opacity: 1;
+    }
+
+    /* Interlinear móvil: reducir gaps para evitar scroll horizontal excesivo */
+    .interlinear-words-container {
+        gap: 1.5rem !important;
     }
 }
 

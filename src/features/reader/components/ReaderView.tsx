@@ -274,7 +274,7 @@ export default function ReaderView() {
 
     return (
         <article class="reader-content max-w-3xl mx-auto pb-32 px-2 md:px-0 relative animate-in fade-in duration-700">
-            <div class="mb-8 text-center px-2">
+            <div class="mb-8 text-center px-2 ui-protect">
                 <h1 class="text-2xl md:text-4xl font-bold text-[var(--color-link)] mb-2">
                     {bookData?.nombre || currentBookEntry.name} {chapterKey}
                 </h1>
@@ -291,7 +291,7 @@ export default function ReaderView() {
                         </span>
                         <button
                             onClick={() => setViewMode(viewMode === 'full' ? 'partial' : 'full')}
-                            class="text-sm px-3 py-1.5 rounded-md border border-theme-text/20 hover:bg-theme-text/5 transition-colors flex items-center gap-2"
+                            class="text-sm px-3 py-1.5 rounded-md border border-theme-text/20 hover:bg-theme-text/5 transition-colors flex items-center gap-2 ui-protect"
                         >
                             <span>{viewMode === 'full' ? 'Ver solo requeridos' : 'Ver todo el capítulo'}</span>
                             {viewMode === 'full' ? <EyeOff class="w-4 h-4" /> : <Eye class="w-4 h-4" />}
@@ -301,7 +301,7 @@ export default function ReaderView() {
             </div>
 
             {versesRange && (
-                <div class="mb-8 p-4 rounded-xl border border-[var(--color-link)]/30 bg-[var(--color-link)]/5 flex gap-4 items-start animate-fade-in">
+                <div class="mb-8 p-4 rounded-xl border border-[var(--color-link)]/30 bg-[var(--color-link)]/5 flex gap-4 items-start animate-fade-in ui-protect">
                     <div class="p-2 rounded-lg bg-[var(--color-link)] text-white shrink-0">
                         <BookOpen class="w-5 h-5" />
                     </div>
