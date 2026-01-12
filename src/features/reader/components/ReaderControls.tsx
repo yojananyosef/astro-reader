@@ -93,7 +93,19 @@ export default function ReaderControls({ books = [] }: ReaderControlsProps) {
         if (selectedBook) {
             const isCommentary = window.location.pathname.includes('/commentary');
             const baseUrl = isCommentary ? '/commentary' : '/';
-            window.location.href = `${baseUrl}?book=${selectedBook.code}&chapter=${chapter}`;
+            const url = `${baseUrl}?book=${selectedBook.code}&chapter=${chapter}`;
+            
+            // Si ya estamos en la misma página (Biblia o Comentario), navegar sin recargar
+            const currentPath = window.location.pathname;
+            if (currentPath === baseUrl || (currentPath === '/' && baseUrl === '/')) {
+                window.history.pushState({}, '', url);
+                window.dispatchEvent(new CustomEvent('app:navigate', { 
+                    detail: { url, book: selectedBook.code, chapter: String(chapter) } 
+                }));
+            } else {
+                // Si cambiamos entre Biblia y Comentario, recarga normal (o dejar que View Transitions actúe)
+                window.location.href = url;
+            }
             setIsOpen(false);
         }
     };

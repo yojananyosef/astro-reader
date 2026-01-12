@@ -48,10 +48,18 @@ export default function ReaderView() {
             });
         };
 
+        const handleAppNavigate = (e: any) => {
+            const { book, chapter, verses } = e.detail;
+            setParams({ book, chapter: chapter || '1', verses: verses || '' });
+        };
+
         updateParams();
-        // Escuchar cambios en la URL (por si acaso con View Transitions)
         window.addEventListener('popstate', updateParams);
-        return () => window.removeEventListener('popstate', updateParams);
+        window.addEventListener('app:navigate' as any, handleAppNavigate);
+        return () => {
+            window.removeEventListener('popstate', updateParams);
+            window.removeEventListener('app:navigate' as any, handleAppNavigate);
+        };
     }, []);
 
     const { book: bookKey, chapter: chapterKey, verses: versesRange } = params;
@@ -59,10 +67,15 @@ export default function ReaderView() {
         return booksIndex.find((b) => b.code === bookKey) || booksIndex[0];
     }, [bookKey]);
 
+    // Load book data only when bookKey changes
     useEffect(() => {
         let isMounted = true;
-        async function loadData() {
-            setLoading(true);
+        async function loadBookData() {
+            // Only show loading if we don't have the data for this book yet
+            if (!bookData || bookData.id !== currentBookEntry.code) {
+                setLoading(true);
+            }
+            
             try {
                 const bookCode = currentBookEntry.code;
                 
@@ -87,19 +100,20 @@ export default function ReaderView() {
                 } else {
                     setCommentaryData(null);
                 }
-
-                // Save last position
-                lastBiblePosition.set({ lastBook: bookKey, lastChapter: chapterKey });
             } catch (e) {
-                console.error("Error loading reader data:", e);
-                if (isMounted) setBookData(null);
+                console.error("Error loading data:", e);
             } finally {
                 if (isMounted) setLoading(false);
             }
         }
-        loadData();
+        loadBookData();
         return () => { isMounted = false; };
-    }, [currentBookEntry.code, chapterKey]);
+    }, [currentBookEntry.code]);
+
+    // Update last position when book or chapter changes
+    useEffect(() => {
+        lastBiblePosition.set({ lastBook: bookKey, lastChapter: chapterKey });
+    }, [bookKey, chapterKey]);
 
     const safeParseInt = (s: string) => {
         const n = parseInt(s, 10);
@@ -242,8 +256,24 @@ export default function ReaderView() {
 
     const filteredVerses = viewMode === 'partial' ? versesList.filter(v => v.isHighlighted) : versesList;
 
+    const handleNavigate = (url: string) => {
+        const newUrl = new URL(url, window.location.origin);
+        const book = newUrl.searchParams.get('book') || 'gen';
+        const chapter = newUrl.searchParams.get('chapter') || '1';
+        const verses = newUrl.searchParams.get('verses') || '';
+
+        // Actualizar URL sin recargar
+        window.history.pushState({}, '', url);
+        
+        // Actualizar estado local
+        setParams({ book, chapter, verses });
+        
+        // Hacer scroll arriba instantáneo para mejor sensación de inmediatez
+        window.scrollTo(0, 0);
+    };
+
     return (
-        <article class="reader-content max-w-3xl mx-auto pb-32 px-2 md:px-0 relative">
+        <article class="reader-content max-w-3xl mx-auto pb-32 px-2 md:px-0 relative animate-in fade-in duration-700">
             <div class="mb-8 text-center px-2">
                 <h1 class="text-2xl md:text-4xl font-bold text-[var(--color-link)] mb-2">
                     {bookData?.nombre || currentBookEntry.name} {chapterKey}
@@ -286,13 +316,25 @@ export default function ReaderView() {
             )}
 
             {prevLink && (
-                <a href={prevLink} class="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-40 visible" aria-label="Capítulo Anterior">
+                <a 
+                    href={prevLink} 
+                    onClick={(e) => { e.preventDefault(); handleNavigate(prevLink); }}
+                    class="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-40 visible" 
+                    aria-label="Capítulo Anterior"
+                    data-nav-prev
+                >
                     <ArrowLeft class="w-5 h-5" />
                 </a>
             )}
 
             {nextLink && (
-                <a href={nextLink} class="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-40 visible" aria-label="Capítulo Siguiente">
+                <a 
+                    href={nextLink} 
+                    onClick={(e) => { e.preventDefault(); handleNavigate(nextLink); }}
+                    class="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-40 visible" 
+                    aria-label="Capítulo Siguiente"
+                    data-nav-next
+                >
                     <ArrowRight class="w-5 h-5" />
                 </a>
             )}

@@ -156,10 +156,12 @@ export default function InterlinearView() {
     lastBiblePosition.set({ lastBook: params.book, lastChapter: params.chapter });
   }, [params.book, params.chapter, params.verse]);
 
-  // Cargar datos del capítulo hebreo
+  const [interlinearData, setInterlinearData] = useState<InterlinearData | null>(null);
+
+  // Cargar datos del libro hebreo completo (solo cuando cambia el libro)
   useEffect(() => {
     let isMounted = true;
-    const fetchInterlinearData = async () => {
+    const fetchBookData = async () => {
       setLoading(true);
       setError(null);
       try {
@@ -171,46 +173,43 @@ export default function InterlinearView() {
         }
 
         const data: InterlinearData = await response.json();
-        if (!isMounted) return;
-
-        // Filtrar solo los versículos del capítulo actual
-        const chapterVerses = data.filter(v => v.chapter === parseInt(params.chapter));
-        setChapterData(chapterVerses);
-        
-        // Encontrar el versículo específico
-        const verse = chapterVerses.find(v => v.verse === parseInt(params.verse));
-        if (verse) {
-          setVerseData(verse);
-        } else if (chapterVerses.length > 0) {
-          setVerseData(chapterVerses[0]);
-          setParams(prev => ({ ...prev, verse: String(chapterVerses[0].verse) }));
-        } else {
-          setVerseData(null);
+        if (isMounted) {
+          setInterlinearData(data);
         }
       } catch (err: any) {
         console.error("Error loading interlinear data:", err);
         if (isMounted) {
           setError(err.message);
-          setVerseData(null);
+          setInterlinearData(null);
         }
       } finally {
         if (isMounted) setLoading(false);
       }
     };
 
-    fetchInterlinearData();
+    fetchBookData();
     return () => { isMounted = false; };
-  }, [params.book, params.chapter]);
+  }, [params.book]);
 
-  // Actualizar versículo cuando cambian los parámetros de versículo (sin recargar todo el capítulo)
+  // Actualizar datos del capítulo cuando cambian los parámetros o los datos del libro
   useEffect(() => {
-    if (chapterData.length > 0) {
-      const verse = chapterData.find(v => v.verse === parseInt(params.verse));
-      if (verse) {
-        setVerseData(verse);
-      }
+    if (!interlinearData) return;
+
+    // Filtrar solo los versículos del capítulo actual
+    const chapterVerses = interlinearData.filter(v => v.chapter === parseInt(params.chapter));
+    setChapterData(chapterVerses);
+    
+    // Encontrar el versículo específico
+    const verse = chapterVerses.find(v => v.verse === parseInt(params.verse));
+    if (verse) {
+      setVerseData(verse);
+    } else if (chapterVerses.length > 0) {
+      setVerseData(chapterVerses[0]);
+      setParams(prev => ({ ...prev, verse: String(chapterVerses[0].verse) }));
+    } else {
+      setVerseData(null);
     }
-  }, [params.verse, chapterData]);
+  }, [interlinearData, params.chapter, params.verse]);
 
   const handleBookChange = (code: string) => {
     setParams(prev => ({ ...prev, book: code, chapter: "1", verse: "1" }));

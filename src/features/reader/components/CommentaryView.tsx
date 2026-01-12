@@ -35,9 +35,18 @@ export default function CommentaryView() {
             });
         };
 
+        const handleAppNavigate = (e: any) => {
+            const { book, chapter } = e.detail;
+            setParams({ book, chapter: chapter || '1' });
+        };
+
         updateParams();
         window.addEventListener('popstate', updateParams);
-        return () => window.removeEventListener('popstate', updateParams);
+        window.addEventListener('app:navigate' as any, handleAppNavigate);
+        return () => {
+            window.removeEventListener('popstate', updateParams);
+            window.removeEventListener('app:navigate' as any, handleAppNavigate);
+        };
     }, []);
 
     const { book: bookKey, chapter: chapterKey } = params;
@@ -46,13 +55,17 @@ export default function CommentaryView() {
     }, [bookKey]);
     const currentChapNumInt = parseInt(chapterKey, 10) || 1;
 
+    // Load commentary data only when bookKey changes
     useEffect(() => {
         let isMounted = true;
-        async function loadData() {
-            setLoading(true);
+        async function loadBookData() {
+            // Only show loading if we don't have the data for this book yet
+            if (!commentaryData || commentaryData.id !== currentBookEntry.code) {
+                setLoading(true);
+            }
+            
             try {
                 const bookCode = currentBookEntry.code;
-                
                 const response = await fetch(`/data/commentary/${bookCode}.json`);
                 
                 if (!isMounted) return;
@@ -63,9 +76,6 @@ export default function CommentaryView() {
                 } else {
                     setCommentaryData(null);
                 }
-                
-                // Save last position
-                lastCommentaryPosition.set({ lastBook: bookKey, lastChapter: chapterKey });
             } catch (e) {
                 console.error("Error loading commentary data:", e);
                 if (isMounted) setCommentaryData(null);
@@ -73,9 +83,14 @@ export default function CommentaryView() {
                 if (isMounted) setLoading(false);
             }
         }
-        loadData();
+        loadBookData();
         return () => { isMounted = false; };
-    }, [currentBookEntry.code, chapterKey]);
+    }, [currentBookEntry.code]);
+
+    // Update last position when book or chapter changes
+    useEffect(() => {
+        lastCommentaryPosition.set({ lastBook: bookKey, lastChapter: chapterKey });
+    }, [bookKey, chapterKey]);
 
     const bookChaptersCount = currentBookEntry.chapters;
     const currentBookIndex = booksIndex.findIndex((b) => b.code === currentBookEntry.code);
@@ -154,27 +169,55 @@ export default function CommentaryView() {
         );
     }
 
+    const handleNavigate = (url: string) => {
+        const newUrl = new URL(url, window.location.origin);
+        const book = newUrl.searchParams.get('book') || 'gen';
+        const chapter = newUrl.searchParams.get('chapter') || '1';
+
+        // Actualizar URL sin recargar
+        window.history.pushState({}, '', url);
+        
+        // Actualizar estado local
+        setParams({ book, chapter });
+        
+        // Hacer scroll arriba instantáneo para mejor sensación de inmediatez
+        window.scrollTo(0, 0);
+    };
+
     return (
-        <article class="reader-content max-w-3xl mx-auto pb-32 px-2 md:px-0 relative">
+        <article class="reader-content max-w-3xl mx-auto pb-32 px-2 md:px-0 relative animate-in fade-in duration-700">
             <div class="mb-8 text-center px-2">
                 <h1 class="text-2xl md:text-4xl font-bold text-[var(--color-link)] mb-4">
                     Comentario: {currentBookEntry.name} {currentChapNumInt}
                 </h1>
                 <CommentarySelector 
                     books={booksIndex} 
-                    currentBook={currentBookEntry.code} 
-                    currentChapter={currentChapNumInt} 
+                    currentBook={bookKey}
+                    currentChapter={currentChapNumInt}
+                    onNavigate={handleNavigate}
                 />
             </div>
 
             {prevLink && (
-                <a href={prevLink} class="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-40 visible" aria-label="Capítulo Anterior">
+                <a 
+                    href={prevLink} 
+                    onClick={(e) => { e.preventDefault(); handleNavigate(prevLink); }}
+                    class="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-40 visible" 
+                    aria-label="Capítulo Anterior"
+                    data-nav-prev
+                >
                     <ArrowLeft class="w-5 h-5" />
                 </a>
             )}
 
             {nextLink && (
-                <a href={nextLink} class="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-40 visible" aria-label="Capítulo Siguiente">
+                <a 
+                    href={nextLink} 
+                    onClick={(e) => { e.preventDefault(); handleNavigate(nextLink); }}
+                    class="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-40 visible" 
+                    aria-label="Capítulo Siguiente"
+                    data-nav-next
+                >
                     <ArrowRight class="w-5 h-5" />
                 </a>
             )}

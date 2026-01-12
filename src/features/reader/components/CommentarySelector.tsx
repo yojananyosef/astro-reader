@@ -11,9 +11,10 @@ interface Props {
     currentBook: string;
     currentChapter: number;
     books: BookInfo[];
+    onNavigate?: (url: string) => void;
 }
 
-export default function CommentarySelector({ currentBook, currentChapter, books }: Props) {
+export default function CommentarySelector({ currentBook, currentChapter, books, onNavigate }: Props) {
     const [bookCode, setBookCode] = useState(currentBook);
     const [chapter, setChapter] = useState(currentChapter);
     const [isBookOpen, setIsBookOpen] = useState(false);
@@ -24,6 +25,11 @@ export default function CommentarySelector({ currentBook, currentChapter, books 
 
     const selectedBook = books.find(b => b.code === bookCode);
     const chapters = selectedBook ? Array.from({ length: selectedBook.chapters }, (_, i) => i + 1) : [];
+
+    useEffect(() => {
+        setBookCode(currentBook);
+        setChapter(currentChapter);
+    }, [currentBook, currentChapter]);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -41,13 +47,23 @@ export default function CommentarySelector({ currentBook, currentChapter, books 
     const handleBookSelect = (code: string) => {
         setBookCode(code);
         setIsBookOpen(false);
-        window.location.href = `/commentary?book=${code}&chapter=1`;
+        const url = `/commentary?book=${code}&chapter=1`;
+        if (onNavigate) {
+            onNavigate(url);
+        } else {
+            window.location.href = url;
+        }
     };
 
     const handleChapterSelect = (num: number) => {
         setChapter(num);
         setIsChapterOpen(false);
-        window.location.href = `/commentary?book=${bookCode}&chapter=${num}`;
+        const url = `/commentary?book=${bookCode}&chapter=${num}`;
+        if (onNavigate) {
+            onNavigate(url);
+        } else {
+            window.location.href = url;
+        }
     };
 
     return (
