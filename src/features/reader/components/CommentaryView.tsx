@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, BookOpen, Library } from "lucide-preact";
 import booksIndex from "../../../data/books-index.json";
 import { lastCommentaryPosition } from "../../../stores/navigation";
 import CommentarySelector from "./CommentarySelector";
+import { fetchWithCache } from '../../../utils/fetchWithCache';
 
 export default function CommentaryView() {
     const [commentaryData, setCommentaryData] = useState<any>(null);
@@ -66,16 +67,10 @@ export default function CommentaryView() {
             
             try {
                 const bookCode = currentBookEntry.code;
-                const response = await fetch(`/data/commentary/${bookCode}.json`);
+                const data = await fetchWithCache<any>(`/data/commentary/${bookCode}.json`);
                 
                 if (!isMounted) return;
-
-                if (response.ok) {
-                    const data = await response.json();
-                    setCommentaryData(data);
-                } else {
-                    setCommentaryData(null);
-                }
+                setCommentaryData(data);
             } catch (e) {
                 console.error("Error loading commentary data:", e);
                 if (isMounted) setCommentaryData(null);

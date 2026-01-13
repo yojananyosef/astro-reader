@@ -11,6 +11,7 @@ export function useTTS() {
     const elementsRef = useRef<Element[]>([]);
     const currentIndexRef = useRef(0);
     const isStoppingRef = useRef(false);
+    const utterancesRef = useRef<SpeechSynthesisUtterance[]>([]); // Prevent GC
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -69,13 +70,18 @@ export function useTTS() {
     useEffect(() => {
         let timeoutId: any;
         const keepAlive = () => {
-            if (synth.current?.speaking && !synth.current?.paused) {
+            if (!isPlaying) return;
+
+            // The pause/resume trick is mainly for Chrome on Desktop to prevent the 15s timeout
+            // On mobile it can be unstable, so we use it sparingly
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (synth.current?.speaking && !synth.current?.paused && !isMobile) {
                 synth.current.pause();
                 synth.current.resume();
             }
-            if (isPlaying) {
-                timeoutId = setTimeout(keepAlive, 10000);
-            }
+            
+            timeoutId = setTimeout(keepAlive, 10000);
         };
 
         if (isPlaying) {
@@ -95,6 +101,7 @@ export function useTTS() {
             setIsPaused(false);
             setIsLoading(false);
             currentIndexRef.current = 0;
+            utterancesRef.current = []; // Clear GC protection
             document.querySelectorAll('.speaking-highlight').forEach(el =>
                 el.classList.remove('speaking-highlight')
             );
@@ -172,6 +179,7 @@ export function useTTS() {
 
             elementsRef.current = elements;
             currentIndexRef.current = 0;
+            utterancesRef.current = []; // Reset GC protection
             
             const speakNext = () => {
                 if (isStoppingRef.current) return;
@@ -183,26 +191,21 @@ export function useTTS() {
                 }
 
                 const element = elementsRef.current[currentIndexRef.current];
-                // Ensure element still exists in the DOM (important after navigation)
                 if (!element || !document.body.contains(element)) {
                     stop();
                     return;
                 }
 
-                // Cloning to process text without altering DOM
                 const clone = element.cloneNode(true) as HTMLElement;
                 const currentPrefs = preferences.get();
 
-                // FIX: Skip verse numbers (both new .verse-num and old sup)
                 if (currentPrefs.skipVerses) {
                     clone.querySelectorAll('.verse-num, sup').forEach(el => {
-                        // Replace with a space to avoid joining words incorrectly
                         el.textContent = ' ';
                         el.remove();
                     });
                 }
 
-                // FIX: Skip footnotes and other links
                 if (currentPrefs.skipFootnotes) {
                     clone.querySelectorAll('.footnote-ref, a').forEach(el => {
                         el.textContent = ' ';
@@ -210,13 +213,11 @@ export function useTTS() {
                     });
                 }
 
-                // Remove icons, svgs, or buttons that might be in the text
                 clone.querySelectorAll('.commentary-icon, svg, button, .select-none-ui').forEach(el => {
                     el.textContent = ' ';
                     el.remove();
                 });
 
-                // Final text cleanup: replace multiple spaces and remove hidden characters
                 const text = clone.innerText
                     .replace(/\s+/g, ' ')
                     .trim();
@@ -227,24 +228,26 @@ export function useTTS() {
                     return;
                 }
 
-                // Create utterance
                 const u = new SpeechSynthesisUtterance(text);
                 u.rate = rate;
-                u.lang = 'es-ES'; // Default to Spanish
+                u.lang = 'es-ES';
+
+                // CRITICAL: Keep a reference to prevent GC on mobile
+                utterancesRef.current.push(u);
+                if (utterancesRef.current.length > 5) {
+                    utterancesRef.current.shift(); // Keep only a few to avoid memory leak
+                }
 
                 u.onstart = () => {
                     if (isStoppingRef.current) return;
                     setIsLoading(false);
                     
-                    // Highlight current element - FIRST REMOVE OTHERS
                     document.querySelectorAll('.speaking-highlight').forEach(el =>
                         el.classList.remove('speaking-highlight')
                     );
                     
-                    // THEN ADD TO CURRENT
                     element.classList.add('speaking-highlight');
                     
-                    // Ensure element is visible
                     const rect = element.getBoundingClientRect();
                     const isVisible = (rect.top >= 50 && rect.bottom <= window.innerHeight - 50);
                     if (!isVisible) {
@@ -254,13 +257,11 @@ export function useTTS() {
 
                 u.onend = () => {
                     if (isStoppingRef.current) return;
-                    
-                    // Only increment and continue if the engine is not stopping
                     currentIndexRef.current++;
                     
-                    // Double check if we are still on the same page and have more elements
                     if (document.body.contains(element) && currentIndexRef.current < elementsRef.current.length) {
-                        speakNext();
+                        // Small delay between utterances for better stability on mobile
+                        setTimeout(speakNext, 150);
                     } else if (currentIndexRef.current >= elementsRef.current.length) {
                         stop();
                         if (onComplete) onComplete();
@@ -269,29 +270,34 @@ export function useTTS() {
                     }
                 };
 
-                u.onerror = (event) => {
-                    // On some browsers, 'interrupted' happens on normal stop or quick play clicks.
-                    // We silence this in production as it's an expected behavior during navigation/cancellation.
+                u.onerror = (event: any) => {
                     if (event.error === 'interrupted') {
                         if (!isStoppingRef.current) {
-                            // Try to recover or just move on if it wasn't a deliberate stop
                             setTimeout(speakNext, 100);
                         }
                         return;
                     }
                     
-                    console.error('TTS Error:', event);
-                    stop();
+                    // On some mobile browsers, 'not-allowed' or 'network' might happen
+                    // We try to skip the problematic verse and continue
+                    console.error('TTS Error:', event.error, event);
+                    if (!isStoppingRef.current && currentIndexRef.current < elementsRef.current.length - 1) {
+                        currentIndexRef.current++;
+                        setTimeout(speakNext, 200);
+                    } else {
+                        stop();
+                    }
                 };
 
                 utterance.current = u;
                 
-                // Tiny delay between utterances for better stability on some browsers
+                // Use a slightly larger delay for subsequent utterances on mobile
+                const delay = currentIndexRef.current === 0 ? 0 : 100;
                 setTimeout(() => {
                     if (!isStoppingRef.current && synth.current) {
                         synth.current.speak(u);
                     }
-                }, 50);
+                }, delay);
             };
 
             speakNext();

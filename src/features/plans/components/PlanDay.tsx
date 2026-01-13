@@ -1,5 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 import { ChevronLeft, X, Check, Eye, EyeOff, Info } from "lucide-preact";
+import { fetchWithCache } from "../../../utils/fetchWithCache";
 
 type Reading = { label: string; book: string; chapter: number; verses?: string };
 type EGWReading = { label: string; link?: string; content?: string; chapterId?: number };
@@ -123,16 +124,13 @@ export default function PlanDay({
     if (localReadings.length === 0 && !localEgwReadings.length) {
       async function loadPlanContent() {
         try {
-          const response = await fetch(`/data/plan-content/${planId}.json`);
-          if (response.ok) {
-            const data = await response.json();
-            const dayData = data[day];
-            if (dayData) {
-              setLocalReadings(dayData.bible || []);
-              setLocalEgwReadings(dayData.egw || []);
-              setLocalDescription(dayData.description || "");
-              setLocalDayTitle(dayData.title || "");
-            }
+          const data = await fetchWithCache<any>(`/data/plan-content/${planId}.json`);
+          const dayData = data[day];
+          if (dayData) {
+            setLocalReadings(dayData.bible || []);
+            setLocalEgwReadings(dayData.egw || []);
+            setLocalDescription(dayData.description || "");
+            setLocalDayTitle(dayData.title || "");
           }
         } catch (e) {
           console.error("Error loading plan content in component:", e);
@@ -230,12 +228,7 @@ export default function PlanDay({
     setViewMode(r.verses ? "partial" : "full");
 
     try {
-      const response = await fetch(`/data/books/${r.book.toLowerCase()}.json`);
-      if (!response.ok) {
-        setIsLoadingContent(false);
-        return;
-      }
-      const data = await response.json();
+      const data = await fetchWithCache<any>(`/data/books/${r.book.toLowerCase()}.json`);
       const rawVerses = data?.capitulo?.[String(r.chapter)] ?? {};
 
       const requiredVerses = r.verses ? parseVerseRange(r.verses) : [];
@@ -270,14 +263,11 @@ export default function PlanDay({
     if (r.chapterId && !r.content) {
       setIsLoadingContent(true);
       try {
-        const response = await fetch(`/data/plan-content/es_PP54(PP).json`);
-        if (response.ok) {
-          const data = await response.json();
-          const chapter = data.chapters?.find((c: any) => c.number === r.chapterId);
-          if (chapter) {
-            const content = chapter.sections?.map((s: any) => s.content).join("\n\n") || "";
-            setOpenEgw({ ...r, content });
-          }
+        const data = await fetchWithCache<any>(`/data/plan-content/es_PP54(PP).json`);
+        const chapter = data.chapters?.find((c: any) => c.number === r.chapterId);
+        if (chapter) {
+          const content = chapter.sections?.map((s: any) => s.content).join("\n\n") || "";
+          setOpenEgw({ ...r, content });
         }
       } catch (e) {
         console.error("Error loading EGW content:", e);

@@ -4,6 +4,7 @@ import booksIndex from "../../../data/books-index.json";
 import { highlights, toggleHighlight } from "../../../stores/highlights";
 import { lastBiblePosition } from "../../../stores/navigation";
 import { useStore } from '@nanostores/preact';
+import { fetchWithCache } from '../../../utils/fetchWithCache';
 
 interface Verse {
     number: string;
@@ -80,26 +81,15 @@ export default function ReaderView() {
                 const bookCode = currentBookEntry.code;
                 
                 // Usar rutas relativas a la raíz para mayor compatibilidad
-                const [bookRes, commRes] = await Promise.all([
-                    fetch(`/data/books/${bookCode}.json`),
-                    fetch(`/data/commentary/${bookCode}.json`).catch(() => null)
+                const [bookData, commentaryData] = await Promise.all([
+                    fetchWithCache<any>(`/data/books/${bookCode}.json`),
+                    fetchWithCache<any>(`/data/commentary/${bookCode}.json`).catch(() => null)
                 ]);
 
                 if (!isMounted) return;
 
-                if (bookRes.ok) {
-                    const data = await bookRes.json();
-                    setBookData(data);
-                } else {
-                    setBookData(null);
-                }
-
-                if (commRes && commRes.ok) {
-                    const data = await commRes.json();
-                    setCommentaryData(data);
-                } else {
-                    setCommentaryData(null);
-                }
+                setBookData(bookData);
+                setCommentaryData(commentaryData);
             } catch (e) {
                 console.error("Error loading data:", e);
             } finally {

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "preact/hooks";
 import { ChevronLeft, ChevronRight, Star, Bookmark, Check } from "lucide-preact";
+import { fetchWithCache } from "../../../utils/fetchWithCache";
 
 type Plan = {
   id: string;
@@ -25,15 +26,12 @@ export default function PlanDetail({ plan }: { plan: Plan }) {
   useEffect(() => {
     async function loadDayTitles() {
       try {
-        const response = await fetch(`/data/plan-content/${plan.id}.json`);
-        if (response.ok) {
-          const data = await response.json();
-          const titles: Record<number, string> = {};
-          Object.entries(data).forEach(([day, content]: [string, any]) => {
-            if (content.title) titles[parseInt(day)] = content.title;
-          });
-          setDayTitles(titles);
-        }
+        const data = await fetchWithCache<any>(`/data/plan-content/${plan.id}.json`);
+        const titles: Record<number, string> = {};
+        Object.entries(data).forEach(([day, content]: [string, any]) => {
+          if (content.title) titles[parseInt(day)] = content.title;
+        });
+        setDayTitles(titles);
       } catch (e) {
         console.error("Error loading day titles:", e);
       }

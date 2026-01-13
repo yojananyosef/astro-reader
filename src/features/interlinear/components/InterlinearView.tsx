@@ -2,9 +2,10 @@ import { useState, useEffect, useMemo, useRef } from "preact/hooks";
 import { ArrowLeft, ArrowRight, Info, ExternalLink, ChevronDown, Book, Hash, Check } from "lucide-preact";
 import type { InterlinearWord, InterlinearVerse, InterlinearData } from "../types";
 import booksIndex from "../../../data/books-index.json";
-import { lastBiblePosition } from "../../../stores/navigation";
+import { lastInterlinearPosition } from "../../../stores/navigation";
 import { useStore } from "@nanostores/preact";
 import { preferences } from "../../../stores/preferences";
+import { fetchWithCache } from "../../../utils/fetchWithCache";
 
 const bookMapping: Record<string, string> = {
   gen: "genesis",
@@ -57,11 +58,11 @@ export default function InterlinearView() {
     // Si no hay parámetros en la URL, intentar cargar de localStorage
     if (!searchParams.get("book")) {
       try {
-        const stored = localStorage.getItem('bible-last-position');
+        const stored = localStorage.getItem('interlinear-last-position');
         if (stored) {
-          const { lastBook, lastChapter } = JSON.parse(stored);
+          const { lastBook, lastChapter, lastVerse } = JSON.parse(stored);
           if (lastBook && lastChapter) {
-            return { book: lastBook, chapter: lastChapter, verse: "1" };
+            return { book: lastBook, chapter: lastChapter, verse: lastVerse || "1" };
           }
         }
       } catch (e) {}
@@ -109,13 +110,9 @@ export default function InterlinearView() {
     async function loadSpanishBook() {
       if (!params.book) return;
       try {
-        const response = await fetch(`/data/books/${params.book}.json`);
-        if (response.ok && isMounted) {
-          const data = await response.json();
+        const data = await fetchWithCache<any>(`/data/books/${params.book}.json`);
+        if (isMounted) {
           setBookData(data);
-        } else {
-          console.error("Failed to load spanish book:", params.book, response.status);
-          if (isMounted) setBookData(null);
         }
       } catch (err) {
         console.error("Error loading spanish book:", err);
@@ -152,7 +149,11 @@ export default function InterlinearView() {
     window.history.replaceState({}, "", url.toString());
 
     // Guardar última posición
-    lastBiblePosition.set({ lastBook: params.book, lastChapter: params.chapter });
+    lastInterlinearPosition.set({ 
+      lastBook: params.book, 
+      lastChapter: params.chapter,
+      lastVerse: params.verse 
+    });
   }, [params.book, params.chapter, params.verse]);
 
   const [interlinearData, setInterlinearData] = useState<InterlinearData | null>(null);
@@ -165,13 +166,8 @@ export default function InterlinearView() {
       setError(null);
       try {
         const fileName = bookMapping[params.book] || params.book;
-        const response = await fetch(`/data/bible/hebrew/${fileName}.json`);
+        const data: InterlinearData = await fetchWithCache<any>(`/data/bible/hebrew/${fileName}.json`);
         
-        if (!response.ok) {
-          throw new Error(`No se pudo cargar el archivo: ${fileName}.json (Status: ${response.status})`);
-        }
-
-        const data: InterlinearData = await response.json();
         if (isMounted) {
           setInterlinearData(data);
         }
