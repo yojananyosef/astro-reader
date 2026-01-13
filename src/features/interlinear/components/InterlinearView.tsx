@@ -1,11 +1,12 @@
 import { useState, useEffect, useMemo, useRef } from "preact/hooks";
-import { ArrowLeft, ArrowRight, Info, ExternalLink, ChevronDown, Book, Hash, Check } from "lucide-preact";
+import { Info, ExternalLink, ChevronDown, Book, Hash, Check } from "lucide-preact";
 import type { InterlinearWord, InterlinearVerse, InterlinearData } from "../types";
 import booksIndex from "../../../data/books-index.json";
 import { lastInterlinearPosition } from "../../../stores/navigation";
 import { useStore } from "@nanostores/preact";
 import { preferences } from "../../../stores/preferences";
 import { fetchWithCache } from "../../../utils/fetchWithCache";
+import ArrowNavigation from "../../../components/common/ArrowNavigation";
 
 const bookMapping: Record<string, string> = {
   gen: "genesis",
@@ -54,7 +55,7 @@ export default function InterlinearView() {
   const [params, setParams] = useState(() => {
     if (typeof window === "undefined") return { book: "gen", chapter: "1", verse: "1" };
     const searchParams = new URLSearchParams(window.location.search);
-    
+
     // Si no hay parámetros en la URL, intentar cargar de localStorage
     if (!searchParams.get("book")) {
       try {
@@ -65,7 +66,7 @@ export default function InterlinearView() {
             return { book: lastBook, chapter: lastChapter, verse: lastVerse || "1" };
           }
         }
-      } catch (e) {}
+      } catch (e) { }
     }
 
     return {
@@ -85,7 +86,7 @@ export default function InterlinearView() {
   const [isBookOpen, setIsBookOpen] = useState(false);
   const [isChapterOpen, setIsChapterOpen] = useState(false);
   const [isVerseOpen, setIsVerseOpen] = useState(false);
-  
+
   const bookRef = useRef<HTMLDivElement>(null);
   const chapterRef = useRef<HTMLDivElement>(null);
   const verseRef = useRef<HTMLDivElement>(null);
@@ -125,16 +126,16 @@ export default function InterlinearView() {
 
   const spanishVerse = useMemo(() => {
     if (!bookData || !params.chapter || !params.verse) return null;
-    
+
     const chapterData = bookData.capitulo || bookData.capitulos;
     if (!chapterData) return null;
-    
+
     const chapter = chapterData[params.chapter];
     if (!chapter) return null;
-    
+
     const content = chapter[params.verse];
     if (!content) return null;
-    
+
     if (typeof content === "string") return content;
     if (typeof content === "object") return content.texto || content.text || null;
     return null;
@@ -149,10 +150,10 @@ export default function InterlinearView() {
     window.history.replaceState({}, "", url.toString());
 
     // Guardar última posición
-    lastInterlinearPosition.set({ 
-      lastBook: params.book, 
+    lastInterlinearPosition.set({
+      lastBook: params.book,
       lastChapter: params.chapter,
-      lastVerse: params.verse 
+      lastVerse: params.verse
     });
   }, [params.book, params.chapter, params.verse]);
 
@@ -167,7 +168,7 @@ export default function InterlinearView() {
       try {
         const fileName = bookMapping[params.book] || params.book;
         const data: InterlinearData = await fetchWithCache<any>(`/data/bible/hebrew/${fileName}.json`);
-        
+
         if (isMounted) {
           setInterlinearData(data);
         }
@@ -193,7 +194,7 @@ export default function InterlinearView() {
     // Filtrar solo los versículos del capítulo actual
     const chapterVerses = interlinearData.filter(v => v.chapter === parseInt(params.chapter));
     setChapterData(chapterVerses);
-    
+
     // Encontrar el versículo específico
     const verse = chapterVerses.find(v => v.verse === parseInt(params.verse));
     if (verse) {
@@ -224,10 +225,10 @@ export default function InterlinearView() {
   const navigateVerse = (direction: number) => {
     const currentVerse = parseInt(params.verse);
     const newVerse = currentVerse + direction;
-    
+
     // Verificar si el nuevo versículo existe en el capítulo actual
     const exists = chapterData.some(v => v.verse === newVerse);
-    
+
     if (exists) {
       setParams(prev => ({ ...prev, verse: String(newVerse) }));
     } else if (direction > 0) {
@@ -244,6 +245,17 @@ export default function InterlinearView() {
       }
     }
   };
+
+  const hasPrevVerse = useMemo(() => {
+    return !(params.book === 'gen' && params.chapter === '1' && params.verse === '1');
+  }, [params]);
+
+  const hasNextVerse = useMemo(() => {
+    const isLastBook = params.book === 'mal';
+    const isLastChapter = params.chapter === '4';
+    const isLastVerse = params.verse === '6';
+    return !(isLastBook && isLastChapter && isLastVerse);
+  }, [params]);
 
   return (
     <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-700">
@@ -354,41 +366,20 @@ export default function InterlinearView() {
       </div>
 
       {/* Botones de navegación fijos (estilo Biblia/Comentario) */}
-      {!(params.book === 'gen' && params.chapter === '1' && params.verse === '1') && (
-         <a 
-           onClick={(e) => {
-             e.preventDefault();
-             navigateVerse(-1);
-           }}
-           href="#"
-           className="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-50 visible"
-           aria-label="Versículo anterior"
-         >
-           <ArrowLeft className="w-5 h-5" />
-         </a>
-       )}
- 
-       {!(params.book === 'mal' && params.chapter === '4' && params.verse === '6') && (
-         <a 
-           onClick={(e) => {
-             e.preventDefault();
-             navigateVerse(1);
-           }}
-           href="#"
-           className="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-50 visible"
-           aria-label="Siguiente versículo"
-         >
-           <ArrowRight className="w-5 h-5" />
-         </a>
-       )}
+      <ArrowNavigation
+        onPrev={hasPrevVerse ? () => navigateVerse(-1) : undefined}
+        onNext={hasNextVerse ? () => navigateVerse(1) : undefined}
+        prevLabel="Versículo anterior"
+        nextLabel="Siguiente versículo"
+      />
 
       {/* Área Interlineal */}
-      <div 
+      <div
         className="relative border rounded-3xl p-6 sm:p-10 min-h-[450px] flex flex-col shadow-sm transition-all duration-300"
-        style={{ 
-          backgroundColor: 'var(--color-bg)', 
-          color: 'var(--color-text)', 
-          borderColor: 'color-mix(in srgb, var(--color-text), transparent 90%)' 
+        style={{
+          backgroundColor: 'var(--color-bg)',
+          color: 'var(--color-text)',
+          borderColor: 'color-mix(in srgb, var(--color-text), transparent 90%)'
         }}
       >
 
@@ -419,7 +410,7 @@ export default function InterlinearView() {
                 Lo sentimos, no pudimos localizar los datos interlineales para esta selección.
               </p>
             </div>
-            <button 
+            <button
               onClick={() => window.location.reload()}
               className="px-8 py-3 bg-[var(--color-link)] text-white rounded-2xl font-bold shadow-lg shadow-[var(--color-link)]/20 hover:scale-105 transition-transform ui-protect"
             >
@@ -428,7 +419,7 @@ export default function InterlinearView() {
           </div>
         ) : (
           <div className="flex-1 flex flex-col">
-            <div 
+            <div
               className="flex flex-wrap justify-start gap-x-8 gap-y-16 mb-16 py-8 interlinear-words-container"
               dir="rtl"
             >
@@ -441,9 +432,9 @@ export default function InterlinearView() {
                     </span>
                     <div className="w-2 h-2 bg-[var(--color-text)] rotate-45 -mt-1 ui-protect" />
                   </div>
-                  
+
                   {word.strong && (
-                    <a 
+                    <a
                       href={`https://www.blueletterbible.org/lang/lexicon/lexicon.cfm?strongs=H${word.strong}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -453,17 +444,17 @@ export default function InterlinearView() {
                       {word.strong}
                     </a>
                   )}
-                  
-                  <span 
+
+                  <span
                     className="font-hebrew text-[var(--color-text)] leading-relaxed mb-4 hover:text-[var(--color-link)] transition-colors cursor-default select-none drop-shadow-sm"
                     dir="rtl"
                     style={{ fontSize: `clamp(32px, ${$preferences.fontSize * 2}px, 64px)` }}
                   >
                     {word.hebrew || word.hebrew_aramaic}
                   </span>
-                  
-                  <span 
-                    className="font-bold opacity-60 text-center max-w-[140px] leading-tight group-hover:opacity-100 transition-opacity" 
+
+                  <span
+                    className="font-bold opacity-60 text-center max-w-[140px] leading-tight group-hover:opacity-100 transition-opacity"
                     dir="ltr"
                     style={{ fontSize: `clamp(12px, ${$preferences.fontSize * 0.7}px, 20px)` }}
                   >
@@ -481,9 +472,9 @@ export default function InterlinearView() {
                 </div>
                 <div className="space-y-2 overflow-hidden">
                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--color-link)] opacity-50 ui-protect">Versión Biblia Libre</span>
-                  <p 
+                  <p
                     className="leading-relaxed font-medium italic opacity-80 reader-text"
-                    style={{ 
+                    style={{
                       fontSize: `clamp(16px, ${$preferences.fontSize * 1.1}px, 28px)`,
                       /* Eliminamos line-height y letter-spacing inline para que mande el CSS con clamp */
                     }}
@@ -498,7 +489,7 @@ export default function InterlinearView() {
                 Traducción de referencia no disponible para este versículo.
               </div>
             )}
-            
+
             {/* Pie de página */}
             <div className="pt-8 border-t border-theme-text/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-widest opacity-30">
               <div className="flex items-center gap-2">

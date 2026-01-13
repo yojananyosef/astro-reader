@@ -1,10 +1,12 @@
 import { useState, useEffect, useMemo } from 'preact/hooks';
-import { ArrowLeft, ArrowRight, BookOpen, Library, Info, EyeOff, Eye } from "lucide-preact";
+import { BookOpen, Library, Info, EyeOff, Eye } from "lucide-preact";
 import booksIndex from "../../../data/books-index.json";
 import { highlights, toggleHighlight } from "../../../stores/highlights";
 import { lastBiblePosition } from "../../../stores/navigation";
 import { useStore } from '@nanostores/preact';
 import { fetchWithCache } from '../../../utils/fetchWithCache';
+import ArrowNavigation from '../../../components/common/ArrowNavigation';
+import { getNextChapter, getPrevChapter } from '../../../utils/navigation';
 
 interface Verse {
     number: string;
@@ -42,7 +44,7 @@ export default function ReaderView() {
     useEffect(() => {
         const updateParams = () => {
             const searchParams = new URLSearchParams(window.location.search);
-            setParams({ 
+            setParams({
                 book: searchParams.get('book') || 'gen',
                 chapter: searchParams.get('chapter') || '1',
                 verses: searchParams.get('verses') || ''
@@ -76,10 +78,10 @@ export default function ReaderView() {
             if (!bookData || bookData.id !== currentBookEntry.code) {
                 setLoading(true);
             }
-            
+
             try {
                 const bookCode = currentBookEntry.code;
-                
+
                 // Usar rutas relativas a la raíz para mayor compatibilidad
                 const [bookData, commentaryData] = await Promise.all([
                     fetchWithCache<any>(`/data/books/${bookCode}.json`),
@@ -111,26 +113,17 @@ export default function ReaderView() {
     };
 
     const currentChapNum = safeParseInt(chapterKey) || 1;
-    const bookChaptersCount = currentBookEntry.chapters;
     const currentBookIndex = booksIndex.findIndex((b) => b.code === currentBookEntry.code);
 
     const prevLink = useMemo(() => {
-        if (currentChapNum > 1) return `/?book=${bookKey}&chapter=${currentChapNum - 1}`;
-        if (currentBookIndex > 0) {
-            const prevBook = booksIndex[currentBookIndex - 1];
-            return `/?book=${prevBook.code}&chapter=${prevBook.chapters}`;
-        }
-        return null;
-    }, [bookKey, currentChapNum, currentBookIndex]);
+        const target = getPrevChapter(bookKey, currentChapNum);
+        return target ? `/?book=${target.book}&chapter=${target.chapter}` : null;
+    }, [bookKey, currentChapNum]);
 
     const nextLink = useMemo(() => {
-        if (currentChapNum < bookChaptersCount) return `/?book=${bookKey}&chapter=${currentChapNum + 1}`;
-        if (currentBookIndex < booksIndex.length - 1) {
-            const nextBook = booksIndex[currentBookIndex + 1];
-            return `/?book=${nextBook.code}&chapter=1`;
-        }
-        return null;
-    }, [bookKey, currentChapNum, bookChaptersCount, currentBookIndex]);
+        const target = getNextChapter(bookKey, currentChapNum);
+        return target ? `/?book=${target.book}&chapter=${target.chapter}` : null;
+    }, [bookKey, currentChapNum]);
 
     const parseVerseRange = (range: string): number[] => {
         const result: number[] = [];
@@ -154,7 +147,7 @@ export default function ReaderView() {
     const processedData = useMemo(() => {
         const footnotes: string[] = [];
         let noteCounter = 1;
-        
+
         const versesList = Object.entries(chapterData)
             .map(([num, content]) => {
                 let text = "";
@@ -202,7 +195,7 @@ export default function ReaderView() {
                 const element = document.getElementById(activeNote);
                 if (element) {
                     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    
+
                     setTimeout(() => {
                         const rect = element.getBoundingClientRect();
                         if (Math.abs(rect.top - 112) > 50) { // 112px es el scroll-mt-28
@@ -214,7 +207,7 @@ export default function ReaderView() {
                     setTimeout(() => scrollWithRetry(retries - 1), 200);
                 }
             };
-            
+
             const timer = setTimeout(() => scrollWithRetry(), 100);
             return () => clearTimeout(timer);
         }
@@ -234,7 +227,7 @@ export default function ReaderView() {
                 <Info class="w-12 h-12 text-red-500 mb-4 opacity-50" />
                 <h2 class="text-xl font-bold mb-2">Error al cargar el contenido</h2>
                 <p class="opacity-70 mb-6">No pudimos encontrar los datos para {currentBookEntry.name}.</p>
-                <button 
+                <button
                     onClick={() => window.location.reload()}
                     class="px-4 py-2 bg-[var(--color-link)] text-white rounded-lg hover:opacity-90 transition-opacity"
                 >
@@ -254,10 +247,10 @@ export default function ReaderView() {
 
         // Actualizar URL sin recargar
         window.history.pushState({}, '', url);
-        
+
         // Actualizar estado local
         setParams({ book, chapter, verses });
-        
+
         // Hacer scroll arriba instantáneo para mejor sensación de inmediatez
         window.scrollTo(0, 0);
     };
@@ -298,42 +291,27 @@ export default function ReaderView() {
                     <div class="text-left">
                         <h3 class="font-bold text-[var(--color-link)]">Guía de lectura</h3>
                         <p class="text-sm opacity-80 leading-relaxed">
-                            Estás siguiendo un plan de lectura. Los versículos resaltados son los asignados para hoy. 
+                            Estás siguiendo un plan de lectura. Los versículos resaltados son los asignados para hoy.
                             Puedes cambiar a "Vista Parcial" para enfocarte solo en ellos.
                         </p>
                     </div>
                 </div>
             )}
 
-            {prevLink && (
-                <a 
-                    href={prevLink} 
-                    onClick={(e) => { e.preventDefault(); handleNavigate(prevLink); }}
-                    class="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-50 visible" 
-                    aria-label="Capítulo Anterior"
-                    data-nav-prev
-                >
-                    <ArrowLeft class="w-5 h-5" />
-                </a>
-            )}
-
-            {nextLink && (
-                <a 
-                    href={nextLink} 
-                    onClick={(e) => { e.preventDefault(); handleNavigate(nextLink); }}
-                    class="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-50 visible" 
-                    aria-label="Capítulo Siguiente"
-                    data-nav-next
-                >
-                    <ArrowRight class="w-5 h-5" />
-                </a>
-            )}
+            <ArrowNavigation
+                prevHref={prevLink}
+                nextHref={nextLink}
+                onPrev={prevLink ? (e) => { e.preventDefault(); handleNavigate(prevLink); } : undefined}
+                onNext={nextLink ? (e) => { e.preventDefault(); handleNavigate(nextLink); } : undefined}
+                prevLabel="Capítulo Anterior"
+                nextLabel="Capítulo Siguiente"
+            />
 
             <div class="verses space-y-4 reader-text">
                 {filteredVerses.map((verse) => {
                     const verseId = `${bookKey}-${chapterKey}-${verse.number}`;
                     const isGlobalHighlighted = $highlights[verseId];
-                    
+
                     return (
                         <p
                             key={verse.number}

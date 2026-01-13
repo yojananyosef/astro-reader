@@ -89,13 +89,17 @@
 
 /* Global Scrollbar Removal for Native App Feel */
 html {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    scroll-behavior: smooth; /* Smooth scrolling for all anchors */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scroll-behavior: smooth;
+    /* Smooth scrolling for all anchors */
 }
 
 html::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
+    display: none;
+    /* Chrome, Safari and Opera */
 }
 
 /* Modern Focus State */
@@ -109,9 +113,9 @@ html::-webkit-scrollbar {
 }
 
 /* Native App Feel: Disable text selection on UI elements */
-button, 
-a, 
-.nav-arrow, 
+button,
+a,
+.nav-arrow,
 .sidebar-item,
 [role="button"],
 .select-none-ui {
@@ -130,10 +134,12 @@ body {
     transition: background-color 0.3s, color 0.3s;
     margin: 0;
     min-height: 100vh;
-    /* scrollbar-gutter: stable; */ /* Removed to prevent layout shift when hiding scrollbar */
+    /* scrollbar-gutter: stable; */
+    /* Removed to prevent layout shift when hiding scrollbar */
     overflow-y: auto;
     overflow-x: hidden;
-    -webkit-tap-highlight-color: transparent; /* Remove mobile blue highlight */
+    -webkit-tap-highlight-color: transparent;
+    /* Remove mobile blue highlight */
 }
 
 /* Estilos específicos para el contenido de lectura */
@@ -158,14 +164,15 @@ body {
 .reader-text .verse-num,
 .reader-text .footnote-ref,
 .reader-text .commentary-icon {
-    font-size: 0.65em !important; 
+    font-size: 0.65em !important;
     line-height: 1 !important;
     letter-spacing: normal !important;
     word-spacing: normal !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    vertical-align: middle; /* Volvemos a middle para alineación centralizada */
+    vertical-align: middle;
+    /* Volvemos a middle para alineación centralizada */
     position: relative;
     user-select: none;
 }
@@ -175,7 +182,8 @@ body {
     margin-right: 0.4em;
     opacity: 0.4;
     font-weight: 800;
-    vertical-align: baseline; /* Los números de versículo sí van en la base */
+    vertical-align: baseline;
+    /* Los números de versículo sí van en la base */
 }
 
 .reader-text .commentary-icon,
@@ -184,9 +192,11 @@ body {
     text-decoration: none !important;
     transition: all 0.2s ease;
     margin: 0 0.15em;
-    padding: 0; /* Quitamos padding para controlar el tamaño exacto */
+    padding: 0;
+    /* Quitamos padding para controlar el tamaño exacto */
     border-radius: 4px;
-    width: 1.6em; /* Tamaño fijo igual para ambos */
+    width: 1.6em;
+    /* Tamaño fijo igual para ambos */
     height: 1.6em;
 }
 
@@ -209,7 +219,8 @@ body {
     font-weight: bold;
     background-color: color-mix(in srgb, var(--color-link), transparent 95%);
     border: 1px solid color-mix(in srgb, var(--color-link), transparent 85%);
-    font-size: 0.55em !important; /* Un poco más pequeño el número para que quepa bien */
+    font-size: 0.55em !important;
+    /* Un poco más pequeño el número para que quepa bien */
 }
 
 .reader-text .footnote-ref:hover {
@@ -218,29 +229,34 @@ body {
 
 /* Asegurar que los controles de la interfaz (UI) mantengan su estilo original */
 /* Usamos selectores más específicos para que la UI no se vea afectada */
-.app-grid nav, 
-.app-grid aside, 
+.app-grid nav,
+.app-grid aside,
 .app-grid header,
-.fixed, /* Para los modales/sheets de configuración */
-.absolute.inset-0, /* Para el panel lateral de configuración */
+.fixed,
+/* Para los modales/sheets de configuración */
+.absolute.inset-0,
+/* Para el panel lateral de configuración */
 .surface-card,
 .nav-arrow,
 .ui-protect,
-[data-radix-popper-content-wrapper] { /* Popovers de Radix/UI */
+[data-radix-popper-content-wrapper] {
+    /* Popovers de Radix/UI */
     font-size: 16px !important;
     font-family: 'Arial', 'Verdana', 'Calibri', sans-serif !important;
-    line-height: 1.4 !important; /* Reducido ligeramente para evitar scrollbars en elementos pequeños */
+    line-height: 1.4 !important;
+    /* Reducido ligeramente para evitar scrollbars en elementos pequeños */
     letter-spacing: normal !important;
     word-spacing: normal !important;
     font-size-adjust: none !important;
     text-indent: 0 !important;
     text-transform: none !important;
-    overflow: visible !important; /* Asegurar que no aparezcan scrollbars no deseados */
+    overflow: visible !important;
+    /* Asegurar que no aparezcan scrollbars no deseados */
 }
 
 /* Resetear estilos de texto dentro de la UI para que no hereden los del lector */
-.app-grid nav *, 
-.app-grid aside *, 
+.app-grid nav *,
+.app-grid aside *,
 .app-grid header *,
 .fixed *,
 .absolute.inset-0 *,
@@ -304,7 +320,7 @@ select {
         padding-left: 0.5rem !important;
         padding-right: 0.5rem !important;
     }
-    
+
     .reader-text {
         /* En móvil, si la fuente es muy grande, reducimos el factor de escala */
         /* y limitamos el máximo para que no rompa la pantalla */
@@ -325,7 +341,7 @@ select {
         height: 38px !important;
         opacity: 0.6;
     }
-    
+
     .nav-arrow:active {
         opacity: 1;
     }
@@ -457,7 +473,8 @@ p {
 }
 
 :root {
-    --color-highlight: #fff9c4; /* Light Yellow default */
+    --color-highlight: #fff9c4;
+    /* Light Yellow default */
 }
 
 body[data-theme='dark'] {
@@ -530,7 +547,9 @@ body[data-theme='sepia'] {
 }
 
 /* Highlighting consistency */
-.verse-selected, .commentary-selected, .note-selected {
+.verse-selected,
+.commentary-selected,
+.note-selected {
     background-color: color-mix(in srgb, var(--color-link), transparent 85%) !important;
     border-left: 4px solid var(--color-link) !important;
     transition: all 0.3s ease;
@@ -538,41 +557,72 @@ body[data-theme='sepia'] {
 
 /* Navigation Arrows */
 .nav-arrow {
-    background-color: color-mix(in srgb, var(--color-bg), transparent 20%);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--surface-muted-border);
-    color: var(--color-link);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 300ms ease-in-out,
+        visibility 300ms ease-in-out,
+        transform 300ms ease-in-out,
+        background-color 200ms ease,
+        color 200ms ease,
+        left 0.3s ease-in-out;
     width: 44px;
     height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: color-mix(in srgb, var(--color-bg), transparent 10%) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--surface-muted-border);
+    color: var(--color-link);
     border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-arrow.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 .nav-arrow:hover {
-    background-color: var(--color-link);
+    background-color: var(--color-link) !important;
     color: white;
     transform: translateY(-50%) scale(1.1);
 }
 
-.nav-arrow-prev { left: 1rem; }
-.nav-arrow-next { right: 1rem; }
+.nav-arrow-prev {
+    left: calc(var(--sidebar-current-width, 0px) + 1rem);
+}
+
+.nav-arrow-next {
+    right: 1rem;
+}
 
 @media (max-width: 767px) {
     .nav-arrow {
-        opacity: 0.3 !important; /* Siempre visibles pero muy tenues */
-        pointer-events: auto !important;
-        width: 44px;
-        height: 44px;
+        opacity: 0.4 !important;
+        visibility: visible !important;
+        width: 40px;
+        height: 60px;
         background-color: var(--color-bg) !important;
         border: 1px solid var(--color-link) !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
-        transition: opacity 0.2s ease !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
     }
-    
+
+    .nav-arrow-prev {
+        left: 0 !important;
+        border-radius: 0 30px 30px 0;
+    }
+
+    .nav-arrow-next {
+        right: 0 !important;
+        border-radius: 30px 0 0 30px;
+    }
+
     .nav-arrow:active {
         opacity: 1 !important;
         background-color: var(--color-link) !important;

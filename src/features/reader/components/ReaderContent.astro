@@ -17,112 +17,12 @@ import ReaderView from "./ReaderView";
         transition: all 0.4s ease-in-out;
     }
 
-    .nav-arrow {
-        opacity: 0;
-        visibility: hidden;
-        transition:
-            opacity 300ms ease-in-out,
-            visibility 300ms ease-in-out,
-            transform 300ms ease-in-out;
-        width: 40px;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: color-mix(
-            in srgb,
-            var(--color-text),
-            transparent 92%
-        ) !important;
-        color: var(--color-text);
-        z-index: 200; /* Asegurar que esté por encima del sidebar */
-        position: fixed;
-        top: 50%;
-    }
-
-    .nav-arrow:hover {
-        background-color: color-mix(
-            in srgb,
-            var(--color-text),
-            transparent 85%
-        ) !important;
-    }
-
-    .nav-arrow-prev {
-        left: var(--sidebar-current-width, 0px);
-        border-radius: 0 40px 40px 0;
-        transform: translateY(-50%) translateX(-5px);
-        transition: 
-            opacity 300ms ease-in-out,
-            visibility 300ms ease-in-out,
-            transform 300ms ease-in-out,
-            left 0.3s ease-in-out;
-    }
-
-    .nav-arrow-next {
-        right: 0;
-        border-radius: 40px 0 0 40px;
-        transform: translateY(-50%) translateX(5px);
-    }
-
-    .nav-arrow.visible {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .nav-arrow-prev.visible {
-        transform: translateY(-50%) translateX(0);
-    }
-
-    .nav-arrow-next.visible {
-        transform: translateY(-50%) translateX(0);
-    }
-
-    @media (max-width: 767px) {
-        .nav-arrow {
-            height: 60px;
-            width: 32px;
-            background-color: color-mix(
-                in srgb,
-                var(--color-text),
-                transparent 90%
-            ) !important;
-            z-index: 200;
-        }
-        .nav-arrow-prev {
-            left: 0 !important;
-            border-radius: 0 30px 30px 0;
-            transform: translateY(-50%) translateX(-5px);
-        }
-        .nav-arrow-next {
-            right: 0;
-            border-radius: 30px 0 0 30px;
-            transform: translateY(-50%) translateX(5px);
-        }
-
-        .nav-arrow-prev.visible,
-        .nav-arrow-next.visible {
-            transform: translateY(-50%) translateX(0);
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .nav-arrow-prev {
-            left: calc(var(--sidebar-current-width, 0px) + 1rem);
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-        }
-        .nav-arrow-next {
-            right: 1rem;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-        }
-    }
-
     .verse-item.is-plan-highlighted {
-        background-color: color-mix(in srgb, var(--color-link), transparent 90%);
+        background-color: color-mix(
+            in srgb,
+            var(--color-link),
+            transparent 90%
+        );
     }
 
     .verse-item.is-user-highlighted {
