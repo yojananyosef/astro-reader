@@ -27,9 +27,9 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
 
   const mainNav = [
     { id: "bible", label: "Biblia", icon: BookOpen, url: "/" },
+    { id: "commentary", label: "Comentario", icon: Library, url: "/commentary" },
     { id: "interlinear", label: "Interlineal", icon: Languages, url: "/interlinear" },
     { id: "dictionary", label: "Diccionario", icon: BookText, url: "/strong" },
-    { id: "commentary", label: "Comentario", icon: Library, url: "/commentary" },
     { id: "tracking", label: "Seguimiento", icon: Bookmark, url: "/tracker" },
     { id: "plans", label: "Planes", icon: Star, url: "/plans" },
   ];
