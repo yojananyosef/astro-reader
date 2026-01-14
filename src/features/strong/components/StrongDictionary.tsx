@@ -92,11 +92,11 @@ export default function StrongDictionary() {
             />
           </div>
           <div 
-            className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[44px] h-[44px] flex items-center justify-center flex-shrink-0 p-0 cursor-pointer"
-            title="Buscar"
-          >
-            <Search size={20} strokeWidth={2} className="text-[var(--color-link)]" />
-          </div>
+              className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[44px] h-[44px] flex items-center justify-center flex-shrink-0 p-0 cursor-pointer"
+              title="Buscar"
+            >
+              <Search size={20} strokeWidth={2} className="text-[var(--color-link)]" />
+            </div>
         </div>
       </div>
 
@@ -120,29 +120,29 @@ export default function StrongDictionary() {
           </thead>
           <tbody className="divide-y divide-[var(--color-text)] divide-opacity-5">
             {paginatedItems.map((item) => (
-              <tr key={item.id} className="hover:bg-[var(--color-link)] transition-colors group border-b border-[var(--color-text)] border-opacity-5">
+              <tr key={item.id} className="hover:bg-[color-mix(in_srgb,var(--color-link),transparent_90%)] transition-colors group border-b border-[var(--color-text)] border-opacity-5">
                 <td className="px-6 py-4">
                   <a 
                     href={`/strong/${item.id}`} 
-                    className="font-bold hover:underline transition-colors block text-[var(--color-link)] group-hover:!text-white" 
+                    className="font-bold hover:underline transition-colors block text-[var(--color-link)]" 
                     data-astro-prefetch
                   >
                     {item.id.replace(/^[HG]/, '')}
                   </a>
                 </td>
-                <td className="px-6 py-4 font-hebrew text-4xl text-[var(--color-text)] group-hover:text-white transition-colors" dir="rtl">
+                <td className="px-6 py-4 font-hebrew text-4xl text-[var(--color-text)] transition-colors" dir="rtl">
                   {item.originalWord}
                 </td>
-                <td className="px-6 py-4 italic text-[var(--color-link)] font-medium group-hover:text-white/90 transition-colors">
+                <td className="px-6 py-4 italic text-[var(--color-link)] font-medium transition-colors">
                   {item.pronunciation}
                 </td>
-                <td className="px-6 py-4 text-[var(--color-text)] opacity-80 text-sm max-w-md group-hover:text-white group-hover:opacity-100 transition-all">
+                <td className="px-6 py-4 text-[var(--color-text)] opacity-80 text-sm max-w-md transition-all">
                   {item.definition}
                 </td>
                 <td className="px-6 py-4 text-right">
                   <div 
                     onClick={() => playAudio(item.id)}
-                    className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[44px] h-[44px] flex items-center justify-center flex-shrink-0 p-0 cursor-pointer text-[var(--color-link)] group-hover:bg-white/20 group-hover:border-white/30 group-hover:text-white ml-auto"
+                    className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[44px] h-[44px] flex items-center justify-center flex-shrink-0 p-0 cursor-pointer text-[var(--color-link)] ml-auto"
                   >
                     <Volume2 size={20} strokeWidth={2} />
                   </div>
