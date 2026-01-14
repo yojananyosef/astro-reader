@@ -1,0 +1,147 @@
+import { useState, useEffect, useMemo } from "preact/hooks";
+import { Search, ChevronLeft, ChevronRight, Volume2 } from "lucide-preact";
+import { fetchWithCache } from "../../../utils/fetchWithCache";
+import ArrowNavigation from "../../../components/common/ArrowNavigation";
+
+export default function StrongDictionary() {
+  const [data, setData] = useState<{ hebrew: any; greek: any }>({ hebrew: {}, greek: {} });
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const json = await fetchWithCache<any>("/data/strong/strong-data.json");
+        setData(json);
+        
+        // Si hay un parámetro de búsqueda en la URL, aplicarlo después de cargar
+        const params = new URLSearchParams(window.location.search);
+        const q = params.get("search");
+        if (q) setSearchTerm(q);
+      } catch (e) {
+        console.error("Error loading strong data:", e);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
+  const filteredItems = useMemo(() => {
+    const items = Object.entries(data.hebrew).map(([id, details]: [string, any]) => ({
+      id: `H${id}`,
+      ...details
+    }));
+    
+    if (!searchTerm) return items;
+    
+    const term = searchTerm.toLowerCase();
+    return items.filter(item => 
+      item.id.toLowerCase().includes(term) ||
+      (item.originalWord && item.originalWord.toLowerCase().includes(term)) ||
+      (item.definition && item.definition.toLowerCase().includes(term)) ||
+      (item.pronunciation && item.pronunciation.toLowerCase().includes(term))
+    );
+  }, [data, searchTerm]);
+
+  const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+  const paginatedItems = filteredItems.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const playAudio = (id: string) => {
+    // Los archivos están sin la H (ej: 1.mp3)
+    const numericId = id.replace(/^[HG]/, "");
+    const audio = new Audio(`/audio/strong/${numericId}.mp3`);
+    audio.play().catch(e => {
+      console.error("Error audio:", e);
+      // No alertar al usuario, simplemente no se reproduce
+    });
+  };
+
+  if (loading) return <div className="p-8 text-center">Cargando diccionario...</div>;
+
+  return (
+    <div className="max-w-6xl mx-auto p-4 space-y-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-bold text-[var(--color-text)]">Diccionario de Strong de hebreo</h1>
+          <p className="text-[var(--color-text)] opacity-60 text-sm">
+            Displaying items {(currentPage - 1) * itemsPerPage + 1}-{Math.min(currentPage * itemsPerPage, filteredItems.length)} of {filteredItems.length} in total
+          </p>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Textos a buscar"
+              value={searchTerm}
+              onInput={(e) => {
+                setSearchTerm(e.currentTarget.value);
+                setCurrentPage(1);
+              }}
+              className="pl-4 pr-10 py-2 bg-[var(--color-bg)] border border-[var(--color-text)] border-opacity-10 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] w-64 text-[var(--color-text)]"
+            />
+            <Search className="absolute right-3 top-2.5 w-5 h-5 text-[var(--color-text)] opacity-40" />
+          </div>
+          <button className="p-2 bg-[var(--color-link)] text-white rounded-full hover:opacity-90 transition-colors">
+            <Search className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+
+      <ArrowNavigation 
+        onPrev={currentPage > 1 ? () => setCurrentPage(p => p - 1) : undefined}
+        onNext={currentPage < totalPages ? () => setCurrentPage(p => p + 1) : undefined}
+        prevLabel="Página anterior"
+        nextLabel="Siguiente página"
+      />
+
+      <div className="bg-[var(--color-bg)] rounded-2xl border border-[var(--color-text)] border-opacity-5 overflow-hidden">
+        <table className="w-full text-left border-collapse">
+          <thead>
+            <tr className="border-b border-[var(--color-text)] border-opacity-5 text-sm font-medium text-[var(--color-text)] opacity-40">
+              <th className="px-6 py-4">Cód.</th>
+              <th className="px-6 py-4">Palab.Orig.</th>
+              <th className="px-6 py-4">Pron.</th>
+              <th className="px-6 py-4">Definición</th>
+              <th className="px-6 py-4"></th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-[var(--color-text)] divide-opacity-5">
+            {paginatedItems.map((item) => (
+              <tr key={item.id} className="hover:bg-[var(--color-link)] hover:bg-opacity-5 transition-colors group border-b border-[var(--color-text)] border-opacity-5">
+                <td className="px-6 py-4">
+                  <a href={`/strong/${item.id}`} className="text-[var(--color-link)] font-bold hover:underline">
+                    {item.id.replace('H', '')}
+                  </a>
+                </td>
+                <td className="px-6 py-4 font-hebrew text-4xl text-[var(--color-text)]" dir="rtl">
+                  {item.originalWord}
+                </td>
+                <td className="px-6 py-4 italic text-pink-500 font-medium">
+                  {item.pronunciation}
+                </td>
+                <td className="px-6 py-4 text-[var(--color-text)] opacity-80 text-sm max-w-md">
+                  {item.definition}
+                </td>
+                <td className="px-6 py-4 text-right">
+                  <button 
+                    onClick={() => playAudio(item.id)}
+                    className="p-2 rounded-lg hover:bg-[var(--color-text)] hover:bg-opacity-10 text-[var(--color-text)] opacity-40 group-hover:text-[var(--color-link)] group-hover:opacity-100 transition-colors"
+                  >
+                    <Volume2 className="w-5 h-5" />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}

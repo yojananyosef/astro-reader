@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from "preact/hooks";
-import { BookOpen, Menu, ChevronRight, Bookmark, Star, MessageSquare, ChevronLeft, Library, X, Languages } from "lucide-preact";
+import { BookOpen, Menu, ChevronRight, Bookmark, Star, MessageSquare, ChevronLeft, Library, X, Languages, BookText } from "lucide-preact";
 
 type Book = { code: string; name: string; chapters: number; section: string };
 
@@ -21,12 +21,14 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
     if (path.includes("/plans")) return "plans";
     if (path.includes("/commentary")) return "commentary";
     if (path.includes("/interlinear")) return "interlinear";
+    if (path.includes("/strong")) return "dictionary";
     return "bible";
   });
 
   const mainNav = [
     { id: "bible", label: "Biblia", icon: BookOpen, url: "/" },
     { id: "interlinear", label: "Interlineal", icon: Languages, url: "/interlinear" },
+    { id: "dictionary", label: "Diccionario", icon: BookText, url: "/strong" },
     { id: "commentary", label: "Comentario", icon: Library, url: "/commentary" },
     { id: "tracking", label: "Seguimiento", icon: Bookmark, url: "/tracker" },
     { id: "plans", label: "Planes", icon: Star, url: "/plans" },

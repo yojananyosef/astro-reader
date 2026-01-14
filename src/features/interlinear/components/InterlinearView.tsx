@@ -435,9 +435,7 @@ export default function InterlinearView() {
 
                   {word.strong && (
                     <a
-                      href={`https://www.blueletterbible.org/lang/lexicon/lexicon.cfm?strongs=H${word.strong}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={`/strong/H${word.strong}`}
                       className="text-[11px] opacity-20 hover:opacity-100 hover:text-[var(--color-link)] transition-all absolute -top-5 font-bold tracking-tighter ui-protect"
                       title={`Lexicón: H${word.strong}`}
                     >
