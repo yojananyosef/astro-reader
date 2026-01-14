@@ -28,7 +28,8 @@ export default function StrongDetail({ id }: Props) {
 
   useEffect(() => {
     async function fetchData() {
-      setLoading(true);
+      // Solo mostramos loading si no hay datos previos o es una carga inicial real
+      if (!data) setLoading(true);
       setError(null);
       try {
         const allData = await fetchWithCache<any>("/data/strong/strong-data.json");
@@ -88,14 +89,14 @@ export default function StrongDetail({ id }: Props) {
     }
   };
 
-  if (loading) return (
+  if (loading && !data) return (
     <div className="flex items-center justify-center min-h-[400px]">
       <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--color-link)]"></div>
     </div>
   );
 
   if (error || !data) return (
-    <div className="flex flex-col items-center justify-center min-h-[400px] text-theme-text/60">
+    <div className="flex flex-col items-center justify-center min-h-[400px] text-[var(--color-text)] opacity-60">
       <p className="text-xl mb-4">{error || "No se encontraron datos."}</p>
       <button 
         onClick={() => window.history.back()}
@@ -107,7 +108,7 @@ export default function StrongDetail({ id }: Props) {
   );
 
   return (
-    <div className="max-w-4xl mx-auto space-y-4 animate-in fade-in duration-500 p-4 relative">
+    <div className="max-w-4xl mx-auto space-y-4 p-4 relative">
       <ArrowNavigation 
         prevHref={prevId ? `/strong/${prevId}` : undefined}
         nextHref={nextId ? `/strong/${nextId}` : undefined}

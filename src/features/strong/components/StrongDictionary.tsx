@@ -62,10 +62,14 @@ export default function StrongDictionary() {
     });
   };
 
-  if (loading) return <div className="p-8 text-center">Cargando diccionario...</div>;
+  if (loading && Object.keys(data).length === 0) return (
+    <div className="flex items-center justify-center min-h-[400px]">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--color-link)]"></div>
+    </div>
+  );
 
   return (
-    <div className="max-w-6xl mx-auto p-4 space-y-6">
+    <div className="max-w-7xl mx-auto p-4 space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-[var(--color-text)]">Diccionario de Strong de hebreo</h1>
