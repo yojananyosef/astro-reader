@@ -141,19 +141,19 @@ export default function StrongDetail({ id, initialData }: Props) {
 
       {/* Barra superior con búsqueda */}
       <div className="flex justify-end items-center mb-4">
-        <form onSubmit={handleSearch} className="flex gap-2">
+        <form onSubmit={handleSearch} className="flex items-center gap-2">
           <div className="relative">
             <input
               type="text"
               placeholder="Textos a buscar"
               value={searchQuery}
               onInput={(e) => setSearchQuery(e.currentTarget.value)}
-              className="pl-4 pr-10 py-2 bg-[var(--color-bg)] border border-[var(--color-text)] border-opacity-10 rounded-lg w-64 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-link)]"
+              className="pl-4 pr-10 py-2 bg-[var(--color-bg)] border border-[var(--color-text)] border-opacity-10 rounded-xl w-64 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] h-[40px]"
             />
-            <Search className="absolute right-3 top-2 w-5 h-5 text-[var(--color-text)] opacity-40" />
+            <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--color-text)] opacity-40 pointer-events-none" />
           </div>
-          <button type="submit" className="p-2 bg-[var(--color-link)] text-white rounded-full hover:opacity-90 transition-colors">
-            <Search className="w-5 h-5" />
+          <button type="submit" className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[40px] h-[40px] flex items-center justify-center flex-shrink-0 group/btn">
+            <Search className="w-5 h-5 text-[var(--color-link)] group-hover/btn:scale-110 transition-transform" />
           </button>
         </form>
       </div>
@@ -178,27 +178,27 @@ export default function StrongDetail({ id, initialData }: Props) {
         <div className="space-y-6">
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0">
-              <button className="px-6 py-2 bg-[var(--color-link)] text-white font-bold rounded-lg min-w-[140px] text-xs uppercase tracking-wider shadow-sm hover:opacity-90 transition-opacity">
+              <div className="px-6 py-2 bg-[var(--color-link)] text-white font-bold rounded-lg min-w-[140px] text-xs uppercase tracking-wider shadow-sm flex items-center justify-center">
                 Pronunciación
-              </button>
+              </div>
             </div>
             <div className="py-2 text-lg text-[var(--color-text)] font-medium">{data.pronunciation}</div>
           </div>
 
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0">
-              <button className="px-6 py-2 bg-[var(--color-link)] text-white font-bold rounded-lg min-w-[140px] text-xs uppercase tracking-wider shadow-sm hover:opacity-90 transition-opacity">
+              <div className="px-6 py-2 bg-[var(--color-link)] text-white font-bold rounded-lg min-w-[140px] text-xs uppercase tracking-wider shadow-sm flex items-center justify-center">
                 Derivación
-              </button>
+              </div>
             </div>
             <div className="py-2 text-lg text-[var(--color-text)]">{data.grammar || 'N/A'}</div>
           </div>
 
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0">
-              <button className="px-6 py-2 bg-[var(--color-link)] text-white font-bold rounded-lg min-w-[140px] text-xs uppercase tracking-wider shadow-sm hover:opacity-90 transition-opacity">
+              <div className="px-6 py-2 bg-[var(--color-link)] text-white font-bold rounded-lg min-w-[140px] text-xs uppercase tracking-wider shadow-sm flex items-center justify-center">
                 Definición
-              </button>
+              </div>
             </div>
             <div className="py-2 text-lg text-[var(--color-text)] leading-relaxed">
               {data.definitions.definition}
@@ -207,9 +207,9 @@ export default function StrongDetail({ id, initialData }: Props) {
 
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0">
-              <button className="px-6 py-2 bg-[var(--color-link)] text-white font-bold rounded-lg min-w-[140px] text-xs uppercase tracking-wider shadow-sm hover:opacity-90 transition-opacity">
+              <div className="px-6 py-2 bg-[var(--color-link)] text-white font-bold rounded-lg min-w-[140px] text-xs uppercase tracking-wider shadow-sm flex items-center justify-center">
                 Def.en RV
-              </button>
+              </div>
             </div>
             <div className="py-2 text-lg text-[var(--color-text)] leading-relaxed opacity-90">
               {data.definitions.reinaValeraDefinition}

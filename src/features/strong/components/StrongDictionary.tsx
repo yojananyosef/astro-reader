@@ -88,12 +88,12 @@ export default function StrongDictionary() {
                 setSearchTerm(e.currentTarget.value);
                 setCurrentPage(1);
               }}
-              className="pl-4 pr-10 py-2 bg-[var(--color-bg)] border border-[var(--color-text)] border-opacity-10 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] w-64 text-[var(--color-text)]"
+              className="pl-4 pr-10 py-2 bg-[var(--color-bg)] border border-[var(--color-text)] border-opacity-10 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] w-64 text-[var(--color-text)] h-[40px]"
             />
-            <Search className="absolute right-3 top-2.5 w-5 h-5 text-[var(--color-text)] opacity-40" />
+            <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-text)] opacity-40 pointer-events-none" />
           </div>
-          <button className="p-2 bg-[var(--color-link)] text-white rounded-full hover:opacity-90 transition-colors">
-            <Search className="w-5 h-5" />
+          <button className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[40px] h-[40px] flex items-center justify-center flex-shrink-0 group/btn">
+            <Search className="w-5 h-5 text-[var(--color-link)] group-hover/btn:scale-110 transition-transform" />
           </button>
         </div>
       </div>
@@ -118,25 +118,29 @@ export default function StrongDictionary() {
           </thead>
           <tbody className="divide-y divide-[var(--color-text)] divide-opacity-5">
             {paginatedItems.map((item) => (
-              <tr key={item.id} className="hover:bg-[var(--color-link)] hover:bg-opacity-5 transition-colors group border-b border-[var(--color-text)] border-opacity-5">
+              <tr key={item.id} className="hover:bg-[var(--color-link)] transition-colors group border-b border-[var(--color-text)] border-opacity-5">
                 <td className="px-6 py-4">
-                  <a href={`/strong/${item.id}`} className="text-[var(--color-link)] font-bold hover:underline" data-astro-prefetch>
-                    {item.id.replace('H', '')}
+                  <a 
+                    href={`/strong/${item.id}`} 
+                    className="font-bold hover:underline transition-colors block text-[var(--color-link)] group-hover:!text-white" 
+                    data-astro-prefetch
+                  >
+                    {item.id.replace(/^[HG]/, '')}
                   </a>
                 </td>
-                <td className="px-6 py-4 font-hebrew text-4xl text-[var(--color-text)]" dir="rtl">
+                <td className="px-6 py-4 font-hebrew text-4xl text-[var(--color-text)] group-hover:text-white transition-colors" dir="rtl">
                   {item.originalWord}
                 </td>
-                <td className="px-6 py-4 italic text-pink-500 font-medium">
+                <td className="px-6 py-4 italic text-[var(--color-link)] font-medium group-hover:text-white/90 transition-colors">
                   {item.pronunciation}
                 </td>
-                <td className="px-6 py-4 text-[var(--color-text)] opacity-80 text-sm max-w-md">
+                <td className="px-6 py-4 text-[var(--color-text)] opacity-80 text-sm max-w-md group-hover:text-white group-hover:opacity-100 transition-all">
                   {item.definition}
                 </td>
                 <td className="px-6 py-4 text-right">
                   <button 
                     onClick={() => playAudio(item.id)}
-                    className="p-2 rounded-lg hover:bg-[var(--color-text)] hover:bg-opacity-10 text-[var(--color-text)] opacity-40 group-hover:text-[var(--color-link)] group-hover:opacity-100 transition-colors"
+                    className="p-2 rounded-lg bg-transparent text-[var(--color-text)] opacity-30 group-hover:opacity-100 group-hover:text-white hover:bg-[var(--surface-hover-bg)] group-hover:hover:bg-white/20 transition-all"
                   >
                     <Volume2 className="w-5 h-5" />
                   </button>
