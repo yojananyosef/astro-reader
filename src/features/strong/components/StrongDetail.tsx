@@ -160,7 +160,7 @@ export default function StrongDetail({ id, initialData }: Props) {
             }}
             className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[44px] h-[44px] flex items-center justify-center flex-shrink-0 p-0 cursor-pointer"
           >
-            <Search size={20} strokeWidth={2.5} className="text-[var(--color-link)]" />
+            <Search size={20} strokeWidth={2} className="text-[var(--color-link)]" />
           </div>
         </form>
       </div>
@@ -225,13 +225,13 @@ export default function StrongDetail({ id, initialData }: Props) {
         </div>
 
         <div className="absolute top-8 left-8">
-           <button 
+           <div 
              onClick={playAudio}
-             className="p-3 bg-[var(--color-bg)] border border-[var(--color-text)] border-opacity-10 rounded-xl hover:bg-[var(--color-link)] hover:text-white hover:border-[var(--color-link)] transition-all shadow-sm group"
+             className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[44px] h-[44px] flex items-center justify-center flex-shrink-0 p-0 cursor-pointer text-[var(--color-link)]"
              aria-label="Reproducir audio"
            >
-             <Volume2 className="w-6 h-6 text-[var(--color-link)] group-hover:text-white transition-colors" />
-           </button>
+             <Volume2 size={24} strokeWidth={2} />
+           </div>
         </div>
       </div>
     </div>

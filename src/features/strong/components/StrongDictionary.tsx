@@ -95,7 +95,7 @@ export default function StrongDictionary() {
             className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[44px] h-[44px] flex items-center justify-center flex-shrink-0 p-0 cursor-pointer"
             title="Buscar"
           >
-            <Search size={20} strokeWidth={2.5} className="text-[var(--color-link)]" />
+            <Search size={20} strokeWidth={2} className="text-[var(--color-link)]" />
           </div>
         </div>
       </div>
@@ -140,12 +140,12 @@ export default function StrongDictionary() {
                   {item.definition}
                 </td>
                 <td className="px-6 py-4 text-right">
-                  <button 
+                  <div 
                     onClick={() => playAudio(item.id)}
-                    className="p-2 rounded-lg bg-transparent text-[var(--color-text)] opacity-30 group-hover:opacity-100 group-hover:text-white hover:bg-[var(--surface-hover-bg)] group-hover:hover:bg-white/20 transition-all"
+                    className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[44px] h-[44px] flex items-center justify-center flex-shrink-0 p-0 cursor-pointer text-[var(--color-link)] group-hover:bg-white/20 group-hover:border-white/30 group-hover:text-white ml-auto"
                   >
-                    <Volume2 className="w-5 h-5" />
-                  </button>
+                    <Volume2 size={20} strokeWidth={2} />
+                  </div>
                 </td>
               </tr>
             ))}
