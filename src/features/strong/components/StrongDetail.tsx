@@ -152,9 +152,16 @@ export default function StrongDetail({ id, initialData }: Props) {
             />
             <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--color-text)] opacity-40 pointer-events-none" />
           </div>
-          <button type="submit" className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[40px] h-[40px] flex items-center justify-center flex-shrink-0 group/btn">
-            <Search className="w-5 h-5 text-[var(--color-link)] group-hover/btn:scale-110 transition-transform" />
-          </button>
+          <div 
+            onClick={(e) => {
+              // Buscar el formulario padre y disparar el submit
+              const form = e.currentTarget.closest('form');
+              if (form) form.requestSubmit();
+            }}
+            className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[44px] h-[44px] flex items-center justify-center flex-shrink-0 p-0 cursor-pointer"
+          >
+            <Search size={20} strokeWidth={2.5} className="text-[var(--color-link)]" />
+          </div>
         </form>
       </div>
 

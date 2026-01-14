@@ -88,13 +88,15 @@ export default function StrongDictionary() {
                 setSearchTerm(e.currentTarget.value);
                 setCurrentPage(1);
               }}
-              className="pl-4 pr-10 py-2 bg-[var(--color-bg)] border border-[var(--color-text)] border-opacity-10 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] w-64 text-[var(--color-text)] h-[40px]"
+              className="px-4 py-2 bg-[var(--color-bg)] border border-[var(--color-text)] border-opacity-10 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-link)] w-64 text-[var(--color-text)] h-[40px]"
             />
-            <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-text)] opacity-40 pointer-events-none" />
           </div>
-          <button className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[40px] h-[40px] flex items-center justify-center flex-shrink-0 group/btn">
-            <Search className="w-5 h-5 text-[var(--color-link)] group-hover/btn:scale-110 transition-transform" />
-          </button>
+          <div 
+            className="bg-[var(--surface-muted-bg)] border border-[var(--surface-muted-border)] rounded-xl hover:bg-[var(--surface-hover-bg)] transition-all w-[44px] h-[44px] flex items-center justify-center flex-shrink-0 p-0 cursor-pointer"
+            title="Buscar"
+          >
+            <Search size={20} strokeWidth={2.5} className="text-[var(--color-link)]" />
+          </div>
         </div>
       </div>
 
