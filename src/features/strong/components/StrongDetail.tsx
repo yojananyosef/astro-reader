@@ -6,11 +6,28 @@ import { fetchWithCache } from "../../../utils/fetchWithCache";
 
 interface Props {
   id: string;
+  initialData?: any;
 }
 
-export default function StrongDetail({ id }: Props) {
-  const [data, setData] = useState<StrongData | null>(null);
-  const [loading, setLoading] = useState(true);
+export default function StrongDetail({ id, initialData }: Props) {
+  const formatData = (entry: any): StrongData => ({
+    id: entry.strongNumber,
+    word: entry.originalWord,
+    transliteration: entry.pronunciation,
+    pronunciation: entry.pronunciation,
+    definitions: {
+      definition: entry.definition,
+      extendedDefinition: entry.extendedDefinition,
+      reinaValeraDefinition: entry.RVDefinition
+    },
+    grammar: entry.partOfSpeech,
+    frequency: Object.values(entry.wordFrequencyRV || {}).reduce((a: number, b: any) => a + (Number(b) || 0), 0) as number,
+    audio: `/audio/strong/${parseInt(entry.strongNumber.replace(/^[HG]/, ""))}.mp3`,
+    wordFrequencyRV: entry.wordFrequencyRV
+  });
+
+  const [data, setData] = useState<StrongData | null>(initialData ? formatData(initialData) : null);
+  const [loading, setLoading] = useState(!initialData);
   const [error, setError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"def" | "gram" | "freq">("def");
   const [searchQuery, setSearchQuery] = useState("");
@@ -27,9 +44,15 @@ export default function StrongDetail({ id }: Props) {
   const nextId = numericId < currentMax ? `${type}${numericId + 1}` : null;
 
   useEffect(() => {
+    if (initialData && (initialData.strongNumber === id || `H${initialData.strongNumber}` === id || `G${initialData.strongNumber}` === id)) {
+      setData(formatData(initialData));
+      setLoading(false);
+      return;
+    }
+
     async function fetchData() {
       // Solo mostramos loading si no hay datos previos o es una carga inicial real
-      if (!data) setLoading(true);
+      if (!data || data.id !== id) setLoading(true);
       setError(null);
       try {
         const allData = await fetchWithCache<any>("/data/strong/strong-data.json");

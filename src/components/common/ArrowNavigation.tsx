@@ -35,6 +35,7 @@ export default function ArrowNavigation({
                     class="nav-arrow nav-arrow-prev fixed top-1/2 -translate-y-1/2 z-50 visible ui-protect"
                     aria-label={prevLabel}
                     data-nav-prev
+                    data-astro-prefetch
                 >
                     <ArrowLeft class="w-5 h-5" />
                 </a>
@@ -52,6 +53,7 @@ export default function ArrowNavigation({
                     class="nav-arrow nav-arrow-next fixed top-1/2 -translate-y-1/2 z-50 visible ui-protect"
                     aria-label={nextLabel}
                     data-nav-next
+                    data-astro-prefetch
                 >
                     <ArrowRight class="w-5 h-5" />
                 </a>

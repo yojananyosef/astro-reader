@@ -438,6 +438,7 @@ export default function InterlinearView() {
                       href={`/strong/H${word.strong}`}
                       className="text-[11px] opacity-20 hover:opacity-100 hover:text-[var(--color-link)] transition-all absolute -top-5 font-bold tracking-tighter ui-protect"
                       title={`Lexicón: H${word.strong}`}
+                      data-astro-prefetch
                     >
                       {word.strong}
                     </a>

@@ -120,7 +120,7 @@ export default function StrongDictionary() {
             {paginatedItems.map((item) => (
               <tr key={item.id} className="hover:bg-[var(--color-link)] hover:bg-opacity-5 transition-colors group border-b border-[var(--color-text)] border-opacity-5">
                 <td className="px-6 py-4">
-                  <a href={`/strong/${item.id}`} className="text-[var(--color-link)] font-bold hover:underline">
+                  <a href={`/strong/${item.id}`} className="text-[var(--color-link)] font-bold hover:underline" data-astro-prefetch>
                     {item.id.replace('H', '')}
                   </a>
                 </td>
