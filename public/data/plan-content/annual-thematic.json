@@ -1,1 +1,6275 @@
-{"1":{"title":"La Creación","bible":[{"label":"Génesis 1","book":"gen","chapter":1},{"label":"Génesis 2","book":"gen","chapter":2}],"egw":[{"label":"Patriarcas y Profetas, Cap. 2: La creación","chapterId":2}],"description":"El Origen: Dios crea el tiempo (Cronos) y el espacio. Institución del Sábado y el Matrimonio."},"2":{"title":"La Entrada del Mal","bible":[{"label":"Génesis 3","book":"gen","chapter":3},{"label":"Génesis 4:1-15","book":"gen","chapter":4,"verses":"1-15"}],"egw":[{"label":"Patriarcas y Profetas, Cap. 3: La tentación y la caída","chapterId":3},{"label":"Patriarcas y Profetas, Cap. 5: Caín y Abel probados","chapterId":5}],"description":"La Entrada del Mal: El conflicto llega a la Tierra. Primer sistema de sacrificios y primer mártir de la historia (Abel)."},"3":{"title":"Los Dos Linajes","bible":[{"label":"Génesis 4:16-26","book":"gen","chapter":4,"verses":"16-26"},{"label":"Génesis 5","book":"gen","chapter":5},{"label":"Génesis 6:1-8","book":"gen","chapter":6,"verses":"1-8"}],"egw":[{"label":"Patriarcas y Profetas, Cap. 4: El plan de redención","chapterId":4},{"label":"Patriarcas y Profetas, Cap. 6: Set y Enoc","chapterId":6}],"description":"Los Dos Linajes: La descendencia de Set mantiene la fe. Enoc camina con Dios 300 años y es traspuesto al cielo (987 AM)."},"4":{"title":"El Juicio (El Diluvio)","bible":[{"label":"Génesis 6:9-22","book":"gen","chapter":6},{"label":"Génesis 7","book":"gen","chapter":7},{"label":"Génesis 8","book":"gen","chapter":8},{"label":"Génesis 9","book":"gen","chapter":9}],"egw":[{"label":"Patriarcas y Profetas, Cap. 7: El diluvio","chapterId":7},{"label":"Patriarcas y Profetas, Cap. 8: Después del diluvio","chapterId":8}],"description":"El Juicio (1656 AM): Destrucción del mundo antiguo por agua. Preservación del remanente en el Arca. Noé vive 950 años."},"5":{"title":"Babel y la Dispersión","bible":[{"label":"Génesis 10","book":"gen","chapter":10},{"label":"Génesis 11","book":"gen","chapter":11}],"egw":[{"label":"Patriarcas y Profetas, Cap. 9: La semana literal","chapterId":9},{"label":"Patriarcas y Profetas, Cap. 10: La torre de Babel","chapterId":10}],"description":"Babel: El origen de los idiomas y la dispersión. Genealogía de Sem hasta Abram (reducción de la longevidad)."},"6":{"title":"El Desafío Cósmico","bible":[{"label":"Job 1","book":"job","chapter":1},{"label":"Job 2","book":"job","chapter":2},{"label":"Job 3","book":"job","chapter":3},{"label":"Job 4","book":"job","chapter":4},{"label":"Job 5","book":"job","chapter":5},{"label":"Job 6","book":"job","chapter":6},{"label":"Job 7","book":"job","chapter":7},{"label":"Job 8","book":"job","chapter":8},{"label":"Job 9","book":"job","chapter":9},{"label":"Job 10","book":"job","chapter":10},{"label":"Job 11","book":"job","chapter":11},{"label":"Job 12","book":"job","chapter":12},{"label":"Job 13","book":"job","chapter":13},{"label":"Job 14","book":"job","chapter":14}],"egw":[{"label":"Patriarcas y Profetas, Cap. 1: El origen del mal","chapterId":1}],"description":"El Desafío Cósmico: Satanás desafía el carácter de Dios. Job pierde todo pero no blasfema. Primer ciclo de discursos."},"7":{"title":"Segundo Ciclo de Job","bible":[{"label":"Job 15","book":"job","chapter":15},{"label":"Job 16","book":"job","chapter":16},{"label":"Job 17","book":"job","chapter":17},{"label":"Job 18","book":"job","chapter":18},{"label":"Job 19","book":"job","chapter":19},{"label":"Job 20","book":"job","chapter":20},{"label":"Job 21","book":"job","chapter":21}],"egw":[],"description":"Segundo Ciclo: Los amigos acusan a Job de pecado oculto. Job apela a un testigo en el cielo."},"8":{"title":"Tercer Ciclo de Job","bible":[{"label":"Job 22","book":"job","chapter":22},{"label":"Job 23","book":"job","chapter":23},{"label":"Job 24","book":"job","chapter":24},{"label":"Job 25","book":"job","chapter":25},{"label":"Job 26","book":"job","chapter":26},{"label":"Job 27","book":"job","chapter":27},{"label":"Job 28","book":"job","chapter":28},{"label":"Job 29","book":"job","chapter":29},{"label":"Job 30","book":"job","chapter":30},{"label":"Job 31","book":"job","chapter":31}],"egw":[],"description":"Tercer Ciclo: Job defiende su integridad y recuerda su prosperidad pasada como servidor de los pobres."},"9":{"title":"Discursos de Eliú","bible":[{"label":"Job 32","book":"job","chapter":32},{"label":"Job 33","book":"job","chapter":33},{"label":"Job 34","book":"job","chapter":34},{"label":"Job 35","book":"job","chapter":35},{"label":"Job 36","book":"job","chapter":36},{"label":"Job 37","book":"job","chapter":37}],"egw":[],"description":"Eliú: Un joven corrige a los ancianos y anticipa la justicia y soberanía de Dios."},"10":{"title":"La Teofanía y Restauración","bible":[{"label":"Job 38","book":"job","chapter":38},{"label":"Job 39","book":"job","chapter":39},{"label":"Job 40","book":"job","chapter":40},{"label":"Job 41","book":"job","chapter":41},{"label":"Job 42","book":"job","chapter":42}],"egw":[],"description":"La Teofanía: Dios habla desde el torbellino. Job se arrepiente y es restaurado. El misterio del dolor."},"11":{"title":"El Llamado de Abraham","bible":[{"label":"Génesis 12","book":"gen","chapter":12},{"label":"Génesis 13","book":"gen","chapter":13},{"label":"Génesis 14","book":"gen","chapter":14}],"egw":[{"label":"Patriarcas y Profetas, Cap. 11: El llamamiento de Abrahán","chapterId":11},{"label":"Patriarcas y Profetas, Cap. 12: Abrahán en Canaán","chapterId":12}],"description":"El Llamado: Egipto y la mentira. Melquisedec (Rey de Salem) bendice a Abraham."},"12":{"title":"El Pacto de Sangre","bible":[{"label":"Génesis 15","book":"gen","chapter":15},{"label":"Génesis 16","book":"gen","chapter":16},{"label":"Génesis 17","book":"gen","chapter":17}],"egw":[],"description":"El Pacto de Sangre: Justificación por la fe (Gén 15:6). Nacimiento de Ismael (Abraham 86 años). La Circuncisión (2107 AM)."},"13":{"title":"Intercesión y Juicio","bible":[{"label":"Génesis 18","book":"gen","chapter":18},{"label":"Génesis 19","book":"gen","chapter":19}],"egw":[{"label":"Patriarcas y Profetas, Cap. 14: La destrucción de Sodoma","chapterId":14}],"description":"Intercesión y Juicio: Abraham intercede por Sodoma. La caída de las ciudades de la llanura. Origen de Moab y Amón."},"14":{"title":"El Sacrificio y la Fe","bible":[{"label":"Génesis 20","book":"gen","chapter":20},{"label":"Génesis 21","book":"gen","chapter":21},{"label":"Génesis 22","book":"gen","chapter":22}],"egw":[{"label":"Patriarcas y Profetas, Cap. 13: La prueba de la fe","chapterId":13}],"description":"El Sacrificio: Nacimiento de Isaac. El sacrificio en el Monte Moriah (sustitución). Muerte de Sara."}}
+{
+    "1": {
+        "title": "El Origen",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 1,
+                "label": "Génesis 1"
+            },
+            {
+                "book": "gen",
+                "chapter": 2,
+                "label": "Génesis 2"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 2: La creación",
+                "chapterId": 2
+            }
+        ],
+        "description": "El Origen: Dios crea el tiempo (Cronos) y el espacio. Institución del Sábado y el Matrimonio."
+    },
+    "2": {
+        "title": "La Entrada del Mal",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 3,
+                "label": "Génesis 3"
+            },
+            {
+                "book": "gen",
+                "chapter": 4,
+                "verses": "1-15",
+                "label": "Génesis 4:1-15"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 3: La tentación y la caída",
+                "chapterId": 3
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 5: Caín y Abel probados",
+                "chapterId": 5
+            }
+        ],
+        "description": "La Entrada del Mal: El conflicto llega a la Tierra. Primer sistema de sacrificios y primer mártir de la historia (Abel)."
+    },
+    "3": {
+        "title": "Los Dos Linajes",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 4,
+                "verses": "16-",
+                "label": "Génesis 4:16-"
+            },
+            {
+                "book": "gen",
+                "chapter": 5,
+                "label": "Génesis 5"
+            },
+            {
+                "book": "gen",
+                "chapter": 6,
+                "verses": "1-8",
+                "label": "Génesis 6:1-8"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 4: El plan de redención",
+                "chapterId": 4
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 6: Set y Enoc",
+                "chapterId": 6
+            }
+        ],
+        "description": "Los Dos Linajes: La descendencia de Set mantiene la fe. Enoc camina con Dios 300 años y es traspuesto al cielo (987 AM)."
+    },
+    "4": {
+        "title": "El Juicio (1656 AM)",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 6,
+                "verses": "9-",
+                "label": "Génesis 6:9-"
+            },
+            {
+                "book": "gen",
+                "chapter": 7,
+                "label": "Génesis 7"
+            },
+            {
+                "book": "gen",
+                "chapter": 8,
+                "label": "Génesis 8"
+            },
+            {
+                "book": "gen",
+                "chapter": 9,
+                "label": "Génesis 9"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 7: El diluvio",
+                "chapterId": 7
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 8: Después del diluvio",
+                "chapterId": 8
+            }
+        ],
+        "description": "El Juicio (1656 AM): Destrucción del mundo antiguo por agua. Preservación del remanente en el Arca. Noé vive 950 años."
+    },
+    "5": {
+        "title": "Babel",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 10,
+                "label": "Génesis 10"
+            },
+            {
+                "book": "gen",
+                "chapter": 11,
+                "label": "Génesis 11"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 9: La semana literal",
+                "chapterId": 9
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 10: La torre de Babel",
+                "chapterId": 10
+            }
+        ],
+        "description": "Babel: El origen de los idiomas y la dispersión. Genealogía de Sem hasta Abram (reducción de la longevidad)."
+    },
+    "6": {
+        "title": "El Desafío Cósmico",
+        "bible": [
+            {
+                "book": "job",
+                "chapter": 1,
+                "label": "Job 1"
+            },
+            {
+                "book": "job",
+                "chapter": 2,
+                "label": "Job 2"
+            },
+            {
+                "book": "job",
+                "chapter": 3,
+                "label": "Job 3"
+            },
+            {
+                "book": "job",
+                "chapter": 4,
+                "label": "Job 4"
+            },
+            {
+                "book": "job",
+                "chapter": 5,
+                "label": "Job 5"
+            },
+            {
+                "book": "job",
+                "chapter": 6,
+                "label": "Job 6"
+            },
+            {
+                "book": "job",
+                "chapter": 7,
+                "label": "Job 7"
+            },
+            {
+                "book": "job",
+                "chapter": 8,
+                "label": "Job 8"
+            },
+            {
+                "book": "job",
+                "chapter": 9,
+                "label": "Job 9"
+            },
+            {
+                "book": "job",
+                "chapter": 10,
+                "label": "Job 10"
+            },
+            {
+                "book": "job",
+                "chapter": 11,
+                "label": "Job 11"
+            },
+            {
+                "book": "job",
+                "chapter": 12,
+                "label": "Job 12"
+            },
+            {
+                "book": "job",
+                "chapter": 13,
+                "label": "Job 13"
+            },
+            {
+                "book": "job",
+                "chapter": 14,
+                "label": "Job 14"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 1: El origen del mal",
+                "chapterId": 1
+            }
+        ],
+        "description": "El Desafío Cósmico: Satanás desafía el carácter de Dios. Job pierde todo pero no blasfema. Primer ciclo de discursos."
+    },
+    "7": {
+        "title": "Segundo Ciclo",
+        "bible": [
+            {
+                "book": "job",
+                "chapter": 15,
+                "label": "Job 15"
+            },
+            {
+                "book": "job",
+                "chapter": 16,
+                "label": "Job 16"
+            },
+            {
+                "book": "job",
+                "chapter": 17,
+                "label": "Job 17"
+            },
+            {
+                "book": "job",
+                "chapter": 18,
+                "label": "Job 18"
+            },
+            {
+                "book": "job",
+                "chapter": 19,
+                "label": "Job 19"
+            },
+            {
+                "book": "job",
+                "chapter": 20,
+                "label": "Job 20"
+            },
+            {
+                "book": "job",
+                "chapter": 21,
+                "label": "Job 21"
+            }
+        ],
+        "egw": [],
+        "description": "Segundo Ciclo: Los amigos acusan a Job de pecado oculto. Job apela a un testigo en el cielo."
+    },
+    "8": {
+        "title": "Tercer Ciclo",
+        "bible": [
+            {
+                "book": "job",
+                "chapter": 22,
+                "label": "Job 22"
+            },
+            {
+                "book": "job",
+                "chapter": 23,
+                "label": "Job 23"
+            },
+            {
+                "book": "job",
+                "chapter": 24,
+                "label": "Job 24"
+            },
+            {
+                "book": "job",
+                "chapter": 25,
+                "label": "Job 25"
+            },
+            {
+                "book": "job",
+                "chapter": 26,
+                "label": "Job 26"
+            },
+            {
+                "book": "job",
+                "chapter": 27,
+                "label": "Job 27"
+            },
+            {
+                "book": "job",
+                "chapter": 28,
+                "label": "Job 28"
+            },
+            {
+                "book": "job",
+                "chapter": 29,
+                "label": "Job 29"
+            },
+            {
+                "book": "job",
+                "chapter": 30,
+                "label": "Job 30"
+            },
+            {
+                "book": "job",
+                "chapter": 31,
+                "label": "Job 31"
+            }
+        ],
+        "egw": [],
+        "description": "Tercer Ciclo: Job defiende su integridad y recuerda su prosperidad pasada como servidor de los pobres."
+    },
+    "9": {
+        "title": "Eliú",
+        "bible": [
+            {
+                "book": "job",
+                "chapter": 32,
+                "label": "Job 32"
+            },
+            {
+                "book": "job",
+                "chapter": 33,
+                "label": "Job 33"
+            },
+            {
+                "book": "job",
+                "chapter": 34,
+                "label": "Job 34"
+            },
+            {
+                "book": "job",
+                "chapter": 35,
+                "label": "Job 35"
+            },
+            {
+                "book": "job",
+                "chapter": 36,
+                "label": "Job 36"
+            },
+            {
+                "book": "job",
+                "chapter": 37,
+                "label": "Job 37"
+            }
+        ],
+        "egw": [],
+        "description": "Eliú: Un joven corrige a los ancianos y anticipa la justicia y soberanía de Dios."
+    },
+    "10": {
+        "title": "La Teofanía",
+        "bible": [
+            {
+                "book": "job",
+                "chapter": 38,
+                "label": "Job 38"
+            },
+            {
+                "book": "job",
+                "chapter": 39,
+                "label": "Job 39"
+            },
+            {
+                "book": "job",
+                "chapter": 40,
+                "label": "Job 40"
+            },
+            {
+                "book": "job",
+                "chapter": 41,
+                "label": "Job 41"
+            },
+            {
+                "book": "job",
+                "chapter": 42,
+                "label": "Job 42"
+            }
+        ],
+        "egw": [],
+        "description": "La Teofanía: Dios habla desde el torbellino. Job se arrepiente y es restaurado. El misterio del dolor."
+    },
+    "11": {
+        "title": "El Llamado",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 12,
+                "label": "Génesis 12"
+            },
+            {
+                "book": "gen",
+                "chapter": 13,
+                "label": "Génesis 13"
+            },
+            {
+                "book": "gen",
+                "chapter": 14,
+                "label": "Génesis 14"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 11: El llamamiento de Abrahán",
+                "chapterId": 11
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 12: Abrahán en Canaán",
+                "chapterId": 12
+            }
+        ],
+        "description": "El Llamado: Egipto y la mentira. Melquisedec (Rey de Salem) bendice a Abraham."
+    },
+    "12": {
+        "title": "El Pacto de Sangre",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 15,
+                "label": "Génesis 15"
+            },
+            {
+                "book": "gen",
+                "chapter": 16,
+                "label": "Génesis 16"
+            },
+            {
+                "book": "gen",
+                "chapter": 17,
+                "label": "Génesis 17"
+            }
+        ],
+        "egw": [],
+        "description": "El Pacto de Sangre: Justificación por la fe (Gén 15:6). Nacimiento de Ismael.(Abraham 86 años). La Circuncisión (2107 AM)."
+    },
+    "13": {
+        "title": "Intercesión y Juicio",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 18,
+                "label": "Génesis 18"
+            },
+            {
+                "book": "gen",
+                "chapter": 19,
+                "label": "Génesis 19"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 14: La destrucción de Sodoma",
+                "chapterId": 14
+            }
+        ],
+        "description": "Intercesión y Juicio: Abraham intercede por Sodoma. La caída de las ciudades de la llanura. Origen de Moab y Amón."
+    },
+    "14": {
+        "title": "El Sacrificio",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 20,
+                "label": "Génesis 20"
+            },
+            {
+                "book": "gen",
+                "chapter": 21,
+                "label": "Génesis 21"
+            },
+            {
+                "book": "gen",
+                "chapter": 22,
+                "label": "Génesis 22"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 13: La prueba de la fe",
+                "chapterId": 13
+            }
+        ],
+        "description": "El Sacrificio: Nacimiento de Isaac. El sacrificio en el Monte Moriah (sustitución). Muerte de Sara."
+    },
+    "15": {
+        "title": "La Novia",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 23,
+                "label": "Génesis 23"
+            },
+            {
+                "book": "gen",
+                "chapter": 24,
+                "label": "Génesis 24"
+            },
+            {
+                "book": "gen",
+                "chapter": 25,
+                "label": "Génesis 25"
+            },
+            {
+                "book": "gen",
+                "chapter": 26,
+                "label": "Génesis 26"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 15: El casamiento de Isaac",
+                "chapterId": 15
+            }
+        ],
+        "description": "La Novia: Rebeca es elegida. Muerte de Abraham (175 años). Los pozos de Isaac y el pacto con Abimelec."
+    },
+    "16": {
+        "title": "El Engañador",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 27,
+                "label": "Génesis 27"
+            },
+            {
+                "book": "gen",
+                "chapter": 28,
+                "label": "Génesis 28"
+            },
+            {
+                "book": "gen",
+                "chapter": 29,
+                "label": "Génesis 29"
+            },
+            {
+                "book": "gen",
+                "chapter": 30,
+                "label": "Génesis 30"
+            },
+            {
+                "book": "gen",
+                "chapter": 31,
+                "label": "Génesis 31"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 16: Jacob y Esaú",
+                "chapterId": 16
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 17: Huida y destierro",
+                "chapterId": 17
+            }
+        ],
+        "description": "El Engañador: Jacob roba la bendición (77 años de edad). Huye a Labán. Nacen los patriarcas de las tribus."
+    },
+    "17": {
+        "title": "Israel",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 32,
+                "label": "Génesis 32"
+            },
+            {
+                "book": "gen",
+                "chapter": 33,
+                "label": "Génesis 33"
+            },
+            {
+                "book": "gen",
+                "chapter": 34,
+                "label": "Génesis 34"
+            },
+            {
+                "book": "gen",
+                "chapter": 35,
+                "label": "Génesis 35"
+            },
+            {
+                "book": "gen",
+                "chapter": 36,
+                "label": "Génesis 36"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 18: La noche de lucha",
+                "chapterId": 18
+            }
+        ],
+        "description": "Israel: Lucha con el Ángel (Cristo preencarnado). Reconciliación con Esaú. El crimen de Simeón y Leví en Siquem."
+    },
+    "18": {
+        "title": "El Soñador",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 37,
+                "label": "Génesis 37"
+            },
+            {
+                "book": "gen",
+                "chapter": 38,
+                "label": "Génesis 38"
+            },
+            {
+                "book": "gen",
+                "chapter": 39,
+                "label": "Génesis 39"
+            },
+            {
+                "book": "gen",
+                "chapter": 40,
+                "label": "Génesis 40"
+            },
+            {
+                "book": "gen",
+                "chapter": 41,
+                "label": "Génesis 41"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 19: El regreso a Canaán",
+                "chapterId": 19
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 20: José en Egipto",
+                "chapterId": 20
+            }
+        ],
+        "description": "El Soñador: José vendido 17 años (c. 2276 AM). Judá y Tamar. José asciende a gobernador bajo Faraones Hicsos (Semitas)."
+    },
+    "19": {
+        "title": "La Prueba",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 42,
+                "label": "Génesis 42"
+            },
+            {
+                "book": "gen",
+                "chapter": 43,
+                "label": "Génesis 43"
+            },
+            {
+                "book": "gen",
+                "chapter": 44,
+                "label": "Génesis 44"
+            },
+            {
+                "book": "gen",
+                "chapter": 45,
+                "label": "Génesis 45"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 21: José y sus hermanos",
+                "chapterId": 21
+            }
+        ],
+        "description": "La Prueba: Los hermanos bajan a Egipto por hambre. José se revela y perdona (Providencia)."
+    },
+    "20": {
+        "title": "Asentamiento en Gosén",
+        "bible": [
+            {
+                "book": "gen",
+                "chapter": 46,
+                "label": "Génesis 46"
+            },
+            {
+                "book": "gen",
+                "chapter": 47,
+                "label": "Génesis 47"
+            },
+            {
+                "book": "gen",
+                "chapter": 48,
+                "label": "Génesis 48"
+            },
+            {
+                "book": "gen",
+                "chapter": 49,
+                "label": "Génesis 49"
+            },
+            {
+                "book": "gen",
+                "chapter": 50,
+                "label": "Génesis 50"
+            }
+        ],
+        "egw": [],
+        "description": "Asentamiento en Gosén: Jacob entra a Egipto con 130 años (2298 AM / 1660 a.C.).Bendiciones y Profecías sobre las 12 tribus (Gén 49). Muerte de José."
+    },
+    "21": {
+        "title": "El Libertador",
+        "bible": [
+            {
+                "book": "exo",
+                "chapter": 1,
+                "label": "Éxodo 1"
+            },
+            {
+                "book": "exo",
+                "chapter": 2,
+                "label": "Éxodo 2"
+            },
+            {
+                "book": "exo",
+                "chapter": 3,
+                "label": "Éxodo 3"
+            },
+            {
+                "book": "exo",
+                "chapter": 4,
+                "label": "Éxodo 4"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 22: Moisés",
+                "chapterId": 22
+            }
+        ],
+        "description": "El Libertador: Nacimiento de Moisés, huida a Madián (40 años) y la Zarza Ardiente. El \"Yo Soy\"."
+    },
+    "22": {
+        "title": "Guerra de Dioses",
+        "bible": [
+            {
+                "book": "exo",
+                "chapter": 5,
+                "label": "Éxodo 5"
+            },
+            {
+                "book": "exo",
+                "chapter": 6,
+                "label": "Éxodo 6"
+            },
+            {
+                "book": "exo",
+                "chapter": 7,
+                "label": "Éxodo 7"
+            },
+            {
+                "book": "exo",
+                "chapter": 8,
+                "label": "Éxodo 8"
+            },
+            {
+                "book": "exo",
+                "chapter": 9,
+                "label": "Éxodo 9"
+            },
+            {
+                "book": "exo",
+                "chapter": 10,
+                "label": "Éxodo 10"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 23: Las plagas de Egipto",
+                "chapterId": 23
+            }
+        ],
+        "description": "Guerra de Dioses: Juicio sobre el Nilo, el ganado y los astros egipcios. Amenhotep II enfrenta las plagas."
+    },
+    "23": {
+        "title": "La Redención",
+        "bible": [
+            {
+                "book": "exo",
+                "chapter": 11,
+                "label": "Éxodo 11"
+            },
+            {
+                "book": "exo",
+                "chapter": 12,
+                "verses": "1-32",
+                "label": "Éxodo 12:1-32"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 24: La pascua",
+                "chapterId": 24
+            }
+        ],
+        "description": "La Redención: La noche del juicio. Muerte del primogénito de Amenhotep II."
+    },
+    "24": {
+        "title": "La Salida",
+        "bible": [
+            {
+                "book": "exo",
+                "chapter": 12,
+                "verses": "33-",
+                "label": "Éxodo 12:33-"
+            },
+            {
+                "book": "exo",
+                "chapter": 13,
+                "label": "Éxodo 13"
+            },
+            {
+                "book": "exo",
+                "chapter": 14,
+                "label": "Éxodo 14"
+            },
+            {
+                "book": "exo",
+                "chapter": 15,
+                "verses": "1-21",
+                "label": "Éxodo 15:1-21"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 25: El éxodo",
+                "chapterId": 25
+            }
+        ],
+        "description": "La Salida: El pueblo es expulsado (v. 33). Cruce del Mar Rojo. Destrucción del ejército egipcio."
+    },
+    "25": {
+        "title": "Provisión",
+        "bible": [
+            {
+                "book": "exo",
+                "chapter": 15,
+                "verses": "22-",
+                "label": "Éxodo 15:22-"
+            },
+            {
+                "book": "exo",
+                "chapter": 16,
+                "label": "Éxodo 16"
+            },
+            {
+                "book": "exo",
+                "chapter": 17,
+                "label": "Éxodo 17"
+            },
+            {
+                "book": "exo",
+                "chapter": 18,
+                "label": "Éxodo 18"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 26: Del Mar Rojo al Sinaí",
+                "chapterId": 26
+            }
+        ],
+        "description": "Provisión: El Maná (Lección del Sábado), el agua de la roca y la victoria sobre Amaleq (descendientes de Esaú)."
+    },
+    "26": {
+        "title": "La Constitución",
+        "bible": [
+            {
+                "book": "exo",
+                "chapter": 19,
+                "label": "Éxodo 19"
+            },
+            {
+                "book": "exo",
+                "chapter": 20,
+                "label": "Éxodo 20"
+            },
+            {
+                "book": "exo",
+                "chapter": 21,
+                "label": "Éxodo 21"
+            },
+            {
+                "book": "exo",
+                "chapter": 22,
+                "label": "Éxodo 22"
+            },
+            {
+                "book": "exo",
+                "chapter": 23,
+                "label": "Éxodo 23"
+            },
+            {
+                "book": "exo",
+                "chapter": 24,
+                "label": "Éxodo 24"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 27: La ley dada a Israel",
+                "chapterId": 27
+            }
+        ],
+        "description": "La Constitución: Dios habla los 10 mandamientos desde el monte. Ratificación del pacto con sangre."
+    },
+    "27": {
+        "title": "El Diseño",
+        "bible": [
+            {
+                "book": "exo",
+                "chapter": 25,
+                "label": "Éxodo 25"
+            },
+            {
+                "book": "exo",
+                "chapter": 26,
+                "label": "Éxodo 26"
+            },
+            {
+                "book": "exo",
+                "chapter": 27,
+                "label": "Éxodo 27"
+            },
+            {
+                "book": "exo",
+                "chapter": 28,
+                "label": "Éxodo 28"
+            },
+            {
+                "book": "exo",
+                "chapter": 29,
+                "label": "Éxodo 29"
+            },
+            {
+                "book": "exo",
+                "chapter": 30,
+                "label": "Éxodo 30"
+            },
+            {
+                "book": "exo",
+                "chapter": 31,
+                "label": "Éxodo 31"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 29: La enemistad de Satanás contra la ley",
+                "chapterId": 29
+            }
+        ],
+        "description": "El Diseño: Bezalel y Aholiab son llamados. Satanás ataca la Ley. El Sábado como señal perpetua (Éxodo 31)."
+    },
+    "28": {
+        "title": "La Apostasía",
+        "bible": [
+            {
+                "book": "exo",
+                "chapter": 32,
+                "label": "Éxodo 32"
+            },
+            {
+                "book": "exo",
+                "chapter": 33,
+                "label": "Éxodo 33"
+            },
+            {
+                "book": "exo",
+                "chapter": 34,
+                "label": "Éxodo 34"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 28: La idolatría en el Sinaí",
+                "chapterId": 28
+            }
+        ],
+        "description": "La Apostasía: El Becerro de Oro. Moisés rompe las tablas. Intercesión y renovación del pacto."
+    },
+    "29": {
+        "title": "El Santuario",
+        "bible": [
+            {
+                "book": "exo",
+                "chapter": 35,
+                "label": "Éxodo 35"
+            },
+            {
+                "book": "exo",
+                "chapter": 36,
+                "label": "Éxodo 36"
+            },
+            {
+                "book": "exo",
+                "chapter": 37,
+                "label": "Éxodo 37"
+            },
+            {
+                "book": "exo",
+                "chapter": 38,
+                "label": "Éxodo 38"
+            },
+            {
+                "book": "exo",
+                "chapter": 39,
+                "label": "Éxodo 39"
+            },
+            {
+                "book": "exo",
+                "chapter": 40,
+                "label": "Éxodo 40"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 30: El tabernáculo y sus servicios",
+                "chapterId": 30
+            }
+        ],
+        "description": "El Santuario: Construcción final. La Gloria (Shekinah) llena el lugar el día 1, del mes 1, del año 2 (1444 a.C.)."
+    },
+    "30": {
+        "title": "Sacrificios",
+        "bible": [
+            {
+                "book": "lev",
+                "chapter": 1,
+                "label": "Levítico 1"
+            },
+            {
+                "book": "lev",
+                "chapter": 2,
+                "label": "Levítico 2"
+            },
+            {
+                "book": "lev",
+                "chapter": 3,
+                "label": "Levítico 3"
+            },
+            {
+                "book": "lev",
+                "chapter": 4,
+                "label": "Levítico 4"
+            },
+            {
+                "book": "lev",
+                "chapter": 5,
+                "label": "Levítico 5"
+            },
+            {
+                "book": "lev",
+                "chapter": 6,
+                "label": "Levítico 6"
+            },
+            {
+                "book": "lev",
+                "chapter": 7,
+                "label": "Levítico 7"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 32: La ley y los pactos",
+                "chapterId": 32
+            }
+        ],
+        "description": "Sacrificios: Tipología de la cruz."
+    },
+    "31": {
+        "title": "Fuego Extraño",
+        "bible": [
+            {
+                "book": "lev",
+                "chapter": 8,
+                "label": "Levítico 8"
+            },
+            {
+                "book": "lev",
+                "chapter": 9,
+                "label": "Levítico 9"
+            },
+            {
+                "book": "lev",
+                "chapter": 10,
+                "label": "Levítico 10"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 31: El pecado de Nadab y Abiú",
+                "chapterId": 31
+            }
+        ],
+        "description": "Fuego Extraño: Consagración del sacerdocio. El castigo por la irreverencia y la intemperancia."
+    },
+    "32": {
+        "title": "Yom Kippur",
+        "bible": [
+            {
+                "book": "lev",
+                "chapter": 11,
+                "label": "Levítico 11"
+            },
+            {
+                "book": "lev",
+                "chapter": 12,
+                "label": "Levítico 12"
+            },
+            {
+                "book": "lev",
+                "chapter": 13,
+                "label": "Levítico 13"
+            },
+            {
+                "book": "lev",
+                "chapter": 14,
+                "label": "Levítico 14"
+            },
+            {
+                "book": "lev",
+                "chapter": 15,
+                "label": "Levítico 15"
+            },
+            {
+                "book": "lev",
+                "chapter": 16,
+                "label": "Levítico 16"
+            }
+        ],
+        "egw": [],
+        "description": "Yom Kippur: Leyes de salud y el Día de la Expiación. El juicio típico y la purificación del santuario."
+    },
+    "33": {
+        "title": "Calendario Sagrado",
+        "bible": [
+            {
+                "book": "lev",
+                "chapter": 17,
+                "label": "Levítico 17"
+            },
+            {
+                "book": "lev",
+                "chapter": 18,
+                "label": "Levítico 18"
+            },
+            {
+                "book": "lev",
+                "chapter": 19,
+                "label": "Levítico 19"
+            },
+            {
+                "book": "lev",
+                "chapter": 20,
+                "label": "Levítico 20"
+            },
+            {
+                "book": "lev",
+                "chapter": 21,
+                "label": "Levítico 21"
+            },
+            {
+                "book": "lev",
+                "chapter": 22,
+                "label": "Levítico 22"
+            },
+            {
+                "book": "lev",
+                "chapter": 23,
+                "label": "Levítico 23"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 52: Las fiestas anuales",
+                "chapterId": 52
+            }
+        ],
+        "description": "Calendario Sagrado: Las 7 fiestas solemnes que prefiguran la historia de la redención."
+    },
+    "34": {
+        "title": "Justicia Social",
+        "bible": [
+            {
+                "book": "lev",
+                "chapter": 24,
+                "label": "Levítico 24"
+            },
+            {
+                "book": "lev",
+                "chapter": 25,
+                "label": "Levítico 25"
+            },
+            {
+                "book": "lev",
+                "chapter": 26,
+                "label": "Levítico 26"
+            },
+            {
+                "book": "lev",
+                "chapter": 27,
+                "label": "Levítico 27"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 50: Diezmos y ofrendas",
+                "chapterId": 50
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 51: El cuidado de Dios hacia los pobres",
+                "chapterId": 51
+            }
+        ],
+        "description": "Justicia Social: Leyes sobre el Jubileo, diezmos y el cuidado de los pobres"
+    },
+    "35": {
+        "title": "Organización",
+        "bible": [
+            {
+                "book": "num",
+                "chapter": 1,
+                "label": "Números 1"
+            },
+            {
+                "book": "num",
+                "chapter": 2,
+                "label": "Números 2"
+            },
+            {
+                "book": "num",
+                "chapter": 3,
+                "label": "Números 3"
+            },
+            {
+                "book": "num",
+                "chapter": 4,
+                "label": "Números 4"
+            },
+            {
+                "book": "num",
+                "chapter": 5,
+                "label": "Números 5"
+            },
+            {
+                "book": "num",
+                "chapter": 6,
+                "label": "Números 6"
+            },
+            {
+                "book": "num",
+                "chapter": 7,
+                "label": "Números 7"
+            },
+            {
+                "book": "num",
+                "chapter": 8,
+                "label": "Números 8"
+            },
+            {
+                "book": "num",
+                "chapter": 9,
+                "label": "Números 9"
+            },
+            {
+                "book": "num",
+                "chapter": 10,
+                "label": "Números 10"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 36: En el desierto",
+                "chapterId": 36
+            }
+        ],
+        "description": "Organización: Censo de las tribus. Orden de marcha. Israel deja el Sinaí (Año 2, mes 2, día 20)."
+    },
+    "36": {
+        "title": "Quejas",
+        "bible": [
+            {
+                "book": "num",
+                "chapter": 11,
+                "label": "Números 11"
+            },
+            {
+                "book": "num",
+                "chapter": 12,
+                "label": "Números 12"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 33: De Sinaí a Cades",
+                "chapterId": 33
+            }
+        ],
+        "description": "Quejas: El fuego en Tabera. La codicia por carne. La lepra de María por rebelión contra la autoridad."
+    },
+    "37": {
+        "title": "Cades-barnea",
+        "bible": [
+            {
+                "book": "num",
+                "chapter": 13,
+                "label": "Números 13"
+            },
+            {
+                "book": "num",
+                "chapter": 14,
+                "label": "Números 14"
+            },
+            {
+                "book": "num",
+                "chapter": 15,
+                "label": "Números 15"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 34: Los doce espías",
+                "chapterId": 34
+            }
+        ],
+        "description": "Cades-barnea: El informe de incredulidad. Sentencia de vagar 40 años hasta que muera la primera generación."
+    },
+    "38": {
+        "title": "Crisis de Autoridad",
+        "bible": [
+            {
+                "book": "num",
+                "chapter": 16,
+                "label": "Números 16"
+            },
+            {
+                "book": "num",
+                "chapter": 17,
+                "label": "Números 17"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 35: Rebelión de Coré",
+                "chapterId": 35
+            }
+        ],
+        "description": "Crisis de Autoridad: Coré desafía a Moisés. La tierra se abre. La vara de Aarón florece, confirmando el sacerdocio ante una nación aterrorizada."
+    },
+    "39": {
+        "title": "Protección y Purificación",
+        "bible": [
+            {
+                "book": "num",
+                "chapter": 18,
+                "label": "Números 18"
+            },
+            {
+                "book": "num",
+                "chapter": 19,
+                "label": "Números 19"
+            }
+        ],
+        "egw": [],
+        "description": "Protección y Purificación: Dios responde al miedo del pueblo (Núm 17:12) estableciendo a los sacerdotes como \"escudo\". Se explica el sistema de sostenimiento (diezmos) y la Vaca Alazana (purificación de la muerte)."
+    },
+    "40": {
+        "title": "Casi en la Meta",
+        "bible": [
+            {
+                "book": "num",
+                "chapter": 20,
+                "label": "Números 20"
+            },
+            {
+                "book": "num",
+                "chapter": 21,
+                "verses": "1-9",
+                "label": "Números 21:1-9"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 37: La roca herida",
+                "chapterId": 37
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 38: Viaje alrededor de Edom",
+                "chapterId": 38
+            }
+        ],
+        "description": "Casi en la Meta: El pecado de Moisés. La Serpiente de Bronce. Muerte de Aarón y fin de los 40 años (1406 a.C.)."
+    },
+    "41": {
+        "title": "Conquistas del Este y Guerra Espiritual",
+        "bible": [
+            {
+                "book": "num",
+                "chapter": 21,
+                "verses": "10-",
+                "label": "Números 21:10-"
+            },
+            {
+                "book": "num",
+                "chapter": 22,
+                "label": "Números 22"
+            },
+            {
+                "book": "num",
+                "chapter": 23,
+                "label": "Números 23"
+            },
+            {
+                "book": "num",
+                "chapter": 24,
+                "label": "Números 24"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 40: Balaam",
+                "chapterId": 40
+            }
+        ],
+        "description": "Conquistas del Este y Guerra Espiritual: Derrota de Sehón y Og. Inicio de los 300 años de ocupación en Transjordania. Balaam intenta maldecir al pueblo, pero Dios anuncia la venida del Mesías (\"La estrella de Jacob\")."
+    },
+    "42": {
+        "title": "Baal-Peor",
+        "bible": [
+            {
+                "book": "num",
+                "chapter": 25,
+                "label": "Números 25"
+            },
+            {
+                "book": "num",
+                "chapter": 26,
+                "label": "Números 26"
+            },
+            {
+                "book": "num",
+                "chapter": 27,
+                "label": "Números 27"
+            },
+            {
+                "book": "num",
+                "chapter": 28,
+                "label": "Números 28"
+            },
+            {
+                "book": "num",
+                "chapter": 29,
+                "label": "Números 29"
+            },
+            {
+                "book": "num",
+                "chapter": 30,
+                "label": "Números 30"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 41: Apostasía en el Jordán",
+                "chapterId": 41
+            }
+        ],
+        "description": "Baal-Peor: La última gran prueba moral antes de cruzar. Muerte de los 24,000. Segundo censo militar."
+    },
+    "43": {
+        "title": "Transjordania",
+        "bible": [
+            {
+                "book": "deu",
+                "chapter": 1,
+                "label": "Deuteronomio 1"
+            },
+            {
+                "book": "deu",
+                "chapter": 2,
+                "label": "Deuteronomio 2"
+            },
+            {
+                "book": "deu",
+                "chapter": 3,
+                "label": "Deuteronomio 3"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 39: Conquista de Basán",
+                "chapterId": 39
+            }
+        ],
+        "description": "Transjordania: Moisés recuerda la derrota de Og y Sehón. Inicio de los 300 años de ocupación del Este."
+    },
+    "44": {
+        "title": "El Shemá",
+        "bible": [
+            {
+                "book": "deu",
+                "chapter": 4,
+                "label": "Deuteronomio 4"
+            },
+            {
+                "book": "deu",
+                "chapter": 5,
+                "label": "Deuteronomio 5"
+            },
+            {
+                "book": "deu",
+                "chapter": 6,
+                "label": "Deuteronomio 6"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 42: La ley repetida",
+                "chapterId": 42
+            }
+        ],
+        "description": "El Shemá: \"Oye Israel...\". Moisés enfatiza la obediencia por amor."
+    },
+    "45": {
+        "title": "Instrucciones",
+        "bible": [
+            {
+                "book": "deu",
+                "chapter": 7,
+                "label": "Deuteronomio 7"
+            },
+            {
+                "book": "deu",
+                "chapter": 8,
+                "label": "Deuteronomio 8"
+            },
+            {
+                "book": "deu",
+                "chapter": 9,
+                "label": "Deuteronomio 9"
+            },
+            {
+                "book": "deu",
+                "chapter": 10,
+                "label": "Deuteronomio 10"
+            },
+            {
+                "book": "deu",
+                "chapter": 11,
+                "label": "Deuteronomio 11"
+            },
+            {
+                "book": "deu",
+                "chapter": 12,
+                "label": "Deuteronomio 12"
+            },
+            {
+                "book": "deu",
+                "chapter": 13,
+                "label": "Deuteronomio 13"
+            },
+            {
+                "book": "deu",
+                "chapter": 14,
+                "label": "Deuteronomio 14"
+            },
+            {
+                "book": "deu",
+                "chapter": 15,
+                "label": "Deuteronomio 15"
+            },
+            {
+                "book": "deu",
+                "chapter": 16,
+                "label": "Deuteronomio 16"
+            },
+            {
+                "book": "deu",
+                "chapter": 17,
+                "label": "Deuteronomio 17"
+            },
+            {
+                "book": "deu",
+                "chapter": 18,
+                "label": "Deuteronomio 18"
+            },
+            {
+                "book": "deu",
+                "chapter": 19,
+                "label": "Deuteronomio 19"
+            },
+            {
+                "book": "deu",
+                "chapter": 20,
+                "label": "Deuteronomio 20"
+            },
+            {
+                "book": "deu",
+                "chapter": 21,
+                "label": "Deuteronomio 21"
+            },
+            {
+                "book": "deu",
+                "chapter": 22,
+                "label": "Deuteronomio 22"
+            },
+            {
+                "book": "deu",
+                "chapter": 23,
+                "label": "Deuteronomio 23"
+            },
+            {
+                "book": "deu",
+                "chapter": 24,
+                "label": "Deuteronomio 24"
+            },
+            {
+                "book": "deu",
+                "chapter": 25,
+                "label": "Deuteronomio 25"
+            },
+            {
+                "book": "deu",
+                "chapter": 26,
+                "label": "Deuteronomio 26"
+            },
+            {
+                "book": "deu",
+                "chapter": 27,
+                "label": "Deuteronomio 27"
+            }
+        ],
+        "egw": [],
+        "description": "Instrucciones: Leyes sobre la expulsión de cananeos y el cuidado de la santidad nacional."
+    },
+    "46": {
+        "title": "El Dilema",
+        "bible": [
+            {
+                "book": "deu",
+                "chapter": 28,
+                "label": "Deuteronomio 28"
+            },
+            {
+                "book": "deu",
+                "chapter": 29,
+                "label": "Deuteronomio 29"
+            },
+            {
+                "book": "deu",
+                "chapter": 30,
+                "label": "Deuteronomio 30"
+            }
+        ],
+        "egw": [],
+        "description": "El Dilema: La vida o la muerte. La profecía de la bendición por obediencia y la maldición por apostasía."
+    },
+    "47": {
+        "title": "El Cántico Final",
+        "bible": [
+            {
+                "book": "deu",
+                "chapter": 31,
+                "label": "Deuteronomio 31"
+            },
+            {
+                "book": "deu",
+                "chapter": 32,
+                "label": "Deuteronomio 32"
+            },
+            {
+                "book": "deu",
+                "chapter": 33,
+                "label": "Deuteronomio 33"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 43: La muerte de Moisés",
+                "chapterId": 43
+            }
+        ],
+        "description": "El Cántico Final: Moisés inviste a Josué y entrega el Libro de la Ley a los sacerdotes."
+    },
+    "48": {
+        "title": "El Fin de una Era",
+        "bible": [
+            {
+                "book": "deu",
+                "chapter": 34,
+                "label": "Deuteronomio 34"
+            },
+            {
+                "book": "psa",
+                "chapter": 90,
+                "label": "Salmo 90"
+            }
+        ],
+        "egw": [],
+        "description": "El Fin de una Era: Muerte de Moisés en el Nebo. El Salmo 90 es su reflexión sobre la eternidad de Dios."
+    },
+    "49": {
+        "title": "Nuevos Espías",
+        "bible": [
+            {
+                "book": "jos",
+                "chapter": 1,
+                "label": "Josué 1"
+            },
+            {
+                "book": "jos",
+                "chapter": 2,
+                "label": "Josué 2"
+            },
+            {
+                "book": "psa",
+                "chapter": 91,
+                "label": "Salmo 91"
+            }
+        ],
+        "egw": [],
+        "description": "Nuevos Espías: Josué asume el mando. El pacto con Rahab en Jericó. El Salmo 91 como protección."
+    },
+    "50": {
+        "title": "Eben-ezer",
+        "bible": [
+            {
+                "book": "jos",
+                "chapter": 3,
+                "label": "Josué 3"
+            },
+            {
+                "book": "jos",
+                "chapter": 4,
+                "label": "Josué 4"
+            },
+            {
+                "book": "jos",
+                "chapter": 5,
+                "verses": "1-12",
+                "label": "Josué 5:1-12"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 44: El cruce del Jordán",
+                "chapterId": 44
+            }
+        ],
+        "description": "Eben-ezer: El Jordán se abre. Circuncisión en Gilgal. Cesa el maná y comen del fruto de la tierra."
+    },
+    "51": {
+        "title": "Guerra Espiritual",
+        "bible": [
+            {
+                "book": "jos",
+                "chapter": 5,
+                "verses": "13-",
+                "label": "Josué 5:13-"
+            },
+            {
+                "book": "jos",
+                "chapter": 6,
+                "label": "Josué 6"
+            },
+            {
+                "book": "jos",
+                "chapter": 7,
+                "label": "Josué 7"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 45: La caída de Jericó",
+                "chapterId": 45
+            }
+        ],
+        "description": "Guerra Espiritual: El \"Príncipe del ejército de Jehová\" aparece. Victoria en Jericó y derrota en Hai por el pecado de Acán."
+    },
+    "52": {
+        "title": "Gerizim y Ebal",
+        "bible": [
+            {
+                "book": "jos",
+                "chapter": 8,
+                "label": "Josué 8"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 46: Bendiciones y maldiciones",
+                "chapterId": 46
+            }
+        ],
+        "description": "Gerizim y Ebal: Cumplimiento de la orden de Moisés de leer la Ley tras la victoria en Hai."
+    },
+    "53": {
+        "title": "El Día Largo",
+        "bible": [
+            {
+                "book": "jos",
+                "chapter": 9,
+                "label": "Josué 9"
+            },
+            {
+                "book": "jos",
+                "chapter": 10,
+                "label": "Josué 10"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 47: Alianza con Gabaonitas",
+                "chapterId": 47
+            }
+        ],
+        "description": "El Día Largo: El sol se detiene en Gabaón. Victoria sobre los 5 reyes amorreos del sur."
+    },
+    "54": {
+        "title": "Campaña del Norte",
+        "bible": [
+            {
+                "book": "jos",
+                "chapter": 11,
+                "label": "Josué 11"
+            },
+            {
+                "book": "jos",
+                "chapter": 12,
+                "label": "Josué 12"
+            },
+            {
+                "book": "jos",
+                "chapter": 13,
+                "label": "Josué 13"
+            }
+        ],
+        "egw": [],
+        "description": "Campaña del Norte: Derrota de Hazor. Fin de las guerras principales (7 años de conquista)."
+    },
+    "55": {
+        "title": "Caleb",
+        "bible": [
+            {
+                "book": "jos",
+                "chapter": 14,
+                "label": "Josué 14"
+            },
+            {
+                "book": "jos",
+                "chapter": 15,
+                "label": "Josué 15"
+            },
+            {
+                "book": "jos",
+                "chapter": 16,
+                "label": "Josué 16"
+            },
+            {
+                "book": "jos",
+                "chapter": 17,
+                "label": "Josué 17"
+            },
+            {
+                "book": "jos",
+                "chapter": 18,
+                "label": "Josué 18"
+            },
+            {
+                "book": "jos",
+                "chapter": 19,
+                "label": "Josué 19"
+            },
+            {
+                "book": "jos",
+                "chapter": 20,
+                "label": "Josué 20"
+            },
+            {
+                "book": "jos",
+                "chapter": 21,
+                "label": "Josué 21"
+            },
+            {
+                "book": "jos",
+                "chapter": 22,
+                "label": "Josué 22"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 48: La repartición",
+                "chapterId": 48
+            }
+        ],
+        "description": "Caleb: A sus 85 años reclama el monte Hebrón. Reparto de la herencia tribal y ciudades de refugio."
+    },
+    "56": {
+        "title": "Despedida",
+        "bible": [
+            {
+                "book": "jos",
+                "chapter": 23,
+                "label": "Josué 23"
+            },
+            {
+                "book": "jos",
+                "chapter": 24,
+                "label": "Josué 24"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 49: Últimas palabras de Josué",
+                "chapterId": 49
+            }
+        ],
+        "description": "Despedida: Josué muere a los 110 años. El pueblo promete fidelidad. Fin de la generación de la fe."
+    },
+    "57": {
+        "title": "Primeros Jueces",
+        "bible": [
+            {
+                "book": "jdg",
+                "chapter": 1,
+                "label": "Jueces 1"
+            },
+            {
+                "book": "jdg",
+                "chapter": 2,
+                "label": "Jueces 2"
+            },
+            {
+                "book": "jdg",
+                "chapter": 3,
+                "label": "Jueces 3"
+            },
+            {
+                "book": "jdg",
+                "chapter": 4,
+                "label": "Jueces 4"
+            },
+            {
+                "book": "jdg",
+                "chapter": 5,
+                "label": "Jueces 5"
+            }
+        ],
+        "egw": [],
+        "description": "Primeros Jueces: Otoniel, Aod y Débora. El fracaso en expulsar a los cananeos. El canto de victoria de Débora"
+    },
+    "58": {
+        "title": "Gedeón",
+        "bible": [
+            {
+                "book": "jdg",
+                "chapter": 6,
+                "label": "Jueces 6"
+            },
+            {
+                "book": "jdg",
+                "chapter": 7,
+                "label": "Jueces 7"
+            },
+            {
+                "book": "jdg",
+                "chapter": 8,
+                "label": "Jueces 8"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 53: Los primeros jueces",
+                "chapterId": 53
+            }
+        ],
+        "description": "Gedeón: Llamado del varón esforzado. Los 300 contra Madián. Victoria sobre la idolatría de Baal."
+    },
+    "59": {
+        "title": "Guerra Civil",
+        "bible": [
+            {
+                "book": "jdg",
+                "chapter": 9,
+                "label": "Jueces 9"
+            },
+            {
+                "book": "jdg",
+                "chapter": 10,
+                "label": "Jueces 10"
+            },
+            {
+                "book": "jdg",
+                "chapter": 11,
+                "label": "Jueces 11"
+            },
+            {
+                "book": "jdg",
+                "chapter": 12,
+                "label": "Jueces 12"
+            }
+        ],
+        "egw": [],
+        "description": "Guerra Civil: Abimelec el usurpador. Jefté y los 300 años de ocupación (Jueces 11:26)."
+    },
+    "60": {
+        "title": "El Nazareo",
+        "bible": [
+            {
+                "book": "jdg",
+                "chapter": 13,
+                "label": "Jueces 13"
+            },
+            {
+                "book": "jdg",
+                "chapter": 14,
+                "label": "Jueces 14"
+            },
+            {
+                "book": "jdg",
+                "chapter": 15,
+                "label": "Jueces 15"
+            },
+            {
+                "book": "jdg",
+                "chapter": 16,
+                "label": "Jueces 16"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 54: Sansón",
+                "chapterId": 54
+            }
+        ],
+        "description": "El Nazareo: Sansón contra los filisteos. La fuerza física vs la debilidad moral."
+    },
+    "61": {
+        "title": "El Punto más bajo",
+        "bible": [
+            {
+                "book": "jdg",
+                "chapter": 17,
+                "label": "Jueces 17"
+            },
+            {
+                "book": "jdg",
+                "chapter": 18,
+                "label": "Jueces 18"
+            },
+            {
+                "book": "jdg",
+                "chapter": 19,
+                "label": "Jueces 19"
+            },
+            {
+                "book": "jdg",
+                "chapter": 20,
+                "label": "Jueces 20"
+            },
+            {
+                "book": "jdg",
+                "chapter": 21,
+                "label": "Jueces 21"
+            }
+        ],
+        "egw": [],
+        "description": "El Punto más bajo: El ídolo de Micaía y el crimen de Gabaa. \"No había rey y cada uno hacía lo que quería\"."
+    },
+    "62": {
+        "title": "El Exilio en Moab y El Pariente Redentor",
+        "bible": [
+            {
+                "book": "rut",
+                "chapter": 1,
+                "label": "Rut 1"
+            },
+            {
+                "book": "rut",
+                "chapter": 2,
+                "label": "Rut 2"
+            },
+            {
+                "book": "rut",
+                "chapter": 3,
+                "label": "Rut 3"
+            },
+            {
+                "book": "rut",
+                "chapter": 4,
+                "label": "Rut 4"
+            }
+        ],
+        "egw": [],
+        "description": "El Exilio en Moab y El Pariente Redentor: Noemí pierde todo. Rut decide seguir al Dios de Israel.  Booz y Rut. Se establece el linaje legal que llevará al Rey David y al Mesías."
+    },
+    "63": {
+        "title": "El Llamado",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 1,
+                "label": "1 Samuel 1"
+            },
+            {
+                "book": "1sa",
+                "chapter": 2,
+                "label": "1 Samuel 2"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 55: El niño Samuel",
+                "chapterId": 55
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 56: Los hijos de Elí",
+                "chapterId": 56
+            }
+        ],
+        "description": "El Llamado: Ana entrega a Samuel al tabernáculo de Silo. \"Habla, Jehová, porque tu siervo oye\". Vs la corrupción de los hijos de Elí, Ofni y Finees."
+    },
+    "64": {
+        "title": "Icabod",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 3,
+                "label": "1 Samuel 3"
+            },
+            {
+                "book": "1sa",
+                "chapter": 4,
+                "label": "1 Samuel 4"
+            },
+            {
+                "book": "1sa",
+                "chapter": 5,
+                "label": "1 Samuel 5"
+            },
+            {
+                "book": "1sa",
+                "chapter": 6,
+                "label": "1 Samuel 6"
+            },
+            {
+                "book": "1sa",
+                "chapter": 7,
+                "label": "1 Samuel 7"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 57: El arca tomada",
+                "chapterId": 57
+            }
+        ],
+        "description": "Icabod: Los filisteos toman el arca. Muerte de Elí. El juicio sobre la casa de los sacerdotes corruptos. El arca en Quiriat-jearim por 20 años."
+    },
+    "65": {
+        "title": "Doble Liderazgo",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 8,
+                "label": "1 Samuel 8"
+            },
+            {
+                "book": "1sa",
+                "chapter": 9,
+                "label": "1 Samuel 9"
+            },
+            {
+                "book": "1sa",
+                "chapter": 10,
+                "label": "1 Samuel 10"
+            },
+            {
+                "book": "1sa",
+                "chapter": 11,
+                "label": "1 Samuel 11"
+            },
+            {
+                "book": "1sa",
+                "chapter": 12,
+                "label": "1 Samuel 12"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 58: Las Escuelas de los Profetas",
+                "chapterId": 58
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 59: El primer rey",
+                "chapterId": 59
+            }
+        ],
+        "description": "Doble Liderazgo: El pueblo rechaza la teocracia y pide un rey. Saúl es ungido como el primer monarca de Israel. 1050 a.C. Samuel establece la educación profética como salvaguardia espiritual para la nación."
+    },
+    "66": {
+        "title": "El Error de Gilgal",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 13,
+                "label": "1 Samuel 13"
+            },
+            {
+                "book": "1sa",
+                "chapter": 14,
+                "label": "1 Samuel 14"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 60: La presunción de Saúl",
+                "chapterId": 60
+            }
+        ],
+        "description": "El Error de Gilgal: Saúl usurpa el oficio sacerdotal. Jonatán muestra fe en Micmas (1028 a.C.)."
+    },
+    "67": {
+        "title": "Amalec",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 15,
+                "label": "1 Samuel 15"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 61: Saúl rechazado",
+                "chapterId": 61
+            }
+        ],
+        "description": "Amalec: Desobediencia total. Samuel anuncia: \"El obedecer es mejor que los sacrificios\"."
+    },
+    "68": {
+        "title": "Belén y el Valle de Ela",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 16,
+                "label": "1 Samuel 16"
+            },
+            {
+                "book": "1sa",
+                "chapter": 17,
+                "label": "1 Samuel 17"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 62: El ungimiento de David",
+                "chapterId": 62
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 63: David y Goliat",
+                "chapterId": 63
+            }
+        ],
+        "description": "Belén y el Valle de Ela: David es ungido secretamente (c. 1025 a.C.). El Espíritu de Dios se aparta de Saúl y viene sobre David. Victoria sobre el gigante."
+    },
+    "69": {
+        "title": "Celos Reales y la Ventana",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 18,
+                "label": "1 Samuel 18"
+            },
+            {
+                "book": "1sa",
+                "chapter": 19,
+                "label": "1 Samuel 19"
+            },
+            {
+                "book": "psa",
+                "chapter": 59,
+                "label": "Salmo 59"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 64: David fugitivo",
+                "chapterId": 64
+            }
+        ],
+        "description": "Celos Reales y la Ventana: Saúl intenta asesinar a David con una lanza. Mical ayuda a David a escapar por la ventana mientras los sicarios vigilan la casa."
+    },
+    "70": {
+        "title": "Asilo entre Enemigos",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 20,
+                "label": "1 Samuel 20"
+            },
+            {
+                "book": "1sa",
+                "chapter": 21,
+                "label": "1 Samuel 21"
+            },
+            {
+                "book": "psa",
+                "chapter": 56,
+                "label": "Salmo 56"
+            },
+            {
+                "book": "psa",
+                "chapter": 34,
+                "label": "Salmo 34"
+            }
+        ],
+        "egw": [],
+        "description": "Asilo entre Enemigos: Despedida final de Jonatán. David huye a Nob (ayuda sacerdotal) y luego a Gat, donde finge locura ante el rey filisteo Aquis."
+    },
+    "71": {
+        "title": "Escuela del Desierto",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 22,
+                "label": "1 Samuel 22"
+            },
+            {
+                "book": "1sa",
+                "chapter": 23,
+                "label": "1 Samuel 23"
+            },
+            {
+                "book": "1sa",
+                "chapter": 24,
+                "label": "1 Samuel 24"
+            },
+            {
+                "book": "psa",
+                "chapter": 142,
+                "label": "Salmo 142"
+            },
+            {
+                "book": "psa",
+                "chapter": 52,
+                "label": "Salmo 52"
+            },
+            {
+                "book": "psa",
+                "chapter": 54,
+                "label": "Salmo 54"
+            },
+            {
+                "book": "psa",
+                "chapter": 63,
+                "label": "Salmo 63"
+            },
+            {
+                "book": "psa",
+                "chapter": 57,
+                "label": "Salmo 57"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 65: La magnanimidad de David",
+                "chapterId": 65
+            }
+        ],
+        "description": "Escuela del Desierto: David huye de la masacre de Nob (Sal 52) y se refugia en cuevas (Sal 57, 142). Perdona a Saúl dos veces, demostrando que no tomará el reino por su propia mano."
+    },
+    "72": {
+        "title": "Conflictos y Refugio",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 25,
+                "label": "1 Samuel 25"
+            },
+            {
+                "book": "1sa",
+                "chapter": 26,
+                "label": "1 Samuel 26"
+            },
+            {
+                "book": "1sa",
+                "chapter": 27,
+                "label": "1 Samuel 27"
+            }
+        ],
+        "egw": [],
+        "description": "Conflictos y Refugio: La muerte de Samuel. David evita matar a Nabal gracias a Abigail. Desesperado por la persecución, David se refugia en tierra de los filisteos (Siclag)."
+    },
+    "73": {
+        "title": "La Gran Crisis de David",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 29,
+                "label": "1 Samuel 29"
+            },
+            {
+                "book": "1sa",
+                "chapter": 30,
+                "label": "1 Samuel 30"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 68: David en Siclag",
+                "chapterId": 68
+            }
+        ],
+        "description": "La Gran Crisis de David: David es rechazado por los señores filisteos (Cap 29). Al regresar a Siclag, la encuentra quemada. El pueblo quiere apedrearlo, pero David \"se fortaleció en Jehová\" (1011 a.C.)."
+    },
+    "74": {
+        "title": "El Ocaso de Saúl",
+        "bible": [
+            {
+                "book": "1sa",
+                "chapter": 28,
+                "label": "1 Samuel 28"
+            },
+            {
+                "book": "1sa",
+                "chapter": 29,
+                "label": "1 Samuel 29"
+            },
+            {
+                "book": "1sa",
+                "chapter": 30,
+                "label": "1 Samuel 30"
+            },
+            {
+                "book": "1sa",
+                "chapter": 31,
+                "label": "1 Samuel 31"
+            },
+            {
+                "book": "1ch",
+                "chapter": 10,
+                "label": "1 Crónicas 10"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 66: La muerte de Saúl",
+                "chapterId": 66
+            },
+            {
+                "label": "Patriarcas y Profetas, Cap. 67: La magia antigua y moderna",
+                "chapterId": 67
+            }
+        ],
+        "description": "El Ocaso de Saúl: Mientras David pelea en el sur, Saúl busca a la pitonisa en Endor (Cap 28). Al día siguiente, muere con sus hijos en el Monte Gilboa (Cap 31)."
+    },
+    "75": {
+        "title": "Hebrón",
+        "bible": [
+            {
+                "book": "2sa",
+                "chapter": 1,
+                "label": "2 Samuel 1"
+            },
+            {
+                "book": "2sa",
+                "chapter": 2,
+                "label": "2 Samuel 2"
+            },
+            {
+                "book": "2sa",
+                "chapter": 3,
+                "label": "2 Samuel 3"
+            },
+            {
+                "book": "2sa",
+                "chapter": 4,
+                "label": "2 Samuel 4"
+            },
+            {
+                "book": "2sa",
+                "chapter": 5,
+                "verses": "1-5",
+                "label": "2 Samuel 5:1-5"
+            },
+            {
+                "book": "1ch",
+                "chapter": 11,
+                "label": "1 Crónicas 11"
+            },
+            {
+                "book": "1ch",
+                "chapter": 12,
+                "label": "1 Crónicas 12"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 69: David llevado al trono",
+                "chapterId": 69
+            }
+        ],
+        "description": "Hebrón: David recibe la noticia, ejecuta al amalequita mentiroso y compone el lamento por Saúl y Jonatán (2 Samuel 1). David es ungido rey de Judá en Hebrón."
+    },
+    "76": {
+        "title": "Sión y el Pacto (1003 a.C.)",
+        "bible": [
+            {
+                "book": "2sa",
+                "chapter": 7,
+                "label": "2 Samuel 7"
+            },
+            {
+                "book": "1ch",
+                "chapter": 13,
+                "label": "1 Crónicas 13"
+            },
+            {
+                "book": "1ch",
+                "chapter": 14,
+                "label": "1 Crónicas 14"
+            },
+            {
+                "book": "1ch",
+                "chapter": 15,
+                "label": "1 Crónicas 15"
+            },
+            {
+                "book": "1ch",
+                "chapter": 16,
+                "label": "1 Crónicas 16"
+            },
+            {
+                "book": "1ch",
+                "chapter": 17,
+                "label": "1 Crónicas 17"
+            },
+            {
+                "book": "psa",
+                "chapter": 2,
+                "label": "Salmo 2"
+            },
+            {
+                "book": "psa",
+                "chapter": 110,
+                "label": "Salmo 110"
+            },
+            {
+                "book": "psa",
+                "chapter": 132,
+                "label": "Salmo 132"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 70: El reinado de David",
+                "chapterId": 70
+            }
+        ],
+        "description": "Sión y el Pacto (1003 a.C.): David conquista la fortaleza de los jebuseos y establece la capital. El Arca es traída tras el juicio de Uza. Dios promete el Reino Eterno (2 Sam 7)"
+    },
+    "77": {
+        "title": "El Imperio se Consolida",
+        "bible": [
+            {
+                "book": "2sa",
+                "chapter": 8,
+                "label": "2 Samuel 8"
+            },
+            {
+                "book": "1ch",
+                "chapter": 18,
+                "label": "1 Crónicas 18"
+            },
+            {
+                "book": "psa",
+                "chapter": 60,
+                "label": "Salmo 60"
+            }
+        ],
+        "egw": [],
+        "description": "El Imperio se Consolida: David somete a los filisteos, moabitas y edomitas. Israel alcanza sus fronteras más extensas."
+    },
+    "78": {
+        "title": "Gracia y Guerra Total",
+        "bible": [
+            {
+                "book": "2sa",
+                "chapter": 9,
+                "label": "2 Samuel 9"
+            },
+            {
+                "book": "2sa",
+                "chapter": 10,
+                "label": "2 Samuel 10"
+            },
+            {
+                "book": "1ch",
+                "chapter": 19,
+                "label": "1 Crónicas 19"
+            },
+            {
+                "book": "psa",
+                "chapter": 20,
+                "label": "Salmo 20"
+            },
+            {
+                "book": "psa",
+                "chapter": 21,
+                "label": "Salmo 21"
+            }
+        ],
+        "egw": [],
+        "description": "Gracia y Guerra Total: David muestra la bondad de Dios a Mefi-boset. Los amonitas insultan a sus embajadores, provocando una coalición sirio-amonita."
+    },
+    "79": {
+        "title": "La Caída (c. 998 a.C.)",
+        "bible": [
+            {
+                "book": "2sa",
+                "chapter": 11,
+                "label": "2 Samuel 11"
+            },
+            {
+                "book": "2sa",
+                "chapter": 12,
+                "label": "2 Samuel 12"
+            },
+            {
+                "book": "psa",
+                "chapter": 51,
+                "label": "Salmo 51"
+            },
+            {
+                "book": "psa",
+                "chapter": 32,
+                "label": "Salmo 32"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 71: El pecado de David y su arrepentimiento",
+                "chapterId": 71
+            }
+        ],
+        "description": "La Caída (c. 998 a.C.): En la cúspide del poder, David cae con Betsabé. Mientras el ejército lucha en Rabá (1 Cró 20), el rey comete adulterio y asesinato."
+    },
+    "80": {
+        "title": "Juicios Domésticos",
+        "bible": [
+            {
+                "book": "2sa",
+                "chapter": 13,
+                "label": "2 Samuel 13"
+            },
+            {
+                "book": "2sa",
+                "chapter": 14,
+                "label": "2 samuel 14"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 72: La rebelión de Absalón",
+                "chapterId": 72
+            }
+        ],
+        "description": "Juicios Domésticos: Comienza el cumplimiento de la sentencia: \"No se apartará la espada de tu casa\". El pecado de Amnón y el odio de Absalón. La desintegración moral de la familia real como consecuencia del ejemplo del padre."
+    },
+    "81": {
+        "title": "El Exilio del Rey",
+        "bible": [
+            {
+                "book": "2sa",
+                "chapter": 15,
+                "label": "2 Samuel 15"
+            },
+            {
+                "book": "2sa",
+                "chapter": 16,
+                "label": "2 Samuel 16"
+            },
+            {
+                "book": "2sa",
+                "chapter": 17,
+                "label": "2 Samuel 17"
+            },
+            {
+                "book": "psa",
+                "chapter": 3,
+                "label": "Salmo 3"
+            },
+            {
+                "book": "psa",
+                "chapter": 63,
+                "label": "Salmo 63"
+            }
+        ],
+        "egw": [],
+        "description": "El Exilio del Rey: Absalón roba el corazón del pueblo. David huye de Jerusalén."
+    },
+    "82": {
+        "title": "Justicia y Traición",
+        "bible": [
+            {
+                "book": "2sa",
+                "chapter": 18,
+                "label": "2 Samuel 18"
+            },
+            {
+                "book": "2sa",
+                "chapter": 19,
+                "label": "2 Samuel 19"
+            },
+            {
+                "book": "2sa",
+                "chapter": 20,
+                "label": "2 Samuel 20"
+            },
+            {
+                "book": "psa",
+                "chapter": 41,
+                "label": "Salmo 41"
+            },
+            {
+                "book": "psa",
+                "chapter": 55,
+                "label": "Salmo 55"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Patriarcas y Profetas, Cap. 73: Los últimos años de David",
+                "chapterId": 73
+            }
+        ],
+        "description": "Justicia y Traición: Muerte de Absalón y el llanto de David. Rebelión de Seba."
+    },
+    "83": {
+        "title": "El Altar del Sacrificio",
+        "bible": [
+            {
+                "book": "2sa",
+                "chapter": 21,
+                "label": "2 Samuel 21"
+            },
+            {
+                "book": "2sa",
+                "chapter": 22,
+                "label": "2 Samuel 22"
+            },
+            {
+                "book": "2sa",
+                "chapter": 23,
+                "label": "2 Samuel 23"
+            },
+            {
+                "book": "2sa",
+                "chapter": 24,
+                "label": "2 Samuel 24"
+            },
+            {
+                "book": "1ch",
+                "chapter": 21,
+                "label": "1 Crónicas 21"
+            }
+        ],
+        "egw": [],
+        "description": "El Altar del Sacrificio: David comete el error de censar al pueblo. La plaga resultante se detiene en la era de Ornán Jebuseo. Este sitio es identificado como el Monte Moriah, el lugar exacto donde se construirá el Templo."
+    },
+    "84": {
+        "title": "Legado Administrativo",
+        "bible": [
+            {
+                "book": "1ch",
+                "chapter": 22,
+                "label": "1 Crónicas 22"
+            },
+            {
+                "book": "1ch",
+                "chapter": 23,
+                "label": "1 Crónicas 23"
+            },
+            {
+                "book": "1ch",
+                "chapter": 24,
+                "label": "1 Crónicas 24"
+            },
+            {
+                "book": "1ch",
+                "chapter": 25,
+                "label": "1 Crónicas 25"
+            },
+            {
+                "book": "1ch",
+                "chapter": 26,
+                "label": "1 Crónicas 26"
+            }
+        ],
+        "egw": [],
+        "description": "Legado Administrativo: David, aunque no puede construir el Templo, organiza a los levitas, cantores y porteros. Acumula oro y materiales. Establece el orden de los turnos sacerdotales que durará hasta el tiempo de Jesús."
+    },
+    "85": {
+        "title": "Testamento de David",
+        "bible": [
+            {
+                "book": "1ch",
+                "chapter": 27,
+                "label": "1 Crónicas 27"
+            },
+            {
+                "book": "1ch",
+                "chapter": 28,
+                "label": "1 Crónicas 28"
+            },
+            {
+                "book": "1ch",
+                "chapter": 29,
+                "label": "1 Crónicas 29"
+            }
+        ],
+        "egw": [],
+        "description": "Testamento de David: David presenta a Salomón ante la nación. El pueblo ofrenda voluntariamente con gozo. David reconoce que \"todo es de Dios\". Oración final de gratitud y muerte de David (971 a.C.)."
+    },
+    "86": {
+        "title": "La Sucesión (971 a.C.)",
+        "bible": [
+            {
+                "book": "1ki",
+                "chapter": 1,
+                "label": "1 Reyes 1"
+            },
+            {
+                "book": "1ki",
+                "chapter": 2,
+                "label": "1 Reyes 2"
+            },
+            {
+                "book": "psa",
+                "chapter": 72,
+                "label": "Salmo 72"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 1: Salomón",
+                "chapterId": 1
+            }
+        ],
+        "description": "La Sucesión (971 a.C.): Adonías intenta usurpar el trono, pero Salomón es proclamado rey. David da sus últimos consejos de justicia."
+    },
+    "87": {
+        "title": "Sabiduría y Apogeo",
+        "bible": [
+            {
+                "book": "1ki",
+                "chapter": 3,
+                "label": "1 Reyes 3"
+            },
+            {
+                "book": "1ki",
+                "chapter": 4,
+                "label": "1 Reyes 4"
+            },
+            {
+                "book": "2ch",
+                "chapter": 1,
+                "label": "2 Crónicas 1"
+            }
+        ],
+        "egw": [],
+        "description": "Sabiduría y Apogeo: Salomón pide sabiduría en lugar de riquezas. El juicio de las dos madres. Organización del estado y paz en todas las fronteras. Inicio de la Edad de Oro de Israel."
+    },
+    "88": {
+        "title": "El Ideal",
+        "bible": [
+            {
+                "book": "sol",
+                "chapter": 1,
+                "label": "Cantares 1"
+            },
+            {
+                "book": "sol",
+                "chapter": 2,
+                "label": "Cantares 2"
+            },
+            {
+                "book": "sol",
+                "chapter": 3,
+                "label": "Cantares 3"
+            },
+            {
+                "book": "sol",
+                "chapter": 4,
+                "label": "Cantares 4"
+            },
+            {
+                "book": "sol",
+                "chapter": 5,
+                "label": "Cantares 5"
+            },
+            {
+                "book": "sol",
+                "chapter": 6,
+                "label": "Cantares 6"
+            },
+            {
+                "book": "sol",
+                "chapter": 7,
+                "label": "Cantares 7"
+            },
+            {
+                "book": "sol",
+                "chapter": 8,
+                "label": "Cantares 8"
+            }
+        ],
+        "egw": [],
+        "description": "El Ideal: Escrito en la juventud de Salomón (c. 965 a.C.). Celebra la pureza del amor y el matrimonio como reflejo del Pacto entre Dios y Su pueblo. Representa el \"Primer Amor\" antes de su caída."
+    },
+    "89": {
+        "title": "El Temor de Jehová",
+        "bible": [
+            {
+                "book": "pro",
+                "chapter": 1,
+                "label": "Proverbios 1"
+            },
+            {
+                "book": "pro",
+                "chapter": 2,
+                "label": "Proverbios 2"
+            },
+            {
+                "book": "pro",
+                "chapter": 3,
+                "label": "Proverbios 3"
+            },
+            {
+                "book": "pro",
+                "chapter": 4,
+                "label": "Proverbios 4"
+            },
+            {
+                "book": "pro",
+                "chapter": 5,
+                "label": "Proverbios 5"
+            },
+            {
+                "book": "pro",
+                "chapter": 6,
+                "label": "Proverbios 6"
+            },
+            {
+                "book": "pro",
+                "chapter": 7,
+                "label": "Proverbios 7"
+            },
+            {
+                "book": "pro",
+                "chapter": 8,
+                "label": "Proverbios 8"
+            },
+            {
+                "book": "pro",
+                "chapter": 9,
+                "label": "Proverbios 9"
+            }
+        ],
+        "egw": [],
+        "description": "El Temor de Jehová: Salomón enseña que la verdadera educación comienza con el reconocimiento de Dios. Preparación para el liderazgo."
+    },
+    "90": {
+        "title": "Justicia Social",
+        "bible": [
+            {
+                "book": "pro",
+                "chapter": 10,
+                "label": "Proverbios 10"
+            },
+            {
+                "book": "pro",
+                "chapter": 11,
+                "label": "Proverbios 11"
+            },
+            {
+                "book": "pro",
+                "chapter": 12,
+                "label": "Proverbios 12"
+            },
+            {
+                "book": "pro",
+                "chapter": 13,
+                "label": "Proverbios 13"
+            },
+            {
+                "book": "pro",
+                "chapter": 14,
+                "label": "Proverbios 14"
+            },
+            {
+                "book": "pro",
+                "chapter": 15,
+                "label": "Proverbios 15"
+            },
+            {
+                "book": "pro",
+                "chapter": 16,
+                "label": "Proverbios 16"
+            },
+            {
+                "book": "pro",
+                "chapter": 17,
+                "label": "Proverbios 17"
+            },
+            {
+                "book": "pro",
+                "chapter": 18,
+                "label": "Proverbios 18"
+            },
+            {
+                "book": "pro",
+                "chapter": 19,
+                "label": "Proverbios 19"
+            },
+            {
+                "book": "pro",
+                "chapter": 20,
+                "label": "Proverbios 20"
+            },
+            {
+                "book": "pro",
+                "chapter": 21,
+                "label": "Proverbios 21"
+            },
+            {
+                "book": "pro",
+                "chapter": 22,
+                "label": "Proverbios 22"
+            }
+        ],
+        "egw": [],
+        "description": "Justicia Social: Consejos para el gobierno, la familia y el trato con el prójimo. Salomón como el hombre más sabio del mundo antiguo."
+    },
+    "91": {
+        "title": "Dichos de los Sabios",
+        "bible": [
+            {
+                "book": "pro",
+                "chapter": 23,
+                "label": "Proverbios 23"
+            },
+            {
+                "book": "pro",
+                "chapter": 24,
+                "label": "Proverbios 24"
+            },
+            {
+                "book": "pro",
+                "chapter": 25,
+                "label": "Proverbios 25"
+            },
+            {
+                "book": "pro",
+                "chapter": 26,
+                "label": "Proverbios 26"
+            },
+            {
+                "book": "pro",
+                "chapter": 27,
+                "label": "Proverbios 27"
+            },
+            {
+                "book": "pro",
+                "chapter": 28,
+                "label": "Proverbios 28"
+            },
+            {
+                "book": "pro",
+                "chapter": 29,
+                "label": "Proverbios 29"
+            },
+            {
+                "book": "pro",
+                "chapter": 30,
+                "label": "Proverbios 30"
+            },
+            {
+                "book": "pro",
+                "chapter": 31,
+                "label": "Proverbios 31"
+            }
+        ],
+        "egw": [],
+        "description": "Dichos de los Sabios: Instrucciones sobre la templanza y el carácter."
+    },
+    "92": {
+        "title": "966 a.C.",
+        "bible": [
+            {
+                "book": "1ki",
+                "chapter": 5,
+                "label": "1 Reyes 5"
+            },
+            {
+                "book": "1ki",
+                "chapter": 6,
+                "label": "1 Reyes 6"
+            },
+            {
+                "book": "2ch",
+                "chapter": 2,
+                "label": "2 Crónicas 2"
+            },
+            {
+                "book": "2ch",
+                "chapter": 3,
+                "label": "2 Crónicas 3"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 2: El templo y su dedicación",
+                "chapterId": 2
+            }
+        ],
+        "description": "966 a.C.: Inicio de la construcción (4º año de Salomón). Dato Clave: 480 años exactos desde el Éxodo (1 Rey 6:1). La gloria de Dios llena el Templo (2 Cró 5)."
+    },
+    "93": {
+        "title": "La Dedicación (959 a.C.)",
+        "bible": [
+            {
+                "book": "1ki",
+                "chapter": 7,
+                "label": "1 Reyes 7"
+            },
+            {
+                "book": "1ki",
+                "chapter": 8,
+                "label": "1 Reyes 8"
+            },
+            {
+                "book": "2ch",
+                "chapter": 4,
+                "label": "2 Crónicas 4"
+            },
+            {
+                "book": "2ch",
+                "chapter": 5,
+                "label": "2 Crónicas 5"
+            },
+            {
+                "book": "2ch",
+                "chapter": 6,
+                "label": "2 Crónicas 6"
+            },
+            {
+                "book": "2ch",
+                "chapter": 7,
+                "label": "2 Crónicas 7"
+            },
+            {
+                "book": "psa",
+                "chapter": 127,
+                "label": "Salmos 127"
+            },
+            {
+                "book": "psa",
+                "chapter": 135,
+                "label": "Salmos 135"
+            },
+            {
+                "book": "psa",
+                "chapter": 136,
+                "label": "Salmos 136"
+            }
+        ],
+        "egw": [],
+        "description": "La Dedicación (959 a.C.): El Arca entra al Lugar Santísimo. El fuego baja del cielo."
+    },
+    "94": {
+        "title": "Apogeo Comercial",
+        "bible": [
+            {
+                "book": "1ki",
+                "chapter": 9,
+                "label": "1 Reyes 9"
+            },
+            {
+                "book": "1ki",
+                "chapter": 10,
+                "label": "1 Reyes 10"
+            },
+            {
+                "book": "2ch",
+                "chapter": 8,
+                "label": "2 Crónicas 8"
+            },
+            {
+                "book": "2ch",
+                "chapter": 9,
+                "label": "2 Crónicas 9"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 3: El orgullo de la prosperidad",
+                "chapterId": 3
+            }
+        ],
+        "description": "Apogeo Comercial: La visita de la Reina de Sabá. Acumulación de oro y caballos. Salomón comienza a violar la ley del rey (Deut 17) por su autosuficiencia."
+    },
+    "95": {
+        "title": "La Caída",
+        "bible": [
+            {
+                "book": "1ki",
+                "chapter": 11,
+                "label": "1 Reyes 11"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 4: Resultados de la transgresión",
+                "chapterId": 4
+            }
+        ],
+        "description": "La Caída: Las mujeres extranjeras inclinan su corazón a la idolatría (Astarté, Moloc). Dios levanta a Jeroboam y Hadad como adversarios. El reino será quitado."
+    },
+    "96": {
+        "title": "El Retorno",
+        "bible": [
+            {
+                "book": "ecc",
+                "chapter": 1,
+                "label": "Eclesiastés 1"
+            },
+            {
+                "book": "ecc",
+                "chapter": 2,
+                "label": "Eclesiastés 2"
+            },
+            {
+                "book": "ecc",
+                "chapter": 3,
+                "label": "Eclesiastés 3"
+            },
+            {
+                "book": "ecc",
+                "chapter": 4,
+                "label": "Eclesiastés 4"
+            },
+            {
+                "book": "ecc",
+                "chapter": 5,
+                "label": "Eclesiastés 5"
+            },
+            {
+                "book": "ecc",
+                "chapter": 6,
+                "label": "Eclesiastés 6"
+            },
+            {
+                "book": "ecc",
+                "chapter": 7,
+                "label": "Eclesiastés 7"
+            },
+            {
+                "book": "ecc",
+                "chapter": 8,
+                "label": "Eclesiastés 8"
+            },
+            {
+                "book": "ecc",
+                "chapter": 9,
+                "label": "Eclesiastés 9"
+            },
+            {
+                "book": "ecc",
+                "chapter": 10,
+                "label": "Eclesiastés 10"
+            },
+            {
+                "book": "ecc",
+                "chapter": 11,
+                "label": "Eclesiastés 11"
+            },
+            {
+                "book": "ecc",
+                "chapter": 12,
+                "label": "Eclesiastés 12"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 5: El arrepentimiento de Salomón",
+                "chapterId": 5
+            }
+        ],
+        "description": "El Retorno: Escrito en su vejez. Confiesa la vaciedad de la vida sin Dios (\"Vanidad de vanidades\"). Su legado final es el temor de Jehová."
+    },
+    "97": {
+        "title": "El Cisma (931 a.C.)",
+        "bible": [
+            {
+                "book": "1ki",
+                "chapter": 12,
+                "verses": "1-33",
+                "label": "1 Reyes 12:1-33"
+            },
+            {
+                "book": "1ki",
+                "chapter": 13,
+                "label": "1 Reyes 13"
+            },
+            {
+                "book": "1ki",
+                "chapter": 14,
+                "label": "1 Reyes 14"
+            },
+            {
+                "book": "1ki",
+                "chapter": 15,
+                "label": "1 Reyes 15"
+            },
+            {
+                "book": "1ki",
+                "chapter": 16,
+                "label": "1 Reyes 16"
+            },
+            {
+                "book": "1ki",
+                "chapter": 17,
+                "label": "1 Reyes 17"
+            },
+            {
+                "book": "1ki",
+                "chapter": 18,
+                "label": "1 Reyes 18"
+            },
+            {
+                "book": "1ki",
+                "chapter": 19,
+                "label": "1 Reyes 19"
+            },
+            {
+                "book": "1ki",
+                "chapter": 20,
+                "label": "1 Reyes 20"
+            },
+            {
+                "book": "1ki",
+                "chapter": 21,
+                "label": "1 Reyes 21"
+            },
+            {
+                "book": "1ki",
+                "chapter": 22,
+                "label": "1 Reyes 22"
+            },
+            {
+                "book": "1ki",
+                "chapter": 23,
+                "label": "1 Reyes 23"
+            },
+            {
+                "book": "1ki",
+                "chapter": 24,
+                "label": "1 Reyes 24"
+            },
+            {
+                "book": "2ch",
+                "chapter": 10,
+                "label": "2 Crónicas 10"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 6: La división del reino",
+                "chapterId": 6
+            }
+        ],
+        "description": "El Cisma (931 a.C.): Roboam rechaza a los ancianos. Las 10 tribus se rebelan. Jeroboam crea los becerros en Dan y Betel para control político."
+    },
+    "98": {
+        "title": "Invasión de Sisac (926 a.C.)",
+        "bible": [
+            {
+                "book": "1ki",
+                "chapter": 12,
+                "verses": "25-33",
+                "label": "1 Reyes 12:25-33"
+            },
+            {
+                "book": "1ki",
+                "chapter": 13,
+                "label": "1 Reyes 13"
+            },
+            {
+                "book": "1ki",
+                "chapter": 14,
+                "verses": "1-20",
+                "label": "1 Reyes 14:1-20"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 7: Jeroboam",
+                "chapterId": 7
+            },
+            {
+                "label": "Profetas y Reyes, Cap. 8: La apostasía nacional",
+                "chapterId": 8
+            }
+        ],
+        "description": "Invasión de Sisac (926 a.C.): El faraón de Egipto saquea Jerusalén. Judá pierde los escudos de oro de Salomón. Roboam se humilla."
+    },
+    "99": {
+        "title": "Reforma en el Sur",
+        "bible": [
+            {
+                "book": "1ki",
+                "chapter": 14,
+                "verses": "21-31",
+                "label": "1 Reyes 14:21-31"
+            },
+            {
+                "book": "1ki",
+                "chapter": 15,
+                "label": "1 Reyes 15"
+            },
+            {
+                "book": "2ch",
+                "chapter": 11,
+                "label": "2 Crónicas 11"
+            },
+            {
+                "book": "2ch",
+                "chapter": 12,
+                "label": "2 Crónicas 12"
+            },
+            {
+                "book": "2ch",
+                "chapter": 13,
+                "label": "2 Crónicas 13"
+            },
+            {
+                "book": "2ch",
+                "chapter": 14,
+                "label": "2 Crónicas 14"
+            },
+            {
+                "book": "2ch",
+                "chapter": 15,
+                "label": "2 Crónicas 15"
+            },
+            {
+                "book": "2ch",
+                "chapter": 16,
+                "label": "2 Crónicas 16"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 15: Josafat",
+                "chapterId": 15
+            }
+        ],
+        "description": "Reforma en el Sur: Abías vence a Jeroboam (2 Cró 13). El rey Asa quita la idolatría y derrota a Zera el Etíope mediante la fe (c. 900 a.C.)."
+    },
+    "100": {
+        "title": "Elías y el Fuego (870 a.C.)",
+        "bible": [
+            {
+                "book": "1ki",
+                "chapter": 16,
+                "label": "1 Reyes 16"
+            },
+            {
+                "book": "1ki",
+                "chapter": 17,
+                "label": "1 Reyes 17"
+            },
+            {
+                "book": "1ki",
+                "chapter": 18,
+                "label": "1 Reyes 18"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 9: Elías el tisbita",
+                "chapterId": 9
+            },
+            {
+                "label": "Profetas y Reyes, Cap. 10: Una severa reprensión",
+                "chapterId": 10
+            },
+            {
+                "label": "Profetas y Reyes, Cap. 11: Sobre el monte Carmelo",
+                "chapterId": 11
+            }
+        ],
+        "description": "Elías y el Fuego (870 a.C.): Acab y Jezabel. Elías detiene la lluvia. Duelo en el Carmelo: \"Jehová es el Dios\"."
+    },
+    "101": {
+        "title": "Muerte de Acab (853 a.C.)",
+        "bible": [
+            {
+                "book": "1ki",
+                "chapter": 19,
+                "label": "1 Reyes 19"
+            },
+            {
+                "book": "1ki",
+                "chapter": 20,
+                "label": "1 Reyes 20"
+            },
+            {
+                "book": "1ki",
+                "chapter": 21,
+                "label": "1 Reyes 21"
+            },
+            {
+                "book": "1ki",
+                "chapter": 22,
+                "label": "1 Reyes 22"
+            },
+            {
+                "book": "2ch",
+                "chapter": 17,
+                "label": "2 Crónicas 17"
+            },
+            {
+                "book": "2ch",
+                "chapter": 18,
+                "label": "2 Crónicas 18"
+            },
+            {
+                "book": "2ch",
+                "chapter": 19,
+                "label": "2 Crónicas 19"
+            },
+            {
+                "book": "2ch",
+                "chapter": 20,
+                "label": "2 Crónicas 20"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 12: De Jezreel a Horeb",
+                "chapterId": 12
+            },
+            {
+                "label": "Profetas y Reyes, Cap. 13: ¿Qué haces aquí?",
+                "chapterId": 13
+            },
+            {
+                "label": "Profetas y Reyes, Cap. 16: Caída de la casa de Acab",
+                "chapterId": 16
+            }
+        ],
+        "description": "Muerte de Acab (853 a.C.): El silbo apacible. David y Josafat se unen. Muerte de Acab en Ramot de Galaad."
+    },
+    "102": {
+        "title": "Traslación (852 a.C.)",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 1,
+                "label": "2 Reyes 1"
+            },
+            {
+                "book": "2ki",
+                "chapter": 2,
+                "label": "2 Reyes 2"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 14: En el espíritu y poder de Elías",
+                "chapterId": 14
+            },
+            {
+                "label": "Profetas y Reyes, Cap. 17: El llamamiento de Eliseo",
+                "chapterId": 17
+            }
+        ],
+        "description": "Traslación (852 a.C.): Elías sube en el carro de fuego. Eliseo recibe la doble porción y comienza su ministerio."
+    },
+    "103": {
+        "title": "Milagros de Gracia",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 3,
+                "label": "2 Reyes 3"
+            },
+            {
+                "book": "2ki",
+                "chapter": 4,
+                "label": "2 Reyes 4"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 18: La purificación de las aguas",
+                "chapterId": 18
+            },
+            {
+                "label": "Profetas y Reyes, Cap. 19: Un profeta de paz",
+                "chapterId": 19
+            }
+        ],
+        "description": "Milagros de Gracia: Guerra contra Moab (Piedra Moabita). Eliseo multiplica el aceite y resucita al hijo de la sunamita."
+    },
+    "104": {
+        "title": "Naamán y Abdías",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 5,
+                "label": "2 Reyes 5"
+            },
+            {
+                "book": "2ki",
+                "chapter": 6,
+                "label": "2 Reyes 6"
+            },
+            {
+                "book": "2ki",
+                "chapter": 7,
+                "label": "2 Reyes 7"
+            },
+            {
+                "book": "2ki",
+                "chapter": 8,
+                "label": "2 Reyes 8"
+            },
+            {
+                "book": "2ch",
+                "chapter": 21,
+                "label": "2 Crónicas 21"
+            },
+            {
+                "book": "oba",
+                "chapter": 1,
+                "label": "Abdías 1"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 20: Naamán",
+                "chapterId": 20
+            },
+            {
+                "label": "Profetas y Reyes, Cap. 31: Esperanza para los paganos",
+                "chapterId": 31
+            }
+        ],
+        "description": "Naamán y Abdías: Sanidad del general sirio. Abdías (c. 845 a.C.): Profetiza contra Edom por traicionar a Judá bajo el rey Joram."
+    },
+    "105": {
+        "title": "Revolución de Jehú (841 a.C.)",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 9,
+                "label": "2 Reyes 9"
+            },
+            {
+                "book": "2ki",
+                "chapter": 10,
+                "label": "2 Reyes 10"
+            },
+            {
+                "book": "2ki",
+                "chapter": 11,
+                "label": "2 Reyes 11"
+            },
+            {
+                "book": "2ch",
+                "chapter": 22,
+                "label": "2 Crónicas 22"
+            },
+            {
+                "book": "2ch",
+                "chapter": 23,
+                "label": "2 Crónicas 23"
+            }
+        ],
+        "egw": [],
+        "description": "Revolución de Jehú (841 a.C.): Jehú extermina a la casa de Acab. En Judá, la usurpadora Atalía es derrocada por Joiada"
+    },
+    "106": {
+        "title": "Muerte de Eliseo",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 12,
+                "label": "2 Reyes 12"
+            },
+            {
+                "book": "2ki",
+                "chapter": 13,
+                "label": "2 Reyes 13"
+            },
+            {
+                "book": "2ch",
+                "chapter": 24,
+                "label": "2 Crónicas 24"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 21: El fin del ministerio de Eliseo",
+                "chapterId": 21
+            }
+        ],
+        "description": "Muerte de Eliseo: El rey Joás visita al profeta moribundo. Reinado de Joás en Judá y su posterior caída."
+    },
+    "107": {
+        "title": "Joel (c. 835 a.C.)",
+        "bible": [
+            {
+                "book": "joe",
+                "chapter": 1,
+                "label": "Joel 1"
+            },
+            {
+                "book": "joe",
+                "chapter": 2,
+                "label": "Joel 2"
+            },
+            {
+                "book": "joe",
+                "chapter": 3,
+                "label": "Joel 3"
+            }
+        ],
+        "egw": [],
+        "description": "Joel (c. 835 a.C.): Plaga de langostas como símbolo del juicio. Promesa del Espíritu Santo (Joel 2:28)."
+    },
+    "108": {
+        "title": "Jonás (c. 780 a.C.)",
+        "bible": [
+            {
+                "book": "jon",
+                "chapter": 1,
+                "label": "Jonás 1"
+            },
+            {
+                "book": "jon",
+                "chapter": 2,
+                "label": "Jonás 2"
+            },
+            {
+                "book": "jon",
+                "chapter": 3,
+                "label": "Jonás 3"
+            },
+            {
+                "book": "jon",
+                "chapter": 4,
+                "label": "Jonás 4"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 22: Nínive, ciudad sobremanera grande",
+                "chapterId": 22
+            }
+        ],
+        "description": "Jonás (c. 780 a.C.): Misión a los asirios bajo Jeroboam II. Dios muestra que Su amor no es solo para Israel."
+    },
+    "109": {
+        "title": "Amós (c. 760 a.C.)",
+        "bible": [
+            {
+                "book": "amo",
+                "chapter": 1,
+                "label": "Amós 1"
+            },
+            {
+                "book": "amo",
+                "chapter": 2,
+                "label": "Amós 2"
+            },
+            {
+                "book": "amo",
+                "chapter": 3,
+                "label": "Amós 3"
+            },
+            {
+                "book": "amo",
+                "chapter": 4,
+                "label": "Amós 4"
+            },
+            {
+                "book": "amo",
+                "chapter": 5,
+                "label": "Amós 5"
+            },
+            {
+                "book": "amo",
+                "chapter": 6,
+                "label": "Amós 6"
+            },
+            {
+                "book": "amo",
+                "chapter": 7,
+                "label": "Amós 7"
+            },
+            {
+                "book": "amo",
+                "chapter": 8,
+                "label": "Amós 8"
+            },
+            {
+                "book": "amo",
+                "chapter": 9,
+                "label": "Amós 9"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 23: El cautiverio asirio",
+                "chapterId": 23
+            }
+        ],
+        "description": "Amós (c. 760 a.C.): El pastor de Tecoa denuncia el lujo excesivo y la opresión en el Reino del Norte. El juicio se acerca."
+    },
+    "110": {
+        "title": "Oseas (c. 750 a.C.)",
+        "bible": [
+            {
+                "book": "hos",
+                "chapter": 1,
+                "label": "Oseas 1"
+            },
+            {
+                "book": "hos",
+                "chapter": 2,
+                "label": "Oseas 2"
+            },
+            {
+                "book": "hos",
+                "chapter": 3,
+                "label": "Oseas 3"
+            },
+            {
+                "book": "hos",
+                "chapter": 4,
+                "label": "Oseas 4"
+            },
+            {
+                "book": "hos",
+                "chapter": 5,
+                "label": "Oseas 5"
+            },
+            {
+                "book": "hos",
+                "chapter": 6,
+                "label": "Oseas 6"
+            },
+            {
+                "book": "hos",
+                "chapter": 7,
+                "label": "Oseas 7"
+            },
+            {
+                "book": "hos",
+                "chapter": 8,
+                "label": "Oseas 8"
+            },
+            {
+                "book": "hos",
+                "chapter": 9,
+                "label": "Oseas 9"
+            },
+            {
+                "book": "hos",
+                "chapter": 10,
+                "label": "Oseas 10"
+            },
+            {
+                "book": "hos",
+                "chapter": 11,
+                "label": "Oseas 11"
+            },
+            {
+                "book": "hos",
+                "chapter": 12,
+                "label": "Oseas 12"
+            },
+            {
+                "book": "hos",
+                "chapter": 13,
+                "label": "Oseas 13"
+            },
+            {
+                "book": "hos",
+                "chapter": 14,
+                "label": "Oseas 14"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 24: Destruido por falta de conocimiento",
+                "chapterId": 24
+            }
+        ],
+        "description": "Oseas (c. 750 a.C.): El matrimonio profético con Gomer. Dios suplica amor fiel antes de que Asiria destruya a Efraín."
+    },
+    "111": {
+        "title": "Reinado de Uzías",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 15,
+                "label": "2 Reyes 15"
+            },
+            {
+                "book": "2ch",
+                "chapter": 26,
+                "label": "2 Crónicas 26"
+            },
+            {
+                "book": "2ch",
+                "chapter": 27,
+                "label": "2 Crónicas 27"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 32: Manasés y Josías",
+                "chapterId": 32
+            }
+        ],
+        "description": "Reinado de Uzías: 52 años de poder en el Sur. El pecado de presunción (lepra). Jotam reina como corregente."
+    },
+    "112": {
+        "title": "La Visión (740 a.C.)",
+        "bible": [
+            {
+                "book": "isa",
+                "chapter": 1,
+                "label": "Isaías 1"
+            },
+            {
+                "book": "isa",
+                "chapter": 2,
+                "label": "Isaías 2"
+            },
+            {
+                "book": "isa",
+                "chapter": 3,
+                "label": "Isaías 3"
+            },
+            {
+                "book": "isa",
+                "chapter": 4,
+                "label": "Isaías 4"
+            },
+            {
+                "book": "isa",
+                "chapter": 5,
+                "label": "Isaías 5"
+            },
+            {
+                "book": "isa",
+                "chapter": 6,
+                "label": "Isaías 6"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 25: El llamamiento de Isaías",
+                "chapterId": 25
+            }
+        ],
+        "description": "La Visión (740 a.C.): Isaías ve la santidad de Dios en el Templo el año que muere Uzías. \"Heme aquí, envíame a mí\"."
+    },
+    "113": {
+        "title": "Miqueas (c. 735 a.C.)",
+        "bible": [
+            {
+                "book": "mic",
+                "chapter": 1,
+                "label": "Miqueas 1"
+            },
+            {
+                "book": "mic",
+                "chapter": 2,
+                "label": "Miqueas 2"
+            },
+            {
+                "book": "mic",
+                "chapter": 3,
+                "label": "Miqueas 3"
+            },
+            {
+                "book": "mic",
+                "chapter": 4,
+                "label": "Miqueas 4"
+            },
+            {
+                "book": "mic",
+                "chapter": 5,
+                "label": "Miqueas 5"
+            },
+            {
+                "book": "mic",
+                "chapter": 6,
+                "label": "Miqueas 6"
+            },
+            {
+                "book": "mic",
+                "chapter": 7,
+                "label": "Miqueas 7"
+            }
+        ],
+        "egw": [],
+        "description": "Miqueas (c. 735 a.C.): Denuncia de la corrupción urbana. Profetiza el nacimiento del Mesías en Belén Efrata (Miq 5:2)."
+    },
+    "114": {
+        "title": "Crisis de Fe",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 16,
+                "label": "2 Reyes 16"
+            },
+            {
+                "book": "2ch",
+                "chapter": 28,
+                "label": "2 Crónicas 28"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 27: Acaz",
+                "chapterId": 27
+            }
+        ],
+        "description": "Crisis de Fe: Acaz rechaza confiar en Dios y se alía con Tiglat-pileser III de Asiria. Judá se vuelve vasalla de Nínive."
+    },
+    "115": {
+        "title": "Emanuel",
+        "bible": [
+            {
+                "book": "isa",
+                "chapter": 7,
+                "label": "Isaías 7"
+            },
+            {
+                "book": "isa",
+                "chapter": 8,
+                "label": "Isaías 8"
+            },
+            {
+                "book": "isa",
+                "chapter": 9,
+                "label": "Isaías 9"
+            },
+            {
+                "book": "isa",
+                "chapter": 10,
+                "label": "Isaías 10"
+            },
+            {
+                "book": "isa",
+                "chapter": 11,
+                "label": "Isaías 11"
+            },
+            {
+                "book": "isa",
+                "chapter": 12,
+                "label": "Isaías 12"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 26: He ahí a vuestro Dios",
+                "chapterId": 26
+            }
+        ],
+        "description": "Emanuel: En medio de la guerra de Acaz, Isaías profetiza el nacimiento de la virgen. \"Un niño nos es nacido\"."
+    },
+    "116": {
+        "title": "722 a.C.",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 17,
+                "label": "2 Reyes 17"
+            },
+            {
+                "book": "isa",
+                "chapter": 13,
+                "label": "Isaías 13"
+            },
+            {
+                "book": "isa",
+                "chapter": 14,
+                "label": "Isaías 14"
+            },
+            {
+                "book": "isa",
+                "chapter": 15,
+                "label": "Isaías 15"
+            },
+            {
+                "book": "isa",
+                "chapter": 16,
+                "label": "Isaías 16"
+            },
+            {
+                "book": "isa",
+                "chapter": 17,
+                "label": "Isaías 17"
+            },
+            {
+                "book": "isa",
+                "chapter": 18,
+                "label": "Isaías 18"
+            },
+            {
+                "book": "isa",
+                "chapter": 19,
+                "label": "Isaías 19"
+            },
+            {
+                "book": "isa",
+                "chapter": 20,
+                "label": "Isaías 20"
+            },
+            {
+                "book": "isa",
+                "chapter": 21,
+                "label": "Isaías 21"
+            },
+            {
+                "book": "isa",
+                "chapter": 22,
+                "label": "Isaías 22"
+            },
+            {
+                "book": "isa",
+                "chapter": 23,
+                "label": "Isaías 23"
+            }
+        ],
+        "egw": [],
+        "description": "722 a.C.: El Fin del Norte. Samaria es tomada por Sargón II. Deportación total. Fin de las 10 tribus de Israel."
+    },
+    "117": {
+        "title": "La Gran Reforma (715 a.C.)",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 18,
+                "label": "2 Reyes 18"
+            },
+            {
+                "book": "2ch",
+                "chapter": 29,
+                "label": "2 Crónicas 29"
+            },
+            {
+                "book": "2ch",
+                "chapter": 30,
+                "label": "2 Crónicas 30"
+            },
+            {
+                "book": "2ch",
+                "chapter": 31,
+                "label": "2 Crónicas 31"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 28: Ezequías",
+                "chapterId": 28
+            }
+        ],
+        "description": "La Gran Reforma (715 a.C.): Ezequías purifica el Templo y celebra la Pascua nacional tras la caída de Samaria."
+    },
+    "118": {
+        "title": "Juicio y Advertencia",
+        "bible": [
+            {
+                "book": "isa",
+                "chapter": 24,
+                "label": "Isaías 24"
+            },
+            {
+                "book": "isa",
+                "chapter": 25,
+                "label": "Isaías 25"
+            },
+            {
+                "book": "isa",
+                "chapter": 26,
+                "label": "Isaías 26"
+            },
+            {
+                "book": "isa",
+                "chapter": 27,
+                "label": "Isaías 27"
+            },
+            {
+                "book": "isa",
+                "chapter": 28,
+                "label": "Isaías 28"
+            },
+            {
+                "book": "isa",
+                "chapter": 29,
+                "label": "Isaías 29"
+            },
+            {
+                "book": "isa",
+                "chapter": 30,
+                "label": "Isaías 30"
+            },
+            {
+                "book": "isa",
+                "chapter": 31,
+                "label": "Isaías 31"
+            },
+            {
+                "book": "isa",
+                "chapter": 32,
+                "label": "Isaías 32"
+            },
+            {
+                "book": "isa",
+                "chapter": 33,
+                "label": "Isaías 33"
+            },
+            {
+                "book": "isa",
+                "chapter": 34,
+                "label": "Isaías 34"
+            },
+            {
+                "book": "isa",
+                "chapter": 35,
+                "label": "Isaías 35"
+            }
+        ],
+        "egw": [],
+        "description": "Juicio y Advertencia: Isaías profetiza el juicio mundial y advierte a Judá contra la alianza con Egipto. El camino de santidad (Isa 35)."
+    },
+    "119": {
+        "title": "Invasión (701 a.C.)",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 19,
+                "label": "2 Reyes 19"
+            },
+            {
+                "book": "isa",
+                "chapter": 36,
+                "label": "Isaías 36"
+            },
+            {
+                "book": "isa",
+                "chapter": 37,
+                "label": "Isaías 37"
+            },
+            {
+                "book": "psa",
+                "chapter": 46,
+                "label": "Salmos 46"
+            },
+            {
+                "book": "psa",
+                "chapter": 48,
+                "label": "Salmos 48"
+            },
+            {
+                "book": "psa",
+                "chapter": 76,
+                "label": "Salmos 76"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 30: Librados de Asiria",
+                "chapterId": 30
+            }
+        ],
+        "description": "Invasión (701 a.C.): Senaquerib sitia Jerusalén. El ángel mata a 185,000 asirios"
+    },
+    "120": {
+        "title": "La Sombra que Retrocede",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 20,
+                "verses": "1-21",
+                "label": "2 Reyes 20:1-21"
+            },
+            {
+                "book": "isa",
+                "chapter": 38,
+                "label": "Isaías 38"
+            },
+            {
+                "book": "isa",
+                "chapter": 39,
+                "label": "Isaías 39"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 29: Los embajadores de Babilonia",
+                "chapterId": 29
+            }
+        ],
+        "description": "La Sombra que Retrocede: Sanidad de Ezequías. Error al mostrar los tesoros a los caldeos. Isaías profetiza el futuro cautiverio babilónico."
+    },
+    "121": {
+        "title": "El Siervo Sufriente",
+        "bible": [
+            {
+                "book": "isa",
+                "chapter": 40,
+                "label": "Isaías 40"
+            },
+            {
+                "book": "isa",
+                "chapter": 41,
+                "label": "Isaías 41"
+            },
+            {
+                "book": "isa",
+                "chapter": 42,
+                "label": "Isaías 42"
+            },
+            {
+                "book": "isa",
+                "chapter": 43,
+                "label": "Isaías 43"
+            },
+            {
+                "book": "isa",
+                "chapter": 44,
+                "label": "Isaías 44"
+            },
+            {
+                "book": "isa",
+                "chapter": 45,
+                "label": "Isaías 45"
+            },
+            {
+                "book": "isa",
+                "chapter": 46,
+                "label": "Isaías 46"
+            },
+            {
+                "book": "isa",
+                "chapter": 47,
+                "label": "Isaías 47"
+            },
+            {
+                "book": "isa",
+                "chapter": 48,
+                "label": "Isaías 48"
+            },
+            {
+                "book": "isa",
+                "chapter": 49,
+                "label": "Isaías 49"
+            },
+            {
+                "book": "isa",
+                "chapter": 50,
+                "label": "Isaías 50"
+            },
+            {
+                "book": "isa",
+                "chapter": 51,
+                "label": "Isaías 51"
+            },
+            {
+                "book": "isa",
+                "chapter": 52,
+                "label": "Isaías 52"
+            },
+            {
+                "book": "isa",
+                "chapter": 53,
+                "label": "Isaías 53"
+            }
+        ],
+        "egw": [],
+        "description": "El Siervo Sufriente: Isaías profetiza el consuelo para los futuros exiliados. El capítulo 53 es la cima de la profecía mesiánica (Cristo)."
+    },
+    "122": {
+        "title": "Restauración Final",
+        "bible": [
+            {
+                "book": "isa",
+                "chapter": 54,
+                "label": "Isaías 54"
+            },
+            {
+                "book": "isa",
+                "chapter": 55,
+                "label": "Isaías 55"
+            },
+            {
+                "book": "isa",
+                "chapter": 56,
+                "label": "Isaías 56"
+            },
+            {
+                "book": "isa",
+                "chapter": 57,
+                "label": "Isaías 57"
+            },
+            {
+                "book": "isa",
+                "chapter": 58,
+                "label": "Isaías 58"
+            },
+            {
+                "book": "isa",
+                "chapter": 59,
+                "label": "Isaías 59"
+            },
+            {
+                "book": "isa",
+                "chapter": 60,
+                "label": "Isaías 60"
+            },
+            {
+                "book": "isa",
+                "chapter": 61,
+                "label": "Isaías 61"
+            },
+            {
+                "book": "isa",
+                "chapter": 62,
+                "label": "Isaías 62"
+            },
+            {
+                "book": "isa",
+                "chapter": 63,
+                "label": "Isaías 63"
+            },
+            {
+                "book": "isa",
+                "chapter": 64,
+                "label": "Isaías 64"
+            },
+            {
+                "book": "isa",
+                "chapter": 65,
+                "label": "Isaías 65"
+            },
+            {
+                "book": "isa",
+                "chapter": 66,
+                "label": "Isaías 66"
+            }
+        ],
+        "egw": [],
+        "description": "Restauración Final: Isaías termina con la visión de los cielos nuevos y la tierra nueva. Cierre del ministerio del profeta (c. 680 a.C.)."
+    },
+    "123": {
+        "title": "La Era Oscura",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 20,
+                "verses": "21-21",
+                "label": "2 Reyes 20:21-21"
+            },
+            {
+                "book": "2ki",
+                "chapter": 21,
+                "label": "2 Reyes 21"
+            },
+            {
+                "book": "2ch",
+                "chapter": 32,
+                "verses": "32-33",
+                "label": "2 Crónicas 32:32-33"
+            },
+            {
+                "book": "2ch",
+                "chapter": 33,
+                "label": "2 Crónicas 33"
+            }
+        ],
+        "egw": [],
+        "description": "La Era Oscura: Manasés reina 55 años. Deshace las reformas de su padre y persigue a los profetas. Llevado a Babilonia, se arrepiente al final."
+    },
+    "124": {
+        "title": "El Niño Rey",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 22,
+                "label": "2 Reyes 22"
+            },
+            {
+                "book": "2ch",
+                "chapter": 34,
+                "label": "2 Crónicas 34"
+            }
+        ],
+        "egw": [],
+        "description": "El Niño Rey: Josías asciende a los 8 años (640 a.C.). Comienza a buscar a Dios a los 16 y limpia la tierra de ídolos."
+    },
+    "125": {
+        "title": "Juicio a Nínive (c. 630 a.C.)",
+        "bible": [
+            {
+                "book": "nah",
+                "chapter": 1,
+                "label": "Nahum 1"
+            },
+            {
+                "book": "nah",
+                "chapter": 2,
+                "label": "Nahum 2"
+            },
+            {
+                "book": "nah",
+                "chapter": 3,
+                "label": "Nahum 3"
+            }
+        ],
+        "egw": [],
+        "description": "Juicio a Nínive (c. 630 a.C.): Nahum anuncia el fin de la \"ciudad sanguinaria\". Dios no dejará impune la crueldad asiria."
+    },
+    "126": {
+        "title": "Advertencia Profética",
+        "bible": [
+            {
+                "book": "zep",
+                "chapter": 1,
+                "label": "Sofonías 1"
+            },
+            {
+                "book": "zep",
+                "chapter": 2,
+                "label": "Sofonías 2"
+            },
+            {
+                "book": "zep",
+                "chapter": 3,
+                "label": "Sofonías 3"
+            }
+        ],
+        "egw": [],
+        "description": "Advertencia Profética: Sofonías profetiza durante la minoría de Josías. Anuncia un juicio que purificará a Jerusalén."
+    },
+    "127": {
+        "title": "Llamado de Jeremías (627 a.C.)",
+        "bible": [
+            {
+                "book": "jer",
+                "chapter": 1,
+                "label": "Jeremías 1"
+            },
+            {
+                "book": "jer",
+                "chapter": 2,
+                "label": "Jeremías 2"
+            },
+            {
+                "book": "jer",
+                "chapter": 3,
+                "label": "Jeremías 3"
+            },
+            {
+                "book": "jer",
+                "chapter": 4,
+                "label": "Jeremías 4"
+            },
+            {
+                "book": "jer",
+                "chapter": 5,
+                "label": "Jeremías 5"
+            },
+            {
+                "book": "jer",
+                "chapter": 6,
+                "label": "Jeremías 6"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 33: El libro de la ley",
+                "chapterId": 33
+            }
+        ],
+        "description": "Llamado de Jeremías (627 a.C.): En el año 13 de Josías. Visión de la olla hirviendo: el mal viene del Norte (Babilonia)."
+    },
+    "128": {
+        "title": "Reforma de Josías",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 23,
+                "label": "2 Reyes 23"
+            }
+        ],
+        "egw": [],
+        "description": "Reforma de Josías: Hallazgo del rollo (622 a.C.). Gran Pascua nacional. Muerte de Josías en Meguido (609 a.C.)."
+    },
+    "129": {
+        "title": "Habacuc (c. 609 a.C.)",
+        "bible": [
+            {
+                "book": "hab",
+                "chapter": 1,
+                "label": "Habacuc 1"
+            },
+            {
+                "book": "hab",
+                "chapter": 2,
+                "label": "Habacuc 2"
+            },
+            {
+                "book": "hab",
+                "chapter": 3,
+                "label": "Habacuc 3"
+            }
+        ],
+        "egw": [],
+        "description": "Habacuc (c. 609 a.C.): El profeta cuestiona a Dios por usar a los babilonios para castigar a Judá. \"El justo por su fe vivirá"
+    },
+    "130": {
+        "title": "Sermón del Templo",
+        "bible": [
+            {
+                "book": "jer",
+                "chapter": 7,
+                "label": "Jeremías 7"
+            },
+            {
+                "book": "jer",
+                "chapter": 8,
+                "label": "Jeremías 8"
+            },
+            {
+                "book": "jer",
+                "chapter": 9,
+                "label": "Jeremías 9"
+            },
+            {
+                "book": "jer",
+                "chapter": 10,
+                "label": "Jeremías 10"
+            },
+            {
+                "book": "jer",
+                "chapter": 11,
+                "label": "Jeremías 11"
+            },
+            {
+                "book": "jer",
+                "chapter": 12,
+                "label": "Jeremías 12"
+            },
+            {
+                "book": "jer",
+                "chapter": 13,
+                "label": "Jeremías 13"
+            },
+            {
+                "book": "jer",
+                "chapter": 26,
+                "label": "Jeremías 26"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 34: Jeremías",
+                "chapterId": 34
+            }
+        ],
+        "description": "Sermón del Templo: Tras la muerte de Josías, Jeremías advierte contra la falsa seguridad religiosa. Conspiración de Anatot."
+    },
+    "131": {
+        "title": "El Rollo Quemado (605 a.C.)",
+        "bible": [
+            {
+                "book": "jer",
+                "chapter": 35,
+                "label": "Jeremías 35"
+            },
+            {
+                "book": "jer",
+                "chapter": 36,
+                "label": "Jeremías 36"
+            },
+            {
+                "book": "jer",
+                "chapter": 45,
+                "label": "Jeremías 45"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 35: La condenación inminente",
+                "chapterId": 35
+            }
+        ],
+        "description": "El Rollo Quemado (605 a.C.): El rey Joacim quema la Palabra de Dios. Jeremías la reescribe. Ejemplo de los Recabitas."
+    },
+    "132": {
+        "title": "1ª Deportación (605 a.C.)",
+        "bible": [
+            {
+                "book": "dan",
+                "chapter": 1,
+                "label": "Daniel 1"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 39: En la corte de Babilonia",
+                "chapterId": 39
+            }
+        ],
+        "description": "1ª Deportación (605 a.C.): Daniel y sus amigos llevados a Babilonia. Decisión de no contaminarse con la comida del rey."
+    },
+    "133": {
+        "title": "La Estatua (c. 603 a.C.)",
+        "bible": [
+            {
+                "book": "dan",
+                "chapter": 2,
+                "label": "Daniel 2"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 40: El sueño de Nabucodonosor",
+                "chapterId": 40
+            }
+        ],
+        "description": "La Estatua (c. 603 a.C.): Dios revela la historia universal desde Babilonia hasta el fin. La Roca que desmenuza los reinos."
+    },
+    "134": {
+        "title": "La Sentencia",
+        "bible": [
+            {
+                "book": "jer",
+                "chapter": 25,
+                "label": "Jeremías 25"
+            },
+            {
+                "book": "jer",
+                "chapter": 46,
+                "label": "Jeremías 46"
+            },
+            {
+                "book": "jer",
+                "chapter": 47,
+                "label": "Jeremías 47"
+            },
+            {
+                "book": "jer",
+                "chapter": 48,
+                "label": "Jeremías 48"
+            },
+            {
+                "book": "jer",
+                "chapter": 49,
+                "label": "Jeremías 49"
+            }
+        ],
+        "egw": [],
+        "description": "La Sentencia: Jeremías fija 70 años de cautiverio. Juicio a las naciones vecinas. Babilonia como instrumento de Jehová."
+    },
+    "135": {
+        "title": "El Horno (c. 594 a.C.)",
+        "bible": [
+            {
+                "book": "dan",
+                "chapter": 3,
+                "label": "Daniel 3"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 41: El horno de fuego",
+                "chapterId": 41
+            }
+        ],
+        "description": "El Horno (c. 594 a.C.): Nabucodonosor erige la estatua de oro en Dura. Fidelidad de los 3 jóvenes. Cristo camina en el fuego."
+    },
+    "136": {
+        "title": "Yugos y Cartas (c. 593 a.C.)",
+        "bible": [
+            {
+                "book": "jer",
+                "chapter": 22,
+                "label": "Jeremías 22"
+            },
+            {
+                "book": "jer",
+                "chapter": 23,
+                "label": "Jeremías 23"
+            },
+            {
+                "book": "jer",
+                "chapter": 24,
+                "label": "Jeremías 24"
+            },
+            {
+                "book": "jer",
+                "chapter": 27,
+                "label": "Jeremías 27"
+            },
+            {
+                "book": "jer",
+                "chapter": 28,
+                "label": "Jeremías 28"
+            },
+            {
+                "book": "jer",
+                "chapter": 29,
+                "label": "Jeremías 29"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 37: Llevados cautivos a Babilonia",
+                "chapterId": 37
+            }
+        ],
+        "description": "Yugos y Cartas (c. 593 a.C.): Jeremías usa yugos para pedir sumisión. Jeremías 29: Envía la carta de esperanza a los ya exiliados (\"Sé los pensamientos que tengo...\")."
+    },
+    "137": {
+        "title": "Visión del Quebar (593 a.C.)",
+        "bible": [
+            {
+                "book": "eze",
+                "chapter": 1,
+                "label": "Ezequiel 1"
+            },
+            {
+                "book": "eze",
+                "chapter": 2,
+                "label": "Ezequiel 2"
+            },
+            {
+                "book": "eze",
+                "chapter": 3,
+                "label": "Ezequiel 3"
+            },
+            {
+                "book": "eze",
+                "chapter": 4,
+                "label": "Ezequiel 4"
+            },
+            {
+                "book": "eze",
+                "chapter": 5,
+                "label": "Ezequiel 5"
+            },
+            {
+                "book": "eze",
+                "chapter": 6,
+                "label": "Ezequiel 6"
+            },
+            {
+                "book": "eze",
+                "chapter": 7,
+                "label": "Ezequiel 7"
+            },
+            {
+                "book": "eze",
+                "chapter": 8,
+                "label": "Ezequiel 8"
+            },
+            {
+                "book": "eze",
+                "chapter": 9,
+                "label": "Ezequiel 9"
+            },
+            {
+                "book": "eze",
+                "chapter": 10,
+                "label": "Ezequiel 10"
+            },
+            {
+                "book": "eze",
+                "chapter": 11,
+                "label": "Ezequiel 11"
+            }
+        ],
+        "egw": [],
+        "description": "Visión del Quebar (593 a.C.): Ezequiel ve la gloria de Dios. Ve la idolatría en el Templo y cómo la Gloria sale de Jerusalén."
+    },
+    "138": {
+        "title": "La Caída de Babilonia (593 a.C.)",
+        "bible": [
+            {
+                "book": "eze",
+                "chapter": 12,
+                "label": "Ezequiel 12"
+            },
+            {
+                "book": "eze",
+                "chapter": 13,
+                "label": "Ezequiel 13"
+            },
+            {
+                "book": "eze",
+                "chapter": 14,
+                "label": "Ezequiel 14"
+            },
+            {
+                "book": "eze",
+                "chapter": 15,
+                "label": "Ezequiel 15"
+            },
+            {
+                "book": "eze",
+                "chapter": 16,
+                "label": "Ezequiel 16"
+            },
+            {
+                "book": "eze",
+                "chapter": 17,
+                "label": "Ezequiel 17"
+            },
+            {
+                "book": "eze",
+                "chapter": 18,
+                "label": "Ezequiel 18"
+            },
+            {
+                "book": "eze",
+                "chapter": 19,
+                "label": "Ezequiel 19"
+            },
+            {
+                "book": "eze",
+                "chapter": 20,
+                "label": "Ezequiel 20"
+            },
+            {
+                "book": "eze",
+                "chapter": 21,
+                "label": "Ezequiel 21"
+            },
+            {
+                "book": "eze",
+                "chapter": 22,
+                "label": "Ezequiel 22"
+            },
+            {
+                "book": "eze",
+                "chapter": 23,
+                "label": "Ezequiel 23"
+            },
+            {
+                "book": "eze",
+                "chapter": 24,
+                "label": "Ezequiel 24"
+            },
+            {
+                "book": "jer",
+                "chapter": 50,
+                "label": "Jeremías 50"
+            },
+            {
+                "book": "jer",
+                "chapter": 51,
+                "label": "Jeremías 51"
+            }
+        ],
+        "egw": [],
+        "description": "La Caída de Babilonia (593 a.C.): Jeremías escribe la destrucción final de Babilonia y envía el rollo para ser hundido en el Éufrates como señal."
+    },
+    "139": {
+        "title": "El Dolor del Profeta",
+        "bible": [
+            {
+                "book": "jer",
+                "chapter": 21,
+                "label": "Jeremías 21"
+            },
+            {
+                "book": "jer",
+                "chapter": 34,
+                "label": "Jeremías 34"
+            },
+            {
+                "book": "jer",
+                "chapter": 37,
+                "label": "Jeremías 37"
+            },
+            {
+                "book": "jer",
+                "chapter": 38,
+                "label": "Jeremías 38"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 38: Luz a través de las tinieblas",
+                "chapterId": 38
+            }
+        ],
+        "description": "El Dolor del Profeta: Jeremías en el cepo. La señal del alfarero. El profeta sufre bajo Joacim pero confía en Dios."
+    },
+    "140": {
+        "title": "586 a.C.",
+        "bible": [
+            {
+                "book": "2ki",
+                "chapter": 24,
+                "verses": "8-20",
+                "label": "2 Reyes 24:8-20"
+            },
+            {
+                "book": "2ki",
+                "chapter": 25,
+                "label": "2 Reyes 25"
+            },
+            {
+                "book": "jer",
+                "chapter": 39,
+                "label": "Jeremías 39"
+            },
+            {
+                "book": "jer",
+                "chapter": 52,
+                "label": "Jeremías 52"
+            }
+        ],
+        "egw": [],
+        "description": "586 a.C.: La Caída. Jerusalén es quemada y el Templo destruido. Sedequías es cegado. Fin de la monarquía terrenal."
+    },
+    "141": {
+        "title": "Epílogo de Babilonia",
+        "bible": [
+            {
+                "book": "dan",
+                "chapter": 4,
+                "label": "Daniel 4"
+            },
+            {
+                "book": "lam",
+                "chapter": 1,
+                "label": "Lamentaciones 1"
+            },
+            {
+                "book": "lam",
+                "chapter": 2,
+                "label": "Lamentaciones 2"
+            },
+            {
+                "book": "lam",
+                "chapter": 3,
+                "label": "Lamentaciones 3"
+            },
+            {
+                "book": "lam",
+                "chapter": 4,
+                "label": "Lamentaciones 4"
+            },
+            {
+                "book": "lam",
+                "chapter": 5,
+                "label": "Lamentaciones 5"
+            }
+        ],
+        "egw": [],
+        "description": "Epílogo de Babilonia: El llanto de Jeremías sobre las ruinas. Daniel 4: Años después, la locura y conversión final de Nabucodonosor."
+    },
+    "142": {
+        "title": "El Remanente en Egipto",
+        "bible": [
+            {
+                "book": "jer",
+                "chapter": 40,
+                "label": "Jeremías 40"
+            },
+            {
+                "book": "jer",
+                "chapter": 41,
+                "label": "Jeremías 41"
+            },
+            {
+                "book": "jer",
+                "chapter": 42,
+                "label": "Jeremías 42"
+            },
+            {
+                "book": "jer",
+                "chapter": 43,
+                "label": "Jeremías 43"
+            },
+            {
+                "book": "jer",
+                "chapter": 44,
+                "label": "Jeremías 44"
+            }
+        ],
+        "egw": [],
+        "description": "El Remanente en Egipto: Asesinato de Gedalías. El pueblo huye a Egipto forzando a Jeremías a ir con ellos. Idolatría persistente a la \"Reina del Cielo\"."
+    },
+    "143": {
+        "title": "Juicio a los Vecinos",
+        "bible": [
+            {
+                "book": "eze",
+                "chapter": 25,
+                "label": "Ezequiel 25"
+            },
+            {
+                "book": "eze",
+                "chapter": 26,
+                "label": "Ezequiel 26"
+            },
+            {
+                "book": "eze",
+                "chapter": 27,
+                "label": "Ezequiel 27"
+            },
+            {
+                "book": "eze",
+                "chapter": 28,
+                "label": "Ezequiel 28"
+            }
+        ],
+        "egw": [],
+        "description": "Juicio a los Vecinos: Profecías contra Amón, Moab y Edom. Tiro: La caída del príncipe de Tiro como símbolo de la caída de Lucifer (Eze 28)."
+    },
+    "144": {
+        "title": "Egipto y el Lamento",
+        "bible": [
+            {
+                "book": "eze",
+                "chapter": 29,
+                "label": "Ezequiel 29"
+            },
+            {
+                "book": "eze",
+                "chapter": 30,
+                "label": "Ezequiel 30"
+            },
+            {
+                "book": "eze",
+                "chapter": 31,
+                "label": "Ezequiel 31"
+            },
+            {
+                "book": "eze",
+                "chapter": 32,
+                "label": "Ezequiel 32"
+            },
+            {
+                "book": "psa",
+                "chapter": 137,
+                "label": "Salmo 137"
+            }
+        ],
+        "egw": [],
+        "description": "Egipto y el Lamento: Egipto es castigado por ser \"caña cascada\"."
+    },
+    "145": {
+        "title": "El Atalaya",
+        "bible": [
+            {
+                "book": "eze",
+                "chapter": 33,
+                "label": "Ezequiel 33"
+            },
+            {
+                "book": "eze",
+                "chapter": 34,
+                "label": "Ezequiel 34"
+            }
+        ],
+        "egw": [],
+        "description": "El Atalaya: Ezequiel recibe la noticia de que la ciudad cayó (Eze 33:21). Su mensaje cambia de juicio a esperanza. Promesa del Buen Pastor."
+    },
+    "146": {
+        "title": "Restauración",
+        "bible": [
+            {
+                "book": "eze",
+                "chapter": 35,
+                "label": "Ezequiel 35"
+            },
+            {
+                "book": "eze",
+                "chapter": 36,
+                "label": "Ezequiel 36"
+            },
+            {
+                "book": "eze",
+                "chapter": 37,
+                "label": "Ezequiel 37"
+            }
+        ],
+        "egw": [],
+        "description": "Restauración: Profecía contra Edom. Promesa de \"corazón nuevo\". Visión del Valle de los Huesos Secos: la resurrección nacional."
+    },
+    "147": {
+        "title": "Gog y Magog",
+        "bible": [
+            {
+                "book": "eze",
+                "chapter": 38,
+                "label": "Ezequiel 38"
+            },
+            {
+                "book": "eze",
+                "chapter": 39,
+                "label": "Ezequiel 39"
+            }
+        ],
+        "egw": [],
+        "description": "Gog y Magog: Profecía sobre la victoria definitiva de Dios sobre los enemigos de Su pueblo restaurado."
+    },
+    "148": {
+        "title": "El Templo Ideal (573 a.C.)",
+        "bible": [
+            {
+                "book": "eze",
+                "chapter": 40,
+                "label": "Ezequiel 40"
+            },
+            {
+                "book": "eze",
+                "chapter": 41,
+                "label": "Ezequiel 41"
+            },
+            {
+                "book": "eze",
+                "chapter": 42,
+                "label": "Ezequiel 42"
+            },
+            {
+                "book": "eze",
+                "chapter": 43,
+                "label": "Ezequiel 43"
+            },
+            {
+                "book": "eze",
+                "chapter": 44,
+                "label": "Ezequiel 44"
+            },
+            {
+                "book": "eze",
+                "chapter": 45,
+                "label": "Ezequiel 45"
+            },
+            {
+                "book": "eze",
+                "chapter": 46,
+                "label": "Ezequiel 46"
+            },
+            {
+                "book": "eze",
+                "chapter": 47,
+                "label": "Ezequiel 47"
+            },
+            {
+                "book": "eze",
+                "chapter": 48,
+                "label": "Ezequiel 48"
+            }
+        ],
+        "egw": [],
+        "description": "El Templo Ideal (573 a.C.): Visión de un santuario glorioso y el río de vida. \"Jehová-Sama\" (Jehová está allí). Preparación para el retorno."
+    },
+    "149": {
+        "title": "La Caída (539 a.C.)",
+        "bible": [
+            {
+                "book": "dan",
+                "chapter": 5,
+                "label": "Daniel 5"
+            },
+            {
+                "book": "dan",
+                "chapter": 7,
+                "label": "Daniel 7"
+            },
+            {
+                "book": "dan",
+                "chapter": 8,
+                "label": "Daniel 8"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 43: El vigía invisible",
+                "chapterId": 43
+            }
+        ],
+        "description": "La Caída (539 a.C.): El banquete de Belsasar. Visiones de las bestias y el Santuario (Purificación de los 2300 días)."
+    },
+    "150": {
+        "title": "Medo-Persia",
+        "bible": [
+            {
+                "book": "dan",
+                "chapter": 6,
+                "label": "Daniel 6"
+            },
+            {
+                "book": "dan",
+                "chapter": 9,
+                "label": "Daniel 9"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 44: En el foso de los leones",
+                "chapterId": 44
+            }
+        ],
+        "description": "Medo-Persia: Daniel en el foso bajo Darío. La oración de Daniel y la profecía de las 70 semanas (El tiempo del Mesías)."
+    },
+    "151": {
+        "title": "El Conflicto Final",
+        "bible": [
+            {
+                "book": "dan",
+                "chapter": 10,
+                "label": "Daniel 10"
+            },
+            {
+                "book": "dan",
+                "chapter": 11,
+                "label": "Daniel 11"
+            },
+            {
+                "book": "dan",
+                "chapter": 12,
+                "label": "Daniel 12"
+            }
+        ],
+        "egw": [],
+        "description": "El Conflicto Final: Miguel se levanta por Su pueblo. Daniel recibe la orden de cerrar el libro hasta el \"tiempo del fin\"."
+    },
+    "152": {
+        "title": "536 a.C.",
+        "bible": [
+            {
+                "book": "ezr",
+                "chapter": 1,
+                "label": "Esdras 1"
+            },
+            {
+                "book": "ezr",
+                "chapter": 2,
+                "label": "Esdras 2"
+            },
+            {
+                "book": "ezr",
+                "chapter": 3,
+                "label": "Esdras 3"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 45: El retorno de los desterrados",
+                "chapterId": 45
+            }
+        ],
+        "description": "536 a.C.: El Decreto de Ciro. Se cumple la profecía de los 70 años. Zorobabel lidera el 1er retorno y pone los cimientos del Templo."
+    },
+    "153": {
+        "title": "Oposición",
+        "bible": [
+            {
+                "book": "ezr",
+                "chapter": 4,
+                "label": "Esdras 4"
+            },
+            {
+                "book": "ezr",
+                "chapter": 5,
+                "label": "Esdras 5"
+            },
+            {
+                "book": "hag",
+                "chapter": 1,
+                "label": "Hageo 1"
+            },
+            {
+                "book": "hag",
+                "chapter": 2,
+                "label": "Hageo 2"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 46: Los profetas de Dios que les ayudaban",
+                "chapterId": 46
+            }
+        ],
+        "description": "Oposición: Los samaritanos detienen la obra. Hageo (520 a.C.): \"Meditad sobre vuestros caminos\". El Templo se termina en el 516 a.C."
+    },
+    "154": {
+        "title": "El Renuevo",
+        "bible": [
+            {
+                "book": "zec",
+                "chapter": 1,
+                "label": "Zacarías 1"
+            },
+            {
+                "book": "zec",
+                "chapter": 2,
+                "label": "Zacarías 2"
+            },
+            {
+                "book": "zec",
+                "chapter": 3,
+                "label": "Zacarías 3"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 47: Josué y el ángel",
+                "chapterId": 47
+            }
+        ],
+        "description": "El Renuevo: Visiones de Zacarías para animar a los constructores. El sumo sacerdote es purificado (tipo de la justificación)."
+    },
+    "155": {
+        "title": "Promesas Mesiánicas",
+        "bible": [
+            {
+                "book": "zec",
+                "chapter": 4,
+                "label": "Zacarías 4"
+            },
+            {
+                "book": "zec",
+                "chapter": 5,
+                "label": "Zacarías 5"
+            },
+            {
+                "book": "zec",
+                "chapter": 6,
+                "label": "Zacarías 6"
+            },
+            {
+                "book": "zec",
+                "chapter": 7,
+                "label": "Zacarías 7"
+            },
+            {
+                "book": "zec",
+                "chapter": 8,
+                "label": "Zacarías 8"
+            },
+            {
+                "book": "zec",
+                "chapter": 9,
+                "label": "Zacarías 9"
+            },
+            {
+                "book": "zec",
+                "chapter": 10,
+                "label": "Zacarías 10"
+            },
+            {
+                "book": "zec",
+                "chapter": 11,
+                "label": "Zacarías 11"
+            },
+            {
+                "book": "zec",
+                "chapter": 12,
+                "label": "Zacarías 12"
+            },
+            {
+                "book": "zec",
+                "chapter": 13,
+                "label": "Zacarías 13"
+            },
+            {
+                "book": "zec",
+                "chapter": 14,
+                "label": "Zacarías 14"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 48: No con ejército, ni con fuerza",
+                "chapterId": 48
+            }
+        ],
+        "description": "Promesas Mesiánicas: \"Tu Rey viene humilde sobre un asno\". Profecías de la victoria final y la santidad de Jerusalén."
+    },
+    "156": {
+        "title": "Interludio en Susa (c. 480 a.C.)",
+        "bible": [
+            {
+                "book": "est",
+                "chapter": 1,
+                "label": "Ester 1"
+            },
+            {
+                "book": "est",
+                "chapter": 2,
+                "label": "Ester 2"
+            },
+            {
+                "book": "est",
+                "chapter": 3,
+                "label": "Ester 3"
+            },
+            {
+                "book": "est",
+                "chapter": 4,
+                "label": "Ester 4"
+            },
+            {
+                "book": "est",
+                "chapter": 5,
+                "label": "Ester 5"
+            },
+            {
+                "book": "est",
+                "chapter": 6,
+                "label": "Ester 6"
+            },
+            {
+                "book": "est",
+                "chapter": 7,
+                "label": "Ester 7"
+            },
+            {
+                "book": "est",
+                "chapter": 8,
+                "label": "Ester 8"
+            },
+            {
+                "book": "est",
+                "chapter": 9,
+                "label": "Ester 9"
+            },
+            {
+                "book": "est",
+                "chapter": 10,
+                "label": "Ester 10"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 49: En tiempos de la reina Ester",
+                "chapterId": 49
+            }
+        ],
+        "description": "Interludio en Susa (c. 480 a.C.): La providencia de Dios salva a los judíos en Persia mientras el Templo ya está en pie en Jerusalén."
+    },
+    "157": {
+        "title": "457 a.C.",
+        "bible": [
+            {
+                "book": "ezr",
+                "chapter": 6,
+                "label": "Esdras 6"
+            },
+            {
+                "book": "ezr",
+                "chapter": 7,
+                "label": "Esdras 7"
+            },
+            {
+                "book": "ezr",
+                "chapter": 8,
+                "label": "Esdras 8"
+            },
+            {
+                "book": "ezr",
+                "chapter": 9,
+                "label": "Esdras 9"
+            },
+            {
+                "book": "ezr",
+                "chapter": 10,
+                "label": "Esdras 10"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 50: Esdras, sacerdote y escriba + Cap. 51: Un despertamiento espiritual",
+                "chapterId": 50
+            }
+        ],
+        "description": "457 a.C.: El Decreto de Artajerjes. Esdras regresa. Inicio del cálculo de las 2300 tardes y mañanas."
+    },
+    "158": {
+        "title": "444 a.C.",
+        "bible": [
+            {
+                "book": "neh",
+                "chapter": 1,
+                "label": "Nehemías 1"
+            },
+            {
+                "book": "neh",
+                "chapter": 2,
+                "label": "Nehemías 2"
+            },
+            {
+                "book": "neh",
+                "chapter": 3,
+                "label": "Nehemías 3"
+            },
+            {
+                "book": "neh",
+                "chapter": 4,
+                "label": "Nehemías 4"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 52: Un hombre oportuno + Cap. 53: Los edificadores de la muralla",
+                "chapterId": 52
+            }
+        ],
+        "description": "444 a.C.: Nehemías reconstruye los muros en 52 días. Oposición de Sanbalat."
+    },
+    "159": {
+        "title": "Reforma Social",
+        "bible": [
+            {
+                "book": "neh",
+                "chapter": 5,
+                "label": "Nehemías 5"
+            },
+            {
+                "book": "neh",
+                "chapter": 6,
+                "label": "Nehemías 6"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 54: Reproches contra la extorsión + Cap. 55: Maquinaciones paganas",
+                "chapterId": 54
+            }
+        ],
+        "description": "Reforma Social: Reorganización civil de la nación."
+    },
+    "160": {
+        "title": "Día 160",
+        "bible": [
+            {
+                "book": "neh",
+                "chapter": 7,
+                "label": "Nehemías 7"
+            },
+            {
+                "book": "neh",
+                "chapter": 8,
+                "label": "Nehemías 8"
+            },
+            {
+                "book": "neh",
+                "chapter": 9,
+                "label": "Nehemías 9"
+            },
+            {
+                "book": "neh",
+                "chapter": 10,
+                "label": "Nehemías 10"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 56: Instruidos en la ley de Dios",
+                "chapterId": 56
+            }
+        ],
+        "description": ""
+    },
+    "161": {
+        "title": "Día 161",
+        "bible": [
+            {
+                "book": "neh",
+                "chapter": 11,
+                "label": "Nehemías 11"
+            },
+            {
+                "book": "neh",
+                "chapter": 12,
+                "label": "Nehemías 12"
+            },
+            {
+                "book": "neh",
+                "chapter": 13,
+                "label": "Nehemías 13"
+            }
+        ],
+        "egw": [
+            {
+                "label": "Profetas y Reyes, Cap. 57: Una reforma",
+                "chapterId": 57
+            }
+        ],
+        "description": ""
+    },
+    "162": {
+        "title": "El Último Profeta (c. 430 a.C.)",
+        "bible": [
+            {
+                "book": "mal",
+                "chapter": 1,
+                "label": "Malaquías 1"
+            },
+            {
+                "book": "mal",
+                "chapter": 2,
+                "label": "Malaquías 2"
+            },
+            {
+                "book": "mal",
+                "chapter": 3,
+                "label": "Malaquías 3"
+            },
+            {
+                "book": "mal",
+                "chapter": 4,
+                "label": "Malaquías 4"
+            }
+        ],
+        "egw": [],
+        "description": "El Último Profeta (c. 430 a.C.): Malaquías reprende la hipocresía sacerdotal y promete la llegada de \"Elías\"."
+    },
+    "163": {
+        "title": "Cierre del AT",
+        "bible": [
+            {
+                "book": "1ch",
+                "chapter": 1,
+                "label": "1 Crónicas 1"
+            },
+            {
+                "book": "1ch",
+                "chapter": 2,
+                "label": "1 Crónicas 2"
+            },
+            {
+                "book": "1ch",
+                "chapter": 3,
+                "label": "1 Crónicas 3"
+            },
+            {
+                "book": "1ch",
+                "chapter": 4,
+                "label": "1 Crónicas 4"
+            },
+            {
+                "book": "1ch",
+                "chapter": 5,
+                "label": "1 Crónicas 5"
+            },
+            {
+                "book": "1ch",
+                "chapter": 6,
+                "label": "1 Crónicas 6"
+            },
+            {
+                "book": "1ch",
+                "chapter": 7,
+                "label": "1 Crónicas 7"
+            },
+            {
+                "book": "1ch",
+                "chapter": 8,
+                "label": "1 Crónicas 8"
+            },
+            {
+                "book": "1ch",
+                "chapter": 9,
+                "label": "1 Crónicas 9"
+            }
+        ],
+        "egw": [],
+        "description": "Cierre del AT: Las genealogías conectan a Adán con el remanente. Visiones de la gloria futura antes de los 400 años de silencio."
+    },
+    "164": {
+        "title": "Día 164",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "165": {
+        "title": "Día 165",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "166": {
+        "title": "Día 166",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "167": {
+        "title": "Día 167",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "168": {
+        "title": "Día 168",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "169": {
+        "title": "Día 169",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "170": {
+        "title": "Día 170",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "171": {
+        "title": "Día 171",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "172": {
+        "title": "Día 172",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "173": {
+        "title": "Día 173",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "174": {
+        "title": "Día 174",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "175": {
+        "title": "Día 175",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "176": {
+        "title": "Día 176",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "177": {
+        "title": "Día 177",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "178": {
+        "title": "Día 178",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "179": {
+        "title": "Día 179",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "180": {
+        "title": "Día 180",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "181": {
+        "title": "Día 181",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "182": {
+        "title": "Día 182",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "183": {
+        "title": "Día 183",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "184": {
+        "title": "Día 184",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "185": {
+        "title": "Día 185",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "186": {
+        "title": "Día 186",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "187": {
+        "title": "Día 187",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "188": {
+        "title": "Día 188",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "189": {
+        "title": "Día 189",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "190": {
+        "title": "Día 190",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "191": {
+        "title": "Día 191",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "192": {
+        "title": "Día 192",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "193": {
+        "title": "Día 193",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "194": {
+        "title": "Día 194",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "195": {
+        "title": "Día 195",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "196": {
+        "title": "Día 196",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "197": {
+        "title": "Día 197",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "198": {
+        "title": "Día 198",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "199": {
+        "title": "Día 199",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "200": {
+        "title": "Día 200",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "201": {
+        "title": "Día 201",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "202": {
+        "title": "Día 202",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "203": {
+        "title": "Día 203",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "204": {
+        "title": "Día 204",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "205": {
+        "title": "Día 205",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "206": {
+        "title": "Día 206",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "207": {
+        "title": "Día 207",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "208": {
+        "title": "Día 208",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "209": {
+        "title": "Día 209",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "210": {
+        "title": "Día 210",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "211": {
+        "title": "Día 211",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "212": {
+        "title": "Día 212",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "213": {
+        "title": "Día 213",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "214": {
+        "title": "Día 214",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "215": {
+        "title": "Día 215",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "216": {
+        "title": "Día 216",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "217": {
+        "title": "Día 217",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "218": {
+        "title": "Día 218",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "219": {
+        "title": "Día 219",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "220": {
+        "title": "Día 220",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "221": {
+        "title": "Día 221",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "222": {
+        "title": "Día 222",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "223": {
+        "title": "Día 223",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "224": {
+        "title": "Día 224",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "225": {
+        "title": "Día 225",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "226": {
+        "title": "Día 226",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "227": {
+        "title": "Día 227",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "228": {
+        "title": "Día 228",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "229": {
+        "title": "Día 229",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "230": {
+        "title": "Día 230",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "231": {
+        "title": "Día 231",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "232": {
+        "title": "Día 232",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "233": {
+        "title": "Día 233",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "234": {
+        "title": "Día 234",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "235": {
+        "title": "Día 235",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "236": {
+        "title": "Día 236",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "237": {
+        "title": "Día 237",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "238": {
+        "title": "Día 238",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "239": {
+        "title": "Día 239",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    },
+    "240": {
+        "title": "Día 240",
+        "bible": [],
+        "egw": [],
+        "description": ""
+    }
+}
