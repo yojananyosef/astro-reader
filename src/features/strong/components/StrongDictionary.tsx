@@ -6,32 +6,80 @@ import ArrowNavigation from "../../../components/common/ArrowNavigation";
 export default function StrongDictionary() {
   const [data, setData] = useState<{ hebrew: any; greek: any }>({ hebrew: {}, greek: {} });
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("search") || "";
+    }
+    return "";
+  });
   const [currentPage, setCurrentPage] = useState(1);
+  const [dictionaryType, setDictionaryType] = useState<"hebrew" | "greek">(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get("type");
+      if (type === "greek") return "greek";
+    }
+    return "hebrew";
+  });
   const itemsPerPage = 10;
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchData(forceRefresh = false) {
       try {
-        const json = await fetchWithCache<any>("/data/strong/strong-data.json");
+        setLoading(true);
+        // Si forceRefresh es true, podemos añadir un query param para saltar cache del navegador
+        // aunque fetchWithCache tiene su propia lógica.
+        const url = "/data/strong/strong-data.json" + (forceRefresh ? `?v=${Date.now()}` : "");
+        const json = await fetchWithCache<any>(url);
         setData(json);
         
-        // Si hay un parámetro de búsqueda en la URL, aplicarlo después de cargar
+        // Si el tipo es griego y está vacío, podría ser un problema de caché
         const params = new URLSearchParams(window.location.search);
-        const q = params.get("search");
-        if (q) setSearchTerm(q);
+        const type = params.get("type");
+        if (type === "greek" && (!json.greek || Object.keys(json.greek).length === 0) && !forceRefresh) {
+          console.log("Greek data empty, retrying with cache bust...");
+          fetchData(true);
+          return;
+        }
       } catch (e) {
         console.error("Error loading strong data:", e);
       } finally {
         setLoading(false);
       }
     }
+
     fetchData();
+
+    const handleUrlChange = () => {
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get("type") as "hebrew" | "greek";
+      const search = params.get("search") || "";
+      
+      if (type && (type === "hebrew" || type === "greek")) {
+        setDictionaryType(type);
+      }
+      if (search) {
+        setSearchTerm(search);
+      }
+      setCurrentPage(1);
+    };
+
+    window.addEventListener("popstate", handleUrlChange);
+    document.addEventListener("astro:after-swap", handleUrlChange);
+    
+    return () => {
+      window.removeEventListener("popstate", handleUrlChange);
+      document.removeEventListener("astro:after-swap", handleUrlChange);
+    };
   }, []);
 
   const filteredItems = useMemo(() => {
-    const items = Object.entries(data.hebrew).map(([id, details]: [string, any]) => ({
-      id: `H${id}`,
+    const sourceData = dictionaryType === "greek" ? data.greek : data.hebrew;
+    const prefix = dictionaryType === "greek" ? "G" : "H";
+
+    const items = Object.entries(sourceData || {}).map(([id, details]: [string, any]) => ({
+      id: `${prefix}${id}`,
       ...details
     }));
     
@@ -44,7 +92,7 @@ export default function StrongDictionary() {
       (item.definition && item.definition.toLowerCase().includes(term)) ||
       (item.pronunciation && item.pronunciation.toLowerCase().includes(term))
     );
-  }, [data, searchTerm]);
+  }, [data, searchTerm, dictionaryType]);
 
   const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
   const paginatedItems = filteredItems.slice(
@@ -72,9 +120,11 @@ export default function StrongDictionary() {
     <div className="max-w-7xl mx-auto p-4 space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-[var(--color-text)]">Diccionario de Strong de hebreo</h1>
+          <h1 className="text-3xl font-bold text-[var(--color-text)]">
+            Diccionario de Strong de {dictionaryType === "greek" ? "griego" : "hebreo"}
+          </h1>
           <p className="text-[var(--color-text)] opacity-60 text-sm">
-            Displaying items {(currentPage - 1) * itemsPerPage + 1}-{Math.min(currentPage * itemsPerPage, filteredItems.length)} of {filteredItems.length} in total
+            Mostrando items {(currentPage - 1) * itemsPerPage + 1}-{Math.min(currentPage * itemsPerPage, filteredItems.length)} de {filteredItems.length} en total
           </p>
         </div>
 
@@ -130,7 +180,7 @@ export default function StrongDictionary() {
                     {item.id.replace(/^[HG]/, '')}
                   </a>
                 </td>
-                <td className="px-6 py-4 font-hebrew text-4xl text-[var(--color-text)] transition-colors" dir="rtl">
+                <td className={`px-6 py-4 text-4xl text-[var(--color-text)] transition-colors ${dictionaryType === "hebrew" ? "font-hebrew" : ""}`} dir={dictionaryType === "hebrew" ? "rtl" : "ltr"}>
                   {item.originalWord}
                 </td>
                 <td className="px-6 py-4 italic text-[var(--color-link)] font-medium transition-colors">

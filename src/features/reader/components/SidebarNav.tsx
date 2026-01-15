@@ -13,15 +13,24 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
   const [open, setOpen] = useState(false);
   const [collapsed, setCollapsed] = useState<boolean>(() => getInitialCollapsed());
 
+  const [dictionaryExpanded, setDictionaryExpanded] = useState(false);
+
   // Initialize active item based on current URL
   const [activeItem, setActiveItem] = useState<string>(() => {
     if (typeof window === "undefined") return "bible";
     const path = window.location.pathname;
+    const search = typeof window !== "undefined" ? window.location.search : "";
+    
     if (path.includes("/tracker")) return "tracking";
     if (path.includes("/plans")) return "plans";
     if (path.includes("/commentary")) return "commentary";
     if (path.includes("/interlinear")) return "interlinear";
-    if (path.includes("/strong")) return "dictionary";
+    if (path.includes("/strong")) {
+      const params = new URLSearchParams(search);
+      const type = params.get("type");
+      if (type === "greek") return "dictionary-greek";
+      return "dictionary-hebrew";
+    }
     return "bible";
   });
 
@@ -29,7 +38,17 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
     { id: "bible", label: "Biblia", icon: BookOpen, url: "/" },
     { id: "commentary", label: "Comentario", icon: Library, url: "/commentary" },
     { id: "interlinear", label: "Interlineal", icon: Languages, url: "/interlinear" },
-    { id: "dictionary", label: "Diccionario", icon: BookText, url: "/strong" },
+    { 
+      id: "dictionary", 
+      label: "Diccionario", 
+      icon: BookText, 
+      url: "#",
+      hasSubmenu: true,
+      subItems: [
+        { id: "dictionary-hebrew", label: "Hebreo", url: "/strong?type=hebrew" },
+        { id: "dictionary-greek", label: "Griego", url: "/strong?type=greek" },
+      ]
+    },
     { id: "tracking", label: "Seguimiento", icon: Bookmark, url: "/tracker" },
     { id: "plans", label: "Planes", icon: Star, url: "/plans" },
   ];
@@ -127,37 +146,73 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
             </div>
             <nav className="flex-1 p-3 space-y-1 overflow-y-auto custom-scrollbar">
               {mainNav.map((item) => {
-                const isActive = activeItem === item.id;
+                const isActive = activeItem === item.id || (item.subItems?.some(sub => sub.id === activeItem));
+                const isExpanded = item.id === "dictionary" && dictionaryExpanded;
+
                 return (
-                  <div
-                    key={item.id}
-                    onClick={() => {
-                      setActiveItem(item.id);
-                      goTo(item.url);
-                    }}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        setActiveItem(item.id);
-                        goTo(item.url);
-                      }
-                    }}
-                    className={`
-                      w-full text-left p-3 rounded-lg flex items-center gap-3 transition-all duration-200 cursor-pointer
-                      ${isActive
-                        ? "font-bold shadow-sm border border-[var(--color-link)]"
-                        : "hover:bg-[var(--surface-hover-bg)] opacity-80 hover:opacity-100"
-                      }
-                    `}
-                    style={isActive ? {
-                      backgroundColor: "color-mix(in srgb, var(--color-link), transparent 90%)",
-                      color: "var(--color-link)"
-                    } : {}}
-                    aria-current={isActive ? 'page' : undefined}
-                  >
-                    <item.icon className={`w-5 h-5 ${isActive ? "" : "opacity-70"}`} />
-                    <span>{item.label}</span>
+                  <div key={item.id} className="space-y-1">
+                    <div
+                      onClick={() => {
+                        if (item.hasSubmenu) {
+                          setDictionaryExpanded(!dictionaryExpanded);
+                        } else {
+                          setActiveItem(item.id);
+                          goTo(item.url);
+                        }
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          if (item.hasSubmenu) {
+                            setDictionaryExpanded(!dictionaryExpanded);
+                          } else {
+                            setActiveItem(item.id);
+                            goTo(item.url);
+                          }
+                        }
+                      }}
+                      className={`
+                        w-full text-left p-3 rounded-lg flex items-center justify-between transition-all duration-200 cursor-pointer
+                        ${isActive
+                          ? "font-bold shadow-sm border border-[var(--color-link)]"
+                          : "hover:bg-[var(--surface-hover-bg)] opacity-80 hover:opacity-100"
+                        }
+                      `}
+                      style={isActive ? {
+                        backgroundColor: "color-mix(in srgb, var(--color-link), transparent 90%)",
+                        color: "var(--color-link)"
+                      } : {}}
+                      aria-current={isActive ? 'page' : undefined}
+                    >
+                      <div className="flex items-center gap-3">
+                        <item.icon className={`w-5 h-5 ${isActive ? "" : "opacity-70"}`} />
+                        <span>{item.label}</span>
+                      </div>
+                      {item.hasSubmenu && (
+                        <ChevronRight className={`w-4 h-4 transition-transform duration-200 ${dictionaryExpanded ? "rotate-90" : ""}`} />
+                      )}
+                    </div>
+
+                    {item.hasSubmenu && dictionaryExpanded && (
+                      <div className="ml-9 space-y-1 border-l border-[var(--color-text)] border-opacity-10 pl-2">
+                        {item.subItems?.map((sub) => {
+                          const isSubActive = activeItem === sub.id;
+                          return (
+                            <div
+                              key={sub.id}
+                              onClick={() => {
+                                setActiveItem(sub.id);
+                                goTo(sub.url);
+                              }}
+                              className={`p-2 rounded-md text-sm cursor-pointer transition-colors ${isSubActive ? "text-[var(--color-link)] font-bold bg-[color-mix(in_srgb,var(--color-link),transparent_95%)]" : "opacity-70 hover:opacity-100 hover:bg-[var(--surface-hover-bg)]"}`}
+                            >
+                              {sub.label}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                 );
               })}
@@ -222,37 +277,71 @@ export default function SidebarNav({ books = [], showTrigger = false, mode = "in
 
           <nav className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-2">
             {mainNav.map((item) => {
-              const isActive = activeItem === item.id;
+              const isActive = activeItem === item.id || (item.subItems?.some(sub => sub.id === activeItem));
               return (
-                <div
-                  key={item.id}
-                  onClick={() => {
-                    setActiveItem(item.id);
-                    goTo(item.url);
-                  }}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      setActiveItem(item.id);
-                      goTo(item.url);
-                    }
-                  }}
-                  className={`
-                    w-full text-left p-3 rounded-lg flex items-center gap-3 transition-all duration-200 cursor-pointer
-                    ${isActive
-                      ? "font-bold shadow-sm border border-[var(--color-link)]"
-                      : "hover:bg-[var(--surface-hover-bg)] opacity-80 hover:opacity-100"
-                    }
-                  `}
-                  style={isActive ? {
-                    backgroundColor: "color-mix(in srgb, var(--color-link), transparent 90%)",
-                    color: "var(--color-link)"
-                  } : {}}
-                  aria-current={isActive ? 'page' : undefined}
-                >
-                  <item.icon className={`w-5 h-5 ${isActive ? "" : "opacity-70"}`} />
-                  <span>{item.label}</span>
+                <div key={item.id} className="space-y-1">
+                  <div
+                    onClick={() => {
+                      if (item.hasSubmenu) {
+                        setDictionaryExpanded(!dictionaryExpanded);
+                      } else {
+                        setActiveItem(item.id);
+                        goTo(item.url);
+                      }
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        if (item.hasSubmenu) {
+                          setDictionaryExpanded(!dictionaryExpanded);
+                        } else {
+                          setActiveItem(item.id);
+                          goTo(item.url);
+                        }
+                      }
+                    }}
+                    className={`
+                      w-full text-left p-3 rounded-lg flex items-center justify-between transition-all duration-200 cursor-pointer
+                      ${isActive
+                        ? "font-bold shadow-sm border border-[var(--color-link)]"
+                        : "hover:bg-[var(--surface-hover-bg)] opacity-80 hover:opacity-100"
+                      }
+                    `}
+                    style={isActive ? {
+                      backgroundColor: "color-mix(in srgb, var(--color-link), transparent 90%)",
+                      color: "var(--color-link)"
+                    } : {}}
+                    aria-current={isActive ? 'page' : undefined}
+                  >
+                    <div className="flex items-center gap-3">
+                      <item.icon className={`w-5 h-5 ${isActive ? "" : "opacity-70"}`} />
+                      <span>{item.label}</span>
+                    </div>
+                    {item.hasSubmenu && (
+                      <ChevronRight className={`w-4 h-4 transition-transform duration-200 ${dictionaryExpanded ? "rotate-90" : ""}`} />
+                    )}
+                  </div>
+
+                  {item.hasSubmenu && dictionaryExpanded && (
+                    <div className="ml-9 space-y-1 border-l border-[var(--color-text)] border-opacity-10 pl-2">
+                      {item.subItems?.map((sub) => {
+                        const isSubActive = activeItem === sub.id;
+                        return (
+                          <div
+                            key={sub.id}
+                            onClick={() => {
+                              setActiveItem(sub.id);
+                              goTo(sub.url);
+                            }}
+                            className={`p-3 rounded-lg text-sm cursor-pointer transition-colors ${isSubActive ? "text-[var(--color-link)] font-bold bg-[color-mix(in_srgb,var(--color-link),transparent_95%)]" : "opacity-70 hover:opacity-100 hover:bg-[var(--surface-hover-bg)]"}`}
+                          >
+                            {sub.label}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               );
             })}
