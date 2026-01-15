@@ -22,7 +22,7 @@ export default function StrongDetail({ id, initialData }: Props) {
     },
     grammar: entry.partOfSpeech,
     frequency: Object.values(entry.wordFrequencyRV || {}).reduce((a: number, b: any) => a + (Number(b) || 0), 0) as number,
-    audio: `/audio/strong/${parseInt(entry.strongNumber.replace(/^[HG]/, ""))}.mp3`,
+    audio: `/audio/strong/${entry.strongNumber.startsWith('G') ? 'greek' : 'hebrew'}/${parseInt(entry.strongNumber.replace(/^[HG]/, ""))}.mp3`,
     wordFrequencyRV: entry.wordFrequencyRV
   });
 
@@ -44,6 +44,9 @@ export default function StrongDetail({ id, initialData }: Props) {
   const nextId = numericId < currentMax ? `${type}${numericId + 1}` : null;
 
   useEffect(() => {
+    // Si el ID cambia, reseteamos el estado de búsqueda para evitar confusiones
+    setSearchQuery("");
+    
     if (initialData && (initialData.strongNumber === id || `H${initialData.strongNumber}` === id || `G${initialData.strongNumber}` === id)) {
       setData(formatData(initialData));
       setLoading(false);
@@ -72,7 +75,7 @@ export default function StrongDetail({ id, initialData }: Props) {
             },
             grammar: strongEntry.partOfSpeech,
             frequency: Object.values(strongEntry.wordFrequencyRV || {}).reduce((a: number, b: any) => a + (Number(b) || 0), 0) as number,
-            audio: `/audio/strong/${numericId}.mp3`,
+            audio: `/audio/strong/${type === 'G' ? 'greek' : 'hebrew'}/${numericId}.mp3`,
             wordFrequencyRV: strongEntry.wordFrequencyRV
           });
         } else {
@@ -103,13 +106,16 @@ export default function StrongDetail({ id, initialData }: Props) {
   };
 
   const playAudio = () => {
-    if (data?.audio) {
-      const audio = new Audio(data.audio);
-      audio.play().catch(e => {
-        console.error("Error al reproducir audio:", e);
-        // Si falla, el archivo probablemente no existe
-      });
-    }
+    // Calculamos la URL en el momento de la reproducción basándonos en el ID actual
+    const typeFolder = id.startsWith('G') ? 'greek' : 'hebrew';
+    const numericId = parseInt(id.replace(/^[HG]/, ""));
+    const audioUrl = `/audio/strong/${typeFolder}/${numericId}.mp3`;
+    
+    console.log("Reproduciendo audio desde:", audioUrl);
+    const audio = new Audio(audioUrl);
+    audio.play().catch(e => {
+      console.error("Error al reproducir audio:", e);
+    });
   };
 
   if (loading && !data) return (

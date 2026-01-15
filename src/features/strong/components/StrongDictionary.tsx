@@ -101,12 +101,12 @@ export default function StrongDictionary() {
   );
 
   const playAudio = (id: string) => {
-    // Los archivos están sin la H (ej: 1.mp3)
+    // Los archivos están en carpetas separadas según el idioma
     const numericId = id.replace(/^[HG]/, "");
-    const audio = new Audio(`/audio/strong/${numericId}.mp3`);
+    const typeFolder = id.startsWith("G") ? "greek" : "hebrew";
+    const audio = new Audio(`/audio/strong/${typeFolder}/${numericId}.mp3`);
     audio.play().catch(e => {
       console.error("Error audio:", e);
-      // No alertar al usuario, simplemente no se reproduce
     });
   };
 
