@@ -35,7 +35,7 @@ export default function Tracker() {
   ).toFixed(1));
 
   return (
-    <div className="max-w-5xl mx-auto space-y-12 pb-20 px-4 md:px-8">
+    <div className="max-w-5xl mx-auto space-y-12 pb-10 px-4 md:px-8">
 
       {/* Header & Main Progress */}
       <div className="flex flex-col items-center justify-center py-8 relative">

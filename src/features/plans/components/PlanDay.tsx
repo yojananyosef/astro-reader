@@ -285,7 +285,7 @@ export default function PlanDay({
   };
 
   return (
-    <div className="max-w-3xl mx-auto pb-24 px-4 md:px-0 space-y-6">
+    <div className="max-w-3xl mx-auto pb-12 px-4 md:px-0 space-y-6">
       {toast && (
         <div
           className="fixed bottom-8 left-1/2 -translate-x-1/2 px-6 py-3 rounded-full shadow-lg border animate-fade-in z-50 flex items-center gap-2 whitespace-nowrap ui-protect"

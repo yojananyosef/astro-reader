@@ -105,7 +105,7 @@ export default function ReadingPlans() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto pb-24 px-4 md:px-8">
+    <div className="max-w-6xl mx-auto pb-10 px-4 md:px-8">
       {toast && (
         <div
           className="fixed bottom-8 left-1/2 -translate-x-1/2 px-6 py-3 rounded-full shadow-lg border animate-fade-in z-50 flex items-center gap-2 whitespace-nowrap"

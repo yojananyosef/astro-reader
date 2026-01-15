@@ -68,10 +68,16 @@ const books = booksIndex;
                     --sidebar-current-width: 0rem;
                 }
                 .app-grid {
-                    grid-template-columns: 0 1fr;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 4rem auto;
                     grid-template-areas:
-                        "nav nav"
-                        "main main";
+                        "nav"
+                        "main";
+                    height: auto;
+                    min-height: 100vh;
+                }
+                .grid-sidebar {
+                    display: contents;
                 }
             }
         </style>
@@ -170,7 +176,7 @@ const books = booksIndex;
             </aside>
 
             <main class="grid-main" transition:animate="fade">
-                <div class="p-6">
+                <div class="p-4 md:p-6">
                     <slot />
                 </div>
             </main>

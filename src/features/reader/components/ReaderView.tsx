@@ -256,7 +256,7 @@ export default function ReaderView() {
     };
 
     return (
-        <article class="reader-content max-w-3xl mx-auto pb-32 px-2 md:px-0 relative animate-in fade-in duration-700">
+        <article class="reader-content max-w-3xl mx-auto pb-12 px-2 md:px-0 relative animate-in fade-in duration-700">
             <div class="mb-8 text-center px-2 ui-protect">
                 <h1 class="text-2xl md:text-4xl font-bold text-[var(--color-link)] mb-2">
                     {bookData?.nombre || currentBookEntry.name} {chapterKey}
