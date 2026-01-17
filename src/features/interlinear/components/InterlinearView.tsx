@@ -48,6 +48,34 @@ const bookMapping: Record<string, string> = {
   hag: "haggai",
   zec: "zechariah",
   mal: "malachi",
+  // New Testament
+  mat: "matthew",
+  mar: "mark",
+  luk: "luke",
+  joh: "john",
+  act: "acts",
+  rom: "romans",
+  "1co": "1-corinthians",
+  "2co": "2-corinthians",
+  gal: "galatians",
+  eph: "ephesians",
+  phi: "philippians",
+  col: "colossians",
+  "1th": "1-thessalonians",
+  "2th": "2-thessalonians",
+  "1ti": "1-timothy",
+  "2ti": "2-timothy",
+  tit: "titus",
+  phm: "philemon",
+  heb: "hebrews",
+  jam: "james",
+  "1pe": "1-peter",
+  "2pe": "2-peter",
+  "1jo": "1-john",
+  "2jo": "2-john",
+  "3jo": "3-john",
+  jud: "jude",
+  rev: "revelation",
 };
 
 export default function InterlinearView() {
@@ -91,7 +119,7 @@ export default function InterlinearView() {
   const chapterRef = useRef<HTMLDivElement>(null);
   const verseRef = useRef<HTMLDivElement>(null);
 
-  const books = useMemo(() => booksIndex.filter(b => b.section === 'at'), []);
+  const books = useMemo(() => booksIndex, []);
   const currentBook = useMemo(() => books.find(b => b.code === params.book), [params.book, books]);
 
   // Cerrar selectores al hacer click fuera
@@ -159,7 +187,7 @@ export default function InterlinearView() {
 
   const [interlinearData, setInterlinearData] = useState<InterlinearData | null>(null);
 
-  // Cargar datos del libro hebreo completo (solo cuando cambia el libro)
+  // Cargar datos del libro interlineal completo (solo cuando cambia el libro)
   useEffect(() => {
     let isMounted = true;
     const fetchBookData = async () => {
@@ -167,7 +195,8 @@ export default function InterlinearView() {
       setError(null);
       try {
         const fileName = bookMapping[params.book] || params.book;
-        const data: InterlinearData = await fetchWithCache<any>(`/data/bible/hebrew/${fileName}.json`);
+        const subDir = currentBook?.section === 'at' ? 'hebrew' : 'greek';
+        const data: InterlinearData = await fetchWithCache<any>(`/data/bible/${subDir}/${fileName}.json`);
 
         if (isMounted) {
           setInterlinearData(data);
@@ -251,17 +280,43 @@ export default function InterlinearView() {
   }, [params]);
 
   const hasNextVerse = useMemo(() => {
-    const isLastBook = params.book === 'mal';
-    const isLastChapter = params.chapter === '4';
-    const isLastVerse = params.verse === '6';
+    if (!currentBook) return false;
+    const isLastBook = params.book === 'rev';
+    const isLastChapter = params.chapter === String(currentBook.chapters);
+    const isLastVerse = chapterData.length > 0 && params.verse === String(chapterData[chapterData.length - 1].verse);
     return !(isLastBook && isLastChapter && isLastVerse);
-  }, [params]);
+  }, [params, currentBook, chapterData]);
 
   return (
     <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-700">
+      <style>{`
+        .custom-scrollbar {
+          scrollbar-width: thin;
+          scrollbar-color: var(--color-link) color-mix(in srgb, var(--color-text), transparent 95%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: color-mix(in srgb, var(--color-text), transparent 95%);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background-color: var(--color-link);
+          border-radius: 10px;
+        }
+        .dropdown-content {
+          max-height: 280px !important;
+          overflow-y: auto !important;
+          background-color: var(--color-bg) !important;
+          backdrop-filter: blur(8px);
+          border: 1px solid color-mix(in srgb, var(--color-text), transparent 85%) !important;
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+        }
+      `}</style>
       <header className="text-center space-y-2 ui-protect">
         <h1 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-link)] opacity-60">
-          Antiguo Testamento Interlineal
+          {currentBook?.section === 'at' ? 'Antiguo Testamento Interlineal' : 'Nuevo Testamento Interlineal'}
         </h1>
       </header>
 
@@ -283,7 +338,7 @@ export default function InterlinearView() {
           </button>
 
           {isBookOpen && (
-            <div className="absolute top-full left-0 mt-2 w-56 max-h-[350px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60] ui-protect">
+            <div className="absolute top-full left-0 mt-2 w-56 dropdown-content rounded-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60] ui-protect">
               <div className="grid grid-cols-1 gap-0.5">
                 {books.map(b => (
                   <button
@@ -316,7 +371,7 @@ export default function InterlinearView() {
           </button>
 
           {isChapterOpen && (
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 max-h-[300px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60] ui-protect">
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 dropdown-content rounded-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60] ui-protect">
               <div className="grid grid-cols-4 gap-1">
                 {Array.from({ length: currentBook?.chapters || 1 }, (_, i) => String(i + 1)).map(num => (
                   <button
@@ -348,7 +403,7 @@ export default function InterlinearView() {
           </button>
 
           {isVerseOpen && (
-            <div className="absolute top-full right-0 mt-2 w-48 max-h-[300px] overflow-y-auto bg-[var(--color-bg)] border border-theme-text/10 rounded-2xl shadow-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60] ui-protect">
+            <div className="absolute top-full right-0 mt-2 w-48 dropdown-content rounded-2xl p-1.5 animate-in fade-in slide-in-from-top-2 duration-200 custom-scrollbar z-[60] ui-protect">
               <div className="grid grid-cols-4 gap-1">
                 {(chapterData.length > 0 ? chapterData.map(v => String(v.verse)) : [params.verse]).map(num => (
                   <button
@@ -396,7 +451,9 @@ export default function InterlinearView() {
           <div className="flex-1 flex items-center justify-center">
             <div className="flex flex-col items-center gap-6">
               <div className="w-16 h-16 border-4 border-[var(--color-link)]/10 border-t-[var(--color-link)] rounded-full animate-spin"></div>
-              <div className="animate-pulse text-lg opacity-40 font-bold tracking-widest uppercase text-xs">Cargando Hebreo</div>
+              <div className="animate-pulse text-lg opacity-40 font-bold tracking-widest uppercase text-xs">
+                Cargando {currentBook?.section === 'at' ? 'Hebreo' : 'Griego'}
+              </div>
             </div>
           </div>
         ) : error ? (
@@ -421,7 +478,7 @@ export default function InterlinearView() {
           <div className="flex-1 flex flex-col">
             <div
               className="flex flex-wrap justify-start gap-x-8 gap-y-16 mb-16 py-8 interlinear-words-container"
-              dir="rtl"
+              dir={currentBook?.section === 'at' ? 'rtl' : 'ltr'}
             >
               {verseData?.words.map((word, idx) => (
                 <div key={idx} className="flex flex-col items-center group relative min-w-[70px]">
@@ -435,9 +492,9 @@ export default function InterlinearView() {
 
                   {word.strong && (
                     <a
-                      href={`/strong/H${word.strong}`}
+                      href={`/strong/${currentBook?.section === 'at' ? 'H' : 'G'}${word.strong}`}
                       className="text-[11px] opacity-20 hover:opacity-100 hover:text-[var(--color-link)] transition-all absolute -top-5 font-bold tracking-tighter ui-protect"
-                      title={`Lexicón: H${word.strong}`}
+                      title={`Lexicón: ${currentBook?.section === 'at' ? 'H' : 'G'}${word.strong}`}
                       data-astro-prefetch
                     >
                       {word.strong}
@@ -445,11 +502,11 @@ export default function InterlinearView() {
                   )}
 
                   <span
-                    className="font-hebrew text-[var(--color-text)] leading-relaxed mb-4 hover:text-[var(--color-link)] transition-colors cursor-default select-none drop-shadow-sm"
-                    dir="rtl"
+                    className={`${currentBook?.section === 'at' ? 'font-hebrew' : 'font-serif'} text-[var(--color-text)] leading-relaxed mb-4 hover:text-[var(--color-link)] transition-colors cursor-default select-none drop-shadow-sm`}
+                    dir={currentBook?.section === 'at' ? 'rtl' : 'ltr'}
                     style={{ fontSize: `clamp(32px, ${$preferences.fontSize * 2}px, 64px)` }}
                   >
-                    {word.hebrew || word.hebrew_aramaic}
+                    {word.hebrew || word.hebrew_aramaic || word.greek}
                   </span>
 
                   <span
