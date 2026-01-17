@@ -1,0 +1,2168 @@
+[
+  {
+    "chapter": 1,
+    "verse": 1,
+    "words": [
+      {
+        "greek": "Παῦλος",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "3972",
+        "spanish": "Paulo"
+      },
+      {
+        "greek": "δέσμιος",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "1198",
+        "spanish": "atado"
+      },
+      {
+        "greek": "Χριστοῦ",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "5547",
+        "spanish": "de Cristo"
+      },
+      {
+        "greek": "Ἰησοῦ",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "2424",
+        "spanish": "Jesús"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "Τιμόθεος",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "5095",
+        "spanish": "Timoteo"
+      },
+      {
+        "greek": "ὁ",
+        "parsing": "Artículo-Nominativo-Singular-Masculino",
+        "strong": "3588",
+        "spanish": "el"
+      },
+      {
+        "greek": "ἀδελφὸς",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "80",
+        "spanish": "hermano"
+      },
+      {
+        "greek": "Φιλήμονι",
+        "parsing": "Sustantivo-Dativo-Singular-Masculino",
+        "strong": "5371",
+        "spanish": "a Filemón"
+      },
+      {
+        "greek": "τῷ",
+        "parsing": "Artículo-Dativo-Singular-Masculino",
+        "strong": "3588",
+        "spanish": "a el"
+      },
+      {
+        "greek": "ἀγαπητῷ",
+        "parsing": "Adjetivo-Dativo-Singular-Masculino",
+        "strong": "27",
+        "spanish": "amado"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "συνεργῷ",
+        "parsing": "Adjetivo-Dativo-Singular-Masculino",
+        "strong": "4904",
+        "spanish": "colaborador"
+      },
+      {
+        "greek": "ἡμῶν",
+        "parsing": "Pronombre Personal-1ª Persona-Genitivo-Plural",
+        "strong": "2249",
+        "spanish": "de nosotros"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 2,
+    "words": [
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "Ἀπφίᾳ",
+        "parsing": "Sustantivo-Dativo-Singular-Femenino",
+        "strong": "682",
+        "spanish": "a Apfia"
+      },
+      {
+        "greek": "τῇ",
+        "parsing": "Artículo-Dativo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "la"
+      },
+      {
+        "greek": "ἀδελφῇ",
+        "parsing": "Sustantivo-Dativo-Singular-Femenino",
+        "strong": "79",
+        "spanish": "hermana"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "Ἀρχίππῳ",
+        "parsing": "Sustantivo-Dativo-Singular-Masculino",
+        "strong": "751",
+        "spanish": "a Arquipo"
+      },
+      {
+        "greek": "τῷ",
+        "parsing": "Artículo-Dativo-Singular-Masculino",
+        "strong": "3588",
+        "spanish": "a el"
+      },
+      {
+        "greek": "συστρατιώτῃ",
+        "parsing": "Sustantivo-Dativo-Singular-Masculino",
+        "strong": "4961",
+        "spanish": "compañero de servicio militar"
+      },
+      {
+        "greek": "ἡμῶν",
+        "parsing": "Pronombre Personal-1ª Persona-Genitivo-Plural",
+        "strong": "2249",
+        "spanish": "de nosotros"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "τῇ",
+        "parsing": "Artículo-Dativo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "a la"
+      },
+      {
+        "greek": "κατ’",
+        "parsing": "Preposición",
+        "strong": "2596",
+        "spanish": "según"
+      },
+      {
+        "greek": "οἶκόν",
+        "parsing": "Sustantivo-Acusativo-Singular-Masculino",
+        "strong": "3624",
+        "spanish": "casa"
+      },
+      {
+        "greek": "σου",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Singular",
+        "strong": "4771",
+        "spanish": "de ti"
+      },
+      {
+        "greek": "ἐκκλησίᾳ·",
+        "parsing": "Sustantivo-Dativo-Singular-Femenino",
+        "strong": "1577",
+        "spanish": "asamblea"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 3,
+    "words": [
+      {
+        "greek": "χάρις",
+        "parsing": "Sustantivo-Nominativo-Singular-Femenino",
+        "strong": "5485",
+        "spanish": "Bondad inmerecida"
+      },
+      {
+        "greek": "ὑμῖν",
+        "parsing": "Pronombre Personal-2ª Persona-Dativo-Plural",
+        "strong": "5210",
+        "spanish": "a ustedes"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "εἰρήνη",
+        "parsing": "Sustantivo-Nominativo-Singular-Femenino",
+        "strong": "1515",
+        "spanish": "paz"
+      },
+      {
+        "greek": "ἀπὸ",
+        "parsing": "Preposición",
+        "strong": "575",
+        "spanish": "desde"
+      },
+      {
+        "greek": "θεοῦ",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "2316",
+        "spanish": "Dios"
+      },
+      {
+        "greek": "πατρὸς",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "3962",
+        "spanish": "Padre"
+      },
+      {
+        "greek": "ἡμῶν",
+        "parsing": "Pronombre Personal-1ª Persona-Genitivo-Plural",
+        "strong": "2249",
+        "spanish": "de nosotros"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "κυρίου",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "2962",
+        "spanish": "de Señor"
+      },
+      {
+        "greek": "Ἰησοῦ",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "2424",
+        "spanish": "Jesús"
+      },
+      {
+        "greek": "Χριστοῦ.",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "5547",
+        "spanish": "Cristo"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 4,
+    "words": [
+      {
+        "greek": "Εὐχαριστῶ",
+        "parsing": "Verbo-Presente-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "2168",
+        "spanish": "Estoy dando gracias"
+      },
+      {
+        "greek": "τῷ",
+        "parsing": "Artículo-Dativo-Singular-Masculino",
+        "strong": "3588",
+        "spanish": "a el"
+      },
+      {
+        "greek": "θεῷ",
+        "parsing": "Sustantivo-Dativo-Singular-Masculino",
+        "strong": "2316",
+        "spanish": "Dios"
+      },
+      {
+        "greek": "μου",
+        "parsing": "Pronombre Personal-1ª Persona-Genitivo-Singular",
+        "strong": "1473",
+        "spanish": "de mí"
+      },
+      {
+        "greek": "πάντοτε",
+        "parsing": "Adverbio",
+        "strong": "3842",
+        "spanish": "siempre"
+      },
+      {
+        "greek": "μνείαν",
+        "parsing": "Sustantivo-Acusativo-Singular-Femenino",
+        "strong": "3417",
+        "spanish": "mención"
+      },
+      {
+        "greek": "σου",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Singular",
+        "strong": "4771",
+        "spanish": "de ti"
+      },
+      {
+        "greek": "ποιούμενος",
+        "parsing": "Verbo-Presente-Medio-Pasivo-Nominativo-Singular-Masculino",
+        "strong": "4160",
+        "spanish": "haciéndose"
+      },
+      {
+        "greek": "ἐπὶ",
+        "parsing": "Preposición",
+        "strong": "1909",
+        "spanish": "sobre"
+      },
+      {
+        "greek": "τῶν",
+        "parsing": "Artículo-Genitivo-Plural-Femenino",
+        "strong": "3588",
+        "spanish": "de las"
+      },
+      {
+        "greek": "προσευχῶν",
+        "parsing": "Sustantivo-Genitivo-Plural-Femenino",
+        "strong": "4335",
+        "spanish": "oraciones"
+      },
+      {
+        "greek": "μου,",
+        "parsing": "Pronombre Personal-1ª Persona-Genitivo-Singular",
+        "strong": "1473",
+        "spanish": "de mí"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 5,
+    "words": [
+      {
+        "greek": "ἀκούων",
+        "parsing": "Verbo-Presente-Activo-Participio-Nominativo-Singular-Masculino",
+        "strong": "191",
+        "spanish": "oyendo"
+      },
+      {
+        "greek": "σου",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Singular",
+        "strong": "4771",
+        "spanish": "de ti"
+      },
+      {
+        "greek": "τὴν",
+        "parsing": "Artículo-Acusativo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "el"
+      },
+      {
+        "greek": "ἀγάπην",
+        "parsing": "Sustantivo-Acusativo-Singular-Femenino",
+        "strong": "26",
+        "spanish": "amor"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "τὴν",
+        "parsing": "Artículo-Acusativo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "la"
+      },
+      {
+        "greek": "πίστιν",
+        "parsing": "Sustantivo-Acusativo-Singular-Femenino",
+        "strong": "4102",
+        "spanish": "fe"
+      },
+      {
+        "greek": "ἣν",
+        "parsing": "Pronombre Relativo-Acusativo-Singular-Femenino",
+        "strong": "3739",
+        "spanish": "cual"
+      },
+      {
+        "greek": "ἔχεις",
+        "parsing": "Verbo-Presente-Activo-Indicativo-2ª Persona-Singular",
+        "strong": "2192",
+        "spanish": "estás teniendo"
+      },
+      {
+        "greek": "πρὸς",
+        "parsing": "Preposición",
+        "strong": "4314",
+        "spanish": "hacia"
+      },
+      {
+        "greek": "τὸν",
+        "parsing": "Artículo-Acusativo-Singular-Masculino",
+        "strong": "3588",
+        "spanish": "a el"
+      },
+      {
+        "greek": "κύριον",
+        "parsing": "Sustantivo-Acusativo-Singular-Masculino",
+        "strong": "2962",
+        "spanish": "Señor"
+      },
+      {
+        "greek": "Ἰησοῦν",
+        "parsing": "Sustantivo-Acusativo-Singular-Masculino",
+        "strong": "2424",
+        "spanish": "Jesús"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "εἰς",
+        "parsing": "Preposición",
+        "strong": "1519",
+        "spanish": "hacia dentro"
+      },
+      {
+        "greek": "πάντας",
+        "parsing": "Adjetivo-Acusativo-Plural-Masculino",
+        "strong": "3956",
+        "spanish": "a todos"
+      },
+      {
+        "greek": "τοὺς",
+        "parsing": "Artículo-Acusativo-Plural-Masculino",
+        "strong": "3588",
+        "spanish": "los"
+      },
+      {
+        "greek": "ἁγίους,",
+        "parsing": "Adjetivo-Acusativo-Plural-Masculino",
+        "strong": "40",
+        "spanish": "santos"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 6,
+    "words": [
+      {
+        "greek": "ὅπως",
+        "parsing": "Adverbio",
+        "strong": "3704",
+        "spanish": "para que"
+      },
+      {
+        "greek": "ἡ",
+        "parsing": "Artículo-Nominativo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "la"
+      },
+      {
+        "greek": "κοινωνία",
+        "parsing": "Sustantivo-Nominativo-Singular-Femenino",
+        "strong": "2842",
+        "spanish": "participación unida"
+      },
+      {
+        "greek": "τῆς",
+        "parsing": "Artículo-Genitivo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "de la"
+      },
+      {
+        "greek": "πίστεώς",
+        "parsing": "Sustantivo-Genitivo-Singular-Femenino",
+        "strong": "4102",
+        "spanish": "fe"
+      },
+      {
+        "greek": "σου",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Singular",
+        "strong": "4771",
+        "spanish": "de ti"
+      },
+      {
+        "greek": "ἐνεργὴς",
+        "parsing": "Adjetivo-Nominativo-Singular-Femenino",
+        "strong": "1756",
+        "spanish": "actividad dentro"
+      },
+      {
+        "greek": "γένηται",
+        "parsing": "Verbo-2º Aoristo-Deponente Medio-Subjuntivo-3ª Persona-Singular",
+        "strong": "1096",
+        "spanish": "llegue a ser"
+      },
+      {
+        "greek": "ἐν",
+        "parsing": "Preposición",
+        "strong": "1722",
+        "spanish": "en"
+      },
+      {
+        "greek": "ἐπιγνώσει",
+        "parsing": "Sustantivo-Dativo-Singular-Femenino",
+        "strong": "1922",
+        "spanish": "conocimiento preciso"
+      },
+      {
+        "greek": "παντὸς",
+        "parsing": "Adjetivo-Genitivo-Singular-Neutro",
+        "strong": "3956",
+        "spanish": "de todo"
+      },
+      {
+        "greek": "ἀγαθοῦ",
+        "parsing": "Adjetivo-Genitivo-Singular-Neutro",
+        "strong": "18",
+        "spanish": "bueno"
+      },
+      {
+        "greek": "τοῦ",
+        "parsing": "Artículo-Genitivo-Singular-Neutro",
+        "strong": "3588",
+        "spanish": "de lo"
+      },
+      {
+        "greek": "ἐν",
+        "parsing": "Preposición",
+        "strong": "1722",
+        "spanish": "en"
+      },
+      {
+        "greek": "ἡμῖν",
+        "parsing": "Pronombre Personal-1ª Persona-Dativo-Plural",
+        "strong": "2249",
+        "spanish": "nosotros"
+      },
+      {
+        "greek": "εἰς",
+        "parsing": "Preposición",
+        "strong": "1519",
+        "spanish": "hacia dentro"
+      },
+      {
+        "greek": "Χριστόν·",
+        "parsing": "Sustantivo-Acusativo-Singular-Masculino",
+        "strong": "5547",
+        "spanish": "Cristo"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 7,
+    "words": [
+      {
+        "greek": "χαρὰν",
+        "parsing": "Sustantivo-Acusativo-Singular-Femenino",
+        "strong": "5479",
+        "spanish": "regocijo"
+      },
+      {
+        "greek": "γὰρ",
+        "parsing": "Conjunción",
+        "strong": "1063",
+        "spanish": "porque"
+      },
+      {
+        "greek": "πολλὴν",
+        "parsing": "Adjetivo-Acusativo-Singular-Femenino",
+        "strong": "4183",
+        "spanish": "mucho"
+      },
+      {
+        "greek": "ἔσχον",
+        "parsing": "Verbo-2º Aoristo-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "2192",
+        "spanish": "tuve"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "παράκλησιν",
+        "parsing": "Sustantivo-Acusativo-Singular-Femenino",
+        "strong": "3874",
+        "spanish": "consolación"
+      },
+      {
+        "greek": "ἐπὶ",
+        "parsing": "Preposición",
+        "strong": "1909",
+        "spanish": "sobre"
+      },
+      {
+        "greek": "τῇ",
+        "parsing": "Artículo-Dativo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "el"
+      },
+      {
+        "greek": "ἀγάπῃ",
+        "parsing": "Sustantivo-Dativo-Singular-Femenino",
+        "strong": "26",
+        "spanish": "amor"
+      },
+      {
+        "greek": "σου,",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Singular",
+        "strong": "4771",
+        "spanish": "de ti"
+      },
+      {
+        "greek": "ὅτι",
+        "parsing": "Conjunción",
+        "strong": "3754",
+        "spanish": "porque"
+      },
+      {
+        "greek": "τὰ",
+        "parsing": "Artículo-Nominativo-Plural-Neutro",
+        "strong": "3588",
+        "spanish": "los"
+      },
+      {
+        "greek": "σπλάγχνα",
+        "parsing": "Sustantivo-Nominativo-Plural-Neutro",
+        "strong": "4698",
+        "spanish": "tiernos cariños"
+      },
+      {
+        "greek": "τῶν",
+        "parsing": "Artículo-Genitivo-Plural-Masculino",
+        "strong": "3588",
+        "spanish": "de los"
+      },
+      {
+        "greek": "ἁγίων",
+        "parsing": "Adjetivo-Genitivo-Plural-Masculino",
+        "strong": "40",
+        "spanish": "santos"
+      },
+      {
+        "greek": "ἀναπέπαυται",
+        "parsing": "Verbo-Perfecto-Pasivo-Indicativo-3ª Persona-Singular",
+        "strong": "373",
+        "spanish": "ha sido descansado"
+      },
+      {
+        "greek": "διὰ",
+        "parsing": "Preposición",
+        "strong": "1223",
+        "spanish": "a través"
+      },
+      {
+        "greek": "σοῦ,",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Singular",
+        "strong": "4771",
+        "spanish": "de ti"
+      },
+      {
+        "greek": "ἀδελφέ.",
+        "parsing": "Sustantivo-Vocativo-Singular-Masculino",
+        "strong": "80",
+        "spanish": "hermano"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 8,
+    "words": [
+      {
+        "greek": "Διό,",
+        "parsing": "Conjunción",
+        "strong": "1352",
+        "spanish": "Por cual"
+      },
+      {
+        "greek": "πολλὴν",
+        "parsing": "Adjetivo-Acusativo-Singular-Femenino",
+        "strong": "4183",
+        "spanish": "mucha"
+      },
+      {
+        "greek": "ἐν",
+        "parsing": "Preposición",
+        "strong": "1722",
+        "spanish": "en"
+      },
+      {
+        "greek": "Χριστῷ",
+        "parsing": "Sustantivo-Dativo-Singular-Masculino",
+        "strong": "5547",
+        "spanish": "Cristo"
+      },
+      {
+        "greek": "παρρησίαν",
+        "parsing": "Sustantivo-Acusativo-Singular-Femenino",
+        "strong": "3954",
+        "spanish": "franqueza"
+      },
+      {
+        "greek": "ἔχων",
+        "parsing": "Verbo-Presente-Activo-Participio-Nominativo-Singular-Masculino",
+        "strong": "2192",
+        "spanish": "teniendo"
+      },
+      {
+        "greek": "ἐπιτάσσειν",
+        "parsing": "Verbo-Presente-Activo-Infinitivo",
+        "strong": "2004",
+        "spanish": "estar dando orden"
+      },
+      {
+        "greek": "σοι",
+        "parsing": "Pronombre Personal-2ª Persona-Dativo-Singular",
+        "strong": "4771",
+        "spanish": "a ti"
+      },
+      {
+        "greek": "τὸ",
+        "parsing": "Artículo-Acusativo-Singular-Neutro",
+        "strong": "3588",
+        "spanish": "a lo"
+      },
+      {
+        "greek": "ἀνῆκον,",
+        "parsing": "Verbo-Presente-Activo-Participio-Acusativo-Singular-Neutro",
+        "strong": "433",
+        "spanish": "siendo apropiado"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 9,
+    "words": [
+      {
+        "greek": "διὰ",
+        "parsing": "Preposición",
+        "strong": "1223",
+        "spanish": "A través"
+      },
+      {
+        "greek": "τὴν",
+        "parsing": "Artículo-Acusativo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "el"
+      },
+      {
+        "greek": "ἀγάπην",
+        "parsing": "Sustantivo-Acusativo-Singular-Femenino",
+        "strong": "26",
+        "spanish": "amor"
+      },
+      {
+        "greek": "μᾶλλον",
+        "parsing": "Adverbio",
+        "strong": "3123",
+        "spanish": "más bien"
+      },
+      {
+        "greek": "παρακαλῶ,",
+        "parsing": "Verbo-Presente-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "3870",
+        "spanish": "suplico"
+      },
+      {
+        "greek": "τοιοῦτος",
+        "parsing": "Pronombre Demostrativo-Nominativo-Singular-Masculino",
+        "strong": "5108",
+        "spanish": "tal"
+      },
+      {
+        "greek": "ὢν",
+        "parsing": "Verbo-Presente-Activo-Participio-Nominativo-Singular-Masculino",
+        "strong": "1510",
+        "spanish": "siendo"
+      },
+      {
+        "greek": "ὡς",
+        "parsing": "Adverbio",
+        "strong": "5613",
+        "spanish": "como"
+      },
+      {
+        "greek": "Παῦλος",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "3972",
+        "spanish": "Paulo"
+      },
+      {
+        "greek": "πρεσβύτης,",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "4246",
+        "spanish": "viejo"
+      },
+      {
+        "greek": "νυνὶ",
+        "parsing": "Adverbio",
+        "strong": "3570",
+        "spanish": "ahora"
+      },
+      {
+        "greek": "δὲ",
+        "parsing": "Conjunción",
+        "strong": "1161",
+        "spanish": "pero"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "también"
+      },
+      {
+        "greek": "δέσμιος",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "1198",
+        "spanish": "atado"
+      },
+      {
+        "greek": "Χριστοῦ",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "5547",
+        "spanish": "de Cristo"
+      },
+      {
+        "greek": "Ἰησοῦ,",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "2424",
+        "spanish": "Jesús --"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 10,
+    "words": [
+      {
+        "greek": "παρακαλῶ",
+        "parsing": "Verbo-Presente-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "3870",
+        "spanish": "Estoy suplicando"
+      },
+      {
+        "greek": "σε",
+        "parsing": "Pronombre Personal-2ª Persona-Acusativo-Singular",
+        "strong": "4771",
+        "spanish": "a ti"
+      },
+      {
+        "greek": "περὶ",
+        "parsing": "Preposición",
+        "strong": "4012",
+        "spanish": "acerca de"
+      },
+      {
+        "greek": "τοῦ",
+        "parsing": "Artículo-Genitivo-Singular-Neutro",
+        "strong": "3588",
+        "spanish": "el"
+      },
+      {
+        "greek": "ἐμοῦ",
+        "parsing": "Pronombre Personal-1ª Persona-Genitivo-Singular",
+        "strong": "1473",
+        "spanish": "de mí"
+      },
+      {
+        "greek": "τέκνου,",
+        "parsing": "Sustantivo-Genitivo-Singular-Neutro",
+        "strong": "5043",
+        "spanish": "hijo"
+      },
+      {
+        "greek": "ὃν",
+        "parsing": "Pronombre Relativo-Acusativo-Singular-Masculino",
+        "strong": "3739",
+        "spanish": "cual"
+      },
+      {
+        "greek": "ἐγέννησα",
+        "parsing": "Verbo-Aoristo-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "1080",
+        "spanish": "di nacimiento"
+      },
+      {
+        "greek": "ἐν",
+        "parsing": "Preposición",
+        "strong": "1722",
+        "spanish": "en"
+      },
+      {
+        "greek": "τοῖς",
+        "parsing": "Artículo-Dativo-Plural-Masculino",
+        "strong": "3588",
+        "spanish": "las"
+      },
+      {
+        "greek": "δεσμοῖς,",
+        "parsing": "Sustantivo-Dativo-Plural-Masculino",
+        "strong": "1199",
+        "spanish": "cadenas"
+      },
+      {
+        "greek": "Ὀνήσιμον,",
+        "parsing": "Sustantivo-Acusativo-Singular-Masculino",
+        "strong": "3682",
+        "spanish": "Onésimo"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 11,
+    "words": [
+      {
+        "greek": "τόν",
+        "parsing": "Artículo-Acusativo-Singular-Masculino",
+        "strong": "3588",
+        "spanish": "a el"
+      },
+      {
+        "greek": "ποτέ",
+        "parsing": "Partícula",
+        "strong": "4218",
+        "spanish": "en algún momento"
+      },
+      {
+        "greek": "σοι",
+        "parsing": "Pronombre Personal-2ª Persona-Dativo-Singular",
+        "strong": "4771",
+        "spanish": "a ti"
+      },
+      {
+        "greek": "ἄχρηστον",
+        "parsing": "Adjetivo-Acusativo-Singular-Masculino",
+        "strong": "890",
+        "spanish": "inútil"
+      },
+      {
+        "greek": "νυνὶ",
+        "parsing": "Adverbio",
+        "strong": "3570",
+        "spanish": "ahora"
+      },
+      {
+        "greek": "δὲ",
+        "parsing": "Conjunción",
+        "strong": "1161",
+        "spanish": "pero"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "también"
+      },
+      {
+        "greek": "σοὶ",
+        "parsing": "Pronombre Personal-2ª Persona-Dativo-Singular",
+        "strong": "4771",
+        "spanish": "a ti"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "ἐμοὶ",
+        "parsing": "Pronombre Personal-1ª Persona-Dativo-Singular",
+        "strong": "1473",
+        "spanish": "a mí"
+      },
+      {
+        "greek": "εὔχρηστον,",
+        "parsing": "Adjetivo-Acusativo-Singular-Masculino",
+        "strong": "2173",
+        "spanish": "bien útil"
+      },
+      {
+        "greek": "ὃν",
+        "parsing": "Pronombre Relativo-Acusativo-Singular-Masculino",
+        "strong": "3739",
+        "spanish": "a quien"
+      },
+      {
+        "greek": "ἀνέπεμψά",
+        "parsing": "Verbo-Aoristo-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "375",
+        "spanish": "envié de nuevo"
+      },
+      {
+        "greek": "σοι,",
+        "parsing": "Pronombre Personal-2ª Persona-Dativo-Singular",
+        "strong": "4771",
+        "spanish": "a ti"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 12,
+    "words": [
+      {
+        "greek": "αὐτόν,",
+        "parsing": "Pronombre Personal-Acusativo-Singular-Masculino",
+        "strong": "846",
+        "spanish": "a él"
+      },
+      {
+        "greek": "τοῦτ’",
+        "parsing": "Pronombre Demostrativo-Nominativo-Singular-Neutro",
+        "strong": "3778",
+        "spanish": "esto"
+      },
+      {
+        "greek": "ἔστιν",
+        "parsing": "Verbo-Presente-Activo-Indicativo-3ª Persona-Singular",
+        "strong": "1510",
+        "spanish": "está siendo"
+      },
+      {
+        "greek": "τὰ",
+        "parsing": "Artículo-Nominativo-Plural-Neutro",
+        "strong": "3588",
+        "spanish": "los"
+      },
+      {
+        "greek": "ἐμὰ",
+        "parsing": "Pronombre Posesivo-1ª Persona-Singular-Nominativo-Plural-Neutro",
+        "strong": "1699",
+        "spanish": "míos"
+      },
+      {
+        "greek": "σπλάγχνα.",
+        "parsing": "Sustantivo-Nominativo-Plural-Neutro",
+        "strong": "4698",
+        "spanish": "tiernos cariños"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 13,
+    "words": [
+      {
+        "greek": "ὃν",
+        "parsing": "Pronombre Relativo-Acusativo-Singular-Masculino",
+        "strong": "3739",
+        "spanish": "A quien"
+      },
+      {
+        "greek": "ἐγὼ",
+        "parsing": "Pronombre Personal-1ª Persona-Nominativo-Singular",
+        "strong": "1473",
+        "spanish": "yo"
+      },
+      {
+        "greek": "ἐβουλόμην",
+        "parsing": "Verbo-Imperfecto-Deponente Medio o Pasivo-Indicativo-1ª Persona-Singular",
+        "strong": "1014",
+        "spanish": "estaba queriendo"
+      },
+      {
+        "greek": "πρὸς",
+        "parsing": "Preposición",
+        "strong": "4314",
+        "spanish": "hacia"
+      },
+      {
+        "greek": "ἐμαυτὸν",
+        "parsing": "Pronombre Reflexivo-1ª Persona-Acusativo-Singular-Masculino",
+        "strong": "1683",
+        "spanish": "a mí mismo"
+      },
+      {
+        "greek": "κατέχειν,",
+        "parsing": "Verbo-Presente-Activo-Infinitivo",
+        "strong": "2722",
+        "spanish": "estar reteniendo"
+      },
+      {
+        "greek": "ἵνα",
+        "parsing": "Conjunción",
+        "strong": "2443",
+        "spanish": "para que"
+      },
+      {
+        "greek": "ὑπὲρ",
+        "parsing": "Preposición",
+        "strong": "5228",
+        "spanish": "por"
+      },
+      {
+        "greek": "σοῦ",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Singular",
+        "strong": "4771",
+        "spanish": "de ti"
+      },
+      {
+        "greek": "μοι",
+        "parsing": "Pronombre Personal-1ª Persona-Dativo-Singular",
+        "strong": "1473",
+        "spanish": "a mí"
+      },
+      {
+        "greek": "διακονῇ",
+        "parsing": "Verbo-Presente-Activo-Subjuntivo-3ª Persona-Singular",
+        "strong": "1247",
+        "spanish": "esté sirviendo"
+      },
+      {
+        "greek": "ἐν",
+        "parsing": "Preposición",
+        "strong": "1722",
+        "spanish": "en"
+      },
+      {
+        "greek": "τοῖς",
+        "parsing": "Artículo-Dativo-Plural-Masculino",
+        "strong": "3588",
+        "spanish": "a las"
+      },
+      {
+        "greek": "δεσμοῖς",
+        "parsing": "Sustantivo-Dativo-Plural-Masculino",
+        "strong": "1199",
+        "spanish": "cadenas"
+      },
+      {
+        "greek": "τοῦ",
+        "parsing": "Artículo-Genitivo-Singular-Neutro",
+        "strong": "3588",
+        "spanish": "de el"
+      },
+      {
+        "greek": "εὐαγγελίου,",
+        "parsing": "Sustantivo-Genitivo-Singular-Neutro",
+        "strong": "2098",
+        "spanish": "buen mensaje"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 14,
+    "words": [
+      {
+        "greek": "χωρὶς",
+        "parsing": "Adverbio",
+        "strong": "5565",
+        "spanish": "aparte de"
+      },
+      {
+        "greek": "δὲ",
+        "parsing": "Conjunción",
+        "strong": "1161",
+        "spanish": "pero"
+      },
+      {
+        "greek": "τῆς",
+        "parsing": "Artículo-Genitivo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "de la"
+      },
+      {
+        "greek": "σῆς",
+        "parsing": "Pronombre Posesivo-2ª Persona-Singular-Genitivo-Singular-Femenino",
+        "strong": "4674",
+        "spanish": "tu"
+      },
+      {
+        "greek": "γνώμης",
+        "parsing": "Sustantivo-Genitivo-Singular-Femenino",
+        "strong": "1106",
+        "spanish": "opinión"
+      },
+      {
+        "greek": "οὐδὲν",
+        "parsing": "Adjetivo-Acusativo-Singular-Neutro-Negativo",
+        "strong": "3762",
+        "spanish": "nada"
+      },
+      {
+        "greek": "ἠθέλησα",
+        "parsing": "Verbo-Aoristo-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "2309",
+        "spanish": "quise"
+      },
+      {
+        "greek": "ποιῆσαι,",
+        "parsing": "Verbo-Aoristo-Activo-Infinitivo",
+        "strong": "4160",
+        "spanish": "hacer"
+      },
+      {
+        "greek": "ἵνα",
+        "parsing": "Conjunción",
+        "strong": "2443",
+        "spanish": "para que"
+      },
+      {
+        "greek": "μὴ",
+        "parsing": "Partícula-Negativa",
+        "strong": "3361",
+        "spanish": "no"
+      },
+      {
+        "greek": "ὡς",
+        "parsing": "Adverbio",
+        "strong": "5613",
+        "spanish": "como"
+      },
+      {
+        "greek": "κατὰ",
+        "parsing": "Preposición",
+        "strong": "2596",
+        "spanish": "según"
+      },
+      {
+        "greek": "ἀνάγκην",
+        "parsing": "Sustantivo-Acusativo-Singular-Femenino",
+        "strong": "318",
+        "spanish": "necesidad"
+      },
+      {
+        "greek": "τὸ",
+        "parsing": "Artículo-Nominativo-Singular-Neutro",
+        "strong": "3588",
+        "spanish": "lo"
+      },
+      {
+        "greek": "ἀγαθόν",
+        "parsing": "Adjetivo-Nominativo-Singular-Neutro",
+        "strong": "18",
+        "spanish": "bueno"
+      },
+      {
+        "greek": "σου",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Singular",
+        "strong": "4771",
+        "spanish": "de ti"
+      },
+      {
+        "greek": "ᾖ",
+        "parsing": "Verbo-Presente-Activo-Subjuntivo-3ª Persona-Singular",
+        "strong": "1510",
+        "spanish": "esté siendo"
+      },
+      {
+        "greek": "ἀλλὰ",
+        "parsing": "Conjunción",
+        "strong": "235",
+        "spanish": "sino"
+      },
+      {
+        "greek": "κατὰ",
+        "parsing": "Preposición",
+        "strong": "2596",
+        "spanish": "según"
+      },
+      {
+        "greek": "ἑκούσιον.",
+        "parsing": "Adjetivo-Acusativo-Singular-Neutro",
+        "strong": "1595",
+        "spanish": "voluntario"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 15,
+    "words": [
+      {
+        "greek": "τάχα",
+        "parsing": "Adverbio",
+        "strong": "5029",
+        "spanish": "Quizás"
+      },
+      {
+        "greek": "γὰρ",
+        "parsing": "Conjunción",
+        "strong": "1063",
+        "spanish": "porque"
+      },
+      {
+        "greek": "διὰ",
+        "parsing": "Preposición",
+        "strong": "1223",
+        "spanish": "por"
+      },
+      {
+        "greek": "τοῦτο",
+        "parsing": "Pronombre Demostrativo-Acusativo-Singular-Neutro",
+        "strong": "3778",
+        "spanish": "esto"
+      },
+      {
+        "greek": "ἐχωρίσθη",
+        "parsing": "Verbo-Aoristo-Pasivo-Indicativo-3ª Persona-Singular",
+        "strong": "5563",
+        "spanish": "fue separado"
+      },
+      {
+        "greek": "πρὸς",
+        "parsing": "Preposición",
+        "strong": "4314",
+        "spanish": "hacia"
+      },
+      {
+        "greek": "ὥραν",
+        "parsing": "Sustantivo-Acusativo-Singular-Femenino",
+        "strong": "5610",
+        "spanish": "hora"
+      },
+      {
+        "greek": "ἵνα",
+        "parsing": "Conjunción",
+        "strong": "2443",
+        "spanish": "para que"
+      },
+      {
+        "greek": "αἰώνιον",
+        "parsing": "Adjetivo-Acusativo-Singular-Masculino",
+        "strong": "166",
+        "spanish": "eterno"
+      },
+      {
+        "greek": "αὐτὸν",
+        "parsing": "Pronombre Personal-Acusativo-Singular-Masculino",
+        "strong": "846",
+        "spanish": "a él"
+      },
+      {
+        "greek": "ἀπέχῃς,",
+        "parsing": "Verbo-Presente-Activo-Subjuntivo-2ª Persona-Singular",
+        "strong": "568",
+        "spanish": "estés teniendo de regreso"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 16,
+    "words": [
+      {
+        "greek": "οὐκ",
+        "parsing": "Partícula-Negativa",
+        "strong": "3756",
+        "spanish": "no"
+      },
+      {
+        "greek": "ἔτι",
+        "parsing": "Adverbio",
+        "strong": "2089",
+        "spanish": "todavía"
+      },
+      {
+        "greek": "ὡς",
+        "parsing": "Adverbio",
+        "strong": "5613",
+        "spanish": "como"
+      },
+      {
+        "greek": "δοῦλον",
+        "parsing": "Sustantivo-Acusativo-Singular-Masculino",
+        "strong": "1401",
+        "spanish": "esclavo"
+      },
+      {
+        "greek": "ἀλλὰ",
+        "parsing": "Conjunción",
+        "strong": "235",
+        "spanish": "sino"
+      },
+      {
+        "greek": "ὑπὲρ",
+        "parsing": "Preposición",
+        "strong": "5228",
+        "spanish": "por"
+      },
+      {
+        "greek": "δοῦλον,",
+        "parsing": "Sustantivo-Acusativo-Singular-Masculino",
+        "strong": "1401",
+        "spanish": "esclavo"
+      },
+      {
+        "greek": "ἀδελφὸν",
+        "parsing": "Sustantivo-Acusativo-Singular-Masculino",
+        "strong": "80",
+        "spanish": "hermano"
+      },
+      {
+        "greek": "ἀγαπητόν,",
+        "parsing": "Adjetivo-Acusativo-Singular-Masculino",
+        "strong": "27",
+        "spanish": "amado"
+      },
+      {
+        "greek": "μάλιστα",
+        "parsing": "Adverbio-Superlativo",
+        "strong": "3122",
+        "spanish": "mayormente"
+      },
+      {
+        "greek": "ἐμοί,",
+        "parsing": "Pronombre Personal-1ª Persona-Dativo-Singular",
+        "strong": "1473",
+        "spanish": "a mí"
+      },
+      {
+        "greek": "πόσῳ",
+        "parsing": "Pronombre Correlativo o Interrogativo-Dativo-Singular-Neutro",
+        "strong": "4214",
+        "spanish": "cuánto más"
+      },
+      {
+        "greek": "δὲ",
+        "parsing": "Conjunción",
+        "strong": "1161",
+        "spanish": "pero"
+      },
+      {
+        "greek": "μᾶλλον",
+        "parsing": "Adverbio",
+        "strong": "3123",
+        "spanish": "aún más"
+      },
+      {
+        "greek": "σοὶ",
+        "parsing": "Pronombre Personal-2ª Persona-Dativo-Singular",
+        "strong": "4771",
+        "spanish": "a ti"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "ἐν",
+        "parsing": "Preposición",
+        "strong": "1722",
+        "spanish": "en"
+      },
+      {
+        "greek": "σαρκὶ",
+        "parsing": "Sustantivo-Dativo-Singular-Femenino",
+        "strong": "4561",
+        "spanish": "carne"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "y"
+      },
+      {
+        "greek": "ἐν",
+        "parsing": "Preposición",
+        "strong": "1722",
+        "spanish": "en"
+      },
+      {
+        "greek": "κυρίῳ.",
+        "parsing": "Sustantivo-Dativo-Singular-Masculino",
+        "strong": "2962",
+        "spanish": "Señor"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 17,
+    "words": [
+      {
+        "greek": "εἰ",
+        "parsing": "Condicional",
+        "strong": "1487",
+        "spanish": "si"
+      },
+      {
+        "greek": "οὖν",
+        "parsing": "Conjunción",
+        "strong": "3767",
+        "spanish": "por lo tanto"
+      },
+      {
+        "greek": "με",
+        "parsing": "Pronombre Personal-1ª Persona-Acusativo-Singular",
+        "strong": "1473",
+        "spanish": "a mí"
+      },
+      {
+        "greek": "ἔχεις",
+        "parsing": "Verbo-Presente-Activo-Indicativo-2ª Persona-Singular",
+        "strong": "2192",
+        "spanish": "estás teniendo"
+      },
+      {
+        "greek": "κοινωνόν,",
+        "parsing": "Sustantivo-Acusativo-Singular-Masculino",
+        "strong": "2844",
+        "spanish": "partícipe"
+      },
+      {
+        "greek": "προσλαβοῦ",
+        "parsing": "Verbo-2º Aoristo-Medio-Imperativo-2ª Persona-Singular",
+        "strong": "4355",
+        "spanish": "recibas hacia ti"
+      },
+      {
+        "greek": "αὐτὸν",
+        "parsing": "Pronombre Personal-Acusativo-Singular-Masculino",
+        "strong": "846",
+        "spanish": "a él"
+      },
+      {
+        "greek": "ὡς",
+        "parsing": "Adverbio",
+        "strong": "5613",
+        "spanish": "como"
+      },
+      {
+        "greek": "ἐμέ.",
+        "parsing": "Pronombre Personal-1ª Persona-Acusativo-Singular",
+        "strong": "1473",
+        "spanish": "a mí"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 18,
+    "words": [
+      {
+        "greek": "εἰ",
+        "parsing": "Condicional",
+        "strong": "1487",
+        "spanish": "Si"
+      },
+      {
+        "greek": "δέ",
+        "parsing": "Conjunción",
+        "strong": "1161",
+        "spanish": "pero"
+      },
+      {
+        "greek": "τι",
+        "parsing": "Pronombre Infinitivo-Acusativo-Singular-Neutro",
+        "strong": "5100",
+        "spanish": "algo"
+      },
+      {
+        "greek": "ἠδίκησέν",
+        "parsing": "Verbo-Aoristo-Activo-Indicativo-3ª Persona-Singular",
+        "strong": "91",
+        "spanish": "hizo no rectamente"
+      },
+      {
+        "greek": "σε",
+        "parsing": "Pronombre Personal-2ª Persona-Acusativo-Singular",
+        "strong": "4771",
+        "spanish": "a ti"
+      },
+      {
+        "greek": "ἢ",
+        "parsing": "Partícula",
+        "strong": "2228",
+        "spanish": "o"
+      },
+      {
+        "greek": "ὀφείλει,",
+        "parsing": "Verbo-Presente-Activo-Indicativo-3ª Persona-Singular",
+        "strong": "3784",
+        "spanish": "está debiendo"
+      },
+      {
+        "greek": "τοῦτο",
+        "parsing": "Pronombre Demostrativo-Acusativo-Singular-Neutro",
+        "strong": "3778",
+        "spanish": "a esto"
+      },
+      {
+        "greek": "ἐμοὶ",
+        "parsing": "Pronombre Personal-1ª Persona-Dativo-Singular",
+        "strong": "1473",
+        "spanish": "a mí"
+      },
+      {
+        "greek": "ἐλλόγα·",
+        "parsing": "Verbo-Presente-Activo-Imperativo-2ª Persona-Singular",
+        "strong": "1677",
+        "spanish": "estés poniendo en cuenta"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 19,
+    "words": [
+      {
+        "greek": "ἐγὼ",
+        "parsing": "Pronombre Personal-1ª Persona-Nominativo-Singular",
+        "strong": "1473",
+        "spanish": "Yo"
+      },
+      {
+        "greek": "Παῦλος",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "3972",
+        "spanish": "Paulo"
+      },
+      {
+        "greek": "ἔγραψα",
+        "parsing": "Verbo-Aoristo-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "1125",
+        "spanish": "escribí"
+      },
+      {
+        "greek": "τῇ",
+        "parsing": "Artículo-Dativo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "a la"
+      },
+      {
+        "greek": "ἐμῇ",
+        "parsing": "Pronombre Posesivo-1ª Persona-Singular-Dativo-Singular-Femenino",
+        "strong": "1699",
+        "spanish": "mi"
+      },
+      {
+        "greek": "χειρί,",
+        "parsing": "Sustantivo-Dativo-Singular-Femenino",
+        "strong": "5495",
+        "spanish": "mano"
+      },
+      {
+        "greek": "ἐγὼ",
+        "parsing": "Pronombre Personal-1ª Persona-Nominativo-Singular",
+        "strong": "1473",
+        "spanish": "yo"
+      },
+      {
+        "greek": "ἀποτίσω·",
+        "parsing": "Verbo-Futuro-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "661",
+        "spanish": "pagaré en compensación"
+      },
+      {
+        "greek": "ἵνα",
+        "parsing": "Conjunción",
+        "strong": "2443",
+        "spanish": "para que"
+      },
+      {
+        "greek": "μὴ",
+        "parsing": "Partícula-Negativa",
+        "strong": "3361",
+        "spanish": "no"
+      },
+      {
+        "greek": "λέγω",
+        "parsing": "Verbo-Presente-Activo-Subjuntivo-1ª Persona-Singular",
+        "strong": "3004",
+        "spanish": "esté diciendo"
+      },
+      {
+        "greek": "σοι",
+        "parsing": "Pronombre Personal-2ª Persona-Dativo-Singular",
+        "strong": "4771",
+        "spanish": "a ti"
+      },
+      {
+        "greek": "ὅτι",
+        "parsing": "Conjunción",
+        "strong": "3754",
+        "spanish": "que"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "también"
+      },
+      {
+        "greek": "σεαυτόν",
+        "parsing": "Pronombre Reflexivo-2ª Persona-Acusativo-Singular-Masculino",
+        "strong": "4572",
+        "spanish": "tú mismo"
+      },
+      {
+        "greek": "μοι",
+        "parsing": "Pronombre Personal-1ª Persona-Dativo-Singular",
+        "strong": "1473",
+        "spanish": "a mí"
+      },
+      {
+        "greek": "προσοφείλεις.",
+        "parsing": "Verbo-Presente-Activo-Indicativo-2ª Persona-Singular",
+        "strong": "4359",
+        "spanish": "estás debiendo hacia"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 20,
+    "words": [
+      {
+        "greek": "ναί,",
+        "parsing": "Partícula",
+        "strong": "3483",
+        "spanish": "Sí"
+      },
+      {
+        "greek": "ἀδελφέ,",
+        "parsing": "Sustantivo-Vocativo-Singular-Masculino",
+        "strong": "80",
+        "spanish": "hermano"
+      },
+      {
+        "greek": "ἐγώ",
+        "parsing": "Pronombre Personal-1ª Persona-Nominativo-Singular",
+        "strong": "1473",
+        "spanish": "yo"
+      },
+      {
+        "greek": "σου",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Singular",
+        "strong": "4771",
+        "spanish": "de ti"
+      },
+      {
+        "greek": "ὀναίμην",
+        "parsing": "Verbo-2º Aoristo-Deponente Medio-Optativo-1ª Persona-Singular",
+        "strong": "3685",
+        "spanish": "podría aprovechar"
+      },
+      {
+        "greek": "ἐν",
+        "parsing": "Preposición",
+        "strong": "1722",
+        "spanish": "en"
+      },
+      {
+        "greek": "κυρίῳ·",
+        "parsing": "Sustantivo-Dativo-Singular-Masculino",
+        "strong": "2962",
+        "spanish": "Señor"
+      },
+      {
+        "greek": "ἀνάπαυσόν",
+        "parsing": "Verbo-Aoristo-Activo-Imperativo-2ª Persona-Singular",
+        "strong": "373",
+        "spanish": "refresca"
+      },
+      {
+        "greek": "μου",
+        "parsing": "Pronombre Personal-1ª Persona-Genitivo-Singular",
+        "strong": "1473",
+        "spanish": "de mí"
+      },
+      {
+        "greek": "τὰ",
+        "parsing": "Artículo-Acusativo-Plural-Neutro",
+        "strong": "3588",
+        "spanish": "a las"
+      },
+      {
+        "greek": "σπλάγχνα",
+        "parsing": "Sustantivo-Acusativo-Plural-Neutro",
+        "strong": "4698",
+        "spanish": "compasiones"
+      },
+      {
+        "greek": "ἐν",
+        "parsing": "Preposición",
+        "strong": "1722",
+        "spanish": "en"
+      },
+      {
+        "greek": "Χριστῷ.",
+        "parsing": "Sustantivo-Dativo-Singular-Masculino",
+        "strong": "5547",
+        "spanish": "Cristo"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 21,
+    "words": [
+      {
+        "greek": "Πεποιθὼς",
+        "parsing": "Verbo-2º Perfecto-Activo-Participio-Nominativo-Singular-Masculino",
+        "strong": "3982",
+        "spanish": "Habiendo sido convencido"
+      },
+      {
+        "greek": "τῇ",
+        "parsing": "Artículo-Dativo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "a la"
+      },
+      {
+        "greek": "ὑπακοῇ",
+        "parsing": "Sustantivo-Dativo-Singular-Femenino",
+        "strong": "5218",
+        "spanish": "obediencia"
+      },
+      {
+        "greek": "σου",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Singular",
+        "strong": "4771",
+        "spanish": "de ti"
+      },
+      {
+        "greek": "ἔγραψά",
+        "parsing": "Verbo-Aoristo-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "1125",
+        "spanish": "escribí"
+      },
+      {
+        "greek": "σοι,",
+        "parsing": "Pronombre Personal-2ª Persona-Dativo-Singular",
+        "strong": "4771",
+        "spanish": "a ti"
+      },
+      {
+        "greek": "εἰδὼς",
+        "parsing": "Verbo-Perfecto-Activo-Participio-Nominativo-Singular-Masculino",
+        "strong": "1492",
+        "spanish": "habiendo sabido"
+      },
+      {
+        "greek": "ὅτι",
+        "parsing": "Conjunción",
+        "strong": "3754",
+        "spanish": "que"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "también"
+      },
+      {
+        "greek": "ὑπὲρ",
+        "parsing": "Preposición",
+        "strong": "5228",
+        "spanish": "más allá"
+      },
+      {
+        "greek": "ἃ",
+        "parsing": "Pronombre Relativo-Acusativo-Plural-Neutro",
+        "strong": "3739",
+        "spanish": "cuales (cosas)"
+      },
+      {
+        "greek": "λέγω",
+        "parsing": "Verbo-Presente-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "3004",
+        "spanish": "estoy diciendo"
+      },
+      {
+        "greek": "ποιήσεις.",
+        "parsing": "Verbo-Futuro-Activo-Indicativo-2ª Persona-Singular",
+        "strong": "4160",
+        "spanish": "harás"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 22,
+    "words": [
+      {
+        "greek": "ἅμα",
+        "parsing": "Adverbio",
+        "strong": "260",
+        "spanish": "Al mismo tiempo"
+      },
+      {
+        "greek": "δὲ",
+        "parsing": "Conjunción",
+        "strong": "1161",
+        "spanish": "pero"
+      },
+      {
+        "greek": "καὶ",
+        "parsing": "Conjunción",
+        "strong": "2532",
+        "spanish": "también"
+      },
+      {
+        "greek": "ἑτοίμαζέ",
+        "parsing": "Verbo-Presente-Activo-Imperativo-2ª Persona-Singular",
+        "strong": "2090",
+        "spanish": "estés preparando"
+      },
+      {
+        "greek": "μοι",
+        "parsing": "Pronombre Personal-1ª Persona-Dativo-Singular",
+        "strong": "1473",
+        "spanish": "a mí"
+      },
+      {
+        "greek": "ξενίαν·",
+        "parsing": "Sustantivo-Acusativo-Singular-Femenino",
+        "strong": "3578",
+        "spanish": "hospedaje"
+      },
+      {
+        "greek": "ἐλπίζω",
+        "parsing": "Verbo-Presente-Activo-Indicativo-1ª Persona-Singular",
+        "strong": "1679",
+        "spanish": "estoy esperando"
+      },
+      {
+        "greek": "γὰρ",
+        "parsing": "Conjunción",
+        "strong": "1063",
+        "spanish": "porque"
+      },
+      {
+        "greek": "ὅτι",
+        "parsing": "Conjunción",
+        "strong": "3754",
+        "spanish": "que"
+      },
+      {
+        "greek": "διὰ",
+        "parsing": "Preposición",
+        "strong": "1223",
+        "spanish": "a través"
+      },
+      {
+        "greek": "τῶν",
+        "parsing": "Artículo-Genitivo-Plural-Femenino",
+        "strong": "3588",
+        "spanish": "de las"
+      },
+      {
+        "greek": "προσευχῶν",
+        "parsing": "Sustantivo-Genitivo-Plural-Femenino",
+        "strong": "4335",
+        "spanish": "oraciones"
+      },
+      {
+        "greek": "ὑμῶν",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Plural",
+        "strong": "5210",
+        "spanish": "de ustedes"
+      },
+      {
+        "greek": "χαρισθήσομαι",
+        "parsing": "Verbo-Futuro-Pasivo-Indicativo-1ª Persona-Singular",
+        "strong": "5483",
+        "spanish": "seré dado de gracia"
+      },
+      {
+        "greek": "ὑμῖν.",
+        "parsing": "Pronombre Personal-2ª Persona-Dativo-Plural",
+        "strong": "5210",
+        "spanish": "a ustedes"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 23,
+    "words": [
+      {
+        "greek": "Ἀσπάζεταί",
+        "parsing": "Verbo-Presente-Deponente Medio o Pasivo-Indicativo-3ª Persona-Singular",
+        "strong": "782",
+        "spanish": "Está saludando"
+      },
+      {
+        "greek": "σε",
+        "parsing": "Pronombre Personal-2ª Persona-Acusativo-Singular",
+        "strong": "4771",
+        "spanish": "a ti"
+      },
+      {
+        "greek": "Ἐπαφρᾶς",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "1889",
+        "spanish": "Epafras"
+      },
+      {
+        "greek": "ὁ",
+        "parsing": "Artículo-Nominativo-Singular-Masculino",
+        "strong": "3588",
+        "spanish": "el"
+      },
+      {
+        "greek": "συναιχμάλωτός",
+        "parsing": "Adjetivo-Nominativo-Singular-Masculino",
+        "strong": "4869",
+        "spanish": "compañero de cárcel"
+      },
+      {
+        "greek": "μου",
+        "parsing": "Pronombre Personal-1ª Persona-Genitivo-Singular",
+        "strong": "1473",
+        "spanish": "de mí"
+      },
+      {
+        "greek": "ἐν",
+        "parsing": "Preposición",
+        "strong": "1722",
+        "spanish": "en"
+      },
+      {
+        "greek": "Χριστῷ",
+        "parsing": "Sustantivo-Dativo-Singular-Masculino",
+        "strong": "5547",
+        "spanish": "Cristo"
+      },
+      {
+        "greek": "Ἰησοῦ,",
+        "parsing": "Sustantivo-Dativo-Singular-Masculino",
+        "strong": "2424",
+        "spanish": "Jesús"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 24,
+    "words": [
+      {
+        "greek": "Μάρκος,",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "3138",
+        "spanish": "Marcos"
+      },
+      {
+        "greek": "Ἀρίσταρχος,",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "708",
+        "spanish": "Aristarco"
+      },
+      {
+        "greek": "Δημᾶς,",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "1214",
+        "spanish": "Demas"
+      },
+      {
+        "greek": "Λουκᾶς,",
+        "parsing": "Sustantivo-Nominativo-Singular-Masculino",
+        "strong": "3065",
+        "spanish": "Lucas"
+      },
+      {
+        "greek": "οἱ",
+        "parsing": "Artículo-Nominativo-Plural-Masculino",
+        "strong": "3588",
+        "spanish": "los"
+      },
+      {
+        "greek": "συνεργοί",
+        "parsing": "Adjetivo-Nominativo-Plural-Masculino",
+        "strong": "4904",
+        "spanish": "colaboradores"
+      },
+      {
+        "greek": "μου.",
+        "parsing": "Pronombre Personal-1ª Persona-Genitivo-Singular",
+        "strong": "1473",
+        "spanish": "de mí"
+      }
+    ]
+  },
+  {
+    "chapter": 1,
+    "verse": 25,
+    "words": [
+      {
+        "greek": "Ἡ",
+        "parsing": "Artículo-Nominativo-Singular-Femenino",
+        "strong": "3588",
+        "spanish": "La"
+      },
+      {
+        "greek": "χάρις",
+        "parsing": "Sustantivo-Nominativo-Singular-Femenino",
+        "strong": "5485",
+        "spanish": "bondad inmerecida"
+      },
+      {
+        "greek": "τοῦ",
+        "parsing": "Artículo-Genitivo-Singular-Masculino",
+        "strong": "3588",
+        "spanish": "de el"
+      },
+      {
+        "greek": "κυρίου",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "2962",
+        "spanish": "Señor"
+      },
+      {
+        "greek": "Ἰησοῦ",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "2424",
+        "spanish": "Jesús"
+      },
+      {
+        "greek": "Χριστοῦ",
+        "parsing": "Sustantivo-Genitivo-Singular-Masculino",
+        "strong": "5547",
+        "spanish": "Cristo"
+      },
+      {
+        "greek": "μετὰ",
+        "parsing": "Preposición",
+        "strong": "3326",
+        "spanish": "con"
+      },
+      {
+        "greek": "τοῦ",
+        "parsing": "Artículo-Genitivo-Singular-Neutro",
+        "strong": "3588",
+        "spanish": "el"
+      },
+      {
+        "greek": "πνεύματος",
+        "parsing": "Sustantivo-Genitivo-Singular-Neutro",
+        "strong": "4151",
+        "spanish": "espíritu"
+      },
+      {
+        "greek": "ὑμῶν.",
+        "parsing": "Pronombre Personal-2ª Persona-Genitivo-Plural",
+        "strong": "5210",
+        "spanish": "de ustedes"
+      }
+    ]
+  }
+]
