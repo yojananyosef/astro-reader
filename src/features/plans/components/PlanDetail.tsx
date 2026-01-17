@@ -22,6 +22,54 @@ export default function PlanDetail({ plan }: { plan: Plan }) {
   const [savedPlans, setSavedPlans] = useState<Record<string, true>>({});
   const [toast, setToast] = useState<string>("");
   const [dayTitles, setDayTitles] = useState<Record<number, string>>({});
+  const [completedDays, setCompletedDays] = useState<number[]>([]);
+
+  // Cargar estado inicial (favoritos, planes guardados y progreso del plan actual)
+  useEffect(() => {
+    try {
+      const rawFavs = localStorage.getItem(FAVORITES_KEY);
+      if (rawFavs) setFavorites(JSON.parse(rawFavs));
+
+      const rawSaved = localStorage.getItem(SAVED_KEY);
+      if (rawSaved) setSavedPlans(JSON.parse(rawSaved));
+
+      const rawProgress = localStorage.getItem(PROGRESS_KEY);
+      if (rawProgress) {
+        const parsed = JSON.parse(rawProgress);
+        const planProgress = parsed?.[plan.id];
+        if (planProgress) {
+          setCompletedDays(Array.isArray(planProgress.completedDays) ? planProgress.completedDays : []);
+          setCurrentPage(typeof planProgress.lastPage === "number" ? planProgress.lastPage : 1);
+        } else {
+          setCompletedDays([]);
+          setCurrentPage(1);
+        }
+      } else {
+        setCompletedDays([]);
+        setCurrentPage(1);
+      }
+    } catch (e) {
+      console.error("Error loading initial state:", e);
+    }
+  }, [plan.id]);
+
+  // Persistir página actual
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(PROGRESS_KEY);
+      const parsed = raw ? JSON.parse(raw) : {};
+      
+      if (!parsed[plan.id]) {
+        parsed[plan.id] = { completedDays: [], lastPage: currentPage };
+      } else {
+        parsed[plan.id].lastPage = currentPage;
+      }
+      
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify(parsed));
+    } catch (e) {
+      console.error("Error saving current page:", e);
+    }
+  }, [plan.id, currentPage]);
 
   useEffect(() => {
     async function loadDayTitles() {
@@ -38,15 +86,6 @@ export default function PlanDetail({ plan }: { plan: Plan }) {
     }
     loadDayTitles();
   }, [plan.id]);
-
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(FAVORITES_KEY);
-      if (raw) setFavorites(JSON.parse(raw));
-      const rawSaved = localStorage.getItem(SAVED_KEY);
-      if (rawSaved) setSavedPlans(JSON.parse(rawSaved));
-    } catch { }
-  }, []);
 
   useEffect(() => {
     try {
@@ -78,17 +117,7 @@ export default function PlanDetail({ plan }: { plan: Plan }) {
 
   const sliceStart = (currentPage - 1) * perPage;
   const visibleDays = days.slice(sliceStart, sliceStart + perPage);
-  const [completedDays, setCompletedDays] = useState<number[]>([]);
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(PROGRESS_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        const list = parsed?.[plan.id]?.completedDays || [];
-        setCompletedDays(Array.isArray(list) ? list : []);
-      }
-    } catch { }
-  }, [plan.id, toast, favorites, savedPlans, currentPage]);
+
   const [savedPulse, setSavedPulse] = useState(false);
   const isSaved = !!savedPlans[plan.id];
   const savePlan = () => {
